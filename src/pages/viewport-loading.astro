@@ -1,0 +1,65 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+
+import '../styles/viewport.css';
+---
+
+
+<MainLayout title="Viewport Loading">
+
+
+
+<script>
+
+const images = document.querySelectorAll(".more-img");
+const imgOptions = {};
+const imgObserver = new IntersectionObserver((entries, imgObserver) => {
+    entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        
+        const img = entry.target;
+        // appending random number for demo only //
+        img.src = img.dataset.src + Math.floor(Math.random() * 10 + 1);
+        img.className = "imgOn";
+        imgObserver.unobserve(entry.target);
+    });
+    }, imgOptions); 
+        images.forEach((img) => {
+        imgObserver.observe(img);
+    });
+ 
+ function loadMore(n){
+	 console.log('loadMore: '+n)
+    for (let i = 0; i < n; i++) { 
+            var src = document.getElementById("card-container");
+
+            //create image
+            var img = document.createElement("img");
+            img.src = "data:image/svg+xml;charset=utf8,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%3E%3C/svg%3E";
+            img.setAttribute('data-src', 'https://cataas.com/cat?width=300&');
+            img.className ="more-img";
+            
+            var div = document.createElement("div");
+            div.className ="card";
+
+             var p = document.createElement("p");
+            p.className ="desc";
+            p.textContent = "A Neque Augue Sem Eu Nam a., Lacus Integer Elit Praesent Ante Tellus in; Finibus Dui Dictum quis. Sed Quam Amet sapien"
+             
+             div.appendChild(img);
+             div.appendChild(p);
+
+            src.appendChild(div);
+            imgObserver.observe(img);
+        }
+        
+      //  setIntersec();
+ }
+</script>
+
+
+<p>Using Intersection Observer select the "Load More" button to add image elements both in and our of the users view.</p>
+  <button onclick="loadMore(4)">Load More</button>
+<div id="card-container"></div>
+
+</MainLayout>

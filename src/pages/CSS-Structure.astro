@@ -1,0 +1,86 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import { Markdown } from 'astro/components';
+---
+<MainLayout title="CSS Structure">
+<main>
+    <article>
+        <section>
+                <Markdown>CSS Inheritance Tree
+                
+        GLOBAL 
+        ├── Grid.css
+        ├── Base-Variables.css ?
+        ├── Spacing.css 
+        └── Base-Presets.css (Header/Footer/User Agent)
+            └── DESIGN SYSTEM / THEME 
+                ├── DS-Colors.css
+                ├── DS-Motion.css
+                ├── DS-Icons.css
+                ├── DS-Typography.css		
+                └── DS-Atoms.css
+                    |      ├── DS-Buttons
+                    |      ├── DS-List
+                    |      ├── DS-Accordion	
+                    |      ├── DS-Loader/Progress
+                    |      └── DS-Form Elements/Inputs	
+                    └── PAGE
+                        ├── Template-1.css
+                        |   ├── Component-1.css	
+                        |   └── Component-2.css
+                        └── Template-2.css
+                            ├── Component-1.css	
+                            └── Component-2.css
+                </Markdown>
+        </section>
+        <section>
+        
+            <button onclick="window.dialog.showModal();">open dialog</button>
+
+                <dialog id="dialog">
+                <p>I'm a dialog.</p>
+                <form method="dialog">
+                    <button>Close</button>
+                </form>
+                </dialog>
+        </section>
+
+        
+    </article>
+    </main>
+    
+</MainLayout>
+<style>
+	article {
+		padding-top: 1em;
+		line-height: 1.5;
+	}
+	section {
+		margin-top: 2em;
+		display: flex;
+		flex-direction: column;
+		gap: 1em;
+		max-width: 90ch;
+	}
+
+
+	pre,
+	code {
+		font-family: var(--font-mono);
+		background: var(--color-light);
+		border-radius: 4px;
+	}
+
+	pre {
+		padding: 1em 1.5em;
+	}
+
+	.tree {
+		line-height: 1.2;
+	}
+
+	code:not(.tree) {
+		padding: 0.125em;
+		margin: 0 -0.125em;
+	}
+</style>

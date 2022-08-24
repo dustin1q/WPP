@@ -1,0 +1,31 @@
+---
+//import { Markdown } from 'astro/components';
+---
+<img id="logo" src="/assets/speedIcon.jpg"/>
+<h1>Performance Patterns for the Web</h1>
+<nav>
+	<ul class="primary-nav flex">
+		<li><a href="/">Overview</a></li>
+		<li><a href="/CSS-Structure">CSS Structures</a></li>
+		<li><a href="/viewport-loading">Viewport Loading</a></li>
+		<li>Build Patterns</li>
+		<li>Optimize UI</li>
+	</ul>
+</nav>
+<style>
+
+#logo{
+	width: 50px;
+	height: auto;
+	margin: 1rem;
+}
+.primary-nav{
+	list-style-type: none;
+	background: var(--color-secondary);
+	color: var(--color-white);
+}
+.flex{
+	display: flex;
+	gap: var(--gap, 1rem);
+}
+</style>

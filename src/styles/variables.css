@@ -1,12 +1,13 @@
 :root {
 	--black:#232323;
 	--color-light-grey:#919191;
+	--color-extra-light-grey:#dddddd;
 	--color-white:#eeeded;
 	--color-blue: #0070d2;
     --color-green: #008827;
     --color-red: #c00;
 	--color-primary: var(--color-black);
-	--color-secondary:  var(--color-light-grey);
+	--color-secondary:  var(--color-extra-light-grey);
 	--font-primary: euro;
 }
 /*@media (prefers-color-scheme: dark) {

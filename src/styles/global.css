@@ -23,6 +23,6 @@ body {
 @media (prefers-color-scheme: dark) {
 	body {
 		background: #ffffff;
-		color: #000000;
+		color:  var(--black);
 	}
 }

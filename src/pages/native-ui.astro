@@ -8,9 +8,9 @@ import MainLayout from '../layouts/MainLayout.astro';
 <ul>
     <li>Accordions</li>
     <li>Models - dialog</li>
-    <li>Progress</li>
+    <li>Progress - Meter</li>
     <li>Tool tip - Abbr</li>
-    <li>Select</li>
+    <li>Select - Datalist</li>
 </ul>
 
 <section>
@@ -36,9 +36,17 @@ import MainLayout from '../layouts/MainLayout.astro';
     </details> 
 </section>
 <section>
-    <h3>Progress</h3>
-    <label for="file">Lable:</label>
+    <h3>Progress - Meter</h3>
+    <label for="file">Progress:</label>
     <progress id="file" max="100" value="70"> 70% </progress>
+
+    <label for="fuel">Meter:</label>
+    <meter id="fuel"
+        min="0" max="100"
+        low="33" high="66" optimum="80"
+        value="50">
+        at 50/100
+    </meter>
 </section>
 
 <section>
@@ -69,5 +77,15 @@ import MainLayout from '../layouts/MainLayout.astro';
         <option value="third">Third Value</option>
         </select>
     </label>
-</section>
+
+    <label for="ice-cream-choice">Choose a flavor:</label>
+<input list="ice-cream-flavors" id="ice-cream-choice" name="ice-cream-choice" />
+
+<datalist id="ice-cream-flavors">
+    <option value="Chocolate">
+    <option value="Coconut">
+    <option value="Mint">
+    <option value="Strawberry">
+    <option value="Vanilla">
+</datalist>
 </MainLayout>

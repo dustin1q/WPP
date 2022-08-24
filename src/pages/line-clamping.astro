@@ -1,0 +1,42 @@
+---
+
+import MainLayout from '../layouts/MainLayout.astro';
+import '../styles/line-clamp.css';
+
+---
+
+<MainLayout title="Min, Max, Clamp & Line clamping">
+ <div class="card-holder">
+        <div class="card" id="card1">
+            <h3>Card 1</h3>
+            <div class="visual">
+                <p>-webkit-line-clamp: 2;</p>
+                <p>width: clamp(23ch, 20%, 46ch);</p>
+              
+            </div>
+            <p contenteditable>Descriptive Text. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sed est error repellat veritatis.</p>
+        </div>
+        <div class="card" id="card2">
+            <h3>Card 2</h3>
+            <div class="visual">
+               <p>-webkit-line-clamp: 3;</p>
+               <p>width: min(100px, 25%, 50vh, 30ch);</p>
+              
+            </div>
+            <p contenteditable>Descriptive Text. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sed est error repellat veritatis.
+                Descriptive Text. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sed est error repellat veritatis.Descriptive Text. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sed est error repellat veritatis.
+            </p>
+        </div>
+        <div class="card" id="card3">
+            <h3>Card 3</h3>
+            <div class="visual">
+                <p>-webkit-line-clamp: 2;</p>
+                <p>width: clamp(23ch, 20%, 46ch);</p>
+                
+            </div>
+            <p contenteditable>Descriptive Text. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sed est error repellat veritatis.
+                Descriptive Text. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sed est error repellat veritatis.Descriptive Text. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sed est error repellat veritatis.
+            </p>
+        </div>
+    </div>
+</MainLayout>

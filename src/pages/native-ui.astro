@@ -5,4 +5,38 @@ import MainLayout from '../layouts/MainLayout.astro';
 
 <MainLayout title="Native UI">
  <p>Uncommon UI can be implemented as a native web components to avoid expensive custom UI.</p>
+<ul>
+    <li>Accordions</li>
+    <li>Models - dialog</li>
+    <li>Progress</li>
+</ul>
+
+<section>
+    <h3>Dialogs</h3>
+    <button onclick="window.dialog.showModal();">open dialog</button>
+    <dialog id="dialog">
+        <p>I'm a native dialog.</p>
+        <form method="dialog">
+            <button>Close</button>
+        </form>
+    </dialog>
+</section>
+
+<section>
+    <h3>Accordions</h3>
+    <details>  
+        <summary>Title 1</summary> 
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+    </details> 
+     <details>  
+        <summary>Title 2</summary> 
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+    </details> 
+</section>
+<section>
+    <h3>Progress</h3>
+    <label for="file">File progress:</label>
+    <progress id="file" max="100" value="70"> 70% </progress>
+</section>
+
 </MainLayout>

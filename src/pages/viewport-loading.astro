@@ -27,8 +27,15 @@ const imgObserver = new IntersectionObserver((entries, imgObserver) => {
         images.forEach((img) => {
         imgObserver.observe(img);
     });
- 
+  var totalcards = 0;
  function loadMore(n){
+     
+    
+   totalcards += n;
+    
+        
+   document.getElementById("totalCardsLBL").textContent = "Total cards added: " + totalcards;
+
 	 console.log('loadMore: '+n)
     for (let i = 0; i < n; i++) { 
             var src = document.getElementById("card-container");
@@ -59,7 +66,8 @@ const imgObserver = new IntersectionObserver((entries, imgObserver) => {
 
 
 <p>Using Intersection Observer select the "Load More" button to add image elements both in and our of the users view.</p>
-  <button onclick="loadMore(8)">Load More</button>
+  <button onclick="loadMore(20)">Load More</button>
+  <p id="totalCardsLBL"></p>
 <div id="card-container"></div>
 
 </MainLayout>

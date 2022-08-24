@@ -4,16 +4,18 @@ import MainLayout from '../layouts/MainLayout.astro';
 ---
 
 <MainLayout title="Native UI">
- <p>Uncommon UI can be implemented as a native web components to avoid expensive custom UI.</p>
+ <p><strong>Uncommon</strong> UI can be implemented as a native web components to avoid expensive custom UI.</p>
 <ul>
     <li>Accordions</li>
     <li>Models - dialog</li>
     <li>Progress</li>
+    <li>Tool tip - Abbr</li>
+    <li>Select</li>
 </ul>
 
 <section>
     <h3>Dialogs</h3>
-    <button onclick="window.dialog.showModal();">open dialog</button>
+    <button onclick="window.dialog.showModal();">Open dialog</button>
     <dialog id="dialog">
         <p>I'm a native dialog.</p>
         <form method="dialog">
@@ -35,8 +37,37 @@ import MainLayout from '../layouts/MainLayout.astro';
 </section>
 <section>
     <h3>Progress</h3>
-    <label for="file">File progress:</label>
+    <label for="file">Lable:</label>
     <progress id="file" max="100" value="70"> 70% </progress>
 </section>
 
+<section>
+<h3>Tool tip - abbr</h3>
+<p><abbr title="World Health Organization">WHO</abbr> was founded in 1948.</p>
+</section>
+
+<section>
+    <h3>Select</h3><!--https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select-->
+    <label>Choose one or more :
+        <select name="pets" multiple size="4">
+            <optgroup label="4-legged pets">
+            <option value="dog">Dog</option>
+            <option value="cat">Cat</option>
+            <option value="hamster" disabled>Hamster</option>
+            </optgroup>
+            <optgroup label="Flying pets">
+            <option value="parrot">Parrot</option>
+            <option value="macaw">Macaw</option>
+            <option value="albatross">Albatross</option>
+            </optgroup>
+        </select>
+    </label>
+    <label>Select one:
+        <select name="choice">
+        <option value="first">First Value</option>
+        <option value="second" selected>Second Value</option>
+        <option value="third">Third Value</option>
+        </select>
+    </label>
+</section>
 </MainLayout>

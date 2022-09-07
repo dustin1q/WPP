@@ -19,7 +19,7 @@ const imgObserver = new IntersectionObserver((entries, imgObserver) => {
         
         const img = entry.target;
         // appending random number for demo only //
-        img.src = img.dataset.src + Math.floor(Math.random() * 10 + 1);
+        img.src = img.dataset.src + Math.floor(Math.random() * 100 + 1);
         img.className = "imgOn";
         imgObserver.unobserve(entry.target);
     });
@@ -66,7 +66,7 @@ const imgObserver = new IntersectionObserver((entries, imgObserver) => {
 
 
 <p>Using Intersection Observer select the "Load More" button to add image elements both in and our of the users view.</p>
-  <button onclick="loadMore(20)">Load More</button>
+  <button onclick="loadMore(50)">Load More</button>
   <p id="totalCardsLBL"></p>
 <div id="card-container"></div>
 

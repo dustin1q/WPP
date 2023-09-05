@@ -2,9 +2,22 @@
 
 import MainLayout from '../layouts/MainLayout.astro';
 import { Code } from 'astro:components';
-//import '../styles/line-clamp.css';
+import '../styles/live-code.css';
 
+const blockStyles = `body {
+  background-color: lightblue;
+}
 
+h1 {
+  color: white;
+  text-align: left;
+}
+
+p {
+  font-family: verdana;
+  font-size: 20px;
+}
+`;
 
 
 ---
@@ -16,11 +29,8 @@ import { Code } from 'astro:components';
 <!-- Optional: Customize your theme. -->
 <Code code={`const foo = 'bar';`} lang="js" theme="dark-plus" />
 <!-- Optional: Enable word wrapping. -->
-<Code code={`const foo = 'bar';`} lang="js" wrap />
-<!-- Optional: Output inline code. -->
-<p>
-  <Code code={`const foo = 'bar';`} lang="js" inline />
-  will be rendered inline.
-</p>
+<Code contenteditable="true" code={blockStyles} lang="css"  wrap contenteditable="true"  theme="dark-plus"/>
+
+
    
 </MainLayout>

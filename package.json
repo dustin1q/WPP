@@ -1,6 +1,6 @@
 {
   "name": "@example/starter",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "private": true,
   "scripts": {
     "dev": "astro dev",
@@ -9,6 +9,9 @@
     "preview": "astro preview"
   },
   "devDependencies": {
-    "astro": "^0.25.4"
+    "astro": "^3.0.8"
+  },
+  "dependencies": {
+    "shiki": "^0.14.4"
   }
 }

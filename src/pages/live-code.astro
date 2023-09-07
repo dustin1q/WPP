@@ -11,10 +11,7 @@ import {javascript} from "@codemirror/lang-javascript"
 
 
 
-const blockStyles = `body {
-  background-color: lightblue;
-}
-
+const css_styles = `
 h1 {
   color: white;
   text-align: left;
@@ -23,32 +20,73 @@ h1 {
 p {
   font-family: verdana;
   font-size: 20px;
-}
-`;
+  color: #bbb;
+}`;
+
+const javascript_code = `javascript`;
+
 
 ---
 
 <MainLayout title="Live Code POC">
+<div class="container">
+    
+    <div class="left">
+        <lable>CSS</lable>
+        <div class="editor" id="css-editor">{css_styles}</div>
 
-<div id="code-editor">{blockStyles}</div>
+        <lable>HTML</lable>
+        <div class="editor" id="html-editor"></div>
+        <lable>Javascript</lable>
+        <div class="editor" id="javascript-editor">{javascript_code}</div>
+    </div>
+    <button id="runbtn" class="runBtn">Run ❯</button>
+    <div class="right">
+        
+        <lable>Results</lable>
+        <iframe id="results" class="editor"></iframe>
+    </div>
+</div>
 </MainLayout>
 
-</script>
-
-<style>
-    #code-editor {
-    width: 400px;
-    height: 400px;
-}
-</style>
 <script>
 import * as ace from 'brace';
 import 'brace/mode/javascript';
 import 'brace/mode/css';
+import 'brace/mode/html';
 import 'brace/theme/twilight';
 
-const editor = ace.edit('code-editor');
-editor.session.setMode('ace/mode/css');
-editor.setTheme('ace/theme/twilight');
+const css_editor = ace.edit('css-editor');
+css_editor.session.setMode('ace/mode/css');
+css_editor.setTheme('ace/theme/twilight');
 
+const html_editor = ace.edit('html-editor');
+html_editor.session.setMode('ace/mode/html');
+html_editor.setTheme('ace/theme/twilight');
+html_editor.setValue("<p>html content here</p>")
+
+const javascript_editor = ace.edit('javascript-editor');
+javascript_editor.session.setMode('ace/mode/javascript');
+javascript_editor.setTheme('ace/theme/twilight');
+
+
+let btn = document.getElementById("runbtn");
+btn.addEventListener("click", (e:Event) => runCode());
+
+function runCode(){
+    console.log("CSS: "+css_editor.getValue());
+    
+
+    let cssCode = "<style>"+css_editor.getValue()+"</style>";
+    let htmlCode = html_editor.getValue();
+    
+    let results = document.getElementById("results");
+    
+    results.contentDocument.head.innerHTML= cssCode;
+    results.contentDocument.body.innerHTML= htmlCode;
+
+    console.log("HTML: "+html_editor.getValue());
+    console.log("Javascript: "+javascript_editor.getValue());
+}
+runCode();
 </script>

@@ -4,6 +4,13 @@ import MainLayout from '../layouts/MainLayout.astro';
 import { Code } from 'astro:components';
 import '../styles/live-code.css';
 
+import {EditorView, basicSetup} from "codemirror"
+import {javascript} from "@codemirror/lang-javascript"
+
+
+
+
+
 const blockStyles = `body {
   background-color: lightblue;
 }
@@ -19,18 +26,29 @@ p {
 }
 `;
 
-
 ---
 
 <MainLayout title="Live Code POC">
- 
-<!-- Syntax highlight some JavaScript code. -->
-<Code code={`const foo = 'bar';`} lang="js" />
-<!-- Optional: Customize your theme. -->
-<Code code={`const foo = 'bar';`} lang="js" theme="dark-plus" />
-<!-- Optional: Enable word wrapping. -->
-<Code contenteditable="true" code={blockStyles} lang="css"  wrap contenteditable="true"  theme="dark-plus"/>
 
-
-   
+<div id="code-editor">{blockStyles}</div>
 </MainLayout>
+
+</script>
+
+<style>
+    #code-editor {
+    width: 400px;
+    height: 400px;
+}
+</style>
+<script>
+import * as ace from 'brace';
+import 'brace/mode/javascript';
+import 'brace/mode/css';
+import 'brace/theme/twilight';
+
+const editor = ace.edit('code-editor');
+editor.session.setMode('ace/mode/css');
+editor.setTheme('ace/theme/twilight');
+
+</script>

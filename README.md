@@ -7,19 +7,21 @@ Focuss areas include:
 * Native UI Web Components 
 
 ## To Do
-* Update nav
-* Add and use SVG icons
-* Leverage Livecode in a code sample template 
-    * Use Native UI items in this template
-    * Abstract examples into a data object
-* Add Unit Testing
-* Incorporate React component (create React App)
-* Consider Modual Federation Pattern
+1. Update nav
+    * Update Layout for mobile
+1. Add and use SVG icons
+1. Leverage Livecode as a code sample template for native UI samples
+    * Create a utility class for Ace Editor
+    * Abstract examples into a data object to render using Ace utility
+1. Add Unit Testing
+1. Incorporate React component (create React App)
+1. Consider a Modual Federation Pattern to demonstrate
 
 ## Architecture
 This project uses Astro as a primary templating engine and static site generator. It may evolve to incorporate React and adition libraries. The aim in adding additional libraries will be to qualify and demonstrate multipal library support, and hopfully Modual Federation design patterns. 
 
 [Astro Documentation](https://github.com/withastro/astro) 
+[Ace editor Documentation](https://ace.c9.io/#nav=howto) 
 
 
 ## 🧞 Commands

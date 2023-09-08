@@ -1,31 +1,26 @@
 .container{
-    width:95%;
+    width:98%;
     height:100vh;
-    padding:20px;
+    padding:10px;
     display: flex;
 }
 .left, .right{
     flex-basis: 50%;
-    padding: 10px;
+    padding: 5px;
 }
+
 .editor {
     width: 100%;
     height: 150px;
-    max-width: 100%;
     margin-bottom:10px;
 }
 iframe{
-    width:95%;
+    width:100%;
     height:95%;
-    border: 1px;
-    border-color:black;
-    outline: 0;
+    border:1px solid #bbb;
+    
 }
-#runbtn{
-    height:30px;
-    width:45px;
-    font-size:10px;
-}
+
 lable{
     display:flex;
     align-items:center;
@@ -33,4 +28,5 @@ lable{
     color: #fff;
     font-size:12px;
     padding: 3px;
+   
 }

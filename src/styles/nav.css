@@ -1,16 +1,14 @@
 #logo{
 	width: 35px;
 	height: auto;
-	margin: 0.2rem;
-	
 }
-
 .primary-nav{
 	list-style-type: none;
 	background: var(--color-secondary);
 	color: var(--black);
 	outline: 0.1rem solid var(--black);	
 	margin:3px;
+    margin-bottom: 1em;
 }
 .primary-nav ul ul {
     display: none;
@@ -45,11 +43,12 @@
     padding: 0;
     position: absolute;
     top: 100%;
-	z-index: 1000;
+	z-index: 1000; 
 }
 .primary-nav ul ul li {
     float: none;
     position: relative;
+    margin-right: 0px;
 }
 .primary-nav ul ul li a {
     padding: 5px 10px;
@@ -59,4 +58,3 @@
     background: var(--color-secondary);
 	color: var(--black);
 }
-

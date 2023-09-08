@@ -1,0 +1,5 @@
+section{
+    margin-bottom: 1em;
+    padding-bottom: 1em;
+    border-bottom: 0.1rem solid var(--color-secondary);
+}

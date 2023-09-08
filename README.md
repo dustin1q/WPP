@@ -10,13 +10,14 @@ Focuss areas include:
 * Update nav
 * Leverage Livecode in a code sample template 
     * Use Native UI items in this template
+    * Abstract examples into a data object
 * Add Unit Testing
 * Incorporate React component (create React App)
 * Consider Modual Federation Pattern
 
 
 ## Architecture
-This project uses Astro as a primary templating engine and static site generator. It may evolve to incorporate React and an adition libraries in an effor to qualify and demonstrate Modual Federation design patterns. 
+This project uses Astro as a primary templating engine and static site generator. It may evolve to incorporate React and adition libraries. The aim in adding additional libraries will be to qualify and demonstrate multipal library support, and hopfully Modual Federation design patterns. 
 
 [Astro Documentation](https://github.com/withastro/astro) 
 

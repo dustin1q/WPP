@@ -1,15 +1,15 @@
 ---
-
+import '../styles/nav.css';
 
 ---
-<img id="logo" src='../assets/speedIcon.jpg'/>
-<h1>Performance Patterns for the Web</h1>
-<nav>
-	<ul class="primary-nav flex">
+
+<h1><img id="logo" src='../assets/speedIcon.jpg'/>
+	Performance Patterns for the Web</h1>
+<nav class="primary-nav">
+	<ul>
 		<li><a href="/">Overview</a></li>
 		<li><a href="/viewport-loading">Viewport Loading</a></li>
 		<li><a href="/native-ui">Native UI</a>
-		
 			<ul>
 				<li>
 				  <a href="#">Accordions</a>
@@ -27,84 +27,9 @@
 				  <a href="#">Select - Datalist</a>
 				</li>
 			  </ul>
-		
 		</li>
 		<li><a href="/line-clamping">Line Clamping & truncating</a></li>
 		<li><a href="/live-code">Live-Code</a></li>
 		<li><a href="#">Build Patterns</a></li>
 	</ul>
 </nav>
-<style>
-
-#logo{
-	width: 35px;
-	height: auto;
-	margin: 0.2rem;
-	
-}
-
-
-
-.primary-nav{
-	list-style-type: none;
-	background: var(--color-secondary);
-	color: var(--black);
-	outline: 0.1rem solid var(--black);	
-	
-	margin:3px;
-}
-
-
-
-nav ul ul {
-        display: none;
-      }
-      nav ul li:hover > ul {
-        display: block;
-      }
-      nav ul:after {
-        content: "";
-        clear: both;
-        display: block;
-      }
-      nav ul li {
-        position: relative;
-        list-style-type: none;
-		padding:3px;
-      }
-      nav ul li:hover {
-        background: var(--color-secondary);
-      }
-      nav ul li:hover a {
-        color: #fff;
-      }
-      nav ul li a {
-        display: block;
-        text-decoration: none;
-      }
-      nav ul ul {
-        background: #5f6975;
-        padding: 0;
-        position: absolute;
-        top: 100%;
-		z-index: 1000;
-      }
-      nav ul ul li {
-        float: none;
-        position: relative;
-      }
-      nav ul ul li a {
-        padding: 5px 10px;
-        color: #fff;
-      }
-      nav ul ul li a:hover {
-        background: var(--color-secondary);
-		color: var(--black);
-      }
-
-
-.flex{
-	display: flex;
-	gap: var(--gap, 1rem);
-}
-</style>

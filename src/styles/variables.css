@@ -42,13 +42,4 @@
 	font-family: 'Helvelow';
 	src: url('../styles/fonts/Helvelow-Regular.woff') format('woff');
   }
-body { 
-	font-family: 'Brooklyn', Arial, Helvetica, sans-serif;
-	color: var(--color-primary);
-	font-size: 1rem;
 
-}
-
-a {
-	color: inherit;
-}

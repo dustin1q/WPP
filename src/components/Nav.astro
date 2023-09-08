@@ -1,15 +1,34 @@
 ---
-//import { Markdown } from 'astro/components';
-import logo from '../assets/speedIcon.jpg'
+
+
 ---
-<img id="logo" src={logo}/>
+<img id="logo" src='../assets/speedIcon.jpg'/>
 <h1>Performance Patterns for the Web</h1>
 <nav>
 	<ul class="primary-nav flex">
 		<li><a href="/">Overview</a></li>
-		<li><a href="/CSS-Structure">CSS Structures</a></li>
 		<li><a href="/viewport-loading">Viewport Loading</a></li>
-		<li><a href="/native-ui">Native UI</a></li>
+		<li><a href="/native-ui">Native UI</a>
+		
+			<ul>
+				<li>
+				  <a href="#">Accordions</a>
+				</li>
+				<li>
+				  <a href="#">Dialogs</a>
+				</li>
+				<li>
+				  <a href="#">Progress - Meter</a>
+				</li>
+				<li>
+				  <a href="#">Tool tip - Abbr</a>
+				</li>
+				<li>
+				  <a href="#">Select - Datalist</a>
+				</li>
+			  </ul>
+		
+		</li>
 		<li><a href="/line-clamping">Line Clamping & truncating</a></li>
 		<li><a href="/live-code">Live-Code</a></li>
 		<li><a href="#">Build Patterns</a></li>
@@ -18,19 +37,72 @@ import logo from '../assets/speedIcon.jpg'
 <style>
 
 #logo{
-	width: 50px;
+	width: 35px;
 	height: auto;
-	margin: 1rem;
+	margin: 0.2rem;
+	
 }
+
+
+
 .primary-nav{
 	list-style-type: none;
 	background: var(--color-secondary);
 	color: var(--black);
 	outline: 0.1rem solid var(--black);	
+	
+	margin:3px;
 }
-.primary-nav li{
-	margin: 0.5em;
-}
+
+
+
+nav ul ul {
+        display: none;
+      }
+      nav ul li:hover > ul {
+        display: block;
+      }
+      nav ul:after {
+        content: "";
+        clear: both;
+        display: block;
+      }
+      nav ul li {
+        position: relative;
+        list-style-type: none;
+		padding:3px;
+      }
+      nav ul li:hover {
+        background: var(--color-secondary);
+      }
+      nav ul li:hover a {
+        color: #fff;
+      }
+      nav ul li a {
+        display: block;
+        text-decoration: none;
+      }
+      nav ul ul {
+        background: #5f6975;
+        padding: 0;
+        position: absolute;
+        top: 100%;
+		z-index: 1000;
+      }
+      nav ul ul li {
+        float: none;
+        position: relative;
+      }
+      nav ul ul li a {
+        padding: 5px 10px;
+        color: #fff;
+      }
+      nav ul ul li a:hover {
+        background: var(--color-secondary);
+		color: var(--black);
+      }
+
+
 .flex{
 	display: flex;
 	gap: var(--gap, 1rem);

@@ -9,6 +9,7 @@ Focuss areas include:
 ## To Do
 1. Update nav
     * Update Layout for mobile
+1. Consider Tailwind??
 1. Add and use SVG icons
 1. Leverage Livecode as a code sample template for native UI samples
     * Create a utility class for Ace Editor

@@ -4,13 +4,7 @@ import MainLayout from '../layouts/MainLayout.astro';
 import { Code } from 'astro:components';
 import '../styles/live-code.css';
 
-import {EditorView, basicSetup} from "codemirror"
-import {javascript} from "@codemirror/lang-javascript"
-
-
-
-
-
+//data objects
 const css_code = `h1, p {
     font-family: verdana;
     color: #bbb;
@@ -27,22 +21,20 @@ const javascript_code = `console.log("jsCode");`;
 ---
 
 <MainLayout title="Live Code POC">
-<div class="container">
-    
-    <div class="left">
-        <lable>CSS</lable>
-        <div class="editor" id="css-editor">{css_code}</div>
-
-        <lable>HTML</lable>
-        <div class="editor" id="html-editor">{html_code}</div>
-        <lable>Javascript</lable>
-        <div class="editor" id="javascript-editor">{javascript_code}</div>
+    <div class="container"> 
+        <div class="left">
+            <lable>CSS</lable>
+            <div class="editor" id="css-editor">{css_code}</div>
+            <lable>HTML</lable>
+            <div class="editor" id="html-editor">{html_code}</div>
+            <lable>Javascript</lable>
+            <div class="editor" id="javascript-editor">{javascript_code}</div>
+        </div>
+        <div class="right">
+            <lable>Results</lable>
+            <iframe id="results"></iframe>
+        </div>
     </div>
-    <div class="right">
-        <lable>Results</lable>
-        <iframe id="results"></iframe>
-    </div>
-</div>
 </MainLayout>
 
 <script>
@@ -52,6 +44,8 @@ import 'brace/mode/css';
 import 'brace/mode/html';
 import 'brace/theme/twilight';
 
+
+//make editor a utility class
 const css_editor = ace.edit('css-editor');
 css_editor.session.setMode('ace/mode/css');
 css_editor.setTheme('ace/theme/twilight');
@@ -68,17 +62,13 @@ javascript_editor.setTheme('ace/theme/twilight');
 javascript_editor.getSession().on('change', function() {runCode()});
 
 function runCode(){
-    //console.log("CSS: "+css_editor.getValue());
-    
     let cssCode = "<style>"+css_editor.getValue()+"</style>";
     let htmlCode = html_editor.getValue();
     let jsCode = javascript_editor.getValue();
-    
+    //add code to iframe
     let results = document.getElementById("results");
-    
     results.contentDocument.head.innerHTML= cssCode;
     results.contentDocument.body.innerHTML= htmlCode;
-
     results.contentWindow.eval(jsCode);
 }
 runCode();

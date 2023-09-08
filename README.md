@@ -1,4 +1,4 @@
-#Performance Patterns for the Web
+# Performance Patterns for the Web
 
 This repo focusses on and demonstrates performant coding patterns and UI examples needed for common frontend development solutions.  
 Focuss areas include:

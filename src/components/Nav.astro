@@ -11,12 +11,12 @@ const uisamples = json.samples;
 	<ul>
 		<li><a href="/">Overview</a></li>
 		<li><a href="/viewport-loading">Viewport Loading</a></li>
-		<li><a href="/native-ui">Native UI</a>
+		<li><a href="/UIsamples">Native UI</a>
 			<ul>
 				{uisamples.map((sample) => (
-					<li><a href={sample.title}> {sample.title} </a></li>
+					<li><a href={"/UIsamples/"+sample.title}> {sample.title} </a></li>
 				))}
-			  </ul>
+			</ul>
 		</li>
 		<li><a href="/line-clamping">Line Clamping & truncating</a></li>
 		<li><a href="/live-code">Live-Code</a></li>

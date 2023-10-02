@@ -1,11 +1,17 @@
 ---
 
 import MainLayout from '../../layouts/MainLayout.astro';
+import json from '../../collection/iusamples.json';
+const uisamples = json.samples;
 ---
 
 <MainLayout title="Samples">
 <p>
-Code samples 
+View the following code samples.
 </p>
-
+<ul>
+    {uisamples.map((sample) => (
+        <li><a href={"/UIsamples/"+sample.title}> {sample.title} </a></li>
+    ))}
+</ul>
 </MainLayout>

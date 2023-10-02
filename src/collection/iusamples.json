@@ -13,10 +13,12 @@
             "desc": "Progress stuff"
         },
         {
-            "title": "Tool-tip-Abbr"
+            "title": "Tool-tip-Abbr",
+            "desc": "tool tip desc stuff"
         },
         {
-            "title": "Select-Datalist"
+            "title": "Select-Datalist",
+            "desc": "Select-Datalist desc stuff"
         }
     ]
 }

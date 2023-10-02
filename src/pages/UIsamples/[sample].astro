@@ -1,0 +1,23 @@
+---
+
+import MainLayout from '../../layouts/MainLayout.astro';
+
+import json from '../../collection/iusamples.json';
+export function getStaticPaths(){
+const samples = json.samples
+  return samples.map(({title, desc}) => {
+    return {
+        params: {sample: title},
+        props: {title, desc},
+    }
+  });
+}
+const {title, desc} = Astro.props; 
+---
+
+<MainLayout title={title}>
+<p>
+{desc}
+</p>
+
+</MainLayout>

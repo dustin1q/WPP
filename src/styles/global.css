@@ -28,3 +28,6 @@ a {
 		color:  var(--black);
 	}
 }
+footer{
+	clear: both;
+}

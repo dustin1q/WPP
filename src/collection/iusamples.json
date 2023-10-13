@@ -2,23 +2,31 @@
     "samples": [
         {
             "title": "Accordions",
-            "desc": "accordion stuff"
+            "desc": "accordion stuff",
+            "html": "<h1>Title</h1> <p>more content</p>",
+            "css": "h1, p { font-family: verdana;color: #bbb; text-align: center;} p {text-align: left;}",
+            "js": "console.log(\"jsCode from JSON\");"
         },
         {
             "title": "Models-dialog",
-            "desc": "Models stuff"
+            "desc": "Models stuff",
+            "html":"html"
         },
         {
             "title": "Progress-Meter",
-            "desc": "Progress stuff"
+            "desc": "Progress stuff",
+            "html":"html"
         },
         {
             "title": "Tool-tip-Abbr",
-            "desc": "tool tip desc stuff"
+            "desc": "tool tip desc stuff",
+            "html":"html",
+            "js": "console.log(\"jsCode from JSON\");"
         },
         {
             "title": "Select-Datalist",
-            "desc": "Select-Datalist desc stuff"
+            "desc": "Select-Datalist desc stuff",
+            "html":"html"
         }
     ]
 }

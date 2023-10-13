@@ -1,43 +1,54 @@
 ---
 
 import MainLayout from '../../layouts/MainLayout.astro';
+import MarkdownPostLayout from '../../layouts/MarkdownPostLayout.astro';
+
 import CodeEditor from '../../components/CodeEditor.astro';
 import '../../styles/live-code.css';
 
-import json from '../../collection/iusamples.json';
-export function getStaticPaths(){
-const samples = json.samples
-  return samples.map(({title, desc, html, css, js}) => {
-    return {
-        params: {sample: title},
-        props: {title, desc, html, css, js},
-    }
-  });
+
+import { getCollection, CollectionEntry} from 'astro:content';
+import { GetStaticPathsRemovedRSSHelper } from 'astro/dist/core/errors/errors-data';
+
+
+export const getStaticPaths = async() => {
+    const uiSamples = await getCollection("uiSamples");
+
+    return uiSamples.map(sample=> ({
+        
+            params: {slug:sample.slug},
+            props: {sample}
+        
+    }));
 }
-const {title, desc, html, css, js} = Astro.props; 
 
+type Props = {
+    sample: CollectionEntry<"uiSamples">
+}
+const {sample} = Astro.props;
+const { Content } = await sample.render();
 
-const javascript_code = `console.log("jsCode");`;
-
+console.log(sample);
 ---
 
-<MainLayout title={title}>
-<p>
-{desc}
-</p>
 
-<div class="container"> 
-    <div class="left">
-        <CodeEditor type="HTML" code={html}/>
-        <CodeEditor type="CSS" code={css}/>
-        <CodeEditor type="JS" code={js}/>
+<MainLayout title={sample.data.title}>
+    <p>
+    {sample.data.desc}
+    </p>
+    
+    <div class="container"> 
+        <div class="left">
+            <Content/>
+        </div>
+        <div class="right">
+            <lable>Results</lable>
+            <iframe id="results"></iframe>
+        </div>
     </div>
-    <div class="right">
-        <lable>Results</lable>
-        <iframe id="results"></iframe>
-    </div>
-</div>
 </MainLayout>
+
+
 <script>
     import * as ace from 'brace';
     import 'brace/mode/javascript';
@@ -45,12 +56,13 @@ const javascript_code = `console.log("jsCode");`;
     import 'brace/mode/html';
     import 'brace/theme/twilight';
     import 'brace/theme/chrome';
-    const isHTML = document.getElementById("HTML")
-    
+    const htmlcontent = document.getElementById("HTML")?.innerHTML;
+    console.log(htmlcontent)
         const html_editor = ace.edit("HTML");
         html_editor.session.setMode('ace/mode/html');
         html_editor.setTheme('ace/theme/twilight');
-        html_editor.getSession().on('change', function() {runCode()});    
+        html_editor.getSession().on('change', function() {runCode()});   
+       
    
         
         const css_editor = ace.edit("CSS");
@@ -63,6 +75,9 @@ const javascript_code = `console.log("jsCode");`;
         js_editor.setTheme('ace/theme/twilight');
         js_editor.getSession().on('change', function() {runCode()});
         
+        
+        html_editor.setValue(htmlcontent) 
+        html_editor.clearSelection();
 
    function runCode(){
 

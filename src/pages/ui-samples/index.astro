@@ -1,13 +1,11 @@
 ---
 
 import MainLayout from '../../layouts/MainLayout.astro';
-//import json from '../../collection/iusamples.json';
-//const uisamples = json.samples;
 
 import { getCollection } from 'astro:content';
 
 const uiSamples = await getCollection("uiSamples")
-console.log(uiSamples);
+//console.log(uiSamples);
 ---
 
 <MainLayout title="MD UI Samples">
@@ -15,7 +13,7 @@ console.log(uiSamples);
 
 <ul>
     {uiSamples.map((uiSamples) => (
-        <li><a href={"/UIsamples/"+uiSamples.slug}> {uiSamples.data.title} </a></li>
+        <li><a href={"/ui-samples/"+uiSamples.slug}> {uiSamples.data.title} </a></li>
         <li> {uiSamples.data.desc}</li>
     ))}
 </ul>

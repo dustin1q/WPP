@@ -1,5 +1,22 @@
+
+header{
+    padding: 0 10px 0 70px;
+    border-bottom: 0.1rem solid var(--black);
+}
+header h1{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    text-align:center; 
+    vertical-align: middle;
+    font-size: 2.2em;
+}
+
+footer{
+        padding: 0 10px 0 10px;
+        border-top: 0.1rem solid var(--black);
+}
 #logo{
-	width: 35px;
+	width: 40px;
 	height: auto;
 }
 .primary-nav{
@@ -58,3 +75,4 @@
     background: var(--color-secondary);
 	color: var(--black);
 }
+

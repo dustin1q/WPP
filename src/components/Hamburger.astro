@@ -1,0 +1,35 @@
+---
+import '../styles/hamburger-nav.css';
+import { getCollection } from 'astro:content';
+
+const uiSamples = await getCollection("uiSamples");
+
+---
+
+<label class="hamburger-menu">
+    <input type="checkbox" />
+  </label>
+  <aside class="sidebar">
+    <nav>
+        <ul>
+            <li><a href="/">Overview</a></li>
+            <li><a href="/viewport-loading">Viewport Loading</a></li>
+            <li>
+                <details>  
+                    <summary>Native UI</summary> 
+                    <ul>
+                        <li><a href="/ui-samples">Overview</a></li>
+                        {uiSamples.map((uiSamples) => (
+                            <li><a href={"/ui-samples/"+uiSamples.slug}> {uiSamples.data.title} </a></li>
+                        ))}
+                    </ul>
+                </details> 
+               
+            </li>
+            <li><a href="/line-clamping">Line Clamping & truncating</a></li>
+            <li><a href="/live-code">Live-Code</a></li>
+            <li><a href="#">Build Patterns</a></li>
+        </ul>
+    </nav>
+  </aside>
+</nav>

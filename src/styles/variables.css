@@ -9,6 +9,18 @@
 	--color-primary: var(--color-black);
 	--color-secondary:  var(--color-extra-light-grey);
 	--font-primary: euro;
+
+/*hamburger Variables */
+	--bar-width: 35px;
+    --bar-height: 3px;
+    --hamburger-gap: 5px;
+    --foreground: var(--black);
+    
+    --background: var(--color-white);
+    --hamburger-margin: 20px;
+    --animation-timing: 200ms ease-in-out;
+    --hamburger-height: calc(var(--bar-height) * 3 + var(--hamburger-gap) * 2);
+
 }
 /*@media (prefers-color-scheme: dark) {
 	:root {

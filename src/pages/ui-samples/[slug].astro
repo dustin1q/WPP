@@ -1,14 +1,8 @@
 ---
 
 import MainLayout from '../../layouts/MainLayout.astro';
-import MarkdownPostLayout from '../../layouts/MarkdownPostLayout.astro';
-
-import CodeEditor from '../../components/CodeEditor.astro';
 import '../../styles/live-code.css';
-
-
 import { getCollection, CollectionEntry} from 'astro:content';
-import { GetStaticPathsRemovedRSSHelper } from 'astro/dist/core/errors/errors-data';
 
 
 export const getStaticPaths = async() => {
@@ -27,8 +21,7 @@ type Props = {
 }
 const {sample} = Astro.props;
 const { Content } = await sample.render();
-
-console.log(sample);
+//console.log(sample);
 ---
 
 
@@ -76,6 +69,7 @@ console.log(sample);
             let jsLBL = document.createElement('lable');
             jsLBL.textContent = "JS";
             jsElement.parentNode.insertBefore(jsLBL, jsElement);
+
 
             const js_editor = ace.edit("JS");
             js_editor.session.setMode('ace/mode/javascript');

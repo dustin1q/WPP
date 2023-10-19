@@ -36,4 +36,10 @@ a {
 }
 footer{
 	clear: both;
+	margin-top: 10px;
+	padding: 0 10px 0 10px;
+    border-top: 0.1rem solid var(--black);
+}
+main{
+	margin: 10px;
 }

@@ -11,14 +11,12 @@ header h1{
     font-size: 2.2em;
 }
 
-footer{
-        padding: 0 10px 0 10px;
-        border-top: 0.1rem solid var(--black);
-}
+
 #logo{
-	width: 40px;
-	height: auto;
+width: 40px;
+ height: auto;
 }
+
 .primary-nav{
 	list-style-type: none;
 	background: var(--color-secondary);

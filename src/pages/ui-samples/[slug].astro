@@ -56,63 +56,53 @@ console.log(sample);
     import 'brace/mode/html';
     import 'brace/theme/twilight';
     import 'brace/theme/chrome';
-    const htmlcontent = document.getElementById("HTML")?.innerHTML;
-    console.log(htmlcontent)
-        const html_editor = ace.edit("HTML");
-        html_editor.session.setMode('ace/mode/html');
-        html_editor.setTheme('ace/theme/twilight');
-        html_editor.getSession().on('change', function() {runCode()});   
-       
-   
-        
-        const css_editor = ace.edit("CSS");
-        css_editor.session.setMode('ace/mode/css');
-        css_editor.setTheme('ace/theme/twilight');
-        css_editor.getSession().on('change', function() {runCode()});
-        
-        const js_editor = ace.edit("JS");
-        js_editor.session.setMode('ace/mode/javascript');
-        js_editor.setTheme('ace/theme/twilight');
-        js_editor.getSession().on('change', function() {runCode()});
-        
-        
-        html_editor.setValue(htmlcontent) 
-        html_editor.clearSelection();
 
-   function runCode(){
+         // Setup CSS
+        if(document.getElementById("CSS")){
+            let css_editor = ace.edit("CSS");
+            css_editor.session.setMode('ace/mode/css');
+            css_editor.setTheme('ace/theme/twilight');
+            css_editor.getSession().on('change', function() {runCode(null,css_editor.getValue())});
+            runCode(null, css_editor.getValue()); 
+        }
+        // Setup JS
+        if(document.getElementById("JS")){
+            const js_editor = ace.edit("JS");
+            js_editor.session.setMode('ace/mode/javascript');
+            js_editor.setTheme('ace/theme/twilight');
+            js_editor.getSession().on('change', function() {runCode(null, null, js_editor.getValue())});
+            runCode(null, null, js_editor.getValue()); 
+        }
+         // Setup HTML
+        const htmlElement = document.getElementById("HTML");
+        const htmlContent = htmlElement?.innerHTML;   
+        if(htmlElement){
+            const html_editor = ace.edit("HTML");
+            html_editor.session.setMode('ace/mode/html');
+            html_editor.setTheme('ace/theme/twilight');
+            html_editor.setValue(htmlContent) 
+            html_editor.clearSelection();
+            html_editor.getSession().on('change', function() {runCode(html_editor.getValue())});
+            runCode(html_editor.getValue()); 
+        }
 
-    //editor.setReadOnly(true); 
-    //let cssCode = "<style>"+css_editor.getValue()+"</style>";
-   
-   // let jsCode = javascript_editor.getValue();
-    //add code to iframe
-    let results = document.getElementById("results");
-    //results.contentDocument.head.innerHTML= cssCode;
-    if(document.getElementById("HTML")){
-        let htmlCode = html_editor.getValue();
-        results.contentDocument.body.innerHTML = htmlCode;
-    }
-    if(document.getElementById("CSS")){
-        let cssCode = css_editor.getValue();
-        if(cssCode.length == 0){
-            let el = document.getElementById("CSS");
-            el.innerHTML = "";
-            el.className = '';
-        }else{
+   function runCode(html?:any, css?: any, js?: any){
+        let htmlCode = html;
+        let cssCode = css;
+        let jsCode = js;
+        //console.log("html: "+htmlCode);
+        //console.log("CSS: "+cssCode);
+        //console.log("JS: "+jsCode);
+        let results = document.getElementById("results");
+        if(htmlCode){
+            results.contentDocument.body.innerHTML = htmlCode;
+        }
+        if(cssCode){
             results.contentDocument.head.innerHTML =  "<style>"+cssCode+"</style>";
         }
-    }
-    if(document.getElementById("JS")){
-        let jsCode = js_editor.getValue();
-        if(jsCode.length == 0){
-            let el = document.getElementById("JS");
-            el.innerHTML = "";
-            el.className = '';
-        }else{
-            results.contentWindow.eval(jsCode);
+        if(jsCode){
+                results.contentWindow.eval(jsCode);
         }
     }
-   
-}
 runCode();
     </script>

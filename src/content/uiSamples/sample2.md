@@ -1,12 +1,12 @@
 ---
 
 title: Accordions
+image: Himanshu
 desc: Native accordions using details and summary tags.
 ---
 
 
-**Accordions
-```HTML
+<div class="editor" id="HTML">
     <details>  
         <summary>Title 1</summary> 
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -15,12 +15,11 @@ desc: Native accordions using details and summary tags.
         <summary>Title 2</summary> 
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
     </details> 
+</div>
 
-```
-
-```CSS
+<div class="editor" id="CSS">
 details {
-  background: #eee;
+  background: #eee; 
   margin-bottom: 2rem;
   padding: .5rem 1rem;
 }
@@ -32,4 +31,8 @@ summary {
 summary > * {
   display: inline;
 }
-```
+</div>
+
+<div class="editor" id="JS">
+    console.log("working");
+</div>

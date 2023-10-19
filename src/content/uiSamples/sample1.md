@@ -1,8 +1,8 @@
 ---
 
-title: Astro in brief
+title: Accordions
 image: Himanshu
-desc: Find out what makes Astro awesome!
+desc: Native accordions using details and summary tags.
 ---
 This is a post written in Markdown.
 

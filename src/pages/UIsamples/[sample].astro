@@ -38,6 +38,9 @@ const javascript_code = `console.log("jsCode");`;
     </div>
 </div>
 </MainLayout>
+
+
+
 <script>
     import * as ace from 'brace';
     import 'brace/mode/javascript';
@@ -72,7 +75,6 @@ const javascript_code = `console.log("jsCode");`;
    // let jsCode = javascript_editor.getValue();
     //add code to iframe
     let results = document.getElementById("results");
-    //results.contentDocument.head.innerHTML= cssCode;
     if(document.getElementById("HTML")){
         let htmlCode = html_editor.getValue();
         results.contentDocument.body.innerHTML = htmlCode;

@@ -169,6 +169,13 @@ declare module 'astro:content' {
 
 	type ContentEntryMap = {
 		"uiSamples": {
+"Progress-Meter.md": {
+	id: "Progress-Meter.md";
+  slug: "progress-meter";
+  body: string;
+  collection: "uiSamples";
+  data: InferEntrySchema<"uiSamples">
+} & { render(): Render[".md"] };
 "sample1.md": {
 	id: "sample1.md";
   slug: "sample1";

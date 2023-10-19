@@ -5,7 +5,6 @@ image: Himanshu
 desc: Native accordions using details and summary tags.
 ---
 This is a post written in Markdown.
-
 <div class="editor" id="HTML">
     <details>  
         <summary>Title 1</summary> 
@@ -32,7 +31,6 @@ summary > * {
   display: inline;
 }
 </div>
-
 <div class="editor" id="JS">
     console.log("working");
 </div>

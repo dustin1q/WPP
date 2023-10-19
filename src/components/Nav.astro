@@ -1,8 +1,13 @@
 ---
 import '../styles/nav.css';
-import json from '../collection/iusamples.json';
+//import json from '../collection/iusamples.json';
 
-const uisamples = json.samples;
+
+import { getCollection } from 'astro:content';
+
+const uiSamples = await getCollection("uiSamples");
+
+
 ---
 
 <h1><img id="logo" src='../assets/speedIcon.jpg'/>
@@ -11,10 +16,10 @@ const uisamples = json.samples;
 	<ul>
 		<li><a href="/">Overview</a></li>
 		<li><a href="/viewport-loading">Viewport Loading</a></li>
-		<li><a href="/UIsamples">Native UI</a>
+		<li><a href="/ui-samples">Native UI</a>
 			<ul>
-				{uisamples.map((sample) => (
-					<li><a href={"/UIsamples/"+sample.title}> {sample.title} </a></li>
+				{uiSamples.map((uiSamples) => (
+					<li><a href={"/ui-samples/"+uiSamples.slug}> {uiSamples.data.title} </a></li>
 				))}
 			</ul>
 		</li>

@@ -58,7 +58,12 @@ console.log(sample);
     import 'brace/theme/chrome';
 
          // Setup CSS
-        if(document.getElementById("CSS")){
+         const cssElement = document.getElementById("CSS");
+        if(cssElement){
+            let cssLBL = document.createElement('lable');
+            cssLBL.textContent = "CSS";
+            cssElement.parentNode.insertBefore(cssLBL, cssElement);
+
             let css_editor = ace.edit("CSS");
             css_editor.session.setMode('ace/mode/css');
             css_editor.setTheme('ace/theme/twilight');
@@ -66,7 +71,12 @@ console.log(sample);
             runCode(null, css_editor.getValue()); 
         }
         // Setup JS
-        if(document.getElementById("JS")){
+        const jsElement = document.getElementById("JS");
+        if(jsElement){
+            let jsLBL = document.createElement('lable');
+            jsLBL.textContent = "JS";
+            jsElement.parentNode.insertBefore(jsLBL, jsElement);
+
             const js_editor = ace.edit("JS");
             js_editor.session.setMode('ace/mode/javascript');
             js_editor.setTheme('ace/theme/twilight');
@@ -77,6 +87,10 @@ console.log(sample);
         const htmlElement = document.getElementById("HTML");
         const htmlContent = htmlElement?.innerHTML;   
         if(htmlElement){
+            let htmlLBL = document.createElement('lable');
+            htmlLBL.textContent = "HTML";
+            htmlElement.parentNode.insertBefore(htmlLBL, htmlElement);
+
             const html_editor = ace.edit("HTML");
             html_editor.session.setMode('ace/mode/html');
             html_editor.setTheme('ace/theme/twilight');
@@ -101,7 +115,7 @@ console.log(sample);
             results.contentDocument.head.innerHTML =  "<style>"+cssCode+"</style>";
         }
         if(jsCode){
-                results.contentWindow.eval(jsCode);
+            results.contentWindow.eval(jsCode);
         }
     }
 runCode();

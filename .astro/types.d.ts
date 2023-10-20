@@ -176,6 +176,13 @@ declare module 'astro:content' {
   collection: "uiSamples";
   data: InferEntrySchema<"uiSamples">
 } & { render(): Render[".md"] };
+"Select.md": {
+	id: "Select.md";
+  slug: "select";
+  body: string;
+  collection: "uiSamples";
+  data: InferEntrySchema<"uiSamples">
+} & { render(): Render[".md"] };
 "sample1.md": {
 	id: "sample1.md";
   slug: "sample1";

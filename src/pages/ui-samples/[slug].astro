@@ -22,34 +22,25 @@ type Props = {
 const {sample} = Astro.props;
 const { Content } = await sample.render();
 
-
 const blobContent = sample.body;
 const htmlCode = blobContent.match(/(?<=<div id="HTML">).*?(?=<\/div>)/gs)
 const cssCode = blobContent.match(/(?<=<div id="CSS">).*?(?=<\/div>)/gs)
 const jsCode = blobContent.match(/(?<=<div id="JS">).*?(?=<\/div>)/gs)
 
-console.log ("server HTML: "+htmlCode)
-
-
 ---
 <MainLayout title={sample.data.title}>
-    <h3>
-    {sample.data.title}
-    </h3>
     <p>
     {sample.data.desc}
     </p>
    
  <CodeEditor 
     client:only="react" 
+    title={sample.data.title}
     defaultHTML={htmlCode}
     defaultCSS={cssCode}
     defaultJS={jsCode}
     />
    
-
-   
-
 </MainLayout>
 
 <script>

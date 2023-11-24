@@ -24,7 +24,6 @@ details {
   padding: .5rem 1rem;
   color:#FFF
 }
-
 summary {
   cursor: pointer;
 }

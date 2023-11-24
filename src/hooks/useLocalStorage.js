@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react'
 
-const PREFIX = 'codepen-clone-'
+const PREFIX = 'PPW-'
 
-export default function useLocalStorage(key, initialValue) {
-  const prefixedKey = PREFIX + key
+export default function useLocalStorage(name,key, initialValue) {
+  const prefixedKey = PREFIX + name + key
 
   const [value, setValue] = useState(() => {
     const jsonValue = localStorage.getItem(prefixedKey)

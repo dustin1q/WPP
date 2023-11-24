@@ -6,9 +6,9 @@ import '../styles/editor.css';
 export default function CodeEditor(props) {
 
 
-  const [html, setHtml] = useLocalStorage('html',''+props.defaultHTML+'')
-  const [css, setCss] = useLocalStorage('css', ''+props.defaultCSS+'')
-  const [js, setJs] = useLocalStorage('js', ''+props.defaultJS+'')
+  const [html, setHtml] = useLocalStorage(props.title,'html',''+props.defaultHTML+'')
+  const [css, setCss] = useLocalStorage(props.title,'css', ''+props.defaultCSS+'')
+  const [js, setJs] = useLocalStorage(props.title,'js', ''+props.defaultJS+'')
   const [srcDoc, setSrcDoc] = useState('')
 
   
@@ -25,33 +25,40 @@ export default function CodeEditor(props) {
 
     return () => clearTimeout(timeout)
   }, [html, css, js])
-
+console.log(css);
   return (
     <>
       <div className="pane top-pane">
-        <Editor
-          language="xml"
-          displayName="HTML"
-          value={html}
-          onEditorChange={setHtml}
-        />
-        <Editor
-          language="css"
-          displayName="CSS"
-          value={css}
-          onEditorChange={setCss}
-        />
-        <Editor
-          language="javascript"
-          displayName="JS"
-          value={js}
-          onEditorChange={setJs}
-        />
+      {html != "null" &&
+          <Editor
+            language="xml"
+            displayName="HTML"
+            value={html}
+            onEditorChange={setHtml}
+          />
+      }
+        {css != "null" &&
+          <Editor
+            language="css"
+            displayName="CSS"
+            value={css}
+            onEditorChange={setCss}
+          />
+        }
+        {js != "null" &&
+          <Editor
+            language="javascript"
+            displayName="JS"
+            value={js}
+            onEditorChange={setJs}
+          />
+        }
       </div>
     
       <div className="pane">
      
-        <iframe
+        <iframe 
+        sandbox="allow-same-origin allow-scripts allow-popups allow-forms"
           srcDoc={srcDoc}
           title="output"
           sandbox="allow-scripts"

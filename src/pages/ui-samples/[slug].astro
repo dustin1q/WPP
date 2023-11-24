@@ -21,10 +21,8 @@ type Props = {
 }
 const {sample} = Astro.props;
 const { Content } = await sample.render();
-//console.log(sample);
+
 ---
-
-
 <MainLayout title={sample.data.title}>
     <p>
     {sample.data.desc}
@@ -32,7 +30,7 @@ const { Content } = await sample.render();
     
     <div class="container"> 
         <div class="left">
-            <Content/>
+            <Content />
         </div>
         <div class="right">
             <lable>Results</lable>
@@ -41,17 +39,55 @@ const { Content } = await sample.render();
     </div>
 </MainLayout>
 
-
 <script>
-    import * as ace from 'brace';
-    import 'brace/mode/javascript';
-    import 'brace/mode/css';
-    import 'brace/mode/html';
-    import 'brace/theme/twilight';
-    import 'brace/theme/chrome';
-
+    import * as monaco from 'monaco-editor';
          // Setup CSS
-         const cssElement = document.getElementById("CSS");
+        const cssElement = document.getElementById("CSS");
+        const cssContent = document.getElementById("CSS")?.innerHTML; 
+        cssElement.innerHTML = "";
+        if(cssElement){
+            let cssLBL = document.createElement('lable');
+            cssLBL.textContent = "CSS";
+            cssElement.parentNode.insertBefore(cssLBL, cssElement);
+            const cssEditor = monaco.editor.create(cssElement, {
+                value: cssContent, 
+                language:'css',
+                theme: "vs-dark",
+            });
+            runCode(null, cssContent);
+            cssEditor.onDidChangeModelContent(e => {
+                console.log(cssEditor.getValue());
+                runCode(null,cssEditor.getValue());
+            });
+        }
+
+        
+         // Setup HTML
+        const htmlElement = document.getElementById("HTML");
+        const htmlContent = htmlElement?.innerHTML;   
+        htmlElement.innerHTML = "";
+        if(htmlElement){
+            let htmlLBL = document.createElement('lable');
+            htmlLBL.textContent = "HTML";
+            htmlElement.parentNode.insertBefore(htmlLBL, htmlElement);
+
+            const htmlEditor = monaco.editor.create(htmlElement, {
+                value: htmlContent, 
+                language:'css',
+                theme: "vs-dark",
+            });
+            runCode(htmlContent);
+            htmlEditor.onDidChangeModelContent(e => {
+                console.log(htmlEditor.getValue());
+                runCode(htmlEditor.getValue());
+            });
+        }
+       
+        //console.log(cssEditor.value)
+        //runCode(,cssEditor.getValue);
+
+         //const cssElement = document.getElementById("CSS");
+        /*
         if(cssElement){
             let cssLBL = document.createElement('lable');
             cssLBL.textContent = "CSS";
@@ -93,14 +129,17 @@ const { Content } = await sample.render();
             html_editor.getSession().on('change', function() {runCode(html_editor.getValue())});
             runCode(html_editor.getValue()); 
         }
+        */
 
-   function runCode(html?:any, css?: any, js?: any){
+        
+    function runCode(html?:any, css?: any, js?: any){
         let htmlCode = html;
         let cssCode = css;
         let jsCode = js;
         //console.log("html: "+htmlCode);
         //console.log("CSS: "+cssCode);
         //console.log("JS: "+jsCode);
+        
         let results = document.getElementById("results");
         if(htmlCode){
             results.contentDocument.body.innerHTML = htmlCode;
@@ -111,6 +150,9 @@ const { Content } = await sample.render();
         if(jsCode){
             results.contentWindow.eval(jsCode);
         }
+        
     }
-runCode();
+//runCode();
+
+
     </script>

@@ -3,18 +3,42 @@
 import MainLayout from '../../layouts/MainLayout.astro';
 
 import { getCollection } from 'astro:content';
+import '../../styles/live-code.css';
 
-const uiSamples = await getCollection("uiSamples")
-//console.log(uiSamples);
+import '../../styles/editor.css';
+
+
+const uiSamples = await getCollection("uiSamples");
+const type = "css";
+const code = "code here"
+import CodeEditor from '../../components/CodeEditor.jsx';
 ---
-
 <MainLayout title="MD UI Samples">
+    <ul>
+        {uiSamples.map((uiSamples) => (
+            <li><a href={"/ui-samples/"+uiSamples.slug}> {uiSamples.data.title} </a></li>
+            <li> {uiSamples.data.desc}</li>
+        ))}
+    </ul>
+    <!--Hydrates on page load -->
+   <!-- <CodeEditor client:load  name="CSS">code here</CodeEditor> -->
+    <!--Hydrates on when main thread is complete-->
+    <!-- <CodeEditor client:idle  name="CSS1">code here</CodeEditor> -->
+    <!--Hydrates when component enters the viewport -->
+    <!-- <CodeEditor client:visible  name="CSS3">code here</CodeEditor> -->
 
 
-<ul>
-    {uiSamples.map((uiSamples) => (
-        <li><a href={"/ui-samples/"+uiSamples.slug}> {uiSamples.data.title} </a></li>
-        <li> {uiSamples.data.desc}</li>
-    ))}
-</ul>
+ <!--CodeEditor React-->
+<CodeEditor client:only="react" title="CSS"/>
+
+    <!-- <CodeEditor client:only="react"  name="CSS3">code here</CodeEditor> -->
+    <p>
+        As a software engineer, you are a highly skilled professional who is
+        responsible for designing, developing, testing, and maintaining software
+        applications. Your work involves understanding complex software systems,
+        analyzing user requirements, and writing clean, efficient code that meets
+        those requirements.
+      </p>
+<br/><br/>
 </MainLayout>
+<script>

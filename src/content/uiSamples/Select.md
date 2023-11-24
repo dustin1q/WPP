@@ -6,51 +6,29 @@ desc: The <progress> HTML element displays an indicator showing the completion p
 
 
 <div class="editor" id="HTML">
-
-
-<label class="custom-select" for="styledSelect1"><select id="styledSelect1" name="options">
-    <option value="">
-      Select an option
-    </option>
-    <option value="1">
-      Option 1
-    </option>
-    <option value="2">
-      Option 2
-    </option>
-    <option value="3">
-      Option 3
-    </option>
-    <option value="4">
-      Option 4
-    </option>
-  </select>
-  
-  </label>
-
-
+<select name="test" aria-invalid="false">
+  <option value="Tomato">Tomato</option>
+  <option value="Banana">Banana</option>
+  <option value="Apple">Apple</option>
+</select>
 </div>
 
 
 <div class="editor" id="CSS">
-:root {
---select-border:#777;
---select-focus:blue;
---select-arrow: var(--select-border);
+select {
+  width: 300px;
+  padding: 12px;
+  border: 0 !important;
+  background-color: lightblue;
+  /* needed */
+  appearance: none;
+  /* SVG background image */
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2212%22%20height%3D%2212%22%20viewBox%3D%220%200%2012%2012%22%3E%3Ctitle%3Edown-arrow%3C%2Ftitle%3E%3Cg%20fill%3D%22%23000000%22%3E%3Cpath%20d%3D%22M10.293%2C3.293%2C6%2C7.586%2C1.707%2C3.293A1%2C1%2C0%2C0%2C0%2C.293%2C4.707l5%2C5a1%2C1%2C0%2C0%2C0%2C1.414%2C0l5-5a1%2C1%2C0%2C1%2C0-1.414-1.414Z%22%20fill%3D%22%23000000%22%3E%3C%2Fpath%3E%3C%2Fg%3E%3C%2Fsvg%3E");
+    background-size: .6em;
+    background-position: calc(100% - 1.3em) center;
+    background-repeat: no-repeat;
 }
-
-.select {
-  width: 100%;
-  min-width: 15ch;
-  max-width: 30ch;
-  border: 1px solid var(--select-border);
-  border-radius: 0.25em;
-  padding: 0.25em 0.5em;
-  font-size: 1.25rem;
-  cursor: pointer;
-  line-height: 1.1;
-  background-color: #fff;
-  background-image: linear-gradient(to top, #f9f9f9, #fff 33%);
+select::-ms-expand {
+    display: none;
 }
-
 </div>

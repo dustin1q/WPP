@@ -1,11 +1,12 @@
 ---
 
-title: Accordions
+title: Native Accordions
 image: Himanshu
 desc: Native accordions using details and summary tags.
 ---
-This is a post written in Markdown.
-<div class="editor" id="HTML">
+
+
+<div id="HTML">
     <details>  
         <summary>Title 1</summary> 
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -16,11 +17,12 @@ This is a post written in Markdown.
     </details> 
 </div>
 
-<div class="editor" id="CSS">
+<div id="CSS">
 details {
-  background: #eee; 
+  background: #333; 
   margin-bottom: 2rem;
   padding: .5rem 1rem;
+  color:#FFF
 }
 
 summary {
@@ -31,6 +33,7 @@ summary > * {
   display: inline;
 }
 </div>
-<div class="editor" id="JS">
+
+<div id="JS">
     console.log("working");
 </div>

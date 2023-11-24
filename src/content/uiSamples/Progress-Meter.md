@@ -5,13 +5,13 @@ desc: The <progress> HTML element displays an indicator showing the completion p
 ---
 
 
-<div class="editor" id="HTML">
+<div id="HTML">
 <label for="file">File progress:</label>
 <progress id="file" max="100" value="70">70%</progress>
 </div>
 
 
-<div class="editor" id="CSS">
+<div id="CSS">
 label {
   padding-right: 10px;
   font-size: 1rem;

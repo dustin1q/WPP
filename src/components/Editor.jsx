@@ -17,11 +17,11 @@ export default function Editor(props) {
   };
   //moneco settings
   const options = {
-    autoIndent: 'full',
+    
     contextmenu: true,
     fontFamily: 'monospace',
-    fontSize: 13,
-    lineHeight: 24,
+    fontSize: 11,
+    lineHeight: 18,
     hideCursorInOverviewRuler: true,
     matchBrackets: 'always',
     minimap: {

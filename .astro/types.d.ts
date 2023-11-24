@@ -175,6 +175,13 @@ declare module 'astro:content' {
 
 	type ContentEntryMap = {
 		"uiSamples": {
+"Native-Accordions.md": {
+	id: "Native-Accordions.md";
+  slug: "native-accordions";
+  body: string;
+  collection: "uiSamples";
+  data: InferEntrySchema<"uiSamples">
+} & { render(): Render[".md"] };
 "Progress-Meter.md": {
 	id: "Progress-Meter.md";
   slug: "progress-meter";
@@ -185,20 +192,6 @@ declare module 'astro:content' {
 "Select.md": {
 	id: "Select.md";
   slug: "select";
-  body: string;
-  collection: "uiSamples";
-  data: InferEntrySchema<"uiSamples">
-} & { render(): Render[".md"] };
-"sample1.md": {
-	id: "sample1.md";
-  slug: "sample1";
-  body: string;
-  collection: "uiSamples";
-  data: InferEntrySchema<"uiSamples">
-} & { render(): Render[".md"] };
-"sample2.md": {
-	id: "sample2.md";
-  slug: "sample2";
   body: string;
   collection: "uiSamples";
   data: InferEntrySchema<"uiSamples">

@@ -5,7 +5,7 @@ desc: The <progress> HTML element displays an indicator showing the completion p
 ---
 
 
-<div class="editor" id="HTML">
+<div id="HTML">
 <select name="test" aria-invalid="false">
   <option value="Tomato">Tomato</option>
   <option value="Banana">Banana</option>
@@ -14,7 +14,7 @@ desc: The <progress> HTML element displays an indicator showing the completion p
 </div>
 
 
-<div class="editor" id="CSS">
+<div id="CSS">
 select {
   width: 300px;
   padding: 12px;

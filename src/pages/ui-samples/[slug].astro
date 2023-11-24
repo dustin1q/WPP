@@ -3,7 +3,7 @@
 import MainLayout from '../../layouts/MainLayout.astro';
 import '../../styles/live-code.css';
 import { getCollection, CollectionEntry} from 'astro:content';
-
+import CodeEditor from '../../components/CodeEditor.jsx';
 
 export const getStaticPaths = async() => {
     const uiSamples = await getCollection("uiSamples");
@@ -22,25 +22,38 @@ type Props = {
 const {sample} = Astro.props;
 const { Content } = await sample.render();
 
+
+const blobContent = sample.body;
+const htmlCode = blobContent.match(/(?<=<div id="HTML">).*?(?=<\/div>)/gs)
+const cssCode = blobContent.match(/(?<=<div id="CSS">).*?(?=<\/div>)/gs)
+const jsCode = blobContent.match(/(?<=<div id="JS">).*?(?=<\/div>)/gs)
+
+console.log ("server HTML: "+htmlCode)
+
+
 ---
 <MainLayout title={sample.data.title}>
+    <h3>
+    {sample.data.title}
+    </h3>
     <p>
     {sample.data.desc}
     </p>
-    
-    <div class="container"> 
-        <div class="left">
-            <Content />
-        </div>
-        <div class="right">
-            <lable>Results</lable>
-            <iframe id="results"></iframe>
-        </div>
-    </div>
+   
+ <CodeEditor 
+    client:only="react" 
+    defaultHTML={htmlCode}
+    defaultCSS={cssCode}
+    defaultJS={jsCode}
+    />
+   
+
+   
+
 </MainLayout>
 
 <script>
-    import * as monaco from 'monaco-editor';
+    /* import * as monaco from 'monaco-editor';
          // Setup CSS
         const cssElement = document.getElementById("CSS");
         const cssContent = document.getElementById("CSS")?.innerHTML; 
@@ -56,7 +69,7 @@ const { Content } = await sample.render();
             });
             runCode(null, cssContent);
             cssEditor.onDidChangeModelContent(e => {
-                console.log(cssEditor.getValue());
+              //  console.log(cssEditor.getValue());
                 runCode(null,cssEditor.getValue());
             });
         }
@@ -81,7 +94,7 @@ const { Content } = await sample.render();
                 console.log(htmlEditor.getValue());
                 runCode(htmlEditor.getValue());
             });
-        }
+        } */
        
         //console.log(cssEditor.value)
         //runCode(,cssEditor.getValue);
@@ -132,7 +145,7 @@ const { Content } = await sample.render();
         */
 
         
-    function runCode(html?:any, css?: any, js?: any){
+    /* function runCode(html?:any, css?: any, js?: any){
         let htmlCode = html;
         let cssCode = css;
         let jsCode = js;
@@ -151,7 +164,7 @@ const { Content } = await sample.render();
             results.contentWindow.eval(jsCode);
         }
         
-    }
+    } */
 //runCode();
 
 

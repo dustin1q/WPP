@@ -4,16 +4,19 @@ import useLocalStorage from '../hooks/useLocalStorage.js'
 import '../styles/editor.css';
 
 export default function CodeEditor(props) {
-  const [html, setHtml] = useLocalStorage('html', '')
-  const [css, setCss] = useLocalStorage('css', '')
-  const [js, setJs] = useLocalStorage('js', '')
+
+
+  const [html, setHtml] = useLocalStorage('html',''+props.defaultHTML+'')
+  const [css, setCss] = useLocalStorage('css', ''+props.defaultCSS+'')
+  const [js, setJs] = useLocalStorage('js', ''+props.defaultJS+'')
   const [srcDoc, setSrcDoc] = useState('')
 
+  
   useEffect(() => {
     const timeout = setTimeout(() => {
       setSrcDoc(`
         <html>
-          <body>${html+"<p>hello</p>"}</body>
+          <body>${html}</body>
           <style>${css}</style>
           <script>${js}</script>
         </html>
@@ -25,7 +28,6 @@ export default function CodeEditor(props) {
 
   return (
     <>
-    <h3>editor Title: {props.title}</h3>
       <div className="pane top-pane">
         <Editor
           language="xml"
@@ -46,7 +48,9 @@ export default function CodeEditor(props) {
           onEditorChange={setJs}
         />
       </div>
+    
       <div className="pane">
+     
         <iframe
           srcDoc={srcDoc}
           title="output"

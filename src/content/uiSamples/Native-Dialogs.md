@@ -2,16 +2,18 @@
 
 title: Native Dialog
 image: ""
-desc: The HTML <dialog> element is used to create both modal and non-modal dialog boxes. Modal dialog boxes interrupt interaction with the rest of the page being inert, while non-modal dialog boxes allow interaction with the rest of the page. <br/> <strong>Note</strong>
+desc: The HTML <dialog> element is used to create both modal and non-modal dialog boxes. Modal dialog boxes interrupt interaction with the rest of the page being inert, while non-modal dialog boxes allow interaction with the rest of the page. 
 ---
 
 
 <div id="HTML">
+<button onclick="window.dialog.showModal();">Open dialog</button>
 <dialog id="dialog">
-    <button onclick="closeDialog()" id="closeDialogHeader">&#x2716</button>
-    <p>This is a dialog. with a blured backdrop</p>
+    <p>I'm a native dialog.</p>
+    <form method="dialog">
+    <button>Close</button>
+    </form>
 </dialog>
-<button onclick="showDialog()"id="openDialogBox">Open dialog box</button>
 </div>
 
 <div id="CSS">
@@ -21,13 +23,3 @@ desc: The HTML <dialog> element is used to create both modal and non-modal dialo
       }
 </div>
 
-<div id="JS">
-  let dialog=document.getElementById("dialog")
-      function showDialog(){
-        dialog.showModal();
-      }
-
-      function closeDialog(){
-        dialog.close(); 
-      }
-</div>

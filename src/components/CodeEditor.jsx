@@ -58,10 +58,9 @@ console.log(css);
       <div className="pane">
      
         <iframe 
-        sandbox="allow-same-origin allow-scripts allow-popups allow-forms"
           srcDoc={srcDoc}
           title="output"
-          sandbox="allow-scripts"
+          sandbox="allow-same-origin allow-scripts allow-popups allow-forms"
           width="100%"
           height="100%"
         />

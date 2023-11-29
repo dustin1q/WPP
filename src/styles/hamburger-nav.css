@@ -94,7 +94,6 @@
 .sidebar li{
 	list-style-type: none;
     margin:3px;
-	padding:3px;
 }
 .sidebar ul li:hover {
     background: var(--color-secondary);
@@ -123,4 +122,16 @@
 .sidebar ul ul li a:hover {
     background: var(--color-secondary);
 	color: var(--black);
+}
+
+.sidebar ul details:hover{
+  background-color: var(--foreground);
+  color: var(--background);
+  padding: 0;
+}
+.sidebar details{
+  padding: 0;
+}
+.sidebar details ul {
+  margin: 0;
 }

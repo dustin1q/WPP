@@ -2,14 +2,14 @@
 import MainLayout from '../../layouts/MainLayout.astro';
 import { getCollection } from 'astro:content';
 
-const uiSamples = await getCollection("uiSamples");
+const uiSamples = await getCollection("cssSamples");
 
 ---
-<MainLayout title="UI Samples">
+<MainLayout title="CSS Samples">
     <ul>
-        {uiSamples.map((uiSamples) => (
-            <li><a href={"/ui-samples/"+uiSamples.slug}> {uiSamples.data.title} </a></li>
-            <li> {uiSamples.data.desc}</li>
+        {uiSamples.map((cssSamples) => (
+            <li><a href={"/css-samples/"+cssSamples.slug}> {cssSamples.data.title} </a></li>
+            <li> {cssSamples.data.desc}</li>
         ))}
     </ul>
     <!--Hydrates on page load -->
@@ -18,10 +18,9 @@ const uiSamples = await getCollection("uiSamples");
     <!-- <CodeEditor client:idle  name="CSS1">code here</CodeEditor> -->
     <!--Hydrates when component enters the viewport -->
     <!-- <CodeEditor client:visible  name="CSS3">code here</CodeEditor> -->
-
     <!-- <CodeEditor client:only="react"  name="CSS3">code here</CodeEditor> -->
     <p>
-        Native UI samples description here.
+        CSS samples description here.
       </p>
 <br/><br/>
 </MainLayout>

@@ -174,67 +174,74 @@ declare module 'astro:content' {
 	>;
 
 	type ContentEntryMap = {
-		"uiSamples": {
+		"cssSamples": {
+"Line-clamping.md": {
+	id: "Line-clamping.md";
+  slug: "line-clamping";
+  body: string;
+  collection: "cssSamples";
+  data: any
+} & { render(): Render[".md"] };
+};
+"uiSamples": {
 "DataList-Select.md": {
 	id: "DataList-Select.md";
   slug: "datalist-select";
   body: string;
   collection: "uiSamples";
-  data: InferEntrySchema<"uiSamples">
+  data: any
 } & { render(): Render[".md"] };
 "Native-Accordions.md": {
 	id: "Native-Accordions.md";
   slug: "native-accordions";
   body: string;
   collection: "uiSamples";
-  data: InferEntrySchema<"uiSamples">
+  data: any
 } & { render(): Render[".md"] };
 "Native-Dialogs.md": {
 	id: "Native-Dialogs.md";
   slug: "native-dialogs";
   body: string;
   collection: "uiSamples";
-  data: InferEntrySchema<"uiSamples">
+  data: any
 } & { render(): Render[".md"] };
 "Native-Multi-Select copy.md": {
 	id: "Native-Multi-Select copy.md";
   slug: "native-multi-select-copy";
   body: string;
   collection: "uiSamples";
-  data: InferEntrySchema<"uiSamples">
+  data: any
 } & { render(): Render[".md"] };
 "Native-Select.md": {
 	id: "Native-Select.md";
   slug: "native-select";
   body: string;
   collection: "uiSamples";
-  data: InferEntrySchema<"uiSamples">
+  data: any
 } & { render(): Render[".md"] };
 "Picklist.md": {
 	id: "Picklist.md";
   slug: "picklist";
   body: string;
   collection: "uiSamples";
-  data: InferEntrySchema<"uiSamples">
+  data: any
 } & { render(): Render[".md"] };
 "Progress-Meter.md": {
 	id: "Progress-Meter.md";
   slug: "progress-meter";
   body: string;
   collection: "uiSamples";
-  data: InferEntrySchema<"uiSamples">
+  data: any
 } & { render(): Render[".md"] };
 };
 
 	};
 
 	type DataEntryMap = {
-		"cssSamples": {
-};
-
+		
 	};
 
 	type AnyEntryMap = ContentEntryMap & DataEntryMap;
 
-	type ContentConfig = typeof import("../src/content/config");
+	type ContentConfig = never;
 }

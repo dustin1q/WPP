@@ -3,12 +3,12 @@
   }
   
   .pane {
-    height: 50vh;
+    height: 55vh;
     display: flex;
   }
   .middle-pane {
-    height: 10vh;
-    
+    height: 3em;
+  
   }
   
   .editor-container {
@@ -21,11 +21,9 @@
     overflow:visible;
   }
   
-  .editor-container.collapsed {
-    flex-grow:0;
-    }
-  
+ 
 
+    
   
   .expand-collapse-btn {
     margin-left: .5rem;
@@ -45,10 +43,6 @@
     border-top-left-radius: .5rem;
   }
   
-  .Monaco {
-    height: 100% !important;
-  }
-  
   .monaco-wrapper {
     flex-grow: 1;
     border-bottom-right-radius: .5rem;
@@ -56,6 +50,18 @@
     overflow: hidden;
   }
 
+  .editor-container.collapsed {
+    flex-grow:0;
+  }
+
+  .editor-container.collapsed .Monaco {
+    position: absolute;
+  }
+  .editor-container .Monaco {
+    position: absolute;
+    height: 100%;
+  }
+ 
   iframe{
     width:100%;
     height:95%;

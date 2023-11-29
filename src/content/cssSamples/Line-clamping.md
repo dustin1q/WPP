@@ -2,7 +2,7 @@
 
 title: Line-Clamping
 image: ""
-desc: Line Clamping desc here 
+desc: Line Clamping specifies the number of lines after which the content will be clamped and clamp() CSS function which clamps a middle value within a range of values between a defined minimum bound and a maximum bound. See below example showcasing line-clamp on a block of text and clamp() affecting the width of an element.
 ---
 
 <html-code>
@@ -70,7 +70,7 @@ desc: Line Clamping desc here
   }
   /*Min Max Clamp */
   #card1 {
-    width: clamp(23ch, 20%, 46ch);    
+    width: clamp(15ch, 30%, 46ch);    
   }
   #card2 {
     width: min(100px, 25%, 50vh, 30ch);  

@@ -5,16 +5,16 @@ desc: The <progress> HTML element displays an indicator showing the completion p
 ---
 
 
-<div id="HTML">
+<html-code>
 <select name="test" aria-invalid="false">
   <option value="Tomato">Tomato</option>
   <option value="Banana">Banana</option>
   <option value="Apple">Apple</option>
 </select>
-</div>
+</html-code>
 
 
-<div id="CSS">
+<css-code>
 select {
   width: 300px;
   padding: 12px;
@@ -31,4 +31,4 @@ select {
 select::-ms-expand {
     display: none;
 }
-</div>
+</css-code>

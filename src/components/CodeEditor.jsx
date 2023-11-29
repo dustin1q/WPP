@@ -5,7 +5,7 @@ import '../styles/editor.css';
 
 export default function CodeEditor(props) {
 
-
+  //assign to local storage hook
   const [html, setHtml] = useLocalStorage(props.title,'html',''+props.defaultHTML+'')
   const [css, setCss] = useLocalStorage(props.title,'css', ''+props.defaultCSS+'')
   const [js, setJs] = useLocalStorage(props.title,'js', ''+props.defaultJS+'')
@@ -25,7 +25,7 @@ export default function CodeEditor(props) {
 
     return () => clearTimeout(timeout)
   }, [html, css, js])
-console.log(css);
+
   return (
     <>
       <div className="pane top-pane">
@@ -54,16 +54,19 @@ console.log(css);
           />
         }
       </div>
-    
-      <div className="pane">
-     
-        <iframe 
-          srcDoc={srcDoc}
-          title="output"
-          sandbox="allow-same-origin allow-scripts allow-popups allow-forms"
-          width="100%"
-          height="100%"
-        />
+      <div className="pane middle-pane">
+       <h3>Preview</h3> 
+        </div>
+      <div className="pane resizable">
+      
+          <iframe 
+            srcDoc={srcDoc}
+            title="output"
+            sandbox="allow-same-origin allow-scripts allow-popups allow-forms"
+            width="100%"
+            height="100%"
+          />
+        
       </div>
     </>
   )

@@ -5,7 +5,7 @@ desc: The <datalist> HTML element contains a set of <option> elements that repre
 ---
 
 
-<div id="HTML">
+<html-code>
 <label for="rocket-choice">Choose a Rocket :</label>
 <input list="rockets" id="rocket-choice" name="ice-cream-choice" />
 <datalist id="rockets">
@@ -15,11 +15,11 @@ desc: The <datalist> HTML element contains a set of <option> elements that repre
     <option value="Atlas 4">
     <option value="Electron">
 </datalist>
-</div>
+</html-code>
 
-<div id="CSS">
+<css-code>
 label {
   display: block;
   margin-bottom: 10px;
 }
-</div>
+</css-code>

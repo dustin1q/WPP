@@ -6,6 +6,10 @@
     height: 50vh;
     display: flex;
   }
+  .middle-pane {
+    height: 10vh;
+    
+  }
   
   .editor-container {
     flex-grow: 1;
@@ -50,4 +54,14 @@
     border-bottom-right-radius: .5rem;
     border-bottom-left-radius: .5rem;
     overflow: hidden;
+  }
+
+
+  .resizable {
+    resize: horizontal;
+    overflow: auto;
+    display: flex;
+  }
+  .resizable > * {
+    flex: 1;
   }

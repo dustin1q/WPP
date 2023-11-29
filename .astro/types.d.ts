@@ -210,6 +210,13 @@ declare module 'astro:content' {
   collection: "uiSamples";
   data: InferEntrySchema<"uiSamples">
 } & { render(): Render[".md"] };
+"Picklist.md": {
+	id: "Picklist.md";
+  slug: "picklist";
+  body: string;
+  collection: "uiSamples";
+  data: InferEntrySchema<"uiSamples">
+} & { render(): Render[".md"] };
 "Progress-Meter.md": {
 	id: "Progress-Meter.md";
   slug: "progress-meter";

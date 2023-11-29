@@ -5,7 +5,7 @@ desc: The <progress> HTML element displays an indicator showing the completion p
 ---
 
 
-<div id="HTML">
+<html-code>
 <label>Choose one or more :</label>
 <select name="pets" multiple size="4" class="selectStyle">
   <optgroup label="4-legged pets">
@@ -31,11 +31,9 @@ desc: The <progress> HTML element displays an indicator showing the completion p
     <option value="Strawberry">
     <option value="Vanilla">
 </datalist>
+</html-code>
 
-</div>
-
-
-<div id="CSS">
+<css-code>
 .selectStyle {
    background: transparent;
    width: 250px;
@@ -44,4 +42,4 @@ desc: The <progress> HTML element displays an indicator showing the completion p
    border: 1px solid #ddd;
    height: 150px;
 }
-</div>
+</css-code>

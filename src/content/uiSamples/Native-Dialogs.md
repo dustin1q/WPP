@@ -6,7 +6,7 @@ desc: The HTML <dialog> element is used to create both modal and non-modal dialo
 ---
 
 
-<div id="HTML">
+<html-code>
 <button onclick="window.dialog.showModal();">Open dialog</button>
 <dialog id="dialog">
     <p>I'm a native dialog.</p>
@@ -14,12 +14,12 @@ desc: The HTML <dialog> element is used to create both modal and non-modal dialo
     <button>Close</button>
     </form>
 </dialog>
-</div>
+</html-code>
 
-<div id="CSS">
+<css-code>
  #dialog::backdrop {
         background-color: rgb(4, 4, 16, 0.25);
         backdrop-filter: blur(2px);
       }
-</div>
+</css-code>
 

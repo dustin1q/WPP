@@ -1,15 +1,13 @@
 ---
 
 import MainLayout from '../../layouts/MainLayout.astro';
-import '../../styles/live-code.css';
+//import '../../styles/live-code.css';
 import { getCollection, CollectionEntry} from 'astro:content';
 import CodeEditor from '../../components/CodeEditor.jsx';
 
 export const getStaticPaths = async() => {
     const uiSamples = await getCollection("uiSamples");
-
     return uiSamples.map(sample=> ({
-        
             params: {slug:sample.slug},
             props: {sample}
         
@@ -23,9 +21,9 @@ const {sample} = Astro.props;
 const { Content } = await sample.render();
 
 const blobContent = sample.body;
-const htmlCode = blobContent.match(/(?<=<div id="HTML">).*?(?=<\/div>)/gs)
-const cssCode = blobContent.match(/(?<=<div id="CSS">).*?(?=<\/div>)/gs)
-const jsCode = blobContent.match(/(?<=<div id="JS">).*?(?=<\/div>)/gs)
+const htmlCode = blobContent.match(/(?<=<html-code>).*?(?=<\/html-code>)/gs)
+const cssCode = blobContent.match(/(?<=<css-code>).*?(?=<\/css-code>)/gs)
+const jsCode = blobContent.match(/(?<=<js-code>).*?(?=<\/js-code>)/gs)
 
 ---
 <MainLayout title={sample.data.title}>
@@ -42,121 +40,3 @@ const jsCode = blobContent.match(/(?<=<div id="JS">).*?(?=<\/div>)/gs)
     />
    
 </MainLayout>
-
-<script>
-    /* import * as monaco from 'monaco-editor';
-         // Setup CSS
-        const cssElement = document.getElementById("CSS");
-        const cssContent = document.getElementById("CSS")?.innerHTML; 
-        cssElement.innerHTML = "";
-        if(cssElement){
-            let cssLBL = document.createElement('lable');
-            cssLBL.textContent = "CSS";
-            cssElement.parentNode.insertBefore(cssLBL, cssElement);
-            const cssEditor = monaco.editor.create(cssElement, {
-                value: cssContent, 
-                language:'css',
-                theme: "vs-dark",
-            });
-            runCode(null, cssContent);
-            cssEditor.onDidChangeModelContent(e => {
-              //  console.log(cssEditor.getValue());
-                runCode(null,cssEditor.getValue());
-            });
-        }
-
-        
-         // Setup HTML
-        const htmlElement = document.getElementById("HTML");
-        const htmlContent = htmlElement?.innerHTML;   
-        htmlElement.innerHTML = "";
-        if(htmlElement){
-            let htmlLBL = document.createElement('lable');
-            htmlLBL.textContent = "HTML";
-            htmlElement.parentNode.insertBefore(htmlLBL, htmlElement);
-
-            const htmlEditor = monaco.editor.create(htmlElement, {
-                value: htmlContent, 
-                language:'css',
-                theme: "vs-dark",
-            });
-            runCode(htmlContent);
-            htmlEditor.onDidChangeModelContent(e => {
-                console.log(htmlEditor.getValue());
-                runCode(htmlEditor.getValue());
-            });
-        } */
-       
-        //console.log(cssEditor.value)
-        //runCode(,cssEditor.getValue);
-
-         //const cssElement = document.getElementById("CSS");
-        /*
-        if(cssElement){
-            let cssLBL = document.createElement('lable');
-            cssLBL.textContent = "CSS";
-            cssElement.parentNode.insertBefore(cssLBL, cssElement);
-
-            let css_editor = ace.edit("CSS");
-            css_editor.session.setMode('ace/mode/css');
-            css_editor.setTheme('ace/theme/twilight');
-            css_editor.getSession().on('change', function() {runCode(null,css_editor.getValue())});
-            runCode(null, css_editor.getValue()); 
-        }
-        // Setup JS
-        const jsElement = document.getElementById("JS");
-        if(jsElement){
-            let jsLBL = document.createElement('lable');
-            jsLBL.textContent = "JS";
-            jsElement.parentNode.insertBefore(jsLBL, jsElement);
-
-
-            const js_editor = ace.edit("JS");
-            js_editor.session.setMode('ace/mode/javascript');
-            js_editor.setTheme('ace/theme/twilight');
-            js_editor.getSession().on('change', function() {runCode(null, null, js_editor.getValue())});
-            runCode(null, null, js_editor.getValue()); 
-        }
-         // Setup HTML
-        const htmlElement = document.getElementById("HTML");
-        const htmlContent = htmlElement?.innerHTML;   
-        if(htmlElement){
-            let htmlLBL = document.createElement('lable');
-            htmlLBL.textContent = "HTML";
-            htmlElement.parentNode.insertBefore(htmlLBL, htmlElement);
-
-            const html_editor = ace.edit("HTML");
-            html_editor.session.setMode('ace/mode/html');
-            html_editor.setTheme('ace/theme/twilight');
-            html_editor.setValue(htmlContent) 
-            html_editor.clearSelection();
-            html_editor.getSession().on('change', function() {runCode(html_editor.getValue())});
-            runCode(html_editor.getValue()); 
-        }
-        */
-
-        
-    /* function runCode(html?:any, css?: any, js?: any){
-        let htmlCode = html;
-        let cssCode = css;
-        let jsCode = js;
-        //console.log("html: "+htmlCode);
-        //console.log("CSS: "+cssCode);
-        //console.log("JS: "+jsCode);
-        
-        let results = document.getElementById("results");
-        if(htmlCode){
-            results.contentDocument.body.innerHTML = htmlCode;
-        }
-        if(cssCode){
-            results.contentDocument.head.innerHTML =  "<style>"+cssCode+"</style>";
-        }
-        if(jsCode){
-            results.contentWindow.eval(jsCode);
-        }
-        
-    } */
-//runCode();
-
-
-    </script>

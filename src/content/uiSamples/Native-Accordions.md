@@ -6,7 +6,7 @@ desc: Native accordions using details and summary tags.
 ---
 
 
-<div id="HTML">
+<html-code>
     <details>  
         <summary>Title 1</summary> 
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -15,9 +15,9 @@ desc: Native accordions using details and summary tags.
         <summary>Title 2</summary> 
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
     </details> 
-</div>
+</html-code>
 
-<div id="CSS">
+</css-code>
 details {
   background: #333; 
   margin-bottom: 2rem;
@@ -31,8 +31,8 @@ summary {
 summary > * {
   display: inline;
 }
-</div>
+</css-code>
 
-<div id="JS">
+<js-code>
     console.log("working");
-</div>
+</js-code>

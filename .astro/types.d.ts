@@ -233,13 +233,6 @@ declare module 'astro:content' {
   collection: "uiSamples";
   data: any
 } & { render(): Render[".md"] };
-"sample1.md": {
-	id: "sample1.md";
-  slug: "sample1";
-  body: string;
-  collection: "uiSamples";
-  data: any
-} & { render(): Render[".md"] };
 };
 
 	};

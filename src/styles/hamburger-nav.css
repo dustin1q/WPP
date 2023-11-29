@@ -88,12 +88,12 @@
 
 .sidebar ul{
 	list-style-type: none;
-    margin:3px;
+  margin:3px;
 	padding:3px;
 }
 .sidebar li{
 	list-style-type: none;
-    margin:3px;
+    margin:10px;
 }
 .sidebar ul li:hover {
     background: var(--color-secondary);
@@ -126,11 +126,20 @@
 
 .sidebar ul details:hover{
   background-color: var(--foreground);
-  color: var(--background);
+  color: gray;
   padding: 0;
+  
 }
+
 .sidebar details{
   padding: 0;
+  color: var(--color-secondary);
+ 
+}
+.sidebar details li {
+  margin: 0;
+  font-size: 0.7rem;
+  color: gray;
 }
 .sidebar details ul {
   margin: 0;

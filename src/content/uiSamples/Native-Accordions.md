@@ -17,7 +17,7 @@ desc: Native accordions using details and summary tags.
     </details> 
 </html-code>
 
-</css-code>
+<css-code>
 details {
   background: #333; 
   margin-bottom: 2rem;
@@ -27,7 +27,6 @@ details {
 summary {
   cursor: pointer;
 }
-
 summary > * {
   display: inline;
 }

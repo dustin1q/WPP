@@ -3,7 +3,7 @@ import '../styles/hamburger-nav.css';
 import { getCollection } from 'astro:content';
 
 const uiSamples = await getCollection("uiSamples");
-
+const cssSamples = await getCollection("cssSamples");
 ---
 
 <label class="hamburger-menu">
@@ -23,18 +23,16 @@ const uiSamples = await getCollection("uiSamples");
                             <li><a href={"/ui-samples/"+uiSamples.slug}> {uiSamples.data.title} </a></li>
                         ))}
                     </ul>
-                </details> 
-               
+                </details>   
             </li>
             <li>
                 <details>  
                     <summary>Native CSS</summary> 
                     <ul>
-                        coming soon..
-                        <!-- <li><a href="/ui-samples">Overview</a></li>
-                        {uiSamples.map((uiSamples) => (
-                            <li><a href={"/ui-samples/"+uiSamples.slug}> {uiSamples.data.title} </a></li>
-                        ))} -->
+                        <li><a href="/css-samples">Overview</a></li>
+                        {cssSamples.map((cssSamples) => (
+                            <li><a href={"/css-samples/"+cssSamples.slug}> {cssSamples.data.title} </a></li>
+                        ))}
                     </ul>
                 </details> 
                

@@ -1,4 +1,4 @@
-# Performance Patterns for  Web Dev
+# Wen Performance Playground for Web Dev
 
 This repo focusses on and demonstrates performant coding patterns and UI examples needed for common frontend development solutions.  
 Focus areas include:
@@ -10,9 +10,6 @@ Focus areas include:
 ## Next steps:
 
 1. Add and use SVG icons
-1. Leverage Livecode as a code sample template for native UI samples
-    * Create a utility class for Ace Editor
-    * Abstract examples into a data object to render using Ace utility
 1. Add Unit Testing
 1. Consider a Modual Federation Pattern to demonstrate
 

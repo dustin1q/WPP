@@ -1,7 +1,7 @@
 ---
 import '../styles/variables.css';
 import '../styles/global.css';
-import Nav from '../components/Nav.astro';
+import Header from '../components/Header.astro';
 import Hamburger from '../components/Hamburger.astro';
 import Footer from '../components/Footer.astro';
 
@@ -18,9 +18,7 @@ let {title} = Astro.props
 </head>
 <body>
 	<main>
-		<header>
-			<Nav/>
-		</header>
+		<Header/>
 		<Hamburger/>
 		<h2>{title}</h2>
 		<slot></slot>

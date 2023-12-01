@@ -4,6 +4,7 @@ import { getCollection } from 'astro:content';
 
 const uiSamples = await getCollection("uiSamples");
 const cssSamples = await getCollection("cssSamples");
+const uiAccelerators = await getCollection("uiAccelerators");
 ---
 
 <label class="hamburger-menu">
@@ -36,6 +37,17 @@ const cssSamples = await getCollection("cssSamples");
                     </ul>
                 </details> 
                
+            </li>
+            <li>
+                <details>  
+                    <summary>UI Accelerators</summary> 
+                    <ul>
+                        <li><a href="/ui-accelerators">Overview</a></li>
+                        {cssSamples.map((cssSamples) => (
+                            <li><a href={"/ui-accelerators/"+cssSamples.slug}> {cssSamples.data.title} </a></li>
+                        ))}
+                    </ul>
+                </details> 
             </li>
             <li><a href="#">Build Patterns</a> <sub>comming soon</sub></li>
             <li><a href="/CSS-Structure">CSS Hierarchy </a></li>

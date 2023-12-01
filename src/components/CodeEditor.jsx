@@ -62,7 +62,7 @@ export default function CodeEditor(props) {
           <iframe 
             srcDoc={srcDoc}
             title="output"
-            sandbox="allow-same-origin allow-scripts allow-popups allow-forms"
+            sandbox="allow-scripts allow-popups allow-forms"
             width="100%"
             height="100%"
           />

@@ -1,0 +1,20 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import { getCollection } from 'astro:content';
+
+const uiSamples = await getCollection("uiAccelerators");
+
+---
+<MainLayout title="UI Accelerators">
+    <p>
+        UI Accelerators description here.
+      </p>
+    <ul>
+        {uiSamples.map((uiSamples) => (
+            <li><a href={"/ui-accelerators/"+uiSamples.slug}> {uiSamples.data.title} </a></li>
+            <li> {uiSamples.data.desc}</li>
+        ))}
+    </ul>
+<br/><br/>
+</MainLayout>
+<script>

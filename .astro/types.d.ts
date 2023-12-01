@@ -183,6 +183,22 @@ declare module 'astro:content' {
   data: any
 } & { render(): Render[".md"] };
 };
+"uiAccelerators": {
+"IntersectionObserver.md": {
+	id: "IntersectionObserver.md";
+  slug: "intersectionobserver";
+  body: string;
+  collection: "uiAccelerators";
+  data: any
+} & { render(): Render[".md"] };
+"Snackbar-Toast.md": {
+	id: "Snackbar-Toast.md";
+  slug: "snackbar-toast";
+  body: string;
+  collection: "uiAccelerators";
+  data: any
+} & { render(): Render[".md"] };
+};
 "uiSamples": {
 "DataList-Select.md": {
 	id: "DataList-Select.md";

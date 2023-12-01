@@ -1,0 +1,40 @@
+---
+
+import MainLayout from '../../layouts/MainLayout.astro';
+import { getCollection, CollectionEntry} from 'astro:content';
+import CodeEditor from '../../components/CodeEditor.jsx';
+
+export const getStaticPaths = async() => {
+    const uiSamples = await getCollection("uiAccelerators");
+    return uiSamples.map(sample=> ({
+            params: {slug:sample.slug},
+            props: {sample}
+    }));
+}
+
+type Props = {
+    sample: CollectionEntry<"uiAccelerators">
+}
+const {sample} = Astro.props;
+const { Content } = await sample.render();
+
+const blobContent = sample.body;
+const htmlCode = blobContent.match(/(?<=<html-code>).*?(?=<\/html-code>)/gs)
+const cssCode = blobContent.match(/(?<=<css-code>).*?(?=<\/css-code>)/gs)
+const jsCode = blobContent.match(/(?<=<js-code>).*?(?=<\/js-code>)/gs)
+
+---
+<MainLayout title={sample.data.title}>
+    <p>
+    {sample.data.desc}
+    </p>
+   
+ <CodeEditor 
+    client:only="react" 
+    title={sample.data.title}
+    defaultHTML={htmlCode}
+    defaultCSS={cssCode}
+    defaultJS={jsCode}
+    />
+   
+</MainLayout>

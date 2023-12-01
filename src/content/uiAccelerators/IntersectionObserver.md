@@ -1,16 +1,55 @@
 ---
-import MainLayout from '../layouts/MainLayout.astro';
 
-import '../styles/viewport.css';
+title: Viewport Loading with Intersection Observer
+image: Himanshu
+desc: Viewport Loading with Intersection Observer in JS gives us full control of the viewport event. While loading="lazy" can be a lightweight solution, commonly lazy-loading libraries use Intersection observer-under-the-hood to give developers more control over this event. Her we are initiating the load of an image and applying a fade effect animation. 
 ---
 
 
-<MainLayout title="Viewport Loading">
+<html-code>
+<p>The "Load More" button using Intersection Observer. </br> Select to add image elements below the fold. Then scroll down to see images fade into view as they enter the viewport.</p>
+  <button id="btn">Load More</button>
+  <p id="totalCardsLBL"></p>
+<div id="card-container"></div>
+</html-code>
 
+<css-code>
+#card-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.card img {
+    border-radius: 10px;
+    display: block;
+    margin: .4rem auto;
+    width: 200px;
+    height: 150px;
+    object-fit: cover;
+    background-color: var(--color-light-grey);
+}
+.more-img {
+    opacity: 0.25;
+}
+.imgOn{
+ transition: opacity 1s ease-in;
+}
+.card {
+    outline: 0.1rem solid var(--black);
+    display: block;
+    margin: .4rem .4rem;
+    padding: 5px;
+    width: 210px;
+    height: auto;
+    object-fit: cover; 
+  }
+  .card p{
+    margin: 0px;
+  }
+</css-code>
 
-
-<script>
-
+<js-code>
 const images = document.querySelectorAll(".more-img");
 const imgOptions = {};
 const imgObserver = new IntersectionObserver((entries, imgObserver) => {
@@ -35,7 +74,6 @@ const imgObserver = new IntersectionObserver((entries, imgObserver) => {
     
    totalcards += n;
     
-        
    document.getElementById("totalCardsLBL").textContent = "Total cards added: " + totalcards;
 
 	 console.log('loadMore: '+n)
@@ -65,13 +103,6 @@ const imgObserver = new IntersectionObserver((entries, imgObserver) => {
         
  }
  var loadMoreBtn = document.getElementById("btn");
-        loadMoreBtn.addEventListener("click", (e:Event) => loadMore(50));
-</script>
+loadMoreBtn.addEventListener("click", (e) => loadMore(50));
 
-
-<p>Using Intersection Observer select the "Load More" button to add image elements both in and our of the users view.</p>
-  <button id="btn">Load More</button>
-  <p id="totalCardsLBL"></p>
-<div id="card-container"></div>
-
-</MainLayout>
+</js-code>

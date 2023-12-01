@@ -43,8 +43,8 @@ const uiAccelerators = await getCollection("uiAccelerators");
                     <summary>UI Accelerators</summary> 
                     <ul>
                         <li><a href="/ui-accelerators">Overview</a></li>
-                        {cssSamples.map((cssSamples) => (
-                            <li><a href={"/ui-accelerators/"+cssSamples.slug}> {cssSamples.data.title} </a></li>
+                        {uiAccelerators.map((uiAccelerators) => (
+                            <li><a href={"/ui-accelerators/"+uiAccelerators.slug}> {uiAccelerators.data.title} </a></li>
                         ))}
                     </ul>
                 </details> 

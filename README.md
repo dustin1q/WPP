@@ -1,29 +1,28 @@
-# Performance Patterns for  Web Dev
+# Wen Performance Playground for Web Dev
 
 This repo focusses on and demonstrates performant coding patterns and UI examples needed for common frontend development solutions.  
-Focuss areas include:
+Focus areas include:
 * Simplifying Layouts
 * Asset Loading Strategies
-* Native UI Web Components 
+* Native UI Web Components
+* Emerging and lesser-known CSS techniques 
 
-## To Do
-1. Update nav
-    * Update Layout for mobile
-1. Consider Tailwind??
+## Next steps:
+
 1. Add and use SVG icons
-1. Leverage Livecode as a code sample template for native UI samples
-    * Create a utility class for Ace Editor
-    * Abstract examples into a data object to render using Ace utility
 1. Add Unit Testing
-1. Incorporate React component (create React App)
 1. Consider a Modual Federation Pattern to demonstrate
 
 ## Architecture
-This project uses Astro as a primary templating engine and static site generator. It may evolve to incorporate React and adition libraries. The aim in adding additional libraries will be to qualify and demonstrate multipal library support, and hopfully Modual Federation design patterns. 
+This project uses Astro as a primary templating engine and static site generator. Within Astro, content is managed using markdown files (.md) and Astro's content collections feature. .md files follow a typed formate as seen in the frontmatter. 
+
+For code sample templates, custom <html-code> <css-code> and <js-code> tages are accepted to render and showcase languages within each code sample. 
+
+Monaco Editor is used as a code editor library wihin the CodeEditor component. This Library is delivered in React and used Astros Island patterns to render on a given template or page.  
 
 [Astro Documentation](https://github.com/withastro/astro) 
-[Ace editor Documentation](https://ace.c9.io/#nav=howto) 
 
+[Monaco Editor Documentation](https://www.npmjs.com/package/@monaco-editor/react)
 
 ## 🧞 Commands
 

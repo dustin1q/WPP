@@ -207,6 +207,13 @@ declare module 'astro:content' {
   collection: "uiSamples";
   data: any
 } & { render(): Render[".md"] };
+"Date-Picker.md": {
+	id: "Date-Picker.md";
+  slug: "date-picker";
+  body: string;
+  collection: "uiSamples";
+  data: any
+} & { render(): Render[".md"] };
 "Native-Accordions.md": {
 	id: "Native-Accordions.md";
   slug: "native-accordions";

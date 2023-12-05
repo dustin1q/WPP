@@ -182,6 +182,13 @@ declare module 'astro:content' {
   collection: "cssSamples";
   data: any
 } & { render(): Render[".md"] };
+"Tabs.md": {
+	id: "Tabs.md";
+  slug: "tabs";
+  body: string;
+  collection: "cssSamples";
+  data: any
+} & { render(): Render[".md"] };
 };
 "uiAccelerators": {
 "IntersectionObserver.md": {

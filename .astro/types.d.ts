@@ -198,6 +198,13 @@ declare module 'astro:content' {
   collection: "uiAccelerators";
   data: any
 } & { render(): Render[".md"] };
+"ServiceWorkerCaching.md": {
+	id: "ServiceWorkerCaching.md";
+  slug: "serviceworkercaching";
+  body: string;
+  collection: "uiAccelerators";
+  data: any
+} & { render(): Render[".md"] };
 "Snackbar-Toast.md": {
 	id: "Snackbar-Toast.md";
   slug: "snackbar-toast";

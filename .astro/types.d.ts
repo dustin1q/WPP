@@ -228,6 +228,13 @@ declare module 'astro:content' {
   collection: "uiSamples";
   data: any
 } & { render(): Render[".md"] };
+"Form-Validation.md": {
+	id: "Form-Validation.md";
+  slug: "form-validation";
+  body: string;
+  collection: "uiSamples";
+  data: any
+} & { render(): Render[".md"] };
 "Native-Accordions.md": {
 	id: "Native-Accordions.md";
   slug: "native-accordions";

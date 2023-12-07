@@ -6,23 +6,15 @@ const uiSamples = await getCollection("uiSamples");
 
 ---
 <MainLayout title="UI Samples">
+    <p>
+        Native UI Sample scripts, showcase lesser known and emerging native capabilities of HTML.
+      </p>
     <ul>
         {uiSamples.map((uiSamples) => (
             <li><a href={"/ui-samples/"+uiSamples.slug}> {uiSamples.data.title} </a></li>
             <li> {uiSamples.data.desc}</li>
         ))}
     </ul>
-    <!--Hydrates on page load -->
-   <!-- <CodeEditor client:load  name="CSS">code here</CodeEditor> -->
-    <!--Hydrates on when main thread is complete-->
-    <!-- <CodeEditor client:idle  name="CSS1">code here</CodeEditor> -->
-    <!--Hydrates when component enters the viewport -->
-    <!-- <CodeEditor client:visible  name="CSS3">code here</CodeEditor> -->
-
-    <!-- <CodeEditor client:only="react"  name="CSS3">code here</CodeEditor> -->
-    <p>
-        Native UI samples description here.
-      </p>
-<br/><br/>
+    <br/><br/>
 </MainLayout>
 <script>

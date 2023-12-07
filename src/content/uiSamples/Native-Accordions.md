@@ -1,7 +1,7 @@
 ---
 
 title: Native Accordions
-image: Himanshu
+image: image
 desc: Native accordions using details and summary tags.
 ---
 
@@ -32,6 +32,3 @@ summary > * {
 }
 </css-code>
 
-<js-code>
-    console.log("working");
-</js-code>

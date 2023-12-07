@@ -1,13 +1,15 @@
 ---
 
 import MainLayout from '../layouts/MainLayout.astro';
-//import '../styles/line-clamp.css';
+import MultiStep from '../components/Multistep/MultiStep.ts'
+import '../styles/MultiStep.css';
 
 ---
 
-<MainLayout title="Multistep React app">
+<MainLayout title="Multistep React Example">
     <p>Multistep React app to showcase Astro Islands and a Multisep app containing validation and progress.</p>
  <div>
-       
+      <MultiStep client:only="react" /> 
 </div>
 </MainLayout>
+ 

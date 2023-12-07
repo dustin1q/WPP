@@ -1,7 +1,7 @@
 ---
 
 title: Viewport Loading with Intersection Observer
-image: Himanshu
+image: image
 desc: Viewport Loading with Intersection Observer in JS gives us full control of the viewport event. While loading="lazy" can be a lightweight solution, commonly lazy-loading libraries use Intersection observer-under-the-hood to give developers more control over this event. Her we are initiating the load of an image and applying a fade effect animation. 
 ---
 

@@ -1,34 +1,98 @@
 ---
-title: Native Select
+title: Styling a Native Select Element
 image: ""
-desc: The <progress> HTML element displays an indicator showing the completion progress of a task, typically displayed as a progress bar.
+desc: This example uses CSS variables and a small theming system to showcase styling capabilities on a native select. Here the browser chrome defines the UI when selecting options. This native implementation assures a reliable and predictable user experience on desktop and mobile devices.  
 ---
 
 
 <html-code>
-<select name="test" aria-invalid="false">
-  <option value="Tomato">Tomato</option>
-  <option value="Banana">Banana</option>
-  <option value="Apple">Apple</option>
+<select>
+  <option>Select a rocket</option>
+  <option>Falcon 9<o/ption>
+  <option>Falcon Heavy<o/ption>
+  <option>Starship<o/ption>
+  <option>Saturn 5<o/ption>
+</select>
+<select class="theme-pink-pill">
+  <option>Select a rocket</option>
+  <option>Falcon 9<o/ption>
+  <option>Falcon Heavy<o/ption>
+  <option>Starship<o/ption>
+  <option>Saturn 5<o/ption>
+</select>
+<select class="theme-dark">
+  <option>Select a rocket</option>
+  <option>Falcon 9<o/ption>
+  <option>Falcon Heavy<o/ption>
+  <option>Starship<o/ption>
+  <option>Saturn 5<o/ption>
 </select>
 </html-code>
 
 
 <css-code>
+
+:root {
+  /* default theme */
+  --radius: 2px;
+  --baseFg: rgb(128, 126, 126);
+  --baseBg: white;
+  --accentFg: #0d0d0d;
+  --accentBg: #d3eff3;
+}
+
+.theme-pink-pill {
+  --radius: 2em;
+  --baseFg: #c70062;
+  --baseBg: #ffe3f1;
+  --accentFg: #c70062;
+  --accentBg: #ffaad4;
+}
+
+.theme-dark {
+  --radius: 0;
+  --baseFg: white;
+  --baseBg: black;
+  --accentFg: rgb(245, 240, 240);
+  --accentBg: rgb(83, 82, 82);
+}
+
 select {
-  width: 300px;
-  padding: 12px;
-  border: 0 !important;
-  background-color: lightblue;
-  /* needed */
+  font: 400 12px/1.3 sans-serif;
+  -webkit-appearance: none;
   appearance: none;
-  /* SVG background image */
-  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2212%22%20height%3D%2212%22%20viewBox%3D%220%200%2012%2012%22%3E%3Ctitle%3Edown-arrow%3C%2Ftitle%3E%3Cg%20fill%3D%22%23000000%22%3E%3Cpath%20d%3D%22M10.293%2C3.293%2C6%2C7.586%2C1.707%2C3.293A1%2C1%2C0%2C0%2C0%2C.293%2C4.707l5%2C5a1%2C1%2C0%2C0%2C0%2C1.414%2C0l5-5a1%2C1%2C0%2C1%2C0-1.414-1.414Z%22%20fill%3D%22%23000000%22%3E%3C%2Fpath%3E%3C%2Fg%3E%3C%2Fsvg%3E");
-    background-size: .6em;
-    background-position: calc(100% - 1.3em) center;
-    background-repeat: no-repeat;
+  color: var(--baseFg);
+  border: 1px solid var(--baseFg);
+  line-height: 1;
+  outline: 0;
+  padding: 0.65em 2.5em 0.55em 0.75em;
+  border-radius: var(--radius);
+  background-color: var(--baseBg);
+  background-image: linear-gradient(var(--baseFg), var(--baseFg)),
+    linear-gradient(-135deg, transparent 50%, var(--accentBg) 50%),
+    linear-gradient(-225deg, transparent 50%, var(--accentBg) 50%),
+    linear-gradient(var(--accentBg) 42%, var(--accentFg) 42%);
+  background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+  background-size: 1px 100%, 20px 22px, 20px 22px, 20px 100%;
+  background-position: right 20px center, right bottom, right bottom, right bottom;   
 }
-select::-ms-expand {
-    display: none;
+
+select:hover {
+  background-image: linear-gradient(var(--accentFg), var(--accentFg)),
+    linear-gradient(-135deg, transparent 50%, var(--accentFg) 50%),
+    linear-gradient(-225deg, transparent 50%, var(--accentFg) 50%),
+    linear-gradient(var(--accentFg) 42%, var(--accentBg) 42%);
 }
+
+select:active {
+  background-image: linear-gradient(var(--accentFg), var(--accentFg)),
+    linear-gradient(-135deg, transparent 50%, var(--accentFg) 50%),
+    linear-gradient(-225deg, transparent 50%, var(--accentFg) 50%),
+    linear-gradient(var(--accentFg) 42%, var(--accentBg) 42%);
+  color: var(--accentBg);
+  border-color: var(--accentFg);
+  background-color: var(--accentFg);
+}
+
+
 </css-code>

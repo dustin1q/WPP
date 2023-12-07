@@ -7,8 +7,14 @@ const uiSamples = await getCollection("uiAccelerators");
 ---
 <MainLayout title="UI Accelerators">
     <p>
-        UI Accelerators description here.
-      </p>
+        Sample scripts shared, showcase lesser known and emerging native capabilities of HTML CSS & JavaScript.
+    <p>
+        Using a live code editor, users can view and interact with the showcased sample code (like codepen). 
+        With this hands-on experience you can test the capabilities and limitation of the code showcased, then use it for your own purposes. 
+    </p>
+    <p>
+        Note: Editors on this site use localstorage to save your edits and retain state automatically.</p>
+    </p>
     <ul>
         {uiSamples.map((uiSamples) => (
             <li><a href={"/ui-accelerators/"+uiSamples.slug}> {uiSamples.data.title} </a></li>

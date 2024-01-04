@@ -1,9 +1,14 @@
+/*
+From 
+https://github.com/WebDevSimplified/react-multistep-form/tree/main
+
+*/
+
 import { FormEvent, useState } from "react"
 import { AccountForm } from "./AccountForm"
 import { AddressForm } from "./AddressForm"
 import { useMultistepForm } from "./useMultistepForm"
 import { UserForm } from "./UserForm"
-import '../../styles/MultiStep.css'
 
 type FormData = {
   firstName: string
@@ -28,8 +33,8 @@ const INITIAL_DATA: FormData = {
   email: "",
   password: "",
 }
-export default function MultiStep() {
 
+function MultiStep() {
   const [data, setData] = useState(INITIAL_DATA)
   function updateFields(fields: Partial<FormData>) {
     setData(prev => {
@@ -50,9 +55,20 @@ export default function MultiStep() {
   }
 
   return (
-    <div className="MultiStep">
+    <div
+      style={{
+        position: "relative",
+        background: "white",
+        border: "1px solid black",
+        padding: "2rem",
+        margin: "1rem",
+        borderRadius: ".5rem",
+        fontFamily: "Arial",
+        maxWidth: "max-content",
+      }}
+    >
       <form onSubmit={onSubmit}>
-        <div className="stepStatus">
+        <div style={{ position: "absolute", top: ".5rem", right: ".5rem" }}>
           {currentStepIndex + 1} / {steps.length}
         </div>
         {step}
@@ -75,3 +91,5 @@ export default function MultiStep() {
     </div>
   )
 }
+
+export default MultiStep

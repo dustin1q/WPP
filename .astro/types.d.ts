@@ -191,6 +191,13 @@ declare module 'astro:content' {
 } & { render(): Render[".md"] };
 };
 "uiAccelerators": {
+"CompareWidget.md": {
+	id: "CompareWidget.md";
+  slug: "comparewidget";
+  body: string;
+  collection: "uiAccelerators";
+  data: any
+} & { render(): Render[".md"] };
 "IntersectionObserver.md": {
 	id: "IntersectionObserver.md";
   slug: "intersectionobserver";

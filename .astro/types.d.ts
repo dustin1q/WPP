@@ -182,6 +182,13 @@ declare module 'astro:content' {
   collection: "cssSamples";
   data: any
 } & { render(): Render[".md"] };
+"Scroll-Snap.md": {
+	id: "Scroll-Snap.md";
+  slug: "scroll-snap";
+  body: string;
+  collection: "cssSamples";
+  data: any
+} & { render(): Render[".md"] };
 "Tabs.md": {
 	id: "Tabs.md";
   slug: "tabs";

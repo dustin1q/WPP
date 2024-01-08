@@ -29,7 +29,6 @@ desc: This example uses CSS variables and a small theming system to showcase sty
 </select>
 </html-code>
 
-
 <css-code>
 
 :root {

@@ -30,5 +30,14 @@ summary {
 summary > * {
   display: inline;
 }
+
+summary::marker {
+  font-size: 1.5em;
+  content: "📬";
+}
+[open] summary::marker {
+  font-size: 1.5em;
+  content: "📭";
+}
 </css-code>
 

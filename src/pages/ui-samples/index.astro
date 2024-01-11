@@ -1,20 +1,23 @@
 ---
 import MainLayout from '../../layouts/MainLayout.astro';
 import { getCollection } from 'astro:content';
-
+import '../../styles/sample-cards.css';
 const uiSamples = await getCollection("uiSamples");
 
 ---
 <MainLayout title="UI Samples">
     <p>
-        Native UI Sample scripts, showcase lesser known and emerging native capabilities of HTML.
-      </p>
-    <ul>
+    Native UI Sample scripts, showcase lesser known and emerging native capabilities of HTML.
+    </p>
+    <section class="sample-holder">
         {uiSamples.map((uiSamples) => (
-            <li><a href={"/ui-samples/"+uiSamples.slug}> {uiSamples.data.title} </a></li>
-            <li> {uiSamples.data.desc}</li>
+        <div class="card">
+            <h3>{uiSamples.data.title}</h3>
+            <p>{uiSamples.data.desc}</p> 
+             <a href={"/ui-samples/"+uiSamples.slug} aria-label={uiSamples.data.title}> Learn more </a>
+          </div>
         ))}
-    </ul>
+    </section>
     <br/><br/>
 </MainLayout>
 <script>

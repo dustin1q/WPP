@@ -1,18 +1,22 @@
 ---
 import MainLayout from '../../layouts/MainLayout.astro';
 import { getCollection } from 'astro:content';
-
+import '../../styles/sample-cards.css';
 const uiSamples = await getCollection("cssSamples");
 
 ---
 <MainLayout title="CSS Samples">
-    <ul>
+  <section class="sample-holder">
+    
         {uiSamples.map((cssSamples) => (
-            <li><a href={"/css-samples/"+cssSamples.slug}> {cssSamples.data.title} </a></li>
-            <li> {cssSamples.data.desc}</li>
+          <div class="card">
+            <h3>{cssSamples.data.title}</h3>
+            <p>{cssSamples.data.desc}</p> 
+             <a href={"/css-samples/"+cssSamples.slug} aria-label={cssSamples.data.title}> Learn more </a>
+          </div>
         ))}
-    </ul>
-
+  
+  </section>
     <p>
         Samples shared, showcase lesser known and emerging capabilities of native CSS.
       </p>

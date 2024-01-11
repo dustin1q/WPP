@@ -89,5 +89,5 @@ https://github.com/argyleink/gui-challenges/tree/main/compare
 bridge.oninput = () => document.body.style.setProperty('--pos', bridge.value + '%')
 
 wallPainting.oninput = () => document.body.style.setProperty('--pos', wallPainting.value + '%')
-
+/// both instances get set at the same time because they share the --pos CSS variable 
 </js-code>

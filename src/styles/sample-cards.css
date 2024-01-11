@@ -1,14 +1,18 @@
 .sample-holder{
 	display: flex;
-	justify-content: space-between;
+	justify-content:center;
 	flex-wrap: wrap;
+	align-items: stretch;
 }
 .card{
-	width:20em;
-	margin: 1em;
+	max-width: 20em;
+	flex-grow: 4;
+	flex-basis: auto;
+	margin: 0.5em;
 	border: 1px solid;
 	border-radius: 15px;
 	padding:10px;
+
 }
 .card a{
 	background-color: black;

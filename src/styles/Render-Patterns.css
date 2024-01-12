@@ -1,6 +1,7 @@
 .Render-View{
     display:flex;
     width: 30%;
+    min-width: 400px;
     justify-content: space-between;
     border: #000 solid 1px;
     padding: 20px;
@@ -10,15 +11,22 @@
     display: flex;
     flex-flow: column;
     gap: 0.5em;
- 
+    
+    .input-holder:has(input[type="radio"]:checked) {
+        background: rgb(0,0,0);
+background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(255,255,255,1) 10%);
+  }
     .input-holder{
         display: grid;
         grid-area: 1/1;
+        width:200px;
+        border-radius: 2px;
         > label{
             font-size: 1rem;
             line-height: 1.1;
            
         }
+        
         > input[type="radio"] {
             /* turn off the radio UI */
             /*-webkit-appearance: none;
@@ -30,7 +38,7 @@
             font-weight: bold;
             font-size: 1.5rem;
             color: black;
-            text-decoration: underline;
+           
         }
     }
 }
@@ -50,19 +58,22 @@
         > label{
             font-weight: bold;
             font-size: 1.2rem;
-            margin-left: -100px;
+            margin-left: -80px;
             
         }
     }
 }
 .client{
-    background: green;
+    background: rgb(183,246,170);
+    background: linear-gradient(0deg, rgba(183,246,170,1) 0%, rgba(53,224,22,0.989233193277311) 51%, rgba(183,246,170,1) 100%);
 }
 .server{
-    background: yellow;
+    background: rgb(126,190,245);
+    background: linear-gradient(0deg, rgba(126,190,245,1) 0%, rgba(48,143,241,0.989233193277311) 51%, rgba(144,198,244,1) 100%);
 }
 .build{
-    background: red;
+    background: rgb(245,171,148);
+    background: linear-gradient(0deg, rgba(245,171,148,1) 0%, rgba(241,48,48,0.989233193277311) 51%, rgba(244,129,94,1) 100%);
 }
 
 #SSR{

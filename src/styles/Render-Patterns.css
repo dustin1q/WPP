@@ -1,0 +1,93 @@
+.Render-View{
+    display:flex;
+    width: 50%;
+    justify-content: space-between;
+   
+}
+.Render-Controls{
+        width:50%;
+        display: flex;
+        flex-flow: column;
+        
+    > button{
+        background: red;
+        margin: 5px;
+    }
+}
+.Render{
+    width:50%;
+    height: 20em;
+    margin-left: 10px;
+    border-left: #000 solid 1px;
+    display: flex;
+    flex-flow: column;
+    align-items:end;
+    > div{
+        width: 30%;
+        display: grid;
+        align-items: center;
+        padding: 10px;
+        transition: height 1s;
+        > label{
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-left: -100px;
+            
+        }
+    }
+}
+.client{
+    background: green;
+}
+.server{
+    background: yellow;
+}
+.build{
+    background: red;
+}
+
+#SSR{
+    .client{
+        height:20%;
+    }
+    .server{
+        height:70%;
+    }
+    .build{
+        height:10%;
+    }
+}
+
+#CSR{
+    .client{
+        height:70%;
+    }
+    .server{
+        height:20%;
+    }
+    .build{
+        height:10%;
+    }
+}
+#SSG{
+    .client{
+        height:10%;
+    }
+    .server{
+        height:10%;
+    }
+    .build{
+        height:80%;
+    }
+}
+#ISR{
+    .client{
+        height:10%;
+    }
+    .server{
+        height:40%;
+    }
+    .build{
+        height:50%;
+    }
+}

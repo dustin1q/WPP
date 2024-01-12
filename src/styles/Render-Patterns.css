@@ -2,38 +2,42 @@
     display:flex;
     width: 30%;
     justify-content: space-between;
-   
+    border: #000 solid 1px;
+    padding: 20px;
 }
 .Render-Controls{
-        width:20%;
-        display: flex;
-        flex-flow: column;
-        display: grid;
-    grid-template-columns: 1em auto;
+    width:20%;
+    display: flex;
+    flex-flow: column;
     gap: 0.5em;
-    > label{
-        font-size: 1rem;
-        line-height: 1.1;
-    }
-    > input[type="radio"] {
-        /* turn off the radio UI */
-        -webkit-appearance: none;
-        appearance: none;
-        background-color: #fff;
-        margin: 0;
-      } 
-    > input[type="radio"]:checked+label {
-        font-weight: bold;
-        font-size: 1.5rem;
-        color: black;
-        text-decoration: underline;
+ 
+    .input-holder{
+        display: grid;
+        grid-area: 1/1;
+        > label{
+            font-size: 1rem;
+            line-height: 1.1;
+           
+        }
+        > input[type="radio"] {
+            /* turn off the radio UI */
+            /*-webkit-appearance: none;
+            appearance: none;*/
+            display: none;
+           
+        } 
+        > input[type="radio"]:checked+label {
+            font-weight: bold;
+            font-size: 1.5rem;
+            color: black;
+            text-decoration: underline;
+        }
     }
 }
 .Render{
     width:50%;
     height: 20em;
     margin-left: 10px;
-    border-left: #000 solid 1px;
     display: flex;
     flex-flow: column;
     align-items:end;
@@ -42,7 +46,7 @@
         display: grid;
         align-items: center;
         padding: 10px;
-        transition: height 1s;
+        transition: height 0.6s;
         > label{
             font-weight: bold;
             font-size: 1.2rem;

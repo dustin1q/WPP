@@ -1,17 +1,32 @@
 .Render-View{
     display:flex;
-    width: 50%;
+    width: 30%;
     justify-content: space-between;
    
 }
 .Render-Controls{
-        width:50%;
+        width:20%;
         display: flex;
         flex-flow: column;
-        
-    > button{
-        background: red;
-        margin: 5px;
+        display: grid;
+    grid-template-columns: 1em auto;
+    gap: 0.5em;
+    > label{
+        font-size: 1rem;
+        line-height: 1.1;
+    }
+    > input[type="radio"] {
+        /* turn off the radio UI */
+        -webkit-appearance: none;
+        appearance: none;
+        background-color: #fff;
+        margin: 0;
+      } 
+    > input[type="radio"]:checked+label {
+        font-weight: bold;
+        font-size: 1.5rem;
+        color: black;
+        text-decoration: underline;
     }
 }
 .Render{

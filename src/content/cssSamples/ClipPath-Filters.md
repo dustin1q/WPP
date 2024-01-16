@@ -10,8 +10,9 @@ desc: The clip-path CSS property creates a clipping region that sets what part o
   <source media="(min-width:960px)" srcset="https://cdn.britannica.com/88/125688-050-3D31632D/spacecraft-Gemini-12-John-F-Kennedy-Space-Nov-11-1966.jpg" width="300" height="300">
   <img src="https://cdn.britannica.com/88/125688-050-3D31632D/spacecraft-Gemini-12-John-F-Kennedy-Space-Nov-11-1966.jpg" width="300" height="300">
 </picture>
-</html-code>
 <img src="https://cdn.britannica.com/88/125688-050-3D31632D/spacecraft-Gemini-12-John-F-Kennedy-Space-Nov-11-1966.jpg" alt="Rocket" width="300" height="300">
+
+</html-code>
 
 <css-code>
 img {
@@ -20,7 +21,14 @@ img {
 .img-pic{
   clip-path: circle(50% at 150px -150px );
   > img{
-    filter: sepia(100%)
+    filter: sepia(100%);
+    /*
+   filter: blur(5px);
+   filter: contrast(200%);
+   filter: hue-rotate(90deg);
+   filter: drop-shadow(16px 16px 20px red) invert(75%);
+    */
   }
 }
+
 </css-code>

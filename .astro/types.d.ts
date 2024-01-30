@@ -175,6 +175,13 @@ declare module 'astro:content' {
 
 	type ContentEntryMap = {
 		"cssSamples": {
+"ClipPath-Filters.md": {
+	id: "ClipPath-Filters.md";
+  slug: "clippath-filters";
+  body: string;
+  collection: "cssSamples";
+  data: any
+} & { render(): Render[".md"] };
 "Line-clamping.md": {
 	id: "Line-clamping.md";
   slug: "line-clamping";
@@ -222,6 +229,13 @@ declare module 'astro:content' {
 "Snackbar-Toast.md": {
 	id: "Snackbar-Toast.md";
   slug: "snackbar-toast";
+  body: string;
+  collection: "uiAccelerators";
+  data: any
+} & { render(): Render[".md"] };
+"StepperBar.md": {
+	id: "StepperBar.md";
+  slug: "stepperbar";
   body: string;
   collection: "uiAccelerators";
   data: any

@@ -233,6 +233,13 @@ declare module 'astro:content' {
   collection: "uiAccelerators";
   data: any
 } & { render(): Render[".md"] };
+"StarRating.md": {
+	id: "StarRating.md";
+  slug: "starrating";
+  body: string;
+  collection: "uiAccelerators";
+  data: any
+} & { render(): Render[".md"] };
 "StepperBar.md": {
 	id: "StepperBar.md";
   slug: "stepperbar";

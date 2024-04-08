@@ -203,6 +203,13 @@ declare module 'astro:content' {
   collection: "cssSamples";
   data: any
 } & { render(): Render[".md"] };
+"Toggle-Switch.md": {
+	id: "Toggle-Switch.md";
+  slug: "toggle-switch";
+  body: string;
+  collection: "cssSamples";
+  data: any
+} & { render(): Render[".md"] };
 };
 "uiAccelerators": {
 "CompareWidget.md": {

@@ -6,10 +6,6 @@ desc: A "toggle switch" (on/off button) with CSS using a checkbox.
 ---
 
 <html-code>
-
-<div class="container">
-  <div class="content">
-
     <label class='Toggle' for='toggle'>
       <input type='checkbox' name='toggle' id='toggle' class="Toggle__input" checked />
       <span class="Toggle__display" hidden>
@@ -74,19 +70,9 @@ desc: A "toggle switch" (on/off button) with CSS using a checkbox.
       Receive notifications (without CSS)
     </label>
 
-  </div>
-</div>
-
-<div class="footer">
-  <p>Read more about <a href="https://kittygiraudel.com/2021/04/05/an-accessible-toggle/">these accessible toggles</a>.</p>
-</div>
-
 </html-code>
 
 <css-code>
-/* Uncomment this rule to effectively break the stylesheet, thus simulating no-CSS styles. */
-/* .selector { [property: value; } */
-
 .Toggle {
   display: flex;
   flex-wrap: wrap;
@@ -114,7 +100,6 @@ button.Toggle {
 .Toggle__display {
   --offset: 0.25em;
   --diameter: 1.8em;
-
   display: inline-flex;
   align-items: center;
   justify-content: space-around;
@@ -177,15 +162,13 @@ button.Toggle {
 }
 
 [dir="rtl"] .Toggle__display::before {
-  left: auto;
+ 
   right: var(--offset);
 }
-
 [dir="rtl"] .Toggle[aria-pressed="true"] + .Toggle__display::before,
 [dir="rtl"] .Toggle__input:checked + .Toggle__display::before {
   transform: translate(-100%, -50%);
 }
-
 .Toggle__icon {
   display: inline-block;
   width: 1em;
@@ -204,49 +187,6 @@ button.Toggle {
 .Toggle__icon--checkmark {
   color: #1fb978;
 }
-
-*,
-::before,
-::after {
-  box-sizing: border-box;
-}
-
-html {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-}
-
-body {
-  display: flex;
-  flex-direction: column;
-  flex: 1 1 100%;
-}
-
-.container {
-  flex: 1 1 100%;
-  display: flex;
-  flex-direction: column;
-  padding: 1em;
-}
-
-.content {
-  max-width: 450px;
-  padding: 2em;
-  margin: auto;
-  border: 1px solid rgb(0 0 0 / 0.2);
-  border-radius: 0.25em;
-}
-
-.footer {
-  padding: 2em;
-  background-color: #eee;
-}
-
-.footer > p {
-  margin: 0;
-}
-
 </css-code>
 
 <js-code>

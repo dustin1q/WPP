@@ -254,6 +254,13 @@ declare module 'astro:content' {
   collection: "uiAccelerators";
   data: any
 } & { render(): Render[".md"] };
+"a11y-tabs-progressivly-enhanced.md": {
+	id: "a11y-tabs-progressivly-enhanced.md";
+  slug: "a11y-tabs-progressivly-enhanced";
+  body: string;
+  collection: "uiAccelerators";
+  data: any
+} & { render(): Render[".md"] };
 };
 "uiSamples": {
 "DataList-Select.md": {

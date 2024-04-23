@@ -29,6 +29,8 @@ const jsCode = blobContent.match(/(?<=<js-code>).*?(?=<\/js-code>)/gs)
 <MainLayout title={sample.data.title}>
     <p>
     {sample.data.desc}
+
+    
     </p>
    
  <CodeEditor 
@@ -38,5 +40,5 @@ const jsCode = blobContent.match(/(?<=<js-code>).*?(?=<\/js-code>)/gs)
     defaultCSS={cssCode}
     defaultJS={jsCode}
     />
-   
+
 </MainLayout>

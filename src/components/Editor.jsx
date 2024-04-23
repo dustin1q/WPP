@@ -25,7 +25,7 @@ export default function Editor(props) {
     hideCursorInOverviewRuler: true,
     matchBrackets: 'always',
     minimap: {
-      enabled: true,
+      enabled: false,
     },
     /* scrollbar: {
       horizontalSliderSize: 4,

@@ -1,0 +1,57 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import { getCollection } from 'astro:content';
+
+const uiSamples = await getCollection("uiAccelerators");
+
+---
+<MainLayout title="Design Ststems">
+    <p>
+        Definition: A design system is a complete set of standards intended to manage design at scale using reusable components and patterns.
+    </p>
+    <p>
+       Designs Systemns promot up efficiency, ensure consistency accross your UI solutions. 
+    <p>
+        Your design system should be functional and goal-oriented, not just mimic the industry’s flashiest trends.
+    </p>
+    <p>
+        Google’s Material Design is often considered the industry standard when it comes to design systems, but it’s not a one-size-fits-all solution. Your design system needs to be a reflection of your brand’s unique identity, tailored to your users’ needs and your organizational goals. It’s about finding a balance between industry standards and the best possible approach for your organization at this distinct point in time. 
+     </p>
+     <p>
+        Design systems aren’t creativity killers; they’re clarity creators. They are a foundation, freeing designers to focus on tackling unique challenges and crafting amazing user experiences. Think of them as your launchpad for creativity, rather than guardrails. It’s about streamlining processes, not curtailing creativity.
+     </p>
+
+    <h3>Tokens</h3>
+<ul>
+    <li>Border</li>
+    <li>Color</li>
+    <li>Font</li>
+    <li>Space</li>
+    <li>Text</li>
+    <li>Icons</li>
+</ul>
+<h3>Atoms</h3>
+<ul>
+    <li>Buttons</li>
+    <li>Button Group</li>
+    <li>Links</li>
+    <li>Accordions</li>
+    <li>Tabs</li>
+    <li>Cards</li>
+    <li>Autocomplete</li>
+    <li>Avitar</li>
+    <li>Breadcrumbs</li>
+    <li>Input</li>
+    <li>Select</li>
+    <li>Checkbox</li>
+    <li>Radio</li>
+    <li>Switch</li>
+    <li>Snackbar</li>
+    <li>Step</li>
+    <li>Table</li>
+    <li>Toggle Button</li>
+    <li>Tool Tip</li>
+</ul>
+</MainLayout>
+<script>
+            

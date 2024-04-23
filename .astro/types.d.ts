@@ -210,6 +210,13 @@ declare module 'astro:content' {
   collection: "cssSamples";
   data: any
 } & { render(): Render[".md"] };
+"nth-child.md": {
+	id: "nth-child.md";
+  slug: "nth-child";
+  body: string;
+  collection: "cssSamples";
+  data: any
+} & { render(): Render[".md"] };
 };
 "uiAccelerators": {
 "CompareWidget.md": {

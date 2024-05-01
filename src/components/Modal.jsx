@@ -12,14 +12,15 @@ function Modal({ openModal, closeModal, id, children }) {
   }, [openModal]);
 
   return (
-    <dialog id={id}
-      ref={ref}
-      onCancel={closeModal}
-    >
-      {children}
-      <button onClick={closeModal}>
-        Close
-      </button>
+    <dialog id={id}ref={ref}onCancel={closeModal}>
+        <div className="modal">
+            <div className="modalTop">
+                <button onClick={closeModal}>X</button>
+            </div>
+            <div className="modalContent">
+                {children}
+            </div>
+        </div>
     </dialog>
   );
 }

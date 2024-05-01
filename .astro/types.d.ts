@@ -203,9 +203,9 @@ declare module 'astro:content' {
   collection: "cssSamples";
   data: any
 } & { render(): Render[".md"] };
-"Toggle-Switch.md": {
-	id: "Toggle-Switch.md";
-  slug: "toggle-switch";
+"has.md": {
+	id: "has.md";
+  slug: "has";
   body: string;
   collection: "cssSamples";
   data: any
@@ -305,9 +305,16 @@ declare module 'astro:content' {
   collection: "uiSamples";
   data: any
 } & { render(): Render[".md"] };
-"Native-Multi-Select copy.md": {
-	id: "Native-Multi-Select copy.md";
-  slug: "native-multi-select-copy";
+"Native-Multi-Select.md": {
+	id: "Native-Multi-Select.md";
+  slug: "native-multi-select";
+  body: string;
+  collection: "uiSamples";
+  data: any
+} & { render(): Render[".md"] };
+"Native-Popover.md": {
+	id: "Native-Popover.md";
+  slug: "native-popover";
   body: string;
   collection: "uiSamples";
   data: any
@@ -329,6 +336,13 @@ declare module 'astro:content' {
 "Progress-Meter.md": {
 	id: "Progress-Meter.md";
   slug: "progress-meter";
+  body: string;
+  collection: "uiSamples";
+  data: any
+} & { render(): Render[".md"] };
+"Toggle-Switch.md": {
+	id: "Toggle-Switch.md";
+  slug: "toggle-switch";
   body: string;
   collection: "uiSamples";
   data: any

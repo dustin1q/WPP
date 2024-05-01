@@ -83,8 +83,27 @@
     backdrop-filter: blur(5px);
 
   }
-  #variablesModel{
+#variablesModel{
     z-index: 5000;
-    width: 600px;
+    width: 50%;   
+    min-width: 400px;  
+    padding: 0px; 
+}
+.model{
+    display: flex;
+    flex-direction: row; 
     
+  }
+.modalContent{
+    width:100%
+}
+.modalTop{
+    padding-bottom: 5px;
+    display: flex;
+    background: var(--color-light-grey);
+    button{
+      margin: 3px;
+      margin-left: auto;
+      background: var(--color-light-grey);
+    }
   }

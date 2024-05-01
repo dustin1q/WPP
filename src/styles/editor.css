@@ -77,3 +77,14 @@
   .resizable > * {
     flex: 1;
   }
+
+  #variablesModel::backdrop {
+    background-color: rgb(4, 4, 16, 0.25);
+    backdrop-filter: blur(5px);
+
+  }
+  #variablesModel{
+    z-index: 5000;
+    width: 600px;
+    
+  }

@@ -4,6 +4,7 @@ import MainLayout from '../../layouts/MainLayout.astro';
 import { getCollection, CollectionEntry} from 'astro:content';
 import CodeEditor from '../../components/CodeEditor.jsx';
 
+import styles from '../../styles/variables.css';
 export const getStaticPaths = async() => {
     const uiSamples = await getCollection("cssSamples");
     return uiSamples.map(sample=> ({
@@ -12,6 +13,8 @@ export const getStaticPaths = async() => {
         
     }));
 }
+
+const cssVariables = styles;
 
 type Props = {
     sample: CollectionEntry<"cssSamples">
@@ -36,6 +39,7 @@ const jsCode = blobContent.match(/(?<=<js-code>).*?(?=<\/js-code>)/gs)
     defaultHTML={htmlCode}
     defaultCSS={cssCode}
     defaultJS={jsCode}
+    cssVars = {cssVariables}
     />
    
 </MainLayout>

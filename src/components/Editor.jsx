@@ -7,7 +7,8 @@ export default function Editor(props) {
     language,
     displayName,
     value,
-    onEditorChange
+    onEditorChange,
+    readOnly = props.readOnly === undefined ? false : props.readOnly
   } = props
   const [open, setOpen] = useState(true)
   
@@ -33,7 +34,7 @@ export default function Editor(props) {
     }, */
     selectOnLineNumbers: true,
     roundedSelection: false,
-    readOnly: false,
+    readOnly: readOnly,
     cursorStyle: 'line',
     automaticLayout: true,
   }; 

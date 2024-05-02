@@ -226,6 +226,13 @@ declare module 'astro:content' {
   collection: "uiAccelerators";
   data: any
 } & { render(): Render[".md"] };
+"ExpandableContent.md": {
+	id: "ExpandableContent.md";
+  slug: "expandablecontent";
+  body: string;
+  collection: "uiAccelerators";
+  data: any
+} & { render(): Render[".md"] };
 "IntersectionObserver.md": {
 	id: "IntersectionObserver.md";
   slug: "intersectionobserver";

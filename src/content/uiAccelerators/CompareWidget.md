@@ -10,21 +10,12 @@ https://github.com/argyleink/gui-challenges/tree/main/compare
 <section class="container">
      <div class="compare">
         <section class="before">
-            <img src="https://cdn.prod.www.spiegel.de/images/0f47e914-0001-0004-0000-000001244934_w648_r1.778_fpx50_fpy50.webp" alt="">
+            <img src="https://dataviz.nbcnews.com/projects/20220712-webb-first-set-before-after-southern-ring-nebula/assets/southern-ring-nebula-before.jpg" alt="">
         </section>
         <section class="after">
-            <img src="https://cdn.prod.www.spiegel.de/images/7840d982-0001-0004-0000-000001244935_w648_r1.778_fpx50_fpy50.webp" alt="">
+            <img src="https://dataviz.nbcnews.com/projects/20220712-webb-first-set-before-after-southern-ring-nebula/assets/southern-ring-nebula-after.jpg" alt="">
         </section>
         <input type="range" id="bridge" step="0.1">
-    </div>
-    <div class="compare">
-        <section class="before">
-            <img src="https://cdn.prod.www.spiegel.de/images/e5057cf4-0001-0004-0000-000001244988_w648_r1.778_fpx50_fpy50.webp" alt="">
-        </section>
-        <section class="after">
-            <img src="https://cdn.prod.www.spiegel.de/images/85c2f511-0001-0004-0000-000001244991_w648_r1.778_fpx50_fpy50.webp" alt="">
-        </section>
-        <input type="range" id="wallPainting" step="0.1">
     </div>
 </section>
 </html-code>

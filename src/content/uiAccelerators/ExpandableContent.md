@@ -5,6 +5,7 @@ image: image
 desc: Multiline overflow, adding text that fades away when too long or a read more button that only appears when needed are perfect examples of this complex situation. 
 ---
 
+https://blog.webdevsimplified.com/2020-01/dynamic-expandable-content/
 
 <html-code>
  <article>

@@ -13,6 +13,20 @@ Focus areas include:
 1. Add Unit Testing
 1. Consider a Modual Federation Pattern to demonstrate
 
+## Css to add
+1. object-fit
+1. accent-color - https://codepen.io/web-dot-dev/pen/PomBZdy
+1. border-image 
+1. scroll-padding
+1. scroll-snap
+1. columns - https://codepen.io/kevinpowell/pen/rNbqBPr
+1. backdrop-filter - https://codepen.io/kevinpowell/pen/RwOewNr
+1. :any-link https://codepen.io/argyleink/pen/vYMzYxx
+1. :empty - https://codepen.io/kevinpowell/pen/mdgzdBR/d0cb3478eef23d16643143cc112fa01e
+1. list-style https://codepen.io/argyleink/pen/rNmzGzW
+1. inset - https://codepen.io/kevinpowell/pen/qBwJBGN
+
+
 ## Architecture
 This project uses Astro as a primary templating engine and static site generator. Within Astro, content is managed using markdown files (.md) and Astro's content collections feature. .md files follow a typed formate as seen in the frontmatter. 
 

@@ -175,6 +175,13 @@ declare module 'astro:content' {
 
 	type ContentEntryMap = {
 		"cssSamples": {
+"Animate-on-Scroll.md": {
+	id: "Animate-on-Scroll.md";
+  slug: "animate-on-scroll";
+  body: string;
+  collection: "cssSamples";
+  data: any
+} & { render(): Render[".md"] };
 "ClipPath-Filters.md": {
 	id: "ClipPath-Filters.md";
   slug: "clippath-filters";

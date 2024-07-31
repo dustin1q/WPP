@@ -17,11 +17,13 @@ desc: The HTML <dialog> element is used to create both modal and non-modal dialo
 </html-code>
 
 <css-code>
+
 dialog{
   opacity: 1;
   transform: scale(1);
   transition: all 0.5s ease-in-out;
-
+  width:80%;
+  height: 80%;
   @starting-style{
     opacity: 0;
     transform: scale(0.8);
@@ -31,5 +33,6 @@ dialog{
     background-color: rgb(4, 4, 16, 0.25);
     backdrop-filter: blur(2px);
 }
+
 </css-code>
 

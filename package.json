@@ -9,11 +9,12 @@
     "preview": "astro preview"
   },
   "devDependencies": {
-    "astro": "^4.0.1"
+    "astro": "^4.12.3"
   },
   "dependencies": {
     "@astrojs/markdown-component": "^1.0.5",
-    "@astrojs/react": "^3.0.7",
+    "@astrojs/react": "^3.6.1",
+    "@astrojs/tailwind": "^5.1.0",
     "@fortawesome/free-solid-svg-icons": "^6.4.2",
     "@fortawesome/react-fontawesome": "^0.2.0",
     "@monaco-editor/react": "^4.6.0",

@@ -7,6 +7,7 @@ desc: The functional :has() CSS pseudo-class represents an element if any of the
 
 <html-code>
 <div class="wrapper">
+    <!--Example 1 Card has image -->
     <article class="card">
         <h2>Card title</h2>
         <div class="thumb">Image</div><!--image thumb on one card -->
@@ -16,6 +17,17 @@ desc: The functional :has() CSS pseudo-class represents an element if any of the
         <h2>Card title</h2>
         <p>A bit of a description text</p>
     </article>
+
+    <!--Example 2 Form has selected element -->
+    <fieldset>
+        <legend>Select a rocket</legend>
+        <lable><input name="rocket" type="radio">Falcon 9</lable>
+        <lable><input name="rocket" type="radio">Falcon Heavy</lable>
+        <lable><input name="rocket" type="radio">Starship</lable>
+        <lable><input name="rocket" type="radio">Satun 5 </lable>
+        <lable><input name="rocket" type="radio" id="other">Other</lable>
+        <input id="other-input">
+    </fieldset>
 </div>
 </html-code>
 
@@ -26,6 +38,7 @@ desc: The functional :has() CSS pseudo-class represents an element if any of the
   width: 100%;
   gap: 1rem;
 }
+/*example #1 */
 .card {
   display: flex;
   flex-wrap: wrap;
@@ -63,5 +76,19 @@ desc: The functional :has() CSS pseudo-class represents an element if any of the
  h2 {
     font-size: 3.5rem;
   }
+}
+
+/*example #2 */
+fieldset{
+  display: flex;
+  flex-direction: column;
+  width: 20rem;
+}
+
+fieldset #other-input{
+  display: none;
+}
+fieldset:has(#other:checked) #other-input{
+  display: block;
 }
 </css-code>

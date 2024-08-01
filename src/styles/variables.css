@@ -54,4 +54,12 @@
 	font-family: 'Helvelow';
 	src: url('../styles/fonts/Helvelow-Regular.woff') format('woff');
   }
-
+  body {
+	margin: 0; /* 1 */
+	line-height: inherit; /* 2 */
+  }
+  .body-font{
+	font-family: EuroStyle;
+	color: var(--color-primary);
+	font-size: 1rem;
+  }

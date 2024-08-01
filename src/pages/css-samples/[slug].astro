@@ -3,7 +3,7 @@
 import MainLayout from '../../layouts/MainLayout.astro';
 import { getCollection, CollectionEntry} from 'astro:content';
 import CodeEditor from '../../components/CodeEditor.jsx';
-//import styles from '../../styles/variables.css';
+import styles from '../../styles/variables.module.css';
 export const getStaticPaths = async() => {
     const uiSamples = await getCollection("cssSamples");
     return uiSamples.map(sample=> ({
@@ -12,8 +12,7 @@ export const getStaticPaths = async() => {
         
     }));
 }
-
-//const cssVariables = "styles";
+//const cssVariables = styles.body-FontFace;
 
 type Props = {
     sample: CollectionEntry<"cssSamples">

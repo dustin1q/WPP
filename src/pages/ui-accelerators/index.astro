@@ -17,7 +17,7 @@ const uiSamples = await getCollection("uiAccelerators");
     </p>
     <ul>
         {uiSamples.map((uiSamples) => (
-            <li><a href={"/ui-accelerators/"+uiSamples.slug}> {uiSamples.data.title} </a></li>
+            <li><a href={"/WPP/ui-accelerators/"+uiSamples.slug}> {uiSamples.data.title} </a></li>
             <li> {uiSamples.data.desc}</li>
         ))}
     </ul>

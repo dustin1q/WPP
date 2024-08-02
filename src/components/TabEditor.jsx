@@ -2,7 +2,7 @@ import MonacoEditor from "@monaco-editor/react";
 import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCompressAlt, faExpandAlt } from '@fortawesome/free-solid-svg-icons'
-export default function Editor(props) {
+export default function TabEditor(props) {
   const {
     language,
     displayName,
@@ -40,7 +40,10 @@ export default function Editor(props) {
     automaticLayout: true,
   }; 
 
-	return (
+	return (<>
+        <input type="radio" class="editor-tabs-radio" name="tabs-example" id={language} checked={checked}/>
+        <label for={language} class="editor-title">{displayName}</label>
+        <div class="editor-tabs-content"> 
           <div className="monaco-wrapper">
             <MonacoEditor 
                   options={options}
@@ -51,5 +54,7 @@ export default function Editor(props) {
                   onChange={onChange}
                 />
           </div>
+        </div>
+    </>
 	);
 }

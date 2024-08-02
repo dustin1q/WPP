@@ -3,30 +3,29 @@
 import MainLayout from '../../layouts/MainLayout.astro';
 import { getCollection} from 'astro:content';
 import CodeEditor from '../../components/CodeEditor.jsx';
-import formatPostData from '../../utils/formatPostData.js'
+import parseSampleData from '../../utils/parseSampleData.js'
 import styles from '../../styles/variables.module.css';
 import { Markup, Markdown } from 'astro-remote';
 export const getStaticPaths = async() => {
-    const uiSamples = await getCollection("cssSamples");
-    return uiSamples.map(sample=> ({
+    const codeSamples = await getCollection("cssSamples");
+    return codeSamples.map(sample=> ({
             params: {slug:sample.slug},
             props: {sample}
         
     }));
 }
 const {sample} = Astro.props;
-const sampleData = new formatPostData(sample.body)
+const sampleData = new parseSampleData(sample.body)
 
 ---
 
 <MainLayout title={sample.data.title}>
     <p>
     {sample.data.desc}
-    {console.log(sampleData.cssCode)}
     </p>
  <CodeEditor 
     client:only="react" 
-    title={sample.data.title+"test"}
+    title={sample.data.title}
     defaultHTML={sampleData.htmlCode}
     defaultCSS={sampleData.cssCode}
     defaultJS={sampleData.jsCode}

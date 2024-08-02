@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import Editor from './Editor'
+import TabEditor from './TabEditor.jsx'
+import Editor from './Editor.jsx'
 import useLocalStorage from '../hooks/useLocalStorage.js'
 import '../styles/editor.css';
 
@@ -31,47 +32,48 @@ export default function CodeEditor(props) {
 
   return (
     <>
-    <button onClick={() => setModal(true)}>CSS Variables</button>
-      <div className="pane top-pane">
-      {html != "null" &&
-          <Editor
-            language="xml"
-            displayName="HTML"
-            value={html}
-            onEditorChange={setHtml}
-          />
-      }
-        {css != "null" &&
-          <Editor
-            language="css"
-            displayName="CSS"
-            value={css}
-            onEditorChange={setCss}
-          />
-        }
-        {js != "null" &&
-          <Editor
-            language="javascript"
-            displayName="JS"
-            value={js}
-            onEditorChange={setJs}
-          />
-        }
-      </div>
-      <div className="pane middle-pane">
-       <h3>Preview</h3> 
-        </div>
-      <div className="pane resizable">
+    <div className="pane">
+      <div className="pane tab-editor-pane">
+        {html != "null" &&
       
-          <iframe 
-            srcDoc={srcDoc}
-            title="output"
-            sandbox="allow-scripts allow-popups allow-forms"
-            width="100%"
-            height="100%"
-          />
-        
+            <TabEditor
+              language="xml"
+              displayName="HTML"
+              value={html}
+              onEditorChange={setHtml}
+              checked="true"
+            />
+          
+        }
+          {css != "null" &&
+            <TabEditor
+              language="css"
+              displayName="CSS"
+              value={css}
+              onEditorChange={setCss}
+            />
+          }
+          {js != "null" &&
+            <TabEditor
+              language="javascript"
+              displayName="JS"
+              value={js}
+              onEditorChange={setJs}
+            />
+          }
+        </div>
+        <div className="pane preview">
+          <label>Preview</label>
+            <iframe 
+              srcDoc={srcDoc}
+              title="output"
+              sandbox="allow-scripts allow-popups allow-forms"
+              width="100%"
+              height="100%"
+            />
+        </div>
       </div>
+      <button onClick={() => setModal(true)}>CSS Variables</button>
       <Modal
       openModal={modal}
       closeModal={() => setModal(false)}

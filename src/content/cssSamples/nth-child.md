@@ -5,6 +5,15 @@ image: ""
 desc: Review nth-child capabilities and why its so powerfull. 
 ---
 
+## see extra content
+Focus areas include:
+* Simplifying Layouts
+* Asset Loading Strategies
+* Native UI Web Components
+* Emerging and lesser-known CSS techniques 
+[Astro Documentation](https://github.com/withastro/astro) 
+
+
 <html-code><ul class="alternate-color">
   <li></li>
   <li></li>

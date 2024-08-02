@@ -23,7 +23,7 @@ iframe{
 lable{
     display:flex;
     align-items:center;
-    background: var(--color-secondary);
+    /*background: var(--color-secondary);*/
     color: var(--black);
     border: 1px solid var(--black);
     font-size:12px;

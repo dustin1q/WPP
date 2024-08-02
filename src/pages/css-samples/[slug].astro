@@ -1,9 +1,11 @@
 ---
 
 import MainLayout from '../../layouts/MainLayout.astro';
-import { getCollection, CollectionEntry} from 'astro:content';
+import { getCollection} from 'astro:content';
 import CodeEditor from '../../components/CodeEditor.jsx';
+import formatPostData from '../../utils/formatPostData.js'
 import styles from '../../styles/variables.module.css';
+import { Markup, Markdown } from 'astro-remote';
 export const getStaticPaths = async() => {
     const uiSamples = await getCollection("cssSamples");
     return uiSamples.map(sample=> ({
@@ -12,31 +14,22 @@ export const getStaticPaths = async() => {
         
     }));
 }
-//const cssVariables = styles.body-FontFace;
-
-type Props = {
-    sample: CollectionEntry<"cssSamples">
-}
 const {sample} = Astro.props;
-const { Content } = await sample.render();
-
-const blobContent = sample.body;
-const htmlCode = blobContent.match(/(?<=<html-code>).*?(?=<\/html-code>)/gs)
-const cssCode = blobContent.match(/(?<=<css-code>).*?(?=<\/css-code>)/gs)
-const jsCode = blobContent.match(/(?<=<js-code>).*?(?=<\/js-code>)/gs)
+const sampleData = new formatPostData(sample.body)
 
 ---
+
 <MainLayout title={sample.data.title}>
     <p>
     {sample.data.desc}
+    {console.log(sampleData.cssCode)}
     </p>
-   
  <CodeEditor 
     client:only="react" 
-    title={sample.data.title}
-    defaultHTML={htmlCode}
-    defaultCSS={cssCode}
-    defaultJS={jsCode}
+    title={sample.data.title+"test"}
+    defaultHTML={sampleData.htmlCode}
+    defaultCSS={sampleData.cssCode}
+    defaultJS={sampleData.jsCode}
     />
-   
+   <Markdown content={sampleData.bodyContent} />
 </MainLayout>

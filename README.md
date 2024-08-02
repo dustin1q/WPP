@@ -1,4 +1,4 @@
-# Wen Performance Playground for Web Dev
+# Web Performance Playground for Web Dev
 
 This repo focusses on and demonstrates performant coding patterns and UI examples needed for common frontend development solutions.  
 Focus areas include:

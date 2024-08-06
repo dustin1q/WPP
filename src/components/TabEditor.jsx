@@ -1,21 +1,24 @@
 import MonacoEditor from "@monaco-editor/react";
-import { useState } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCompressAlt, faExpandAlt } from '@fortawesome/free-solid-svg-icons'
 export default function TabEditor(props) {
   const {
     language,
+    selectedTab,
     displayName,
     value,
     onEditorChange,
-    readOnly = props.readOnly === undefined ? false : props.readOnly,
-    checked
+    onTabClick,
+    readOnly = props.readOnly === undefined ? false : props.readOnly
   } = props
-  const [open, setOpen] = useState(true)
-  
+let selected=false;
+if(language==selectedTab){
+  selected = true;
+}
   function onChange (newValue){
-    console.log("onChange", newValue); 
+    //console.log("onChange", newValue); 
     onEditorChange(newValue)
+  };
+  function onTabClicked (){
+    onTabClick(language)
   };
   //moneco settings
   const options = {
@@ -39,11 +42,15 @@ export default function TabEditor(props) {
     cursorStyle: 'line',
     automaticLayout: true,
   }; 
-
 	return (<>
-        <input type="radio" class="editor-tabs-radio" name="tabs-example" id={language} checked={checked}/>
-        <label for={language} class="editor-title">{displayName}</label>
-        <div class="editor-tabs-content"> 
+        <input type="radio" className="editor-tabs-radio" name="tabs-example"
+        id={language} 
+        defaultChecked={selected} 
+        onClick={onTabClicked}
+        />
+        
+        <label htmlFor={language} className="editor-title">{displayName}</label>
+        <div className="editor-tabs-content"> 
           <div className="monaco-wrapper">
             <MonacoEditor 
                   options={options}

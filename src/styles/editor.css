@@ -31,6 +31,7 @@
     border-top-right-radius: .5rem;
     border-top-left-radius: .5rem;
     margin-right: .5em;
+    margin-top: .2em;
     cursor: pointer; 
   }
   
@@ -40,6 +41,7 @@
     border-bottom-left-radius: .5rem;
     overflow: hidden;
     height: 90%;
+    
   }
 
   
@@ -70,7 +72,7 @@
   .editor-tabs-radio:checked + .editor-title {
     font-weight: bold;
     background-color: rgb(30, 30, 30);
-    border: 2px solid #8d8a8a;
+    border: 1px solid #8d8a8a;
     border-bottom: 0;
   }
   .editor-tabs-radio:checked + .editor-title + .editor-tabs-content {

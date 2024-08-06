@@ -11,6 +11,9 @@ export default function CodeEditor(props) {
   const [html, setHtml] = useLocalStorage(props.title,'html',''+props.defaultHTML+'')
   const [css, setCss] = useLocalStorage(props.title,'css', ''+props.defaultCSS+'')
   const [js, setJs] = useLocalStorage(props.title,'js', ''+props.defaultJS+'')
+
+  const [selectedTab, setSelectedTab] = useLocalStorage(props.title,'selectedTab','xml')
+
   const [srcDoc, setSrcDoc] = useState('')
   //const [cssVars, setCssVars] = useState(props.cssVars);
   const [modal, setModal] = useState(false);
@@ -35,30 +38,35 @@ export default function CodeEditor(props) {
     <div className="pane">
       <div className="pane tab-editor-pane">
         {html != "null" &&
-      
             <TabEditor
               language="xml"
+              onTabClick={setSelectedTab}
+              selectedTab={selectedTab}
               displayName="HTML"
               value={html}
               onEditorChange={setHtml}
-              checked="true"
+              title={props.title}
             />
           
         }
           {css != "null" &&
             <TabEditor
               language="css"
+              onTabClick={"css"}
               displayName="CSS"
               value={css}
               onEditorChange={setCss}
+              title={props.title}
             />
           }
           {js != "null" &&
             <TabEditor
               language="javascript"
+              onTabClick={"javascript"}
               displayName="JS"
               value={js}
               onEditorChange={setJs}
+              title={props.title}
             />
           }
         </div>

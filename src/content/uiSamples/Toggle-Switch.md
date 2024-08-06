@@ -6,10 +6,10 @@ desc: A "toggle switch" (on/off button) with CSS using a checkbox.
 ---
 
 <html-code>
-<lable>
+<label>
   <input type="checkbox"/>
   HTML & CSS Toggle Switch
-</lable>
+</label>
 </html-code>
 
 <css-code>

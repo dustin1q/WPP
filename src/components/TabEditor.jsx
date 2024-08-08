@@ -18,7 +18,7 @@ if(language==selectedTab){
     onEditorChange(newValue)
   };
   function onTabClicked (){
-    onTabClick(language)
+    return(language)
   };
   //moneco settings
   const options = {

@@ -12,8 +12,8 @@ export default function CodeEditor(props) {
   const [css, setCss] = useLocalStorage(props.title,'css', ''+props.defaultCSS+'')
   const [js, setJs] = useLocalStorage(props.title,'js', ''+props.defaultJS+'')
 
-  const [selectedTab, setSelectedTab] = useLocalStorage(props.title,'selectedTab','xml')
-
+  //const [selectedTab, setSelectedTab] = useLocalStorage(props.title,'selectedTab', 'xml')
+  const [selectedTab, setSelectedTab] = useState('xml')//set HTML as default tab
   const [srcDoc, setSrcDoc] = useState('')
   //const [cssVars, setCssVars] = useState(props.cssVars);
   const [modal, setModal] = useState(false);

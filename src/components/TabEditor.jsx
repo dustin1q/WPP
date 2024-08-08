@@ -7,6 +7,7 @@ export default function TabEditor(props) {
     value,
     onEditorChange,
     onTabClick,
+    codeChange,
     readOnly = props.readOnly === undefined ? false : props.readOnly
   } = props
 let selected=false;
@@ -49,7 +50,7 @@ if(language==selectedTab){
         onClick={onTabClicked}
         />
         
-        <label htmlFor={language} className="editor-title">{displayName}</label>
+        <label htmlFor={language} className="editor-title">{displayName} {codeChange ? '*': ''}</label> 
         <div className="editor-tabs-content"> 
           <div className="monaco-wrapper">
             <MonacoEditor 

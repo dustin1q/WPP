@@ -12,14 +12,19 @@ export default function CodeEditor(props) {
   const [css, setCss] = useLocalStorage(props.title,'css', ''+props.defaultCSS+'')
   const [js, setJs] = useLocalStorage(props.title,'js', ''+props.defaultJS+'')
 
-  //const [selectedTab, setSelectedTab] = useLocalStorage(props.title,'selectedTab', 'xml')
   const [selectedTab, setSelectedTab] = useState('xml')//set HTML as default tab
   const [srcDoc, setSrcDoc] = useState('')
-  //const [cssVars, setCssVars] = useState(props.cssVars);
+
   const [modal, setModal] = useState(false);
+
+  const [htmlChange, setHTMLChange] = useState(html != props.defaultHTML);
+  const [cssChange, setCssChange] = useState(css != props.defaultCSS);
+  const [jsChange, setJSChange] = useState(js != props.defaultJS);
+
   const cssVars = props.cssVars;
   useEffect(() => {
     const timeout = setTimeout(() => {
+      
       setSrcDoc(`
         <html>
           <head><style>${cssVars}</style></head>
@@ -28,6 +33,9 @@ export default function CodeEditor(props) {
           <script>${js}</script>
         </html>
       `)
+      setHTMLChange(html != props.defaultHTML)
+      setCssChange(css != props.defaultCSS)
+      setJSChange(js != props.defaultJS)
     }, 250)
 
     return () => clearTimeout(timeout)
@@ -45,6 +53,7 @@ export default function CodeEditor(props) {
               displayName="HTML"
               value={html}
               onEditorChange={setHtml}
+              codeChange={htmlChange}
               title={props.title}
             />
           
@@ -57,6 +66,7 @@ export default function CodeEditor(props) {
               value={css}
               onEditorChange={setCss}
               title={props.title}
+              codeChange={cssChange}
             />
           }
           {js != "null" &&
@@ -66,6 +76,7 @@ export default function CodeEditor(props) {
               displayName="JS"
               value={js}
               onEditorChange={setJs}
+              codeChange={jsChange}
               title={props.title}
             />
           }

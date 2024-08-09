@@ -10,13 +10,13 @@ desc: Implement a simple carousel with pure HTML and CSS. OK Maybe a little JS.
   <div class="carousel-container">
     <div class="carousel">
       <div id="skyline" class="carousel__item">
-        <img src="https://images.unsplash.com/photo-1474181487882-5abf3f0ba6c2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=960&h=420&q=80" alt="Skyline of Wai Tan, Shanghai" class="carousel__image">
+        <img src="/WPP/sampleImages/Skyline_of_Wai.jpg" alt="Skyline of Wai Tan, Shanghai" class="carousel__image">
       </div>
       <div id="great-wall-of-china" class="carousel__item">
-        <img src="https://images.unsplash.com/photo-1508804185872-d7badad00f7d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=960&h=420&q=80" alt="Great wall of China." class="carousel__image">
+        <img src="/WPP/sampleImages/Sunset_on_Li_River.jpg" alt="Great wall of China." class="carousel__image">
       </div>
       <div id="sunset-on-the-li-river" class="carousel__item">
-        <img src="https://images.unsplash.com/photo-1543097692-fa13c6cd8595?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=960&h=420&q=80" alt="Sunset on the Li River as the few remaining cormorant fisherman pack their." class="carousel__image">
+        <img src="/WPP/sampleImages/great_wall.jpg" alt="Sunset on the Li River as the few remaining cormorant fisherman pack their." class="carousel__image">
       </div>
     </div>
     <div id="controls" class="controls">
@@ -61,7 +61,7 @@ desc: Implement a simple carousel with pure HTML and CSS. OK Maybe a little JS.
 
 .carousel__image {
   display: block;
-  max-width: 20em;
+  max-width: 40em;
  
 }
 
@@ -102,7 +102,7 @@ p {
 .wrapper {
   margin-right: auto;
   margin-left: auto;
-  max-width: 20em;
+  max-width: 40em;
   
   box-shadow: 0 0 1em 1em rgba(0, 0, 0, 0.1);
   

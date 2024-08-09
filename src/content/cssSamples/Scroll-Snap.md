@@ -35,11 +35,9 @@ desc: Implement a simple carousel with pure HTML and CSS. OK Maybe a little JS.
 </html-code>
 
 <css-code>
-
 .carousel-container {
   position: relative;
 }
-
 .carousel {
   display: flex;
   scroll-snap-type: x mandatory;
@@ -51,20 +49,15 @@ desc: Implement a simple carousel with pure HTML and CSS. OK Maybe a little JS.
 .carousel::-webkit-scrollbar {
   display: none;
 }
-
-
 .carousel__item {
   width: 100%;
   flex-shrink: 0;
   scroll-snap-align: start;
 }
-
 .carousel__image {
   display: block;
   max-width: 40em;
- 
 }
-
 .controls {
   position: absolute;
   right: 0;
@@ -72,7 +65,6 @@ desc: Implement a simple carousel with pure HTML and CSS. OK Maybe a little JS.
   left: 0;
   text-align: center;
 }
-
 .controls__dot {
   display: inline-block;
   width: 0.85em;
@@ -83,7 +75,6 @@ desc: Implement a simple carousel with pure HTML and CSS. OK Maybe a little JS.
   opacity: 0.8;
   cursor: pointer;
   transition: opacity 0.2s;
-  
   &:not(:first-child) {
     margin-left: 0.25em;
   }
@@ -93,21 +84,16 @@ desc: Implement a simple carousel with pure HTML and CSS. OK Maybe a little JS.
     opacity: 1;
   }
 }
-
 // Other styles
 p {
   line-height: 1.5;
 }
-
 .wrapper {
   margin-right: auto;
   margin-left: auto;
   max-width: 40em;
-  
   box-shadow: 0 0 1em 1em rgba(0, 0, 0, 0.1);
-  
 }
-
 .visuallyhidden {
   border: 0;
   clip: rect(0 0 0 0);
@@ -118,16 +104,12 @@ p {
   position: absolute;
   width: 1px;
 }
-
-
 </css-code>
 
 <js-code>
-
 document.querySelector('#controls').addEventListener('click', (event) => {
   const $slide = document.querySelector(event.target.getAttribute('href'));
   if (!$slide) return;
-  
   if ($slide.scrollIntoViewIfNeeded) {
     event.preventDefault();
     $slide.scrollIntoViewIfNeeded();

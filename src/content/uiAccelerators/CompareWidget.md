@@ -4,16 +4,16 @@ title: CSS Image Compare
 image: image
 desc: Using CSS grid, masks and an input type range to create a comparison component. 
 ---
-https://github.com/argyleink/gui-challenges/tree/main/compare
+
 
 <html-code>
 <section class="container">
      <div class="compare">
         <section class="before">
-            <img src="https://dataviz.nbcnews.com/projects/20220712-webb-first-set-before-after-southern-ring-nebula/assets/southern-ring-nebula-before.jpg" alt="">
+            <img src="/WPP/sampleImages/southern-ring-nebula-before.jpg" alt="Hubble before shot">
         </section>
         <section class="after">
-            <img src="https://dataviz.nbcnews.com/projects/20220712-webb-first-set-before-after-southern-ring-nebula/assets/southern-ring-nebula-after.jpg" alt="">
+            <img src="/WPP/sampleImages/southern-ring-nebula-after.jpg" alt="Webb after shot">
         </section>
         <input type="range" id="bridge" step="0.1">
     </div>
@@ -21,8 +21,6 @@ https://github.com/argyleink/gui-challenges/tree/main/compare
 </html-code>
 
 <css-code>
-
-
 .compare {
   display: grid;
   border: #000 solid 1px;
@@ -71,14 +69,12 @@ https://github.com/argyleink/gui-challenges/tree/main/compare
 .container{
   display: flex;
 }
-
-
 </css-code>
 
 <js-code>
-
 bridge.oninput = () => document.body.style.setProperty('--pos', bridge.value + '%')
-
 wallPainting.oninput = () => document.body.style.setProperty('--pos', wallPainting.value + '%')
 /// both instances get set at the same time because they share the --pos CSS variable 
 </js-code>
+
+https://github.com/argyleink/gui-challenges/tree/main/compare

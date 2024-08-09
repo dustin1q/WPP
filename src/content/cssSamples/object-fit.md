@@ -8,29 +8,30 @@ desc: The object-fit CSS property sets how the content of a replaced element, su
 ---
 
 <html-code>
-<img class="fill" src="https://assets.newatlas.com/dims4/default/0fa9d1d/2147483647/strip/true/crop/1688x1125+308+0/resize/1200x800!/quality/90/?url=http%3A%2F%2Fnewatlas-brightspot.s3.amazonaws.com%2Ff3%2Fe1%2F41e61a0c4d468823070534adbb84%2Fdragon-carousel-0007-2.jpg" alt="Dragon Spacecraft" />
+<h2>object-fit: fill</h2>
+<img class="fill" src="/WPP/sampleImages/dragon.jpg" alt="Dragon Spacecraft" />
 
-  <img class="fill narrow" src="https://assets.newatlas.com/dims4/default/0fa9d1d/2147483647/strip/true/crop/1688x1125+308+0/resize/1200x800!/quality/90/?url=http%3A%2F%2Fnewatlas-brightspot.s3.amazonaws.com%2Ff3%2Fe1%2F41e61a0c4d468823070534adbb84%2Fdragon-carousel-0007-2.jpg" alt="Dragon Spacecraft" />
+<img class="fill narrow" src="/WPP/sampleImages/dragon.jpg" alt="Dragon Spacecraft" />
 
-  <h2>object-fit: contain</h2>
-  <img class="contain" src="https://assets.newatlas.com/dims4/default/0fa9d1d/2147483647/strip/true/crop/1688x1125+308+0/resize/1200x800!/quality/90/?url=http%3A%2F%2Fnewatlas-brightspot.s3.amazonaws.com%2Ff3%2Fe1%2F41e61a0c4d468823070534adbb84%2Fdragon-carousel-0007-2.jpg" alt="Dragon Spacecraft" />
+<h2>object-fit: contain</h2>
+<img class="contain" src="/WPP/sampleImages/dragon.jpg" alt="Dragon Spacecraft" />
 
-  <img class="contain narrow" src="https://assets.newatlas.com/dims4/default/0fa9d1d/2147483647/strip/true/crop/1688x1125+308+0/resize/1200x800!/quality/90/?url=http%3A%2F%2Fnewatlas-brightspot.s3.amazonaws.com%2Ff3%2Fe1%2F41e61a0c4d468823070534adbb84%2Fdragon-carousel-0007-2.jpg" alt="Dragon Spacecraft" />
+<img class="contain narrow" src="/WPP/sampleImages/dragon.jpg" alt="Dragon Spacecraft" />
 
-  <h2>object-fit: cover</h2>
-  <img class="cover" src="https://assets.newatlas.com/dims4/default/0fa9d1d/2147483647/strip/true/crop/1688x1125+308+0/resize/1200x800!/quality/90/?url=http%3A%2F%2Fnewatlas-brightspot.s3.amazonaws.com%2Ff3%2Fe1%2F41e61a0c4d468823070534adbb84%2Fdragon-carousel-0007-2.jpg" alt="Dragon Spacecraft" />
+<h2>object-fit: cover</h2>
+<img class="cover" src="/WPP/sampleImages/dragon.jpg" alt="Dragon Spacecraft" />
 
-  <img class="cover narrow" src="https://assets.newatlas.com/dims4/default/0fa9d1d/2147483647/strip/true/crop/1688x1125+308+0/resize/1200x800!/quality/90/?url=http%3A%2F%2Fnewatlas-brightspot.s3.amazonaws.com%2Ff3%2Fe1%2F41e61a0c4d468823070534adbb84%2Fdragon-carousel-0007-2.jpg" alt="Dragon Spacecraft" />
+<img class="cover narrow" src="/WPP/sampleImages/dragon.jpg" alt="Dragon Spacecraft" />
 
-  <h2>object-fit: none</h2>
-  <img class="none" src="https://assets.newatlas.com/dims4/default/0fa9d1d/2147483647/strip/true/crop/1688x1125+308+0/resize/1200x800!/quality/90/?url=http%3A%2F%2Fnewatlas-brightspot.s3.amazonaws.com%2Ff3%2Fe1%2F41e61a0c4d468823070534adbb84%2Fdragon-carousel-0007-2.jpg" alt="Dragon Spacecraft" />
+<h2>object-fit: none</h2>
+<img class="none" src="/WPP/sampleImages/dragon.jpg" alt="Dragon Spacecraft" />
 
-  <img class="none narrow" src="https://assets.newatlas.com/dims4/default/0fa9d1d/2147483647/strip/true/crop/1688x1125+308+0/resize/1200x800!/quality/90/?url=http%3A%2F%2Fnewatlas-brightspot.s3.amazonaws.com%2Ff3%2Fe1%2F41e61a0c4d468823070534adbb84%2Fdragon-carousel-0007-2.jpg" alt="Dragon Spacecraft" />
+<img class="none narrow" src="/WPP/sampleImages/dragon.jpg" alt="Dragon Spacecraft" />
 
-  <h2>object-fit: scale-down</h2>
-  <img class="scale-down" src="https://assets.newatlas.com/dims4/default/0fa9d1d/2147483647/strip/true/crop/1688x1125+308+0/resize/1200x800!/quality/90/?url=http%3A%2F%2Fnewatlas-brightspot.s3.amazonaws.com%2Ff3%2Fe1%2F41e61a0c4d468823070534adbb84%2Fdragon-carousel-0007-2.jpg" alt="Dragon Spacecraft" />
+<h2>object-fit: scale-down</h2>
+<img class="scale-down" src="/WPP/sampleImages/dragon.jpg" alt="Dragon Spacecraft" />
 
-  <img class="scale-down narrow" src="https://assets.newatlas.com/dims4/default/0fa9d1d/2147483647/strip/true/crop/1688x1125+308+0/resize/1200x800!/quality/90/?url=http%3A%2F%2Fnewatlas-brightspot.s3.amazonaws.com%2Ff3%2Fe1%2F41e61a0c4d468823070534adbb84%2Fdragon-carousel-0007-2.jpg" alt="Dragon Spacecraft" />
+<img class="scale-down narrow" src="/WPP/sampleImages/dragon.jpg" alt="Dragon Spacecraft" />
 
 
 </html-code>

@@ -14,8 +14,6 @@ Focus areas include:
 1. Consider a Modual Federation Pattern to demonstrate
 
 ## Css to add
-1. object-fit
-1. accent-color - https://codepen.io/web-dot-dev/pen/PomBZdy
 1. border-image 
 1. scroll-padding
 1. scroll-snap

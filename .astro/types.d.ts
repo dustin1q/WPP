@@ -161,6 +161,13 @@ declare module 'astro:content' {
   collection: "cssSamples";
   data: any
 } & { render(): Render[".md"] };
+"color-scheme.md": {
+	id: "color-scheme.md";
+  slug: "color-scheme";
+  body: string;
+  collection: "cssSamples";
+  data: any
+} & { render(): Render[".md"] };
 "has.md": {
 	id: "has.md";
   slug: "has";

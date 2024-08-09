@@ -175,6 +175,13 @@ declare module 'astro:content' {
   collection: "cssSamples";
   data: any
 } & { render(): Render[".md"] };
+"object-fit.md": {
+	id: "object-fit.md";
+  slug: "object-fit";
+  body: string;
+  collection: "cssSamples";
+  data: any
+} & { render(): Render[".md"] };
 };
 "uiAccelerators": {
 "CompareWidget.md": {

@@ -1,0 +1,114 @@
+---
+interface Props {
+	type?: string;
+	lable: string;
+	instruction?: string;
+	required?: boolean;
+	errorMSG:string;
+	validationType?:string;
+	id:string;
+	
+}
+
+const { type, lable, errorMSG, required, instruction, validationType, id} = Astro.props;
+let validationPattern
+switch (validationType){
+	case "email": 
+		validationPattern = "[^ @]*@[^ @]*"
+		break;
+	case "zipCode": 
+		validationPattern = "[0-9]{5}"
+		break;
+	case "rxNumber": 
+		validationPattern = "^\d{5}(?:[-\s]\d{4})?$"
+		break;
+}
+let requiredField = "required ";
+
+const inputProperties = {
+    "required": required,
+	"id":"test",
+    "pattern": validationPattern,
+	"aria-invalid":false,
+	"placeholder": " ",
+	"for":id
+}
+
+const labelProperties = {
+    "class":  required ? "required" : "",
+	"id":id
+}
+
+---
+<div >
+	<label { ...labelProperties }  >{lable}</label>
+	<div class="instruction">{instruction}</div>
+	<input type= {type ? type : "text"} { ...inputProperties } />
+	<div class="input_error">{errorMSG}</div>
+</div>
+
+<style>
+	:root{
+		--error-red: rgb(196, 0, 0);
+		--svg-alert: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="15px" height="15px" viewBox="0 0 24 24"  focusable="false" aria-hidden="true" data-testid="ErrorIcon"%3E%3Cpath fill="rgb(196, 0, 0)" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2m1 15h-2v-2h2zm0-4h-2V7h2z"%3E%3C/path%3E%3C/svg%3E');
+	}
+	
+	.input_error{
+  		color: var(--error-red);
+		margin: 0 0 0 20px;
+		font-family: "Optum Sans", Arial, sans-serif;
+		font-weight: 400;
+		text-align: left;
+		font-size: 0.875rem;
+		line-height: 1.4;
+		position: relative;
+		-webkit-font-smoothing: antialiased;
+		display: none;
+		&::before {
+			position: absolute;
+			left: -20px;
+			top: 2px;
+			display: block;
+			content: var(--svg-alert);
+		}
+		&::after{
+			display: block;
+		}
+	}
+	input{
+		border: 1px solid black;
+		border-radius: 4px;
+		size: 5em;
+	}
+	input:not(:focus):not(:placeholder-shown):invalid {
+		border-color: red;
+		
+	}
+	input:not(:focus):not(:placeholder-shown):invalid  + .input_error {
+  		display: block;
+		
+	}
+	input:not(:focus):not(:placeholder-shown):valid  {
+		border-color: rgb(111, 193, 89);
+	}
+	input:valid + .input_error {
+  		display: none;
+	}
+
+	.instruction{
+		color: rgb(75, 77, 79);
+		font-size: 14px;
+		line-height: 20px;
+		font-family: "Optum Sans", Arial, sans-serif;
+		font-weight: 400;
+	}
+	label{
+		font-size: 16px;
+    	line-height: 20px;
+    	font-family: "Optum Sans", Arial, sans-serif;
+	}
+	.required:after{
+		content: "*";
+		color: red;
+	}
+</style>

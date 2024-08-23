@@ -5,6 +5,7 @@ import { getCollection } from 'astro:content';
 const uiSamples = await getCollection("uiSamples");
 const cssSamples = await getCollection("cssSamples");
 const uiAccelerators = await getCollection("uiAccelerators");
+const layoutExamples = await getCollection("layoutExamples");
 ---
 
 <label class="hamburger-menu">
@@ -48,6 +49,18 @@ const uiAccelerators = await getCollection("uiAccelerators");
                     </ul>
                 </details> 
             </li>
+            <li>
+                <details>  
+                    <summary>Layouts</summary> 
+                    <ul>
+                        <li><a href="/WPP/layoutExamples">Overview</a></li>
+                        {layoutExamples.map((layoutExamples) => (
+                            <li><a href={"/WPP/layoutExamples/"+layoutExamples.slug}> {layoutExamples.data.title} </a></li>
+                        ))}
+                    </ul>
+                </details> 
+            </li>
+            <li>
             <li>
                 <details>  
                     <summary>Design Systems</summary> 

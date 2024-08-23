@@ -190,6 +190,15 @@ declare module 'astro:content' {
   data: any
 } & { render(): Render[".md"] };
 };
+"layoutExamples": {
+"content-grid.md": {
+	id: "content-grid.md";
+  slug: "content-grid";
+  body: string;
+  collection: "layoutExamples";
+  data: any
+} & { render(): Render[".md"] };
+};
 "uiAccelerators": {
 "CompareWidget.md": {
 	id: "CompareWidget.md";

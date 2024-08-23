@@ -1,0 +1,25 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import { getCollection } from 'astro:content';
+import '../../styles/sample-cards.css';
+const uiSamples = await getCollection("layoutExamples");
+
+---
+<MainLayout title="Layouts">
+  <section class="sample-holder">
+    
+        {uiSamples.map((layoutExamples) => (
+          <div class="card">
+            <h3>{layoutExamples.data.title}</h3>
+            <p>{layoutExamples.data.desc}</p> 
+             <a href={"/WPP/layoutExamples/"+layoutExamples.slug} aria-label={layoutExamples.data.title}> Learn more </a>
+          </div>
+        ))}
+  
+  </section>
+    <p>
+        To provide robust layout patterns that work really well using modern methods.  
+      </p>
+
+</MainLayout>
+<script>

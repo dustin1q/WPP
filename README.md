@@ -17,6 +17,7 @@ Focus areas include:
 1. border-image 
 1. scroll-padding
 1. scroll-snap
+1. Layout section - https://codepen.io/collection/yrWJrk
 1. columns - https://codepen.io/kevinpowell/pen/rNbqBPr
 1. backdrop-filter - https://codepen.io/kevinpowell/pen/RwOewNr
 1. :any-link https://codepen.io/argyleink/pen/vYMzYxx

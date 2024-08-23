@@ -6,7 +6,6 @@ desc: The color-scheme CSS property allows an element to indicate which color sc
 ---
 
 <html-code>
-
 <label>
   Checkbox
   <input type="checkbox" checked>

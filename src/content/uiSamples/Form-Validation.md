@@ -37,7 +37,7 @@ desc: Native HTML form validation can be accomplished without any JavaScript.
 	.input_error{
   		color: var(--error-red);
 		margin: 0 0 0 20px;
-		font-family: "Optum Sans", Arial, sans-serif;
+		font-family: Arial, sans-serif;
 		font-weight: 400;
 		text-align: left;
 		font-size: 0.875rem;
@@ -80,13 +80,13 @@ desc: Native HTML form validation can be accomplished without any JavaScript.
 		color: rgb(75, 77, 79);
 		font-size: 14px;
 		line-height: 20px;
-		font-family: "Optum Sans", Arial, sans-serif;
+		font-family: Arial, sans-serif;
 		font-weight: 400;
 	}
 	label{
 		font-size: 16px;
     	line-height: 20px;
-    	font-family: "Optum Sans", Arial, sans-serif;
+    	font-family: Arial, sans-serif;
       display: block;
 	}
 	.required:after{

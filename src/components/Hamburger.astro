@@ -65,7 +65,7 @@ const uiPlayground = await getCollection("uiPlayground");
                 <details>  
                     <summary>Playground</summary> 
                     <ul>
-                        <li><a href="/WPP/uiPlayground">Overview</a></li>
+                        <li><a href="/WPP/ui-playground">Overview</a></li>
                         {uiPlayground.map((uiPlayground) => (
                             <li><a href={"/WPP/ui-playground/"+uiPlayground.slug}> {uiPlayground.data.title} </a></li>
                         ))}

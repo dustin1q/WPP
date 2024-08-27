@@ -1,0 +1,22 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import { getCollection } from 'astro:content';
+import '../../styles/sample-cards.css';
+const uiSamples = await getCollection("uiSamples");
+
+---
+<MainLayout title="UI Playground">
+    <p>
+    Playground for fun and interesting code. 
+    </p>
+    <section class="sample-holder">
+        {uiSamples.map((uiSamples) => (
+        <div class="card">
+            <h3>{uiSamples.data.title}</h3>
+            <p>{uiSamples.data.desc}</p> 
+             <a href={"/WPP/ui-playground/"+uiSamples.slug} aria-label={uiSamples.data.title}> Learn more </a>
+          </div>
+        ))}
+    </section>
+</MainLayout>
+<script>

@@ -6,7 +6,7 @@ desc: Matrix using p5
 ---
 
 <html-code>
-<script src="http://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.6/p5.js"></script>
+<script src="/WPP/lib/p5.js"></script>
     
 </html-code>
 

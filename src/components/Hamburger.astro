@@ -6,6 +6,7 @@ const uiSamples = await getCollection("uiSamples");
 const cssSamples = await getCollection("cssSamples");
 const uiAccelerators = await getCollection("uiAccelerators");
 const layoutExamples = await getCollection("layoutExamples");
+const uiPlayground = await getCollection("uiPlayground");
 ---
 
 <label class="hamburger-menu">
@@ -61,6 +62,16 @@ const layoutExamples = await getCollection("layoutExamples");
                 </details> 
             </li>
             <li>
+                <details>  
+                    <summary>Playground</summary> 
+                    <ul>
+                        <li><a href="/WPP/uiPlayground">Overview</a></li>
+                        {uiPlayground.map((uiPlayground) => (
+                            <li><a href={"/WPP/ui-playground/"+uiPlayground.slug}> {uiPlayground.data.title} </a></li>
+                        ))}
+                    </ul>
+                </details> 
+            </li>
             <li>
                 <details>  
                     <summary>Design Systems</summary> 

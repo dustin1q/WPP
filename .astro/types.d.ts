@@ -258,6 +258,13 @@ declare module 'astro:content' {
 } & { render(): Render[".md"] };
 };
 "uiPlayground": {
+"css-Lightsaber.md": {
+	id: "css-Lightsaber.md";
+  slug: "css-lightsaber";
+  body: string;
+  collection: "uiPlayground";
+  data: any
+} & { render(): Render[".md"] };
 "css-SolarSystem.md": {
 	id: "css-SolarSystem.md";
   slug: "css-solarsystem";

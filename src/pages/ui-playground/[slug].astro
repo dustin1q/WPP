@@ -7,7 +7,7 @@ import parseSampleData from '../../utils/parseSampleData.js'
 import styles from '../../styles/variables.module.css';
 import { Markup, Markdown } from 'astro-remote';
 export const getStaticPaths = async() => {
-    const codeSamples = await getCollection("uiSamples");
+    const codeSamples = await getCollection("uiPlayground");
     return codeSamples.map(sample=> ({
             params: {slug:sample.slug},
             props: {sample}

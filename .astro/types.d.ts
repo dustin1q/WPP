@@ -257,6 +257,15 @@ declare module 'astro:content' {
   data: any
 } & { render(): Render[".md"] };
 };
+"uiPlayground": {
+"css-SolarSystem.md": {
+	id: "css-SolarSystem.md";
+  slug: "css-solarsystem";
+  body: string;
+  collection: "uiPlayground";
+  data: any
+} & { render(): Render[".md"] };
+};
 "uiSamples": {
 "DataList-Select.md": {
 	id: "DataList-Select.md";

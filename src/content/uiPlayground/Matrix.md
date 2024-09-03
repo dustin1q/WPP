@@ -11,8 +11,7 @@ desc: Matrix using p5
 </html-code>
 
 <js-code>
-
-var symbolSize = 14;
+var symbolSize = 11;
 var fadeInterval = 1.6;
 var streams = [];
 function setup(){
@@ -65,7 +64,7 @@ function Symbol(x, y, speed, first, opacity){
 function Stream(){
     this.symbols =[];
     this.totalSymbols = round(random(5, 30));
-    this.speed = random(3, 8);
+    this.speed = random(1, 4);
     this.generateSymbols = function(x, y){
         var opacity = 255;
         var first = round(random(0,4)) == 1;
@@ -91,5 +90,4 @@ function Stream(){
         });
     }
 }
-
 </js-code>

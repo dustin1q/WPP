@@ -22,6 +22,21 @@ export default function CodeEditor(props) {
   const [jsChange, setJSChange] = useState(js != props.defaultJS);
 
   const cssVars = props.cssVars;
+
+
+  function resetHTML(){
+    console.log("resetHTML")
+    setHtml(''+props.defaultHTML+'');
+  }
+  function resetCSS(){
+    console.log("resetCSS")
+    setCss(''+props.defaultCSS+'');
+  }
+  function resetJS(){
+    console.log("resetJS")
+    setJs(''+props.defaultJS+'');
+  }
+
   useEffect(() => {
     const timeout = setTimeout(() => {
       
@@ -53,6 +68,7 @@ export default function CodeEditor(props) {
               displayName="HTML"
               value={html}
               onEditorChange={setHtml}
+              onUndoChanges= {resetHTML}
               codeChange={htmlChange}
               title={props.title}
             />
@@ -65,6 +81,7 @@ export default function CodeEditor(props) {
               displayName="CSS"
               value={css}
               onEditorChange={setCss}
+              onUndoChanges= {resetCSS}
               title={props.title}
               codeChange={cssChange}
             />
@@ -76,6 +93,7 @@ export default function CodeEditor(props) {
               displayName="JS"
               value={js}
               onEditorChange={setJs}
+              onUndoChanges= {resetJS}
               codeChange={jsChange}
               title={props.title}
             />

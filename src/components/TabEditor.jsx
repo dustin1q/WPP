@@ -1,4 +1,5 @@
 import MonacoEditor from "@monaco-editor/react";
+
 export default function TabEditor(props) {
   const {
     language,
@@ -6,6 +7,7 @@ export default function TabEditor(props) {
     displayName,
     value,
     onEditorChange,
+    onUndoChanges,
     onTabClick,
     codeChange,
     readOnly = props.readOnly === undefined ? false : props.readOnly
@@ -14,6 +16,11 @@ let selected=false;
 if(language==selectedTab){
   selected = true;
 }
+function undoChanges(){
+  console.log("undoChanges")
+  onUndoChanges();
+}
+
   function onChange (newValue){
     //console.log("onChange", newValue); 
     onEditorChange(newValue)
@@ -50,7 +57,9 @@ if(language==selectedTab){
         onClick={onTabClicked}
         />
         
-        <label htmlFor={language} className="editor-title">{displayName} {codeChange ? '*': ''}</label> 
+        <label htmlFor={language} className="editor-title">
+          {displayName} {codeChange ? <button onClick={undoChanges}><img src="/WPP/assets/undo.svg" alt="undo" /></button> : ''}
+          </label> 
         <div className="editor-tabs-content"> 
           <div className="monaco-wrapper">
             <MonacoEditor 

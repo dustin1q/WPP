@@ -58,7 +58,7 @@ function undoChanges(){
         />
         
         <label htmlFor={language} className="editor-title">
-          {displayName} {codeChange ? <button onClick={undoChanges}><img src="/WPP/assets/undo.svg" alt="undo" /></button> : ''}
+          {displayName} {codeChange ? <button onClick={undoChanges}>&#8634;</button> : ''}
           </label> 
         <div className="editor-tabs-content"> 
           <div className="monaco-wrapper">

@@ -25,15 +25,12 @@ export default function CodeEditor(props) {
 
 
   function resetHTML(){
-    console.log("resetHTML")
     setHtml(''+props.defaultHTML+'');
   }
   function resetCSS(){
-    console.log("resetCSS")
     setCss(''+props.defaultCSS+'');
   }
   function resetJS(){
-    console.log("resetJS")
     setJs(''+props.defaultJS+'');
   }
 

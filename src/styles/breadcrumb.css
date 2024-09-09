@@ -1,6 +1,6 @@
 .c-breadcrumbs {
     --color-link-breadcrumbs: inherit;
-    --size-font-breadcrumbs: 1rem;
+    --size-font-breadcrumbs: 0.8rem;
     --spacing-vertical-separator-breadcrumbs: 6px;
     font-weight: bold;
     text-decoration: underline;

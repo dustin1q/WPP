@@ -19,13 +19,16 @@ desc: Native accordions using details and summary tags.
 
 <css-code>
 details {
-  background: #333; 
-  margin-bottom: 2rem;
-  padding: .5rem 1rem;
-  color:#FFF
+ font-weight: normal;
+  margin-bottom: 1rem;
+  padding: .2rem 0 .2rem .2rem;
+  color:#1c1a1a;
+  border-bottom: 1px solid black;
 }
-summary {
+summary { 
+  font-weight: bold;
   cursor: pointer;
+  color:#0d0c0c
 }
 summary > * {
   display: inline;
@@ -33,11 +36,11 @@ summary > * {
 
 summary::marker {
   font-size: 1.5em;
-  content: "📬";
+  content: "\21E8";
 }
 [open] summary::marker {
   font-size: 1.5em;
-  content: "📭";
+  content: "\21E9";
 }
 </css-code>
 

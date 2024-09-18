@@ -9,29 +9,29 @@ desc: The object-fit CSS property sets how the content of a replaced element, su
 
 <html-code>
 <h2>object-fit: fill</h2>
-<img class="fill" src="/WPP/sampleImages/dragon.jpg" alt="Dragon Spacecraft" />
+<img class="fill" src="/sampleImages/dragon.jpg" alt="Dragon Spacecraft" />
 
-<img class="fill narrow" src="/WPP/sampleImages/dragon.jpg" alt="Dragon Spacecraft" />
+<img class="fill narrow" src="/sampleImages/dragon.jpg" alt="Dragon Spacecraft" />
 
 <h2>object-fit: contain</h2>
-<img class="contain" src="/WPP/sampleImages/dragon.jpg" alt="Dragon Spacecraft" />
+<img class="contain" src="/sampleImages/dragon.jpg" alt="Dragon Spacecraft" />
 
-<img class="contain narrow" src="/WPP/sampleImages/dragon.jpg" alt="Dragon Spacecraft" />
+<img class="contain narrow" src="/sampleImages/dragon.jpg" alt="Dragon Spacecraft" />
 
 <h2>object-fit: cover</h2>
-<img class="cover" src="/WPP/sampleImages/dragon.jpg" alt="Dragon Spacecraft" />
+<img class="cover" src="/sampleImages/dragon.jpg" alt="Dragon Spacecraft" />
 
-<img class="cover narrow" src="/WPP/sampleImages/dragon.jpg" alt="Dragon Spacecraft" />
+<img class="cover narrow" src="/sampleImages/dragon.jpg" alt="Dragon Spacecraft" />
 
 <h2>object-fit: none</h2>
-<img class="none" src="/WPP/sampleImages/dragon.jpg" alt="Dragon Spacecraft" />
+<img class="none" src="/sampleImages/dragon.jpg" alt="Dragon Spacecraft" />
 
-<img class="none narrow" src="/WPP/sampleImages/dragon.jpg" alt="Dragon Spacecraft" />
+<img class="none narrow" src="/sampleImages/dragon.jpg" alt="Dragon Spacecraft" />
 
 <h2>object-fit: scale-down</h2>
-<img class="scale-down" src="/WPP/sampleImages/dragon.jpg" alt="Dragon Spacecraft" />
+<img class="scale-down" src="/sampleImages/dragon.jpg" alt="Dragon Spacecraft" />
 
-<img class="scale-down narrow" src="/WPP/sampleImages/dragon.jpg" alt="Dragon Spacecraft" />
+<img class="scale-down narrow" src="/sampleImages/dragon.jpg" alt="Dragon Spacecraft" />
 
 
 </html-code>

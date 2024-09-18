@@ -6,7 +6,7 @@ desc: Matrix using p5
 ---
 
 <html-code>
-<script src="/WPP/lib/p5.js"></script>
+<script src="/lib/p5.js"></script>
     
 </html-code>
 

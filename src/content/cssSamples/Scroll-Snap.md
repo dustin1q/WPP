@@ -10,13 +10,13 @@ desc: Implement a simple carousel with pure HTML and CSS. OK Maybe a little JS.
   <div class="carousel-container">
     <div class="carousel">
       <div id="skyline" class="carousel__item">
-        <img src="/WPP/sampleImages/Skyline_of_Wai.jpg" alt="Skyline of Wai Tan, Shanghai" class="carousel__image">
+        <img src="/sampleImages/Skyline_of_Wai.jpg" alt="Skyline of Wai Tan, Shanghai" class="carousel__image">
       </div>
       <div id="great-wall-of-china" class="carousel__item">
-        <img src="/WPP/sampleImages/Sunset_on_Li_River.jpg" alt="Great wall of China." class="carousel__image">
+        <img src="/sampleImages/Sunset_on_Li_River.jpg" alt="Great wall of China." class="carousel__image">
       </div>
       <div id="sunset-on-the-li-river" class="carousel__item">
-        <img src="/WPP/sampleImages/great_wall.jpg" alt="Sunset on the Li River as the few remaining cormorant fisherman pack their." class="carousel__image">
+        <img src="/sampleImages/great_wall.jpg" alt="Sunset on the Li River as the few remaining cormorant fisherman pack their." class="carousel__image">
       </div>
     </div>
     <div id="controls" class="controls">

@@ -10,10 +10,10 @@ desc: Using CSS grid, masks and an input type range to create a comparison compo
 <section class="container">
      <div class="compare">
         <section class="before">
-            <img src="/WPP/sampleImages/southern-ring-nebula-before.jpg" alt="Hubble before shot">
+            <img src="/sampleImages/southern-ring-nebula-before.jpg" alt="Hubble before shot">
         </section>
         <section class="after">
-            <img src="/WPP/sampleImages/southern-ring-nebula-after.jpg" alt="Webb after shot">
+            <img src="/sampleImages/southern-ring-nebula-after.jpg" alt="Webb after shot">
         </section>
         <input type="range" id="bridge" step="0.1">
     </div>

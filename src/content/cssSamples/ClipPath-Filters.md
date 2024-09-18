@@ -7,10 +7,10 @@ desc: The clip-path CSS property creates a clipping region that sets what part o
 
 <html-code>
 <picture class="img-pic">
-  <source media="(min-width:960px)" srcset="/WPP/sampleImages/spacecraft-Gemini-12-John-F-Kennedy-Space-Nov-11-1966.webp" width="300" height="300">
-  <img src="/WPP/sampleImages/spacecraft-Gemini-12-John-F-Kennedy-Space-Nov-11-1966.webp" width="300" height="300">
+  <source media="(min-width:960px)" srcset="/sampleImages/spacecraft-Gemini-12-John-F-Kennedy-Space-Nov-11-1966.webp" width="300" height="300">
+  <img src="/sampleImages/spacecraft-Gemini-12-John-F-Kennedy-Space-Nov-11-1966.webp" width="300" height="300">
 </picture>
-<img src="/WPP/sampleImages/spacecraft-Gemini-12-John-F-Kennedy-Space-Nov-11-1966.webp" alt="Rocket" width="300" height="300">
+<img src="/sampleImages/spacecraft-Gemini-12-John-F-Kennedy-Space-Nov-11-1966.webp" alt="Rocket" width="300" height="300">
 
 </html-code>
 

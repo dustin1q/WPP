@@ -176,6 +176,10 @@ main{
 	  grid-column: 1 / -1;
 	}
   }
+
+  .grid-col-span-2{
+	grid-column: span 2;
+  }
   .page-title {
 	font-size: var(--fs-900);
 	line-height: 1.05;
@@ -208,7 +212,6 @@ main{
   
   .slider {
 	grid-column: content;
-  
 	display: grid;
 	gap: 1rem;
 	grid-auto-flow: column;

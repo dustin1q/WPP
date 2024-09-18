@@ -1,20 +1,19 @@
 
-header{
+.header_section{
     padding: 0 0px 0 0rem;
     background: var(--dark-blue);
     margin: 0px;
     height:4em;
-
+    
+}
+header{
     display: grid;
-    align-items: center;
-    justify-content:space-between;
 }
 header h1{
    color: var(--light-blue);
    margin: 10px 0 0 0px;
     vertical-align: middle;
     font-size: 2em;
-   
     line-height: 0.6;
 }
 header p{
@@ -26,9 +25,11 @@ header p{
     font-size: 0.8em;
 }
 .headerTitle{
-    display: grid;
+    display: flex;
     flex-direction: column;
 }
 #logo{
 margin: 0 15px 0 0;
+grid-column-start: 8;
+grid-row-start: 1;
 }

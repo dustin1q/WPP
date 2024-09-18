@@ -21,19 +21,21 @@ let {desc} = Astro.props
 </head>
 <body>
 	<main class="primary-layout">
-		<Header/>
-		<Hamburger/>
-		<div class="subHeader full-width">
-			<Breadcrumb />
-			<h2>{title}</h2>
-			<p>{desc}</p>
-		</div>
-		<section class="breakout">
-			<slot></slot>
+		<section class="full-width header_section">
+			<Hamburger/><Header/>
+			
 		</section>
-	<section class="breakout">
-		<Footer/>
-	</section>
+			<section class="full-width subHeader">
+				<Breadcrumb />
+				<h2>{title}</h2>
+				<p>{desc}</p>
+			</section>
+			<section class="breakout">
+				<slot></slot>
+			</section>
+		<section class="breakout">
+			<Footer/>
+		</section>
 	</main>
 </body>
 </html>

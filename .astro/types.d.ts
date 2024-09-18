@@ -221,6 +221,13 @@ declare module 'astro:content' {
   collection: "uiAccelerators";
   data: any
 } & { render(): Render[".md"] };
+"PopoverHamburgerMenu.md": {
+	id: "PopoverHamburgerMenu.md";
+  slug: "popoverhamburgermenu";
+  body: string;
+  collection: "uiAccelerators";
+  data: any
+} & { render(): Render[".md"] };
 "ServiceWorkerCaching.md": {
 	id: "ServiceWorkerCaching.md";
   slug: "serviceworkercaching";

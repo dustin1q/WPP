@@ -40,3 +40,6 @@ footer{
 main{
 	margin: 0px;
 }
+.subHeader{
+    background: var(--light-blue);
+}

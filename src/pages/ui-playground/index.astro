@@ -3,12 +3,10 @@ import MainLayout from '../../layouts/MainLayout.astro';
 import { getCollection } from 'astro:content';
 import '../../styles/sample-cards.css';
 const uiSamples = await getCollection("uiPlayground");
-
+const desc = "Playground for fun and interesting code. "
 ---
-<MainLayout title="UI Playground">
-    <p>
-    Playground for fun and interesting code. 
-    </p>
+<MainLayout title="UI Playground" desc={desc}>
+  
     <section class="sample-holder">
         {uiSamples.map((uiSamples) => (
         <div class="card">

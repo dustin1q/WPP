@@ -19,10 +19,8 @@ const sampleData = new parseSampleData(sample.body)
 
 ---
 
-<MainLayout title={sample.data.title}>
-    <p>
-    {sample.data.desc}
-    </p>
+<MainLayout title={sample.data.title} desc={sample.data.desc}>
+   
  <CodeEditor 
     client:only="react" 
     title={sample.data.title}

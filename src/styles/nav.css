@@ -1,19 +1,19 @@
 
 header{
-    padding: 0 0px 0 70px;
+    padding: 0 0px 0 8rem;
     background: var(--dark-blue);
     margin: 0px;
     height:4em;
 
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content:space-between;
 }
 header h1{
    color: var(--light-blue);
    margin: 10px 0 0 0px;
     vertical-align: middle;
-    font-size: 2.2em;
+    font-size: 2em;
    
     line-height: 0.6;
 }
@@ -23,13 +23,12 @@ header p{
     margin-bottom: 5px;
    
     vertical-align: middle;
-    font-size: 1em;
+    font-size: 0.8em;
 }
 .headerTitle{
     display: flex;
     flex-direction: column;
 }
 #logo{
-display: flex;
-align-content: end;
+margin: 0 15px 0 0;
 }

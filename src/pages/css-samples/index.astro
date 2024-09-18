@@ -3,9 +3,10 @@ import MainLayout from '../../layouts/MainLayout.astro';
 import { getCollection } from 'astro:content';
 import '../../styles/sample-cards.css';
 const uiSamples = await getCollection("cssSamples");
-
+const desc:string = "Samples shared, showcase lesser known and modern CSS patterns. The goal in these examples is not to create simple code everyone can understand. It's to provide robust patterns that work really well using modern methods."
+     
 ---
-<MainLayout title="CSS Samples">
+<MainLayout title="CSS Samples" desc={desc}>
   <section class="sample-holder">
     
         {uiSamples.map((cssSamples) => (
@@ -17,9 +18,6 @@ const uiSamples = await getCollection("cssSamples");
         ))}
   
   </section>
-    <p>
-        Samples shared, showcase lesser known and modern CSS patterns. The goal in these examples is not to create simple code everyone can understand. It's to provide robust patterns that work really well using modern methods.  
-      </p>
       <p><strong>Coming soon:</strong></p>
       <ul>
         <li>has()</li>

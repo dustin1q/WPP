@@ -3,7 +3,7 @@ header{
     padding: 0 0px 0 70px;
     background: var(--dark-blue);
     margin: 0px;
-    height:3.5em;
+    height:4em;
 
     display: flex;
     align-items: center;
@@ -11,19 +11,24 @@ header{
 }
 header h1{
    color: var(--light-blue);
-    text-align:center; 
+   margin: 10px 0 0 0px;
     vertical-align: middle;
     font-size: 2.2em;
+   
+    line-height: 0.6;
 }
 header p{
     color:white;
     margin-top: 0px;
     margin-bottom: 5px;
-    text-align:center; 
+   
     vertical-align: middle;
     font-size: 1em;
 }
-
+.headerTitle{
+    display: flex;
+    flex-direction: column;
+}
 #logo{
 display: flex;
 align-content: end;

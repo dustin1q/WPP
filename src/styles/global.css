@@ -1,18 +1,21 @@
 
 
 body {
-	font-family: 'Brooklyn', Arial, Helvetica, sans-serif;
+	font-family: 'Degular', Arial, Helvetica, sans-serif;
 	color: var(--color-primary);
 	font-size: 1rem;
 	background: #f9fafb;
 	color: #111827;
-	
+	padding: 0;
+	margin: 0;
 }
 h1{
+	font-family: 'Safiro', Arial, Helvetica, sans-serif;
 	font-size: 2em;
 }
 h2{
 	font-size: 1.5em;
+	font-family: 'Safiro', Arial, Helvetica, sans-serif;
 }
 ul{
 	list-style:circle;
@@ -35,5 +38,5 @@ footer{
     border-top: 0.1rem solid var(--black);
 }
 main{
-	margin: 10px;
+	margin: 0px;
 }

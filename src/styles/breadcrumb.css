@@ -1,10 +1,10 @@
 .c-breadcrumbs {
-    --color-link-breadcrumbs: inherit;
+    --color-link-breadcrumbs: var(--dark-blue);
     --size-font-breadcrumbs: 0.8rem;
     --spacing-vertical-separator-breadcrumbs: 6px;
     font-weight: bold;
     text-decoration: underline;
-    border-bottom: 0.1rem solid var(--black);
+   color: var(--dark-blue);
     padding-top: .5em;
     padding-bottom: .5em;
   }
@@ -61,6 +61,4 @@
     color: var(--color-link-breadcrumbs);
     line-height: 1;
   }
-  
-  /*# sourceMappingURL=breadcrumbs.css.map */
   

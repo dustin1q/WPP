@@ -2,6 +2,9 @@
 	--black:#232323;
 	--color-light-grey:#919191;
 	--color-extra-light-grey:#dddddd;
+	--dark-blue:#113045;
+	--light-blue:#6CEAFC;
+	--extra-light-blue:#DBFAFD;
 	--color-white:#eeeded;
 	--color-blue: #0070d2;
     --color-green: #008827;
@@ -14,9 +17,9 @@
 	--bar-width: 35px;
     --bar-height: 3px;
     --hamburger-gap: 5px;
-    --foreground: var(--black);
+    --foreground: var(--dark-blue);
     
-    --background: var(--color-white);
+    --background: var(--light-blue);
     --hamburger-margin: 20px;
     --animation-timing: 200ms ease-in-out;
     --hamburger-height: calc(var(--bar-height) * 3 + var(--hamburger-gap) * 2);
@@ -51,9 +54,19 @@
   }
 
   @font-face {
-	font-family: 'Helvelow';
-	src: url('../styles/fonts/Helvelow-Regular.woff') format('woff');
-  }
+    font-family: 'Degular';
+    src: url('../styles/fonts/Degular-Medium.woff2') format('woff2'),
+        url('../styles/fonts/Degular-Medium.woff') format('woff'),
+        url('../styles/fonts/Degular-Medium.ttf') format('truetype');
+}
+
+  @font-face {
+    font-family: 'Safiro';
+    src: url('../styles/fonts/Safiro-SemiBold.woff2') format('woff2'),
+        url('../styles/fonts/Safiro-SemiBold.woff') format('woff'),
+        url('../styles/fonts/Safiro-SemiBold.ttf') format('truetype');
+   
+}
   body {
 	margin: 0; /* 1 */
 	line-height: inherit; /* 2 */

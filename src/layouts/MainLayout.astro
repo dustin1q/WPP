@@ -16,20 +16,24 @@ let {desc} = Astro.props
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width">
 	<title>Behind The Framework-{title}</title>	
-	<link rel="icon" type="image/x-icon" href="/WPP/favicon.ico" />
+	<link rel="icon" type="image/x-icon" href="/favicon.ico" />
 
 </head>
 <body>
-	<main>
+	<main class="primary-layout">
 		<Header/>
 		<Hamburger/>
-		<div class="subHeader">
+		<div class="subHeader full-width">
 			<Breadcrumb />
 			<h2>{title}</h2>
 			<p>{desc}</p>
 		</div>
-		<slot></slot>
+		<section class="breakout">
+			<slot></slot>
+		</section>
+	<section class="breakout">
 		<Footer/>
+	</section>
 	</main>
 </body>
 </html>

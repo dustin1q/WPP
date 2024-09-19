@@ -29,11 +29,13 @@ a {
 		color:  var(--black);
 	}
 }
-footer{
-	clear: both;
+.footer{
 	margin-top: 10px;
-	padding: 0 10px 0 10px;
-    border-top: 0.1rem solid var(--black);
+	padding: 10px 10px 10px 10px;
+   	color: #ffffff;
+	background: var(--dark-blue);
+	display: grid;
+	justify-content:center;
 }
 main{
 	margin: 0px;

@@ -21,7 +21,7 @@
   
   .editor-title {
     display:flex;
-    background-color: #040404;
+    background-color: var(--dark-blue);
     color: white;
     font-size: .7rem;
     padding: .5rem 1rem .5rem 1rem;
@@ -114,7 +114,7 @@
 }
   .preview label{
     display:flex;
-    background-color: #040404;
+    background-color: var(--dark-blue);
     border: 1px solid #3b3939;
     color: white;
     font-size: .7rem;

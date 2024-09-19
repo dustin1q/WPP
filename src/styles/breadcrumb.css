@@ -4,7 +4,7 @@
     --spacing-vertical-separator-breadcrumbs: 6px;
     font-weight: bold;
     text-decoration: underline;
-   color: var(--dark-blue);
+    color: var(--dark-blue);
     padding-top: .5em;
     padding-bottom: .5em;
   }
@@ -28,7 +28,7 @@
     padding: 0;
     margin: 0;
     cursor: pointer;
-    color: var(--color-truncated-button, var(--color-link-breadcrumbs));
+    color: var(--color-truncated-button, var(--dark-blue));
   }
   .c-breadcrumbs__crumbs {
     list-style-type: none;
@@ -58,7 +58,7 @@
   .c-breadcrumbs__link, .c-breadcrumbs__truncated-button {
     font-size: var(--size-font-breadcrumbs);
     /*text-decoration: none;*/
-    color: var(--color-link-breadcrumbs);
+    color: var(--dark-blue);
     line-height: 1;
   }
   

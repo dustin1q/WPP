@@ -3,15 +3,16 @@
     padding: 0 0px 0 0rem;
     background: var(--dark-blue);
     margin: 0px;
-    height:4em;
+    height:5em;
     
 }
 header{
     display: grid;
+    vertical-align: middle;
 }
 header h1{
    color: var(--light-blue);
-   margin: 10px 0 0 0px;
+   margin: 20px 0 0 0px;
     vertical-align: middle;
     font-size: 2em;
     line-height: 0.6;
@@ -20,7 +21,6 @@ header p{
     color:white;
     margin-top: 0px;
     margin-bottom: 5px;
-   
     vertical-align: middle;
     font-size: 0.8em;
 }
@@ -28,8 +28,23 @@ header p{
     display: flex;
     flex-direction: column;
 }
+
+.subHeader{
+    background: var(--light-blue);
+	padding: 20px 0px 20px 0px;
+    
+	h2{
+		color: var(--dark-blue);
+		font-size: 2.5em;
+        
+	}
+	p{
+		color: var(--dark-blue);
+        line-height: 1;
+	}
+}
 #logo{
-margin: 0 15px 0 0;
-grid-column-start: 8;
+margin: 0 0px 0 0;
+grid-column-start: 9;
 grid-row-start: 1;
 }

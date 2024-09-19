@@ -57,7 +57,7 @@ export default function CodeEditor(props) {
     <> 
      {/* <button onClick={() => setModal(true)}>CSS Variables</button>*/}
     <div className="pane">
-      <div className="pane tab-editor-pane">
+      <div className="tab-editor-pane">
         {html != "null" &&
             <TabEditor
               language="xml"
@@ -97,7 +97,7 @@ export default function CodeEditor(props) {
             />
           }
         </div>
-        <div className="pane preview">
+        <div className="preview">
           <label>Preview</label>
             <iframe 
               srcDoc={srcDoc}
@@ -107,9 +107,7 @@ export default function CodeEditor(props) {
               height="100%"
             />
         </div>
-        
       </div>
-    
       <Modal
       openModal={modal}
       closeModal={() => setModal(false)}

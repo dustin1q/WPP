@@ -11,6 +11,9 @@ desc: <input> elements of type="date" create input fields that let the user ente
 <span class="validity"></span>
 
 
+<label for="time">Select a time:</label>
+<input type="time" id="time"/>
+
 <label for="color">Select a color:</label>
 <input type="color" id="color"/>
 

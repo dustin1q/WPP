@@ -54,7 +54,8 @@ export default function CodeEditor(props) {
   }, [html, css, js, cssVars])
 
   return (
-    <>
+    <> 
+     {/* <button onClick={() => setModal(true)}>CSS Variables</button>*/}
     <div className="pane">
       <div className="pane tab-editor-pane">
         {html != "null" &&
@@ -106,8 +107,9 @@ export default function CodeEditor(props) {
               height="100%"
             />
         </div>
+        
       </div>
-      <button onClick={() => setModal(true)}>CSS Variables</button>
+    
       <Modal
       openModal={modal}
       closeModal={() => setModal(false)}

@@ -9,25 +9,32 @@
 	flex-grow: 4;
 	flex-basis: auto;
 	margin: 0.5em;
-	border: 1px solid;
+	
 	border-radius: 15px;
 	padding:10px;
 	display: flex;
 	flex-direction: column;
-
+	background: var(--extra-light-blue);
+	& a{
+		background-color: var(--dark-blue);
+		padding:5px 10px;
+		color: white;
+		border-radius: 10px;
+		font-size:0.6rem;
+		margin-top: auto;
+		display: flex;
+		width: fit-content;
+	}
+	& a:hover{
+		background-color: var(--light-blue);
+		color: var(--dark-blue);
+	}
+	& h3{
+		font-size: 1.3em;
+		font-family: 'Safiro', Arial, Helvetica, sans-serif;
+	}
 }
-.card a{
-	background-color: black;
-	padding:5px 10px;
-	color: white;
-	border-radius: 10px;
-	font-size:0.6rem;
-	margin-top: auto;
-	display: flex;
-    width: fit-content;
-    
 
-}
 .card p{
 	display: -webkit-inline-box;
     -webkit-box-orient: vertical;  

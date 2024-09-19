@@ -19,10 +19,29 @@ desc: CSS only, elements are animated when the page is scrolled and they enter t
   <div>10</div>
   <div>11</div>
   <div>12</div>
+  <div>13</div>
+  <div>14</div>
+  <div>15</div>
+  <div>16</div>
+  <div>17</div>
+  <div>18</div>
+  <div>19</div>
+  <div>20</div>
+  <div>21</div>
+  <div>22</div>
+  <div>23</div>
+  <div>24</div>
+  <div>25</div>
+  <div>26</div>
+  <div>27</div>
+  <div>28</div>
+  <div>29</div>
+  <div>30</div>
 </div>
 </html-code>
 
 <css-code>
+
 @keyframes appear{
   from{
     opacity:0;
@@ -36,16 +55,17 @@ desc: CSS only, elements are animated when the page is scrolled and they enter t
 .container{
   display: flex;
   flex-wrap: wrap;
- text-align: center;
-  background: rgb(103, 103, 141);
+  text-align: center;
   color: white;
+  align-items: center;
+  justify-content: center;
 }
 .container div:nth-last-child(2n){ 
   background-color: rgb(157, 158, 158);
 }
 .container div{
-  width: 200px;
-  height: 200px;
+  width: 100px;
+  height: 100px;
   margin: .2em;
   padding-top:.7em;
   animation: appear linear;
@@ -53,6 +73,7 @@ desc: CSS only, elements are animated when the page is scrolled and they enter t
   animation-range: entry 0;
   background-color: rgb(0, 0, 0);
 }
+
 </css-code>
 
 

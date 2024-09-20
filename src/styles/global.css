@@ -15,14 +15,21 @@ h2{
 	font-size: 1.5em;
 	font-family: 'Safiro', Arial, Helvetica, sans-serif;
 }
+h3{
+	font-size: 1.2em;
+	font-family: 'Safiro', Arial, Helvetica, sans-serif;
+}
 ul{
 	list-style:circle;
+	padding: 20px 20px 10px 20px;
 }
 
 a {
 	color: inherit;
 }
-
+p{
+	padding: 10px 0px 10px 0px;
+}
 @media (prefers-color-scheme: dark) {
 	body {
 		background: #ffffff;

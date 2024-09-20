@@ -32,6 +32,7 @@
 	& h3{
 		font-size: 1.3em;
 		font-family: 'Safiro', Arial, Helvetica, sans-serif;
+		color: var(--dark-blue);
 	}
 }
 

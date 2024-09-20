@@ -24,7 +24,7 @@ desc: Using the Popover API you can build out this simple hamburger menu with no
     <li><a href="#">New Glen</a></li>
   </ul>
 </nav>
-<h3>JS-Free hamburger menu Using Popover API</h3>
+<h3>Hamburger menu Using Popover API - No Javascript</h3>
 <p>Click open the hamburger menu to see a demo of JavaScript-free interaction handling! By using the <code>popover</code> attribute, you can allow the browser to handle the keyboard management (including navigation via <kbd>esc</kbd>, <kbd>spacebar</kbd>, and <kbd>enter</kbd>), optional light-dismiss (clicking outside the boundaries of the popover), and click handlers such as on the open and close buttons. Note: I removed the backdrop styling because popover doesn't inert the page so it might be confusing.</p>
 </html-code>
 <css-code>

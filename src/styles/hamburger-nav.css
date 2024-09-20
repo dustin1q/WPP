@@ -1,10 +1,7 @@
 
-
-
 #menu {
   width: 250px;
   height: 100%;
- 
   /*  undo popover styles  */
   border: none;
   padding: 0;
@@ -16,26 +13,25 @@
   transition: translate 0.3s ease-out, display 0.3s ease-out allow-discrete,
     overlay 0.5s ease-out allow-discrete;
   translate: -250px 0;
-
-  /*   &::backdrop {
-    opacity: 0;
+  &::backdrop {
+    opacity: 10;
     background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(1px);
     transition: opacity 0.5s;
-  } */
+  } 
 
   &:popover-open {
     translate: 0 0;
 
-    /* &::backdrop {
+     &::backdrop {
       opacity: 1;
-    } */
+    } 
 
     @starting-style {
       translate: -250px 0;
-
-      /* &::backdrop {
+       &::backdrop {
         opacity: 0;
-      } */
+      } 
     }
   }
 }
@@ -56,7 +52,6 @@
   border: none;
    font-size:30px;
 }
-
 .sr-only:not(:focus):not(:active) {
   clip: rect(0 0 0 0);
   clip-path: inset(50%);
@@ -66,10 +61,6 @@
   white-space: nowrap;
   width: 1px;
 }
-
-
-  
-
 .sidebar ul{
 	list-style-type: none;
   margin:3px;
@@ -80,8 +71,7 @@
     margin:10px;
 }
 .sidebar ul li:hover {
-    
-    color: var(--black);
+    color: #ffffff;
 }
 
 /*needs nor work */
@@ -103,18 +93,15 @@
     padding: 5px 10px;
     color: var(--light-blue);
 }
-.sidebar ul ul li a:hover {
-    
+.sidebar * a:hover {
 	color: #ffffff;
 }
-
-.sidebar ul details:hover{
-  
-  color: #ffffff;
-  padding: 0;
-  
+.sidebar * ul:hover {
+	color: #ffffff;
 }
-
+.sidebar * summary:hover{
+  color: #ffffff;
+}
 .sidebar details{
   padding: 0;
   color: var(--light-blue);
@@ -123,7 +110,7 @@
 .sidebar details li {
   margin: 0;
   font-size: 0.7rem;
-  color: gray;
+  color:#ffffff;
 }
 .sidebar details ul {
   margin: 0;

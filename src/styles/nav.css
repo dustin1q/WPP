@@ -4,7 +4,8 @@
     background: var(--dark-blue);
     margin: 0px;
     height:5em;
-    
+    position:sticky;
+    top:0px;
 }
 header{
     display: grid;

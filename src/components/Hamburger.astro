@@ -9,11 +9,17 @@ const layoutExamples = await getCollection("layoutExamples");
 const uiPlayground = await getCollection("uiPlayground");
 ---
 
-<label class="hamburger-menu">
-    <input type="checkbox" />
-  </label>
-  <aside class="sidebar">
-    <nav>
+
+<button class="menu-btn" popovertarget="menu">
+    <span>&#9776;</span>
+    <span class="sr-only">Open menu</span>
+  </button>
+
+  <nav popover id="menu" class="sidebar">
+    <button class="close-btn" popovertarget="menu" popovertargetaction="hide">
+        <span aria-hidden="true">&#10006;</span>
+        <span class="sr-only">Close menu</span>
+      </button>
         <ul>
             <li><a href="/">Overview</a></li>
             <li>
@@ -88,4 +94,3 @@ const uiPlayground = await getCollection("uiPlayground");
             <li><a href="/Render-Patterns">Render Patterns</li>
         </ul>
     </nav>
-  </aside>

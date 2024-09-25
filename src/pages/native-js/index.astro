@@ -1,0 +1,22 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import { getCollection } from 'astro:content';
+import '../../styles/sample-cards.css';
+const nativeJS = await getCollection("nativeJS");
+const desc:string = "Samples shared, showcase lesser known and modern CSS patterns. The goal in these examples is not to create simple code everyone can understand. It's to provide robust patterns that work really well using modern methods."
+     
+---
+<MainLayout title="JS Samples" desc={desc}>
+  <section class="breakout sample-holder">
+    
+        {nativeJS.map((nativeJS) => (
+          <div class="card">
+            <h3>{nativeJS.data.title}</h3>
+            <p>{nativeJS.data.desc}</p> 
+             <a href={"/native-js/"+nativeJS.slug} aria-label={nativeJS.data.title}> Learn more </a>
+          </div>
+        ))}
+  
+  </section>
+</MainLayout>
+<script>

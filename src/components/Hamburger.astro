@@ -2,8 +2,9 @@
 import '../styles/hamburger-nav.css';
 import { getCollection } from 'astro:content';
 
-const uiSamples = await getCollection("uiSamples");
-const cssSamples = await getCollection("cssSamples");
+const nativeHTML = await getCollection("nativeHTML");
+const nativeCSS = await getCollection("nativeCSS");
+const nativeJS = await getCollection("nativeJS");
 const uiAccelerators = await getCollection("uiAccelerators");
 const layoutExamples = await getCollection("layoutExamples");
 const uiPlayground = await getCollection("uiPlayground");
@@ -24,11 +25,11 @@ const uiPlayground = await getCollection("uiPlayground");
             <li><a href="/">Overview</a></li>
             <li>
                 <details>  
-                    <summary>Native UI</summary> 
+                    <summary>Native HTML</summary> 
                     <ul>
-                        <li><a href="/ui-samples">Overview</a></li>
-                        {uiSamples.map((uiSamples) => (
-                            <li><a href={"/ui-samples/"+uiSamples.slug}> {uiSamples.data.title} </a></li>
+                        <li><a href="/native-html">Overview</a></li>
+                        {nativeHTML.map((nativeHTML) => (
+                            <li><a href={"/native-html/"+nativeHTML.slug}> {nativeHTML.data.title} </a></li>
                         ))}
                     </ul>
                 </details>   
@@ -37,13 +38,23 @@ const uiPlayground = await getCollection("uiPlayground");
                 <details>  
                     <summary>Native CSS</summary> 
                     <ul>
-                        <li><a href="/css-samples">Overview</a></li>
-                        {cssSamples.map((cssSamples) => (
-                            <li><a href={"/css-samples/"+cssSamples.slug}> {cssSamples.data.title} </a></li>
+                        <li><a href="/native-css">Overview</a></li>
+                        {nativeCSS.map((nativeCSS) => (
+                            <li><a href={"/native-css/"+nativeCSS.slug}> {nativeCSS.data.title} </a></li>
                         ))}
                     </ul>
-                </details> 
-               
+                </details>  
+            </li>
+            <li>
+                <details>  
+                    <summary>Native JS</summary> 
+                    <ul>
+                        <li><a href="/native-js">Overview</a></li>
+                        {nativeJS.map((nativeJS) => (
+                            <li><a href={"/native-js/"+nativeJS.slug}> {nativeJS.data.title} </a></li>
+                        ))}
+                    </ul>
+                </details>  
             </li>
             <li>
                 <details>  

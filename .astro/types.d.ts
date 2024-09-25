@@ -125,77 +125,180 @@ declare module 'astro:content' {
 	>;
 
 	type ContentEntryMap = {
-		"cssSamples": {
-"Animate-on-Scroll.md": {
-	id: "Animate-on-Scroll.md";
-  slug: "animate-on-scroll";
+		"cssSamples": Record<string, {
+  id: string;
+  slug: string;
   body: string;
   collection: "cssSamples";
-  data: any
-} & { render(): Render[".md"] };
-"ClipPath-Filters.md": {
-	id: "ClipPath-Filters.md";
-  slug: "clippath-filters";
-  body: string;
-  collection: "cssSamples";
-  data: any
-} & { render(): Render[".md"] };
-"Line-clamping.md": {
-	id: "Line-clamping.md";
-  slug: "line-clamping";
-  body: string;
-  collection: "cssSamples";
-  data: any
-} & { render(): Render[".md"] };
-"Scroll-Snap.md": {
-	id: "Scroll-Snap.md";
-  slug: "scroll-snap";
-  body: string;
-  collection: "cssSamples";
-  data: any
-} & { render(): Render[".md"] };
-"Tabs.md": {
-	id: "Tabs.md";
-  slug: "tabs";
-  body: string;
-  collection: "cssSamples";
-  data: any
-} & { render(): Render[".md"] };
-"color-scheme.md": {
-	id: "color-scheme.md";
-  slug: "color-scheme";
-  body: string;
-  collection: "cssSamples";
-  data: any
-} & { render(): Render[".md"] };
-"has.md": {
-	id: "has.md";
-  slug: "has";
-  body: string;
-  collection: "cssSamples";
-  data: any
-} & { render(): Render[".md"] };
-"nth-child.md": {
-	id: "nth-child.md";
-  slug: "nth-child";
-  body: string;
-  collection: "cssSamples";
-  data: any
-} & { render(): Render[".md"] };
-"object-fit.md": {
-	id: "object-fit.md";
-  slug: "object-fit";
-  body: string;
-  collection: "cssSamples";
-  data: any
-} & { render(): Render[".md"] };
-};
+  data: any;
+  render(): Render[".md"];
+}>;
 "layoutExamples": {
 "content-grid.md": {
 	id: "content-grid.md";
   slug: "content-grid";
   body: string;
   collection: "layoutExamples";
+  data: any
+} & { render(): Render[".md"] };
+};
+"nativeCSS": {
+"Animate-on-Scroll.md": {
+	id: "Animate-on-Scroll.md";
+  slug: "animate-on-scroll";
+  body: string;
+  collection: "nativeCSS";
+  data: any
+} & { render(): Render[".md"] };
+"ClipPath-Filters.md": {
+	id: "ClipPath-Filters.md";
+  slug: "clippath-filters";
+  body: string;
+  collection: "nativeCSS";
+  data: any
+} & { render(): Render[".md"] };
+"Line-clamping.md": {
+	id: "Line-clamping.md";
+  slug: "line-clamping";
+  body: string;
+  collection: "nativeCSS";
+  data: any
+} & { render(): Render[".md"] };
+"Scroll-Snap.md": {
+	id: "Scroll-Snap.md";
+  slug: "scroll-snap";
+  body: string;
+  collection: "nativeCSS";
+  data: any
+} & { render(): Render[".md"] };
+"Tabs.md": {
+	id: "Tabs.md";
+  slug: "tabs";
+  body: string;
+  collection: "nativeCSS";
+  data: any
+} & { render(): Render[".md"] };
+"color-scheme.md": {
+	id: "color-scheme.md";
+  slug: "color-scheme";
+  body: string;
+  collection: "nativeCSS";
+  data: any
+} & { render(): Render[".md"] };
+"has.md": {
+	id: "has.md";
+  slug: "has";
+  body: string;
+  collection: "nativeCSS";
+  data: any
+} & { render(): Render[".md"] };
+"nth-child.md": {
+	id: "nth-child.md";
+  slug: "nth-child";
+  body: string;
+  collection: "nativeCSS";
+  data: any
+} & { render(): Render[".md"] };
+"object-fit.md": {
+	id: "object-fit.md";
+  slug: "object-fit";
+  body: string;
+  collection: "nativeCSS";
+  data: any
+} & { render(): Render[".md"] };
+};
+"nativeHTML": {
+"DataList-Select.md": {
+	id: "DataList-Select.md";
+  slug: "datalist-select";
+  body: string;
+  collection: "nativeHTML";
+  data: any
+} & { render(): Render[".md"] };
+"Date-Picker.md": {
+	id: "Date-Picker.md";
+  slug: "date-picker";
+  body: string;
+  collection: "nativeHTML";
+  data: any
+} & { render(): Render[".md"] };
+"Form-Validation.md": {
+	id: "Form-Validation.md";
+  slug: "form-validation";
+  body: string;
+  collection: "nativeHTML";
+  data: any
+} & { render(): Render[".md"] };
+"Native-Accordions.md": {
+	id: "Native-Accordions.md";
+  slug: "native-accordions";
+  body: string;
+  collection: "nativeHTML";
+  data: any
+} & { render(): Render[".md"] };
+"Native-Dialogs.md": {
+	id: "Native-Dialogs.md";
+  slug: "native-dialogs";
+  body: string;
+  collection: "nativeHTML";
+  data: any
+} & { render(): Render[".md"] };
+"Native-Multi-Select.md": {
+	id: "Native-Multi-Select.md";
+  slug: "native-multi-select";
+  body: string;
+  collection: "nativeHTML";
+  data: any
+} & { render(): Render[".md"] };
+"Native-Popover.md": {
+	id: "Native-Popover.md";
+  slug: "native-popover";
+  body: string;
+  collection: "nativeHTML";
+  data: any
+} & { render(): Render[".md"] };
+"Native-Select.md": {
+	id: "Native-Select.md";
+  slug: "native-select";
+  body: string;
+  collection: "nativeHTML";
+  data: any
+} & { render(): Render[".md"] };
+"Picklist.md": {
+	id: "Picklist.md";
+  slug: "picklist";
+  body: string;
+  collection: "nativeHTML";
+  data: any
+} & { render(): Render[".md"] };
+"Progress-Meter.md": {
+	id: "Progress-Meter.md";
+  slug: "progress-meter";
+  body: string;
+  collection: "nativeHTML";
+  data: any
+} & { render(): Render[".md"] };
+"Toggle-Switch.md": {
+	id: "Toggle-Switch.md";
+  slug: "toggle-switch";
+  body: string;
+  collection: "nativeHTML";
+  data: any
+} & { render(): Render[".md"] };
+};
+"nativeJS": {
+"IntersectionObserver.md": {
+	id: "IntersectionObserver.md";
+  slug: "intersectionobserver";
+  body: string;
+  collection: "nativeJS";
+  data: any
+} & { render(): Render[".md"] };
+"ServiceWorkerCaching.md": {
+	id: "ServiceWorkerCaching.md";
+  slug: "serviceworkercaching";
+  body: string;
+  collection: "nativeJS";
   data: any
 } & { render(): Render[".md"] };
 };
@@ -214,23 +317,9 @@ declare module 'astro:content' {
   collection: "uiAccelerators";
   data: any
 } & { render(): Render[".md"] };
-"IntersectionObserver.md": {
-	id: "IntersectionObserver.md";
-  slug: "intersectionobserver";
-  body: string;
-  collection: "uiAccelerators";
-  data: any
-} & { render(): Render[".md"] };
 "PopoverHamburgerMenu.md": {
 	id: "PopoverHamburgerMenu.md";
   slug: "popoverhamburgermenu";
-  body: string;
-  collection: "uiAccelerators";
-  data: any
-} & { render(): Render[".md"] };
-"ServiceWorkerCaching.md": {
-	id: "ServiceWorkerCaching.md";
-  slug: "serviceworkercaching";
   body: string;
   collection: "uiAccelerators";
   data: any
@@ -287,85 +376,14 @@ declare module 'astro:content' {
   data: any
 } & { render(): Render[".md"] };
 };
-"uiSamples": {
-"DataList-Select.md": {
-	id: "DataList-Select.md";
-  slug: "datalist-select";
+"uiSamples": Record<string, {
+  id: string;
+  slug: string;
   body: string;
   collection: "uiSamples";
-  data: any
-} & { render(): Render[".md"] };
-"Date-Picker.md": {
-	id: "Date-Picker.md";
-  slug: "date-picker";
-  body: string;
-  collection: "uiSamples";
-  data: any
-} & { render(): Render[".md"] };
-"Form-Validation.md": {
-	id: "Form-Validation.md";
-  slug: "form-validation";
-  body: string;
-  collection: "uiSamples";
-  data: any
-} & { render(): Render[".md"] };
-"Native-Accordions.md": {
-	id: "Native-Accordions.md";
-  slug: "native-accordions";
-  body: string;
-  collection: "uiSamples";
-  data: any
-} & { render(): Render[".md"] };
-"Native-Dialogs.md": {
-	id: "Native-Dialogs.md";
-  slug: "native-dialogs";
-  body: string;
-  collection: "uiSamples";
-  data: any
-} & { render(): Render[".md"] };
-"Native-Multi-Select.md": {
-	id: "Native-Multi-Select.md";
-  slug: "native-multi-select";
-  body: string;
-  collection: "uiSamples";
-  data: any
-} & { render(): Render[".md"] };
-"Native-Popover.md": {
-	id: "Native-Popover.md";
-  slug: "native-popover";
-  body: string;
-  collection: "uiSamples";
-  data: any
-} & { render(): Render[".md"] };
-"Native-Select.md": {
-	id: "Native-Select.md";
-  slug: "native-select";
-  body: string;
-  collection: "uiSamples";
-  data: any
-} & { render(): Render[".md"] };
-"Picklist.md": {
-	id: "Picklist.md";
-  slug: "picklist";
-  body: string;
-  collection: "uiSamples";
-  data: any
-} & { render(): Render[".md"] };
-"Progress-Meter.md": {
-	id: "Progress-Meter.md";
-  slug: "progress-meter";
-  body: string;
-  collection: "uiSamples";
-  data: any
-} & { render(): Render[".md"] };
-"Toggle-Switch.md": {
-	id: "Toggle-Switch.md";
-  slug: "toggle-switch";
-  body: string;
-  collection: "uiSamples";
-  data: any
-} & { render(): Render[".md"] };
-};
+  data: any;
+  render(): Render[".md"];
+}>;
 
 	};
 

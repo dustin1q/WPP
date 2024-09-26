@@ -4,8 +4,8 @@ import MainLayout from '../../layouts/MainLayout.astro';
 import { getCollection} from 'astro:content';
 import CodeEditor from '../../components/CodeEditor.jsx';
 import parseSampleData from '../../utils/parseSampleData.js'
-import styles from '../../styles/variables.module.css';
 import { Markup, Markdown } from 'astro-remote';
+
 export const getStaticPaths = async() => {
     const codeSamples = await getCollection("uiPlayground");
     return codeSamples.map(sample=> ({
@@ -20,7 +20,6 @@ const sampleData = new parseSampleData(sample.body)
 ---
 
 <MainLayout title={sample.data.title} desc = {sample.data.desc}>
-    
  <CodeEditor 
     client:only="react" 
     title={sample.data.title}

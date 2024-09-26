@@ -125,15 +125,7 @@ declare module 'astro:content' {
 	>;
 
 	type ContentEntryMap = {
-		"cssSamples": Record<string, {
-  id: string;
-  slug: string;
-  body: string;
-  collection: "cssSamples";
-  data: any;
-  render(): Render[".md"];
-}>;
-"layoutExamples": {
+		"layoutExamples": {
 "content-grid.md": {
 	id: "content-grid.md";
   slug: "content-grid";
@@ -376,14 +368,6 @@ declare module 'astro:content' {
   data: any
 } & { render(): Render[".md"] };
 };
-"uiSamples": Record<string, {
-  id: string;
-  slug: string;
-  body: string;
-  collection: "uiSamples";
-  data: any;
-  render(): Render[".md"];
-}>;
 
 	};
 

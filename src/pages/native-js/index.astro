@@ -6,7 +6,7 @@ const nativeJS = await getCollection("nativeJS");
 const desc:string = "Samples shared, showcase lesser known and modern CSS patterns. The goal in these examples is not to create simple code everyone can understand. It's to provide robust patterns that work really well using modern methods."
      
 ---
-<MainLayout title="JS Samples" desc={desc}>
+<MainLayout title="Javascript Samples" desc={desc}>
   <section class="breakout sample-holder">
     
         {nativeJS.map((nativeJS) => (
@@ -18,5 +18,10 @@ const desc:string = "Samples shared, showcase lesser known and modern CSS patter
         ))}
   
   </section>
+  <p><strong>Coming soon:</strong></p>
+      <ul>
+        <li>Easy selectors</li>
+        <li>Date and Time formating</li>
+      </ul>
 </MainLayout>
-<script>
+

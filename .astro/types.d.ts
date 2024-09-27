@@ -142,6 +142,13 @@ declare module 'astro:content' {
   collection: "nativeCSS";
   data: any
 } & { render(): Render[".md"] };
+"CSS-counter.md": {
+	id: "CSS-counter.md";
+  slug: "css-counter";
+  body: string;
+  collection: "nativeCSS";
+  data: any
+} & { render(): Render[".md"] };
 "ClipPath-Filters.md": {
 	id: "ClipPath-Filters.md";
   slug: "clippath-filters";

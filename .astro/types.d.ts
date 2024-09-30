@@ -367,6 +367,13 @@ declare module 'astro:content' {
   collection: "uiPlayground";
   data: any
 } & { render(): Render[".md"] };
+"Typewriter.md": {
+	id: "Typewriter.md";
+  slug: "typewriter";
+  body: string;
+  collection: "uiPlayground";
+  data: any
+} & { render(): Render[".md"] };
 "css-Lightsaber.md": {
 	id: "css-Lightsaber.md";
   slug: "css-lightsaber";

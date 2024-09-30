@@ -10,6 +10,7 @@ import Breadcrumb from '../components/Breadcrumb.astro';
 
 let {title} = Astro.props
 let {desc} = Astro.props
+let {noSearch} = Astro.props
 ---
 <html lang="en">
 <head>
@@ -28,7 +29,7 @@ let {desc} = Astro.props
 <body>
 	<main class="primary-layout">
 		<section class="full-width header_section ">
-			<Header/>
+			<Header {noSearch} />
 		</section>
 		<section class="full-width subHeader">
 			<div class="breakout">	

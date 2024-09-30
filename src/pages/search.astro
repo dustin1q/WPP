@@ -1,0 +1,48 @@
+---
+
+import MainLayout from '../layouts/MainLayout.astro';
+---
+
+<MainLayout title="Search Results" noSearch="true">
+    <aside>
+        <form class="search">
+            <label for="search"></label>
+            <input 
+            type="search" 
+            required min="2" 
+            max="24" 
+            name="search" 
+            id="search" 
+            placeholder="Enter a search term..."/>
+        </form>
+    </aside>
+<p id="searchReadout"></p>
+<section aria-label="Search Results">
+    
+</section>
+<script>
+    import DOMPurify from "dompurify";
+    const search = document.querySelector("#search");
+    const searchReadout = document.querySelector("#searchReadout");
+    function updateDocumentTitle(search){
+        document.title = search ? `Search results for "${search}"`:`Search`
+    }
+    function updateSearchReadout(search){
+       searchReadout.textContent = search ? `Search results for "${search}"`:``
+    }
+    // event listeners
+    window.addEventListener("DOMContentLoaded", () => {
+        const urlParams = DOMPurify.sanitize(new URLSearchParams(window.location.search).get("q"));
+        updateDocumentTitle(urlParams);
+        updateSearchReadout(urlParams); 
+        search.value = urlParams;
+        search.focus();
+    });
+    window.addEventListener("input", () => {
+        const searchTerm = DOMPurify.sanitize(search.value);
+        updateDocumentTitle(searchTerm);
+        updateSearchReadout(searchTerm); 
+    });
+</script>
+</MainLayout>
+

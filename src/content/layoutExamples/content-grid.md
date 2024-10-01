@@ -1,6 +1,6 @@
 ---
 title: Content-grid with horizontal slider
-
+cat: layout-Examples
 image: ""
 desc: Kevin Powell's content-grid with horizontal slider 
 ---

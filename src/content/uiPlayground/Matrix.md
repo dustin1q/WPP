@@ -1,6 +1,7 @@
 ---
 
 title: Matrix 
+cat: ui-playground
 image: image
 desc: Matrix using p5
 ---

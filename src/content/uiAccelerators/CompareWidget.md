@@ -1,6 +1,7 @@
 ---
 
 title: CSS Image Compare 
+cat: ui-accelerators
 image: image
 desc: Using CSS grid, masks and an input type range to create a comparison component. 
 ---

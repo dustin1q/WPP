@@ -7,6 +7,7 @@ const uiSamplesCollection = defineCollection({
   schema: z.object({
     title: z.string(),
     desc: z.string(),
+    cat: z.string().optional(),
     image: z.string().optional()
   }),
 });

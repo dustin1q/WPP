@@ -1,6 +1,7 @@
 ---
 
 title: CSS Solar System 
+cat: ui-playground
 image: image
 desc: The Solar System has been done in CSS a lot of times — just search Codepen! So why do it again? Because things get better and simpler — and we can now do a responsive solar system with just a few lines of CSS.
 ---

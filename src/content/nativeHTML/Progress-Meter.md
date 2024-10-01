@@ -1,6 +1,6 @@
 ---
 title: Progress, meter & range elements 
-
+cat: nativeHTML
 desc: The <progress> & <meter> HTML elements display an indicator showing the completion progress of a task, typically displayed as a progress bar. Input type range allows a user to select a rage by draging the indicator.
 ---
 

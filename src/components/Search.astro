@@ -1,0 +1,39 @@
+<aside>
+<form class="search">
+    <label for="search"></label>
+    <input type="search" required min="2" max="24" name="search" id="search" placeholder="Search all code samples..."/>
+</form>
+<!--sourced fron this lesson https://www.youtube.com/watch?v=XnV_2MWqAhQ -->
+</aside>
+<style>
+    html{
+        scrollbar-gutter: stable;
+    }
+    .search{
+        display: grid;
+        gap: 1rem;
+        max-width: 32ch;
+        input{
+            font: inherit;
+            border-radius: 3px;
+            height:30px;
+            padding: 5px;
+        }
+
+    }
+</style>
+<script>
+    import DOMPurify from "dompurify";
+    const form = document.querySelector("form");
+    form?.addEventListener("submit", (e) =>{
+        e.preventDefault();
+        const formData = new FormData(form);
+        const searchTerm = DOMPurify.sanitize(formData.get("search")?.toString());
+        console.log(formData.get("search"));
+        if(!searchTerm || searchTerm.length === 0) return;
+        const url = new URL("/search", window.location.origin);
+        url.searchParams.set("q", searchTerm);
+        window.location.assign(url.toString());
+
+    })
+</script>

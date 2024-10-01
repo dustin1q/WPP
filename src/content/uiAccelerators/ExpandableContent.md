@@ -1,6 +1,7 @@
 ---
 
 title: Expandable Content
+cat: ui-accelerators
 image: image
 desc: Multiline overflow, adding text that fades away when too long or a read more button that only appears when needed are perfect examples of this complex situation. 
 ---

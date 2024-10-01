@@ -1,6 +1,7 @@
 ---
 
 title: Stepper Bar
+cat: ui-accelerators
 image: image
 desc: A custom step progress bar with CSS, which can be easily integrated into every application.
 ---

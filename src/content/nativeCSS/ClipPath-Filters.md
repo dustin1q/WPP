@@ -1,6 +1,6 @@
 ---
 title: Clip Path & Filters
-cat: nativeCSS
+cat: native-css
 image: ""
 desc: The clip-path CSS property creates a clipping region that sets what part of an element should be shown. Parts that are inside the region are shown, while those outside are hidden. The filter CSS property applies graphical effects like blur or color shift to an element. Filters are commonly used to adjust the rendering of images, backgrounds, and borders.
 ---

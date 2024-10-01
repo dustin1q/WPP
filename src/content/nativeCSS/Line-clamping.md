@@ -2,7 +2,7 @@
 
 title: Line-Clamping
 image: ""
-cat: nativeCSS
+cat: native-css
 desc: Line Clamping specifies the number of lines after which the content will be clamped and clamp() CSS function which clamps a middle value within a range of values between a defined minimum bound and a maximum bound. See below example showcasing line-clamp on a block of text and clamp() affecting the width of an element.
 ---
 

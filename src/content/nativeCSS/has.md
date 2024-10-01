@@ -1,6 +1,6 @@
 ---
 title: :has() & :not(:has())
-cat: nativeCSS
+cat: native-css
 image: ""
 desc: The functional :has() CSS pseudo-class represents an element if any of the relative selectors that are passed as an argument match at least one element when anchored against this element. This pseudo-class presents a way of selecting a parent element or a previous sibling element with respect to a reference element by taking a relative selector list as an argument.
 ---

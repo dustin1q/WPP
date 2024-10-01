@@ -1,6 +1,6 @@
 ---
 title: CSS Typewriter Effect
-cat: uiPLayground
+cat: ui-playground
 image: image
 desc: Typewriter animation using only CSS
 ---

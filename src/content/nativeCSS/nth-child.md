@@ -1,6 +1,6 @@
 ---
 title: nth-child selectors & more
-cat: nativeCSS
+cat: native-css
 image: ""
 desc: Review nth-child capabilities and why its so powerfull. 
 ---

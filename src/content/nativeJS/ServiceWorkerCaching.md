@@ -1,7 +1,7 @@
 ---
 
 title: Service Worker Caching
-cat: nativeJS
+cat: native-js
 image: image
 desc: Use Service Workers to proactively control the caching of common assets. This will reduce latency as the user navigates through subsequent pages within the web experience.
 ---

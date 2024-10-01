@@ -18,7 +18,7 @@ import MainLayout from '../layouts/MainLayout.astro';
     </aside>
 <p id="searchReadout"></p>
 <section aria-label="Search Results">
-    <ul id="searchResults"></ul>
+    <ul id="resultsList"></ul>
 </section>
 <script>
     import DOMPurify from "dompurify";
@@ -54,16 +54,31 @@ import MainLayout from '../layouts/MainLayout.astro';
         </style></svg>`
     const search = document.querySelector("#search");
     const searchReadout = document.querySelector("#searchReadout");
-    const searchResults = document.querySelector("#searchResults");
+    const resultsList = document.querySelector("#resultsList");
     function updateDocumentTitle(search){
         document.title = search ? `Search results for "${search}"`:`Search`
     }
     function updateSearchReadout(search){
        searchReadout.textContent = search ? `Search results for "${search}"`:``
     }
+    function updateSearchPageURL(search){
+        const url = new URL(window.location.href);
+        url.searchParams.set("q", search);
+        window.history.replaceState(null, "", url);
+    }
+
+    function generateSearchList(results){
+        return results.map((r) => {
+            //console.log(r);
+            const {title, desc, slug, cat} = r.item;
+            return `<li>
+                        <a href="${cat}/${slug}">${title}</a>
+                    </li>`;
+        }).join("");
+    }
     async function fetchSearchResults(search){
         if(search.length === 0)return;
-       // searchResults.innerHTML = SPINNER;
+        resultsList.innerHTML = SPINNER;
         if(!SEARCH_DATA){
             try{
                 const res = await fetch("/search.json");
@@ -72,6 +87,7 @@ import MainLayout from '../layouts/MainLayout.astro';
                 SEARCH_DATA =  data;
             } catch (e){
                 console.error(e);
+               
             }
         }
        
@@ -81,6 +97,7 @@ import MainLayout from '../layouts/MainLayout.astro';
         }
         if(!FUSE_INSTANCE)return;
         const searchResult = FUSE_INSTANCE.search(search);
+        resultsList.innerHTML = searchResult.length > 0 ? generateSearchList(searchResult) : "No results Found";
         console.log(searchResult)
     }
     // event listeners
@@ -97,6 +114,7 @@ import MainLayout from '../layouts/MainLayout.astro';
         updateDocumentTitle(searchTerm);
         updateSearchReadout(searchTerm); 
         fetchSearchResults(searchTerm);
+        updateSearchPageURL(searchTerm);
     });
 </script>
 </MainLayout>

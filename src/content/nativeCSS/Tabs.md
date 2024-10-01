@@ -1,7 +1,7 @@
 ---
 title: CSS Tabs
 image: ""
-cat: nativeCSS
+cat: native-css
 desc: CSS-only tabs to show you don't need to adopt a whole library when creating a tab interface. 
 ---
 

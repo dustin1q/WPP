@@ -1,7 +1,7 @@
 ---
 
 title: Star Rating 
-cat: uiAccelerators
+cat: ui-accelerators
 image: image
 desc: Using CSS Background values to limit DOM count and complexity, we render a dynamic star rating view. 
 ---

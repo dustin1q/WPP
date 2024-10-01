@@ -1,7 +1,7 @@
 ---
 
 title: QR Code Generator
-cat: uiPLayground
+cat: ui-playground
 image: image
 desc: Using simple HTML, CSS & Javascript we create a QR code generator. 
 ---

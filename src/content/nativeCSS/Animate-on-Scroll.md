@@ -1,7 +1,7 @@
 ---
 
 title: Animate On Scroll 
-cat: nativeCSS
+cat: native-css
 desc: CSS only, elements are animated when the page is scrolled and they enter the viewport. 
 ---
 

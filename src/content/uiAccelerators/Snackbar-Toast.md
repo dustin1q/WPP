@@ -1,7 +1,7 @@
 ---
 
 title: Snackbar / Toast
-cat: uiAccelerators
+cat: ui-accelerators
 image: image
 desc: This pattern shows how to build an adaptive and accessible toast component with a few lines of JS.
 ---

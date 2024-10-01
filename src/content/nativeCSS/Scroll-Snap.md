@@ -1,7 +1,7 @@
 ---
 
 title: ScrollSnap Carousel 
-cat: nativeCSS
+cat: native-css
 image: ""
 desc: Implement a simple carousel with pure HTML and CSS. OK Maybe a little JS.
 ---

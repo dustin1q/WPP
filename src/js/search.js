@@ -61,7 +61,7 @@ function generateSearchList(results){
         const {title, desc, slug, cat} = r.item;
         return `<li>
                     <p>${desc}</p>
-                    <a href="${cat}/${slug}">${title}</a>
+                    <a href="/${cat}/${slug}">${title}</a>
                 </li>`;
     }).join("");
 }

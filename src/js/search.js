@@ -31,12 +31,17 @@ const SPINNER = `<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" 
     </style></svg>`
 const search = document.querySelector("#search");
 const searchReadout = document.querySelector("#searchReadout");
+const searchNumber = document.querySelector("#searchNumber");
 const resultsList = document.querySelector("#resultsList");
+
 function updateDocumentTitle(search){
     document.title = search ? `Search results for "${search}"`:`Search`
 }
+function updateSearchNumber(resultsNumber){
+    searchNumber.textContent = resultsNumber > 0 ? ` ${resultsNumber} Found`:``
+ }
 function updateSearchReadout(search){
-   searchReadout.textContent = search ? `Search results for "${search}"`:``
+   searchReadout.textContent = search ? `Search on "${search}". `:``
 }
 function updateSearchPageURL(search){
     const url = new URL(window.location.href);
@@ -45,7 +50,12 @@ function updateSearchPageURL(search){
 }
 
 function generateSearchList(results){
-    if(results.length == 0) return;
+    
+    if(results.length == 0){
+       
+        return;
+    } 
+    
     return results.map((r) => {
         //console.log(r);
         const {title, desc, slug, cat} = r.item;
@@ -58,9 +68,9 @@ function generateSearchList(results){
 async function fetchSearchResults(search){
     if(search.length === 0){
         resultsList.innerHTML = "";
+        updateSearchNumber(0);
         return;
     }
-
     resultsList.innerHTML = SPINNER;
     if(!SEARCH_DATA){
         try{
@@ -70,7 +80,6 @@ async function fetchSearchResults(search){
             SEARCH_DATA =  data;
         } catch (e){
             console.error(e);
-           
         }
     }
    
@@ -80,11 +89,10 @@ async function fetchSearchResults(search){
     }
     if(!FUSE_INSTANCE)return;
     //console.log("before fuse: "+search.length)
-    const searchResult = FUSE_INSTANCE.search(search);
-   // resultsList.innerHTML = searchResult.length > 0 ? generateSearchList(searchResult) : "No results Found";
-   console.log(searchResult.length);
+    const searchResult = FUSE_INSTANCE.search(search); 
     resultsList.innerHTML = searchResult.length > 0 ? generateSearchList(searchResult) : "No samples found…";
-    console.log(searchResult)
+    updateSearchNumber(searchResult.length);
+    //console.log(searchResult)
 }
 // event listeners
 window.addEventListener("DOMContentLoaded", () => {

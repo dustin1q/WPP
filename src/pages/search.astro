@@ -18,9 +18,34 @@ import MainLayout from '../layouts/MainLayout.astro';
         </form>
     </aside>
 <p id="searchReadout"></p>
+<h3 id="searchNumber"></h3>
 <section aria-label="Search Results">
     <ul id="resultsList"></ul>
 </section>
 <script src="../js/search.js"></script>
 </MainLayout>
 
+<style>
+    #resultsList{
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap:0.5em;
+        a{
+            color: rgb(22, 22, 70);
+            text-decoration: underline;
+            font-weight: bold;
+        }
+        p{
+            padding: 0px;
+            font-size: 0.8rem;
+            display: block;
+        }
+        li{
+            
+            padding: 10px;
+            background: #c3eeff;
+            border-radius: 5px;
+        }
+    }
+</style>

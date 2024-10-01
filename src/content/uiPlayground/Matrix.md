@@ -1,6 +1,7 @@
 ---
 
 title: Matrix 
+cat: uiPLayground
 image: image
 desc: Matrix using p5
 ---

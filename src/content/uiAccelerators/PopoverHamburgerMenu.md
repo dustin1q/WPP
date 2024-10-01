@@ -1,6 +1,7 @@
 ---
 
 title: Popover Hamburger Menu
+cat: uiAccelerators
 image: image
 desc: Using the Popover API you can build out this simple hamburger menu with no javascript. 
 ---

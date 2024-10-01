@@ -1,5 +1,6 @@
 ---
 title: Date & Color Picker
+cat: nativeHTML
 image: ""
 desc: <input> elements of type="date" create input fields that let the user enter a date, either with a textbox that validates the input or a special date picker interface. This example sets a default value date of 2022-04-01 and then we use JS to update the value to 2006-10-31 and log to console. Only using CSS, it also validates input with a visual indicator. 
 ---

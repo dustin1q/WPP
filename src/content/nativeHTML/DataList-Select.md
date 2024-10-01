@@ -1,5 +1,6 @@
 ---
 title: Data List Select
+cat: nativeHTML
 image: ""
 desc: The <datalist> HTML element contains a set of <option> elements that represent the permissible or recommended options available to choose from within other controls.
 ---

@@ -1,7 +1,6 @@
 import MonacoEditor from "@monaco-editor/react";
 import { useState } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCompressAlt, faExpandAlt } from '@fortawesome/free-solid-svg-icons'
+
 export default function Editor(props) {
   const {
     language,

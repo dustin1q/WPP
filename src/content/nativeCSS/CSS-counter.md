@@ -1,6 +1,6 @@
 ---
 title: CSS Counters
-
+cat: nativeCSS
 image: ""
 desc: CSS Counters are one of those things a lot of people aren't aware of. CSS Counters are a method of controlling number values in generated content, using the counter-reset and counter-increment properties. No Javascript required. 
 ---

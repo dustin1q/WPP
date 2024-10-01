@@ -1,5 +1,6 @@
 ---
 title: Styling a Native Select Element
+cat: nativeHTML
 image: ""
 desc: This example uses CSS variables and a small theming system to showcase styling capabilities on a native select. Here the browser chrome defines the UI when selecting options. This native implementation assures a reliable and predictable user experience on desktop and mobile devices.  
 ---

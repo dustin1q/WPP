@@ -1,6 +1,6 @@
 ---
-
 title: CSS Typewriter Effect
+cat: uiPLayground
 image: image
 desc: Typewriter animation using only CSS
 ---
@@ -14,7 +14,6 @@ desc: Typewriter animation using only CSS
 </html-code>
 
 <css-code>
-
 .typewriter{
   display:flex;
   /*justify-content: center;*/

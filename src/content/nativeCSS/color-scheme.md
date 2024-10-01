@@ -1,6 +1,7 @@
 ---
 
 title: Custom Color-Scheme 
+cat: nativeCSS
 image: ""
 desc: The color-scheme CSS property allows an element to indicate which color schemes it can comfortably be rendered in. In this example we explore ways to add accent colors to input elements. 
 ---

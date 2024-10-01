@@ -2,6 +2,7 @@
 
 title: a11y tabs - progressively enhanced
 image: image
+cat: uiAccelerators
 desc: Accessible tabs with progressive enhancement JS pattern.
 ---
 

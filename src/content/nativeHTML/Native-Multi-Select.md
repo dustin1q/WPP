@@ -1,5 +1,6 @@
 ---
 title: Native Multi Select
+cat: nativeHTML
 image: ""
 desc: The <progress> HTML element displays an indicator showing the completion progress of a task, typically displayed as a progress bar.
 ---

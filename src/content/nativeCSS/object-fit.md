@@ -1,6 +1,6 @@
 ---
 title: Object-fit
-
+cat: nativeCSS
 image: ""
 desc: The object-fit CSS property sets how the content of a replaced element, such as an <img> or <video>, should be resized to fit its container.
 

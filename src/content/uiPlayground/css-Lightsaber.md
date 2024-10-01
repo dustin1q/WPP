@@ -1,6 +1,7 @@
 ---
 
 title: CSS Light Saber
+cat: uiPLayground
 image: image
 desc: A fun Light Saber effect using CSS
 ---

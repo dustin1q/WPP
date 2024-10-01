@@ -9,13 +9,11 @@
     "preview": "astro preview"
   },
   "devDependencies": {
-    "astro": "^4.12.3"
+    "astro": "^4.15.9"
   },
   "dependencies": {
     "@astrojs/markdown-component": "^1.0.5",
-    "@astrojs/react": "^3.6.1",
-    "@astrojs/tailwind": "^5.1.0",
-    "@fortawesome/free-solid-svg-icons": "^6.4.2",
+    "@astrojs/react": "^3.6.2",
     "@fortawesome/react-fontawesome": "^0.2.0",
     "@monaco-editor/react": "^4.6.0",
     "@types/react": "^18.2.21",
@@ -25,9 +23,9 @@
     "astro-remote": "^0.3.3",
     "astro-tunnel": "^0.1.2",
     "dompurify": "^3.1.7",
+    "fuse.js": "^7.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "rehype-accessible-emojis": "^0.3.2",
     "remark-toc": "^9.0.0",
     "shiki": "^0.14.4",
     "typescript": "^4.6.3"

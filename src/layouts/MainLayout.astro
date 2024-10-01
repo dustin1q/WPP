@@ -6,6 +6,7 @@ import Header from '../components/Header.astro';
 
 import Footer from '../components/Footer.astro';
 import Breadcrumb from '../components/Breadcrumb.astro';
+import Search from '../components/Search.astro';
 
 
 let {title} = Astro.props
@@ -29,13 +30,14 @@ let {noSearch} = Astro.props
 <body>
 	<main class="primary-layout">
 		<section class="full-width header_section ">
-			<Header {noSearch} />
+			<Header {noSearch}/>
 		</section>
 		<section class="full-width subHeader">
 			<div class="breakout">	
-				<Breadcrumb />
+				<Breadcrumb /><!--{!noSearch && <Search/>} -->
 				<h2>{title}</h2>
 				<p>{desc}</p>
+				
 			</div>
 		</section>
 		<section class="breakout">

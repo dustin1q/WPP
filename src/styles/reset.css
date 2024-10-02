@@ -37,10 +37,20 @@ html,
 2. Inherit line-height from `html` so users can set them as a class directly on the `html` element.
 */
 
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
 body {
   margin: 0; /* 1 */
-  line-height: inherit; /* 2 */
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
 }
+
 
 /*
 1. Add the correct height in Firefox.
@@ -376,4 +386,20 @@ video {
 /* Make elements with the HTML hidden attribute stay hidden by default */
 [hidden] {
   display: none;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

@@ -34,7 +34,6 @@ desc: A fun Light Saber effect using CSS
     --blade-hue: 120;
     --blade-lightness: 50%;
   }
-  
   *,
   *::before,
   *::after {
@@ -48,9 +47,9 @@ desc: A fun Light Saber effect using CSS
     grid-template-rows: 100px 50px 1fr;
     min-height: 100vh;
     place-items: center;
-    font-family: "Source Sans Pro", sans-serif;
-    text-transform: uppercase;
-    font-size: 1.5rem;
+    font-family: 'Arial Narrow Bold', sans-serif;
+   /* text-transform: uppercase; */
+    font-size: 0.7rem;
   }
   
   /* The color pickers */
@@ -220,21 +219,5 @@ desc: A fun Light Saber effect using CSS
   #on-off:checked ~ embed {
     display: block;
   }
-  
-  
-  /* YT link */
-  .yt {
-    color: hsl(0 0% 100% / .5);
-    font-size: 1rem;
-    padding: 1em;
-    margin: 0 0 1em 0;
-    grid-column: 1 / -1;
-  }
-  
-  .yt:hover {
-    color: white;
-    text-shadow:
-      0 0 .5em hsl( var(--blade-hue) 50% 50%),
-      0 0 1em hsl( var(--blade-hue) 50% 50% / .75);
-  }
+
 </css-code>

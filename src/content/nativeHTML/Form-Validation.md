@@ -1,7 +1,7 @@
 ---
 
 title: Native Form Validation
-cat: nativeHTML
+cat: native-html
 image: ""
 desc: Native HTML form validation can be accomplished without any JavaScript. 
 ---

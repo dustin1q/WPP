@@ -1,6 +1,6 @@
 ---
 title: Toggle Switch
-cat: nativeHTML
+cat: native-html
 image: ""
 desc: A "toggle switch" (on/off button) with CSS using a checkbox.
 ---

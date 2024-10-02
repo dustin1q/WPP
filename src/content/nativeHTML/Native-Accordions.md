@@ -1,7 +1,7 @@
 ---
 
 title: Native Accordions
-cat: nativeHTML
+cat: native-html
 image: image
 desc: Native accordions using details and summary tags.
 ---

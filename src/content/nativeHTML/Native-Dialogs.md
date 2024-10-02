@@ -1,7 +1,7 @@
 ---
 
 title: Native Dialog
-cat: nativeHTML
+cat: native-html
 image: ""
 desc: The HTML <dialog> element is used to create both modal and non-modal dialog boxes. Modal dialog boxes interrupt interaction with the rest of the page being inert, while non-modal dialog boxes allow interaction with the rest of the page. 
 ---

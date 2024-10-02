@@ -1,7 +1,7 @@
 ---
 
 title: Picklist
-cat: nativeHTML
+cat: native-html
 image: image
 desc: Leverage checkboxs or radio groups for highly functional and native picking experiences. Note the use of grid-area 1/1 placing the label over the checkbox element. 
 ---

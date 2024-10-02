@@ -5,7 +5,8 @@ let FUSE_INSTANCE;
 const FUSE_OPTIONS ={
     includeScore: true,
     shouldSort: true,
-    threshold: 0.5,
+    threshold: 0.3,
+    minMatchCharLength: 3,
     keys: [
         {
             name: "title",

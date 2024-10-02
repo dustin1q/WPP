@@ -61,7 +61,7 @@ function generateSearchList(results){
         //console.log(r);
         const {title, desc, slug, cat} = r.item;
         return `<li>
-                    <p>${desc}</p>
+                    <textarea disabled="true" style="border:none;resize: none; overflow:hidden;">${desc}</textarea>
                     <a href="/${cat}/${slug}">${title}</a>
                 </li>`;
     }).join("");

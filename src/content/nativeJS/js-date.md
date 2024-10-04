@@ -3,7 +3,7 @@
 title: Javascript Date Object
 cat: native-js
 image: image
-desc: Lets take a MOMENT to leard the native Javascript Date object. The Date() constructor can be called with two or more arguments, in which case they are interpreted as the year, month, day, hour, minute, second, and millisecond, respectively, in local time. Date.UTC() works similarly, but it interprets the components as UTC time and also accepts a single argument representing the year. The example below demonstrates how you can perform operations with the date object and examples how to format it. 
+desc: Lets take a MOMENT to leard the native Javascript Date object. The Date() constructor can be called with two or more arguments, in which case they are interpreted as the year, month, day, hour, minute, second, and millisecond, respectively, in local time. Date.UTC() works similarly, but it interprets the components as UTC time and also accepts a single argument representing the year. The example below demonstrates how you can perform operations with the date object and examples on how to format it. 
 ---
 
 

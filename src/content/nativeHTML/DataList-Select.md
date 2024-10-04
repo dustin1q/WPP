@@ -8,7 +8,7 @@ desc: The <datalist> HTML element contains a set of <option> elements that repre
 
 <html-code>
 <label for="rocket-choice">Choose a Rocket :</label>
-<input list="rockets" id="rocket-choice" name="ice-cream-choice" />
+<input list="rockets" id="rocket-choice" />
 <datalist id="rockets">
     <option value="Falcon 9">
     <option value="Starship">

@@ -8,20 +8,42 @@ desc: Lets take a MOMENT to leard the native Javascript Date object. The Date() 
 
 
 <html-code>
-<label>Todays date:</label>
-<span id="todaysDate"></span>
-<label>Days To add:</label>
-<span id="days"></span>
-<label>New date:</label>
-<span id="newDate"></span>
+<h3>Adding and formating the Date() object</h3>
+<div>
+    <label>Todays date:</label>
+    <span id="todaysDate"></span>
+</div>
+<div>
+    <label>Days To add:</label>
+    <span id="days"></span>
+</div>
+<div>
+    <label>New date:</label>
+    <span id="newDate"></span>
+</div>
 </html-code>
 <css-code>
 body{
     display: flex;
     flex-direction: column;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.8rem;
+}
+div{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 1em;
+    padding: 0.3em;
+}
+div:nth-last-child(odd){ 
+  background-color: rgb(221, 221, 221);
 }
 label{
     font-weight: bold;
+    width: 30%;
+}
+span{
+    width: 30%;
 }
 </css-code>
 

@@ -199,6 +199,13 @@ declare module 'astro:content' {
   collection: "nativeCSS";
   data: any
 } & { render(): Render[".md"] };
+"css-Animating-border.md": {
+	id: "css-Animating-border.md";
+  slug: "css-animating-border";
+  body: string;
+  collection: "nativeCSS";
+  data: any
+} & { render(): Render[".md"] };
 "has.md": {
 	id: "has.md";
   slug: "has";
@@ -392,13 +399,6 @@ declare module 'astro:content' {
 "Typewriter.md": {
 	id: "Typewriter.md";
   slug: "typewriter";
-  body: string;
-  collection: "uiPlayground";
-  data: any
-} & { render(): Render[".md"] };
-"css-Animating-border.md": {
-	id: "css-Animating-border.md";
-  slug: "css-animating-border";
   body: string;
   collection: "uiPlayground";
   data: any

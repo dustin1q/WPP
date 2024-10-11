@@ -1,11 +1,10 @@
 ---
 
-title: CSS Animating Boarder
-cat: ui-playground
+title: Animating Boarders - @property
+cat: native-css
 image: image
 desc: CSS Border Animations using css pseudo-elements ::before and ::after. Creating a border animation in css using conic-gradients and custom propertie variables. 
 ---
-Based on Mads Stoumann's example here https://dev.to/madsstoumann/the-solar-system-in-css-51bo
 
 <html-code>
 <div class="card">
@@ -21,6 +20,7 @@ Based on Mads Stoumann's example here https://dev.to/madsstoumann/the-solar-syst
   width: 100vw;
 }
 
+/* Using @property instead of CSS variables to set a type and update later through keyframes */
 @property --angle{
   syntax: "<angle>";
   initial-value: 0deg;

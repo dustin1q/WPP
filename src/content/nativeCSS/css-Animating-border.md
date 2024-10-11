@@ -7,9 +7,17 @@ desc: CSS Border Animations using css pseudo-elements ::before and ::after. Crea
 ---
 
 <html-code>
-<div class="card">
-<h2>Animating Boarder</h2>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae nulla ex. Sed tempor sem augue, vitae convallis turpis sodales vitae. Vestibulum tristique nisl quis nunc porttitor ornare. Donec ac urna maximus lorem congue dictum nec vel nisl. Praesent aliquet, tellus a aliquam commodo, mauris eros faucibus orci.</p>
+<div class="card" id="cometTail">
+    <h2>Comet</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae .</p>
+</div>
+<div class="card" id="rainbow">
+    <h2>Rainbow</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae .</p>
+</div>
+<div class="card" id="blue">
+    <h2>One Colour</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae .</p>
 </div>
 </html-code>
 
@@ -17,7 +25,12 @@ desc: CSS Border Animations using css pseudo-elements ::before and ::after. Crea
   background: #000F;
   color: #FFFA;
   margin: 10px;
-  width: 100vw;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7em;
+  h2{
+   margin-block: 0em;
+  }
 }
 
 /* Using @property instead of CSS variables to set a type and update later through keyframes */
@@ -27,9 +40,10 @@ desc: CSS Border Animations using css pseudo-elements ::before and ::after. Crea
   inherits: false;
 }
 .card{
-  margin: 0 auto;
+  margin:  0 auto;
   padding: 2em;
-  width: 310px;
+  width: clamp(15ch, 20%, 20ch);
+  height: 150px;
   background: #1d1d1d;
   text-align: center;
   border-radius: 10px;
@@ -40,20 +54,11 @@ desc: CSS Border Animations using css pseudo-elements ::before and ::after. Crea
   position: absolute;
   height: 100%;
   width: 100%;
-  /*Rainbow*/
-  /*background-image: conic-gradient(from var(--angle), transparent 80%, #ff4545, #00ff99, #006aff, #ff0095, #ff4545);*/
-  /*One colour trail*/
-  /* background-image: conic-gradient(from var(--angle), transparent 70%, #1e38ff); */
-   /*comet tail effect*/
-  background-image: conic-gradient(from var(--angle), transparent 20%, #2d2c2c, #acacac, #ffffff);
-  
   padding: 1px; /* set width of the boarder */
-
   top: 50%;
   left: 50%;
   translate: -50% -50%;
   z-index: -1;
-  
   border-radius: 10px;
   animation: 1.5s spin linear infinite;
 }
@@ -61,6 +66,7 @@ desc: CSS Border Animations using css pseudo-elements ::before and ::after. Crea
   filter: blur(1.5rem);
   opacity: 0.5;
 }
+
 @keyframes spin {
   from {
     --angle: 0deg;
@@ -70,5 +76,19 @@ desc: CSS Border Animations using css pseudo-elements ::before and ::after. Crea
   }
 }
 
-
+#cometTail::before, #cometTail::after{
+   /*comet tail effect*/
+  background-image: conic-gradient(from var(--angle), transparent 20%, #2d2c2c, #acacac, #ffffff);
+ }
+#rainbow::before, #rainbow::after{
+   /*Rainbow*/
+  background-image: conic-gradient(from var(--angle), transparent 80%, #ff4545, #00ff99, #006aff, #ff0095, #ff4545);
+}
+#bue::before, #blue::after{
+   /*Rainbow*/
+  background-image: conic-gradient(from var(--angle), transparent 90%, #1e38ff); 
+  filter: blur(0);
+  opacity: 1;
+  padding: 3px; /* set width of the boarder */
+}
 </css-code>

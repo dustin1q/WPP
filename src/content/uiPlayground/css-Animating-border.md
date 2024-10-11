@@ -36,7 +36,6 @@ Based on Mads Stoumann's example here https://dev.to/madsstoumann/the-solar-syst
   position: relative;
 }
 .card::after, .card::before{
-  --angle: 0deg;
   content:'';
   position: absolute;
   height: 100%;
@@ -50,7 +49,7 @@ Based on Mads Stoumann's example here https://dev.to/madsstoumann/the-solar-syst
   z-index: -1;
   padding: 3px; /* controles the width of the boarder */
   border-radius: 10px;
-  animation: 3s spin linear infinite;
+  animation: 2s spin linear infinite;
 }
 .card::before{
   filter: blur(1.5rem);
@@ -64,5 +63,4 @@ Based on Mads Stoumann's example here https://dev.to/madsstoumann/the-solar-syst
    --angle: 360deg;
   }
 }
-
 </css-code>

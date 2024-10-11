@@ -141,6 +141,13 @@ declare module 'astro:content' {
 
 	type ContentEntryMap = {
 		"layoutExamples": {
+"columns.md": {
+	id: "columns.md";
+  slug: "columns";
+  body: string;
+  collection: "layoutExamples";
+  data: any
+} & { render(): Render[".md"] };
 "content-grid.md": {
 	id: "content-grid.md";
   slug: "content-grid";

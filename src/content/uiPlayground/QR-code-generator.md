@@ -7,7 +7,7 @@ desc: Using simple HTML, CSS & Javascript we create a QR code generator.
 ---
 
 <html-code>
-<script src="/lib/qrcode.js"></script>
+<script src="/lib/qrcode.min.js"></script>
 <div class="container">
 <form name="qrForm">
   <label for="protocol" >Protocol:</label>
@@ -35,18 +35,17 @@ desc: Using simple HTML, CSS & Javascript we create a QR code generator.
         <option value="Byte" selected>Byte</option>
         <option value="Kanji">Kanji</option>
       </select>
-      <span>Multibyte:</span>
-      <select name="mb" id="mb">
-        <option value="default">None</option>
-        <option value="SJIS">SJIS</option>
-        <option value="UTF-8" selected>UTF-8</option>
-      </select>
+      <label for="background-color" >Background Colour:</label>
+      <input id="background-color" type="color" value="#ffffff" aria-label="QR code background color">
+      <label for="foreground-color" >Foreground Colour:</label>
+      <input id="foreground-color" type="color" value="#000000" aria-label="QR code foreground color">
       <p>Enter text or URL</p>
       <input name="msg" id="msg" rows="10" cols="40" placeholder="Text or URL" id="inputText"/>
       <button type="button"  id="submit" onclick="update_qrcode()">Generate QR Code</button>
     </form>
  <div id="qr"></div>
 </div>
+
 </html-code>
 
 <css-code>
@@ -131,13 +130,17 @@ body{
 </css-code>
 
 <js-code>
-let qrElement = document.getElementById("qr");
+
+//let qrElement = document.getElementById("qr");
+let qrCodeElement = document.getElementById("qr")
 let tElement = document.getElementById("t");
 let eElement = document.getElementById("e");
 let mElement = document.getElementById("m");
-let mbElement = document.getElementById("mb");
 let msgElement = document.getElementById("msg");
 let protocolElement = document.getElementById("protocol");
+
+let bgColorElement = document.getElementById("background-color");
+let fgColorElement = document.getElementById("foreground-color");
 
 draw_qrcode = function(text, typeNumber, errorCorrectionLevel) {
   document.write(create_qrcode(text, typeNumber, errorCorrectionLevel) );
@@ -158,21 +161,38 @@ update_qrcode = function() {
   let protocol = protocolElement.value;
   let url = protocol + text;
   
+  let fgColor = fgColorElement.value;
+  let bgColor = bgColorElement.value;
+  
   let t = tElement.value;
   let e = eElement.value;
-  let m =  mElement.value;
-  let mb = mbElement.value;
+
+  
+
+  console.log("color: " + bgColorElement.value);
   
   if(msgElement.value.length > 0){
-    qrElement.innerHTML = create_qrcode(url, t, e, m, mb);
+    //qrElement.innerHTML = create_qrcode(url, t, e, m, mb);
+    qrCodeElement.innerHTML = "";
+
+    let qrcode = new QRCode(qrCodeElement, {
+		text: url,
+		width: "100",
+		height: "100",
+		colorDark :fgColor,
+		colorLight : bgColor,
+    t : t,
+		correctLevel : QRCode.CorrectLevel[e]
+	});
   }else{ 
     msgElement.classList.add("error");
-     qrElement.innerHTML = "";
+     //qrElement.innerHTML = "";
         setTimeout(()=>{
              msgElement.classList.remove("error");
         }, 1000)
   }
   
 };
+
 </js-code>
 

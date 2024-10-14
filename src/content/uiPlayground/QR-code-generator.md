@@ -45,11 +45,11 @@ Link to library file [qrcode.min.js](/lib/qrcode.min.js)
     <input id="foreground-color" type="color" value="#000000" aria-label="QR code foreground color">
   </div>
   <div class="formElement">
-    <label for="height" >Height:</label>
+    <label for="height" >Height: (Pixels)</label>
     <input type='number' id='height' name='mynumber' value='200' />
   </div>
   <div class="formElement">
-    <label for="width" >Width:</label>
+    <label for="width" >Width: (Pixels)</label>
     <input type='number' id='width' name='mynumber' value='200' />
   </div>
   </details>
@@ -78,11 +78,13 @@ form .formElement:nth-last-child(even){
     justify-content:space-between;
     border: 1px solid rgb(233, 233, 233);
     padding: 0.6em;
-    border-radius: 3px;
+    border-radius: 5px;
 }
 select{
     width:50%;
     border-radius: 5px;
+    height:2em;
+    padding: 3px;
 }
 input{
     width:100%;
@@ -100,20 +102,20 @@ input[type=color]{
    margin: 0;
 }
 input[type=number]{
-   width:20%;
+   width:3.3em;
    height:2em;
-   padding: 5px;
+   padding: 3px;
    margin: 0;
    text-align: center;
 }
 label summary{
     font-size: 0.8rem;
     font-weight: bold;
+    margin: 0 0 0.8em 0 ;
 }
 details{
     padding: 0;
     margin: 0 0 1em 0 ;
-    
 }
 button{
     width:100%;

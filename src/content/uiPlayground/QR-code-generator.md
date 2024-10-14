@@ -7,7 +7,7 @@ desc: Create a QR code generator using a small dependancy free QR code library (
 ---
 Inspired by this Veritasium video 
 [How do QR codes work? (I built one myself to find out)](https://www.youtube.com/watch?v=w5ebcowAJD8)
-<br>
+<br/>
 Link to library file [qrcode.min.js](/lib/qrcode.min.js)
 <html-code>
 <script src="/lib/qrcode.min.js"></script>
@@ -45,12 +45,19 @@ Link to library file [qrcode.min.js](/lib/qrcode.min.js)
     <label for="foreground-color" >Foreground Colour:</label>
     <input id="foreground-color" type="color" value="#000000" aria-label="QR code foreground color">
   </div>
+  <div class="formElement">
+    <label for="height" >Height:</label>
+    <input type='number' id='height' name='mynumber' value='200' />
+  </div>
+  <div class="formElement">
+    <label for="width" >Width:</label>
+    <input type='number' id='width' name='mynumber' value='200' />
+  </div>
   </details>
         <button type="button"  id="submit" onclick="update_qrcode()">Generate QR Code</button>
     </form>
  <div id="qr"></div>
 </div>
-
 </html-code>
 
 <css-code>body{
@@ -72,6 +79,7 @@ form .formElement:nth-last-child(even){
     justify-content:space-between;
     border: 1px solid rgb(233, 233, 233);
     padding: 0.6em;
+    border-radius: 3px;
 }
 select{
     width:50%;
@@ -92,6 +100,13 @@ input[type=color]{
    padding: 0;
    margin: 0;
 }
+input[type=number]{
+   width:20%;
+   height:2em;
+   padding: 5px;
+   margin: 0;
+   text-align: center;
+}
 label summary{
     font-size: 0.8rem;
     font-weight: bold;
@@ -99,6 +114,7 @@ label summary{
 details{
     padding: 0;
     margin: 0 0 1em 0 ;
+    
 }
 button{
     width:100%;
@@ -144,38 +160,39 @@ button{
         transform: translateX(0px);
     }
 }
-
 </css-code>
 
-<js-code>
+<js-code>//get all needed elements 
 let qrCodeElement = document.getElementById("qr")
 let eElement = document.getElementById("e");
 let msgElement = document.getElementById("msg");
 let protocolElement = document.getElementById("protocol");
 let bgColorElement = document.getElementById("background-color");
 let fgColorElement = document.getElementById("foreground-color");
+let heightElement = document.getElementById("height");
+let widthElement = document.getElementById("width");
 
 update_qrcode = function() {
   let text = msgElement.value.replace(/^[\s\u3000]+|[\s\u3000]+$/g, '');
   let protocol = protocolElement.value;
   let url = protocol + text;
-  
   let fgColor = fgColorElement.value;
   let bgColor = bgColorElement.value;
+  let height = heightElement.value;
+  let width = widthElement.value;
   let e = eElement.value;
-  console.log("color: " + bgColorElement.value);
-  
+  //check if user entered a text value
   if(msgElement.value.length > 0){
     qrCodeElement.innerHTML = "";
     let qrcode = new QRCode(qrCodeElement, {
 		text: url,
-		width: "200",
-		height: "200",
+		width: width,
+		height: height,
 		colorDark :fgColor,
 		colorLight : bgColor,
 		correctLevel : QRCode.CorrectLevel[e]
 	});
-  }else{ 
+  }else{ // add error class to impt element to iniciate shake animation
     msgElement.classList.add("error");
         setTimeout(()=>{
              msgElement.classList.remove("error");

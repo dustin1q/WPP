@@ -9,8 +9,7 @@ Inspired by this Veritasium video
 [How do QR codes work? (I built one myself to find out)](https://www.youtube.com/watch?v=w5ebcowAJD8)
 <br/>
 Link to library file [qrcode.min.js](/lib/qrcode.min.js)
-<html-code>
-<script src="/lib/qrcode.min.js"></script>
+<html-code><script src="/lib/qrcode.min.js"></script>
 <div class="container">
 <form name="qrForm">
   <label  for="msg"l>Enter text or URL</label>
@@ -142,6 +141,10 @@ button{
 }
 .error{
     animation: 0.3s linear 0s infinite alternate shake;
+    border: 1px solid red;
+}
+.error::placeholder{
+    color: red;
 }
 @keyframes shake {
     0% {
@@ -196,6 +199,7 @@ update_qrcode = function() {
     msgElement.classList.add("error");
         setTimeout(()=>{
              msgElement.classList.remove("error");
+             msgElement.focus();
         }, 1000)
   }
 };

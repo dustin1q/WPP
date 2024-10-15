@@ -7,6 +7,14 @@ const desc = "It is what I sometimes have called â€œthe separation of concernsâ€
 <main>
     <article>
         <section>
+            <p>
+                Separation of Concerns has become a programming principle that encourages grouping functionality in ways that reduce overlap. 
+                In browser based architectures, a number of these groupings have already been idefined for us through the browser engine API. 
+                These groupings span across HTML, CSS and Javascript. As engineers we often forget to leverage these groupings and unknowingly create redundancies in one or more of these languages. 
+            </p>
+            <p>
+                Not to be confused with SoC in context to Model View Controller (MVC). This POV addresses the broader UI engineering bowndries we recognize in HTML, and CSS and its relationship with Javascript. Too often we see solutions built in javascript mimicking something that could otherwise have been built natively in HTML or CSS. Today weâ€™re seeing powerful and emerging capabilities in HTML and CSS that challenge patterns and solutions often solved using javascript. As these languages mature there is a growing need to establish SoC principals around them. 
+            </p>
             <h3>The Three Body Problem</h3>
             <p>
                 Web based UI Architecture begins with 3 primary concerns, HTML, CSS and Javascript. 
@@ -21,20 +29,19 @@ const desc = "It is what I sometimes have called â€œthe separation of concernsâ€
             <p>
                 So how do we determine which one is more efficient?</p>
             <p>
-                While each of these languages can solve similar problems, having a structured SoC will help us make informed architectural decisions when solutioning for the web.
+                Having a structured SoC can help us make informed architectural decisions when solutioning for the web. 
+                One way to achieve this is to prioritize our concerns by language.
             </p>
-            
-            
-            <p>Prioritizing concerns on browser based solutions:</p>
+            <p>Prioritizing concerns for low-complexity performant solutions:</p>
             <ol>
-                <li>Critical rendering path (HTML, CSS)</li>
-                <li>Native Capabilities</li>
-                <li>Performance & Complexity Reduction</li>
-                <li>Customizations</li>
+                <li><strong>Critical rendering path (CRP)</strong> - HTML & CSS are first-class citizens in the CRP</li>
+                <li><strong>Leverage Native HTML</strong> - Always use what the browser gives you for free.(HTML & CSS)</li>
+                <li><strong>Logic</strong> - Separate Presentation logic (CSS) from Procedural logic (Javascript)</li>
+                
             </ol>
-            <p>
-               Prioritized SoC for UI Architecture:
-            </p>
+            <h3>
+               SoC UI Architecture in order of priority:
+            </h3>
             <div class="cardholder">
                 <div class="card">
                     <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 48 48">
@@ -56,7 +63,7 @@ const desc = "It is what I sometimes have called â€œthe separation of concernsâ€
                 </div>
             </div>
             <p>
-                Begin with HTML and falback to CSS, then Javascript. With each consideration we can seperate solutioning accross these three languages and leverage thw strengths and capabilities of each. 
+                Begin with HTML and falback to CSS, then Javascript. With each consideration we can seperate solutioning accross these three languages and leverage strengths and capabilities of each. 
             </p>
             <h3>Additional Concerns</h3>  
             
@@ -132,6 +139,9 @@ const desc = "It is what I sometimes have called â€œthe separation of concernsâ€
     }
     ol {
         margin: 0 1em 0 1em;
+    }
+    h3 {
+        margin: 1em 0 1em 0;
     }
     svg{
         width:70px;

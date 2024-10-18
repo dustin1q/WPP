@@ -8,12 +8,13 @@ const desc = "It is what I sometimes have called “the separation of concerns�
     <article>
         <section>
             <p>
-                Separation of Concerns has become a programming principle that encourages grouping functionality in ways that reduce overlap. 
-                In browser based architectures, a number of these groupings have already been idefined for us through the browser engine API. 
-                These groupings span across HTML, CSS and Javascript. As engineers we often forget to leverage these groupings and unknowingly create redundancies in one or more of these languages. 
-            </p>
+                Separation of Concerns is a programming principle that encourages the grouping of functionality in ways that reduce overlap.
+                 In browser based architectures, a number of these groupings have been secretly identified for us through the browser engine API.
+                 While we may not always use these APIs, we should take advantage of them as much as we can, and consider their designs as inspiration to our own.
+                These groupings span across HTML, CSS and Javascript. As engineers we often forget to leverage these groupings and unknowingly create redundancies in one or more of these languages.
+</p>
             <p>
-                Not to be confused with SoC in context to Model View Controller (MVC). This POV addresses the broader UI engineering bowndries we recognize in HTML, and CSS and its relationship with Javascript. Too often we see solutions built in javascript mimicking something that could otherwise have been built natively in HTML or CSS. Today we’re seeing powerful and emerging capabilities in HTML and CSS that challenge patterns and solutions often solved using javascript. As these languages mature there is a growing need to establish SoC principals around them. 
+                Not to be confused with SoC in context to Model View Controller (MVC). This POV addresses the broader UI engineering bowndries we recognize in HTML, CSS and their relationship with Javascript. Too often we see solutions built in javascript mimicking something that could otherwise have been built natively in HTML or CSS. Today we’re seeing powerful and emerging capabilities in HTML and CSS that challenge patterns and solutions often solved using javascript. As these languages mature there is a growing need to establish SoC principals around them. 
             </p>
             <h3>The Three Body Problem</h3>
             <p>
@@ -65,6 +66,25 @@ const desc = "It is what I sometimes have called “the separation of concerns�
             <p>
                 Begin with HTML and falback to CSS, then Javascript. With each consideration we can seperate solutioning accross these three languages and leverage strengths and capabilities of each. 
             </p>
+            <h3>State MGMT Concerns</h3>
+            <p>
+                Accounting for state management is something that often leads to over architected solutions. As engineers, it's important for us to consider a ranking of our state management requirements when architecting solutions. Similar to data storage, requirements for state management can be ranked on a scale of high or low volatility (State Volatility). In other words, application state is easily erased or can persist forever, or persist somewhere in between. For example: The state of an accordion [expanded] can be lost on page refresh (high volatility) where a Session ID can persist after a page refresh (low volatility). In most high volatility scenarios, engineers are encouraged to architect solutions to lower state volatility. While lowering state volatility sounds good, it also means increasing application complexity. Adding complexity to lower state volatility is a tradeoff we need to consider.  In the above example, we can add javascript to persist accordion state on page refresh. While this reduces state volatility on the accordion it might not be necessary and likely adds little value to the overall user experience and application logic.
+As we separate these concerns we want to minimize complexities leading to over-architecture, and persist state (lower state volatility) only where necessary. 
+
+
+            </p>
+            <p>
+                The following list prioritizes state management techniques ranked from high volatility, low complexity (4) to low volatility, high complexity (1) approaches. 
+            </p>
+            <ol>
+                <li>Server side State - (Session ID, DB etc.)</li>
+                <li>Application State - JS Client side (cookies, local storage, service workers)</li>
+                <li>UI Design state - CSS (variables, has() not() etc.)</li>
+                <li>UI State - HTML(form selection, anchor tags etc.)</li>
+            </ol>
+            
+        </section>
+        <section>
             <h3>Additional Concerns</h3>  
             
             <div class="cardholder">

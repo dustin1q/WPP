@@ -164,6 +164,13 @@ declare module 'astro:content' {
   collection: "nativeCSS";
   data: any
 } & { render(): Render[".md"] };
+"CSS-Parallax-2.md": {
+	id: "CSS-Parallax-2.md";
+  slug: "css-parallax-2";
+  body: string;
+  collection: "nativeCSS";
+  data: any
+} & { render(): Render[".md"] };
 "CSS-counter.md": {
 	id: "CSS-counter.md";
   slug: "css-counter";

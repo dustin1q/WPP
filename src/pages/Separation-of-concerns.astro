@@ -8,13 +8,17 @@ const desc = "It is what I sometimes have called “the separation of concerns�
     <article>
         <section>
             <p>
-                Separation of Concerns is a programming principle that encourages the grouping of functionality in ways that reduce overlap.
-                 In browser based architectures, a number of these groupings have been secretly identified for us through the browser engine API.
-                 While we may not always use these APIs, we should take advantage of them as much as we can, and consider their designs as inspiration to our own.
-                These groupings span across HTML, CSS and Javascript. As engineers we often forget to leverage these groupings and unknowingly create redundancies in one or more of these languages.
-</p>
+                Separation of Concerns is a programming principle that encourages the grouping of functionality in ways that reduce overlap and redundancy.
+                 To understand these groupings in browser based architectures, we can take cues from the native browser engine API itself.  
+                 While we may not always use these APIs, we should take advantage of them as much as we can, and consider their designs as inspiration against our own.
+                As we all know, these groupings map natively to HTML, CSS and Javascript. As engineers we often fail to leverage native groupings and unknowingly create redundancies across the scope of our solutions and the languages themself.
+            </p>
             <p>
-                Not to be confused with SoC in context to Model View Controller (MVC). This POV addresses the broader UI engineering bowndries we recognize in HTML, CSS and their relationship with Javascript. Too often we see solutions built in javascript mimicking something that could otherwise have been built natively in HTML or CSS. Today we’re seeing powerful and emerging capabilities in HTML and CSS that challenge patterns and solutions often solved using javascript. As these languages mature there is a growing need to establish SoC principals around them. 
+                Not to be confused with SoC in context to Model View Controller (MVC). 
+                This POV addresses the broader UI engineering bowndries we recognize in HTML, CSS and their relationship with Javascript. 
+                Too often we see solutions built in javascript mimicking something that could otherwise have been built natively in HTML or CSS. 
+                Or we see something built with a javascript library that could have been built using modern native javascript.
+                Today we’re seeing powerful and emerging capabilities in native HTML CSS and Javascript that challenge patterns and solutions often solved using javascript or javascript libraries. As these languages mature there is a growing need to establish SoC principals around them. 
             </p>
             <h3>The Three Body Problem</h3>
             <p>
@@ -25,7 +29,7 @@ const desc = "It is what I sometimes have called “the separation of concerns�
              <p>
                 Engineers will often solve a UI problem without considering SoC. For example: Animating DOM elements with javascript instead of using CSS. 
                 This often leads to inefficiencies in performance, and avoidable complexities in their solutions.   
-                For this reason we need to determine which language solves the problem more efficiently. 
+                For this reason we need to know which language is purposely designed to solve the right problem.
             </p>
             <p>
                 So how do we determine which one is more efficient?</p>

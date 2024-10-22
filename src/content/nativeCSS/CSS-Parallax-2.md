@@ -8,19 +8,19 @@ desc: Pure CSS Parallax Scroll with 3 sections using three layers of perspective
   <div class="px-section px-begin">Begining</div>
   <div class="px-section" id="section-1">
     <p>Section 1<p>
-    <div class="px-layer px-base">Base</div>
-    <div class="px-layer px-mid">Mid</div>
+    <div class="px-layer px-base">Base Layer</div>
+    <div class="px-layer px-mid">Mid Layer</div>
   </div>
   <div class="px-section" id="section-2">
     <p>Section 2<p>
-    <div class="px-layer px-mid">Mid</div>
-    <div class="px-layer px-top">Top</div>
+    <div class="px-layer px-mid">Mid Layer</div>
+    <div class="px-layer px-top">Top Layer</div>
   </div>
   <div class="px-section" id="section-3">
     <p>Section 3<p>
-    <div class="px-layer px-base">Base</div>
-    <div class="px-layer px-mid">Mid</div>
-    <div class="px-layer px-top">Top</div>
+    <div class="px-layer px-base">Base Layer</div>
+    <div class="px-layer px-mid">Mid Layer</div>
+    <div class="px-layer px-top">Top Layer</div>
   </div>
   <div class="px-section px-end">The End</div>
 </div>
@@ -73,10 +73,10 @@ body{
   transform: translateZ(0px)
 }
 .px-mid{
-  transform: translateZ(50px) scale(1); ;
+  transform: translateZ(50px) scale(0.8); ;
 }
 .px-top{
-   transform: translateZ(200px) scale(1.3);
+   transform: translateZ(130px) scale(0.6);
 }
 /*customize each section using a section ID*/
 #section-1{

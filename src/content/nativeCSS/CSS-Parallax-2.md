@@ -1,5 +1,5 @@
 ---
-title: CSS Parallax 2 w/ Sections
+title: CSS Parallax w/ Sections
 cat: native-css
 desc: Pure CSS Parallax Scroll with 3 sections using three layers of perspective. Base, Mid & Top 
 ---

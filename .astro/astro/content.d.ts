@@ -241,6 +241,13 @@ declare module 'astro:content' {
   collection: "nativeCSS";
   data: any
 } & { render(): Render[".md"] };
+"pseudo-content-attr.md": {
+	id: "pseudo-content-attr.md";
+  slug: "pseudo-content-attr";
+  body: string;
+  collection: "nativeCSS";
+  data: any
+} & { render(): Render[".md"] };
 };
 "nativeHTML": {
 "DataList-Select.md": {

@@ -1,7 +1,7 @@
 ---
 title: Pseudo Content & attr()
 cat: native-css
-desc: Using attr() functions to apply values to the content property of a psedo element. The example below.
+desc: Using attr() functions to apply values to the content property of a psedo element. The example below passes a string value through the HTML data-lable attribute. In CSS this value is applied to the content property of the :before pseudo element using the attr() function. 
 ---
 
 <html-code>

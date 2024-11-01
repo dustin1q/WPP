@@ -199,6 +199,13 @@ declare module 'astro:content' {
   collection: "nativeCSS";
   data: any
 } & { render(): Render[".md"] };
+"Sticky-with-Animated-Scroll.md": {
+	id: "Sticky-with-Animated-Scroll.md";
+  slug: "sticky-with-animated-scroll";
+  body: string;
+  collection: "nativeCSS";
+  data: any
+} & { render(): Render[".md"] };
 "Tabs.md": {
 	id: "Tabs.md";
   slug: "tabs";

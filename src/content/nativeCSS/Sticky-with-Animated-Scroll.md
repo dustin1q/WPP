@@ -33,12 +33,13 @@ article {
   max-width: 420px;
 }
 .img-container {
+  display: flex;
   position: sticky;
   top: 20px;
   color: #000000;
   padding: 0px;
   z-index: 0;
-  height: 275px;
+  height: auto;
   background-color: rgb(14, 14, 14);
   img {
     object-fit: fill;

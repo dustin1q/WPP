@@ -9,15 +9,15 @@ desc: Native accordions using details and summary tags. Using the "name" attribu
 
 <html-code>
 <details name="accordionGroup">  
-    <summary>Title 1</summary> 
+    <summary>Accordion 1</summary> 
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 </details> 
 <details name="accordionGroup">  
-    <summary>Title 2</summary> 
+    <summary>Accordion 2</summary> 
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 </details> 
 <details name="accordionGroup">  
-    <summary>Title 3</summary> 
+    <summary>Accordion 3</summary> 
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 </details>
 <details>  

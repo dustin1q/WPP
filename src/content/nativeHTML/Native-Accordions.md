@@ -8,40 +8,63 @@ desc: Native accordions using details and summary tags.
 
 
 <html-code>
-    <details>  
-        <summary>Title 1</summary> 
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-    </details> 
-     <details>  
-        <summary>Title 2</summary> 
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-    </details> 
+<details name="accordionGroup">  
+    <summary>Title 1</summary> 
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+</details> 
+<details name="accordionGroup">  
+    <summary>Title 2</summary> 
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+</details> 
+<details name="accordionGroup">  
+    <summary>Title 3</summary> 
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+</details>
+<details>  
+    <summary>New Accordion</summary> 
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+    <article>
+      <pre>
+        <code>
+summary {
+  cursor: pointer;
+}
+      </code>
+      </pre>
+    </article>
+</details>
 </html-code>
 
 <css-code>
-details {
- font-weight: normal;
-  margin-bottom: 1rem;
-  padding: .2rem 0 .2rem .2rem;
-  color:#1c1a1a;
-  border-bottom: 1px solid black;
-}
-summary { 
-  font-weight: bold;
+
+summary  {
   cursor: pointer;
-  color:#0d0c0c
-}
-summary > * {
-  display: inline;
 }
 
-summary::marker {
-  font-size: 1.5em;
-  content: "\21E8";
+summary  {
+  background-color: #2196F3;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
 }
-[open] summary::marker {
-  font-size: 1.5em;
-  content: "\21E9";
+
+details[open] summary {border-radius: 5px 5px 0 0;}
+
+details {
+  background: #b1cadf;
+  border-radius: 5px;
+  margin: 0.5em;
 }
+
+/* extra styles */
+
+* {box-sizing: border-box;}
+body {font-family: system-ui, sans-serif; margin: 20px; background: #fff9f1;}
+h1 {font-size: 1.2em;}
+article > *:first-child {margin: 0;}
+article > * + * {margin: 0.75em 0 0 0;}
+pre {color: white; background: #455e7b; padding: 1em; border-radius: 5px;}
+article {padding: 10px; margin: 0;}
+details code {font-size: 1.1em;}
 </css-code>
 

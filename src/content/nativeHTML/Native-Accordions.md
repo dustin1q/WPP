@@ -22,7 +22,7 @@ desc: Native accordions using details and summary tags.
 </details>
 <details>  
     <summary>New Accordion</summary> 
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+    This accordion is not using the "name" attribute which allows its open/close state to act independent of the other accordion instances on the same page.
     <article>
       <pre>
         <code>

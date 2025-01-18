@@ -3,7 +3,7 @@
 title: Native Accordions
 cat: native-html
 image: image
-desc: Native accordions using details and summary tags.
+desc: Native accordions using details and summary tags. Using the "name" attribute restricts the open state to one instance in a common named group. Alternatively, not using the "name" attribute allows the open/close state to act independent of the other accordion instances on the same page.
 ---
 
 

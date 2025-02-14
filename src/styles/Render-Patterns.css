@@ -5,6 +5,7 @@
     justify-content: space-between;
     border: #000 solid 1px;
     padding: 20px;
+    margin-top: 1em;
 }
 .Render-Controls{
     width:20%;

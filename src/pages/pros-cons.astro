@@ -1,0 +1,74 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import '../styles/Render-Patterns.css';
+---
+<MainLayout title="Pros Cons of Framwork Adoption">
+    <style>
+        .grid{
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            border-top: 1px solid black;
+            border-right: 1px solid black;
+            
+        }
+        .grid > span{
+            padding: 8px 4px;
+            border-left: 1px solid black;
+            border-bottom: 1px solid black;
+        }
+        section{
+            margin: 0.5em;
+        }
+        .gridHeader{
+            font-weight: bold;
+            text-align: center;
+        }
+    </style>
+<main>
+    <article>
+        
+        <section> 
+            <p>
+                Adopting a JavaScript framework or library often comes with benefits. This is why we use frameworks in the first place. Whats rarely discussed is are the risks and trade-offs we unknowingly or knowingly accept when adopting JavaScript libraries and frameworks. Here we explore the pro and cons of JavaScript library and framework adoption.
+            </p>
+            <h3>Framework & Library Adoption</h3>
+            <div class="grid">
+                <span class="gridHeader">Pros</span>
+                <span class="gridHeader">Cons</span>
+                <span>Time to Market</span>
+                <span>Added Payload</span>
+                <span>Tested & Relyable</span>
+                <span>Regression Risk</span>
+                <span>Well Documented</span>
+                <span>Increased Dependancies</span>
+                <span>Customizable</span>
+                <span>Performance impact</span>
+                <span></span>
+                <span>Ongoing support - version MGMT</span>
+            </div>
+            <br/>
+            <h3>Native Capabilities Adoption</h3>
+            <div class="grid">
+                <span class="gridHeader">Pros</span>
+                <span class="gridHeader">Cons</span>
+                <span>Time to Market</span>
+                <span> </span>
+                <span>Tested & Relyable</span>
+                <span></span>
+                <span>Well Documented</span>
+                <span></span>
+                <span>Dependancy Free</span>
+                <span></span>
+                <span>Performant</span>
+                <span></span>
+                <span>Future proof</span>
+                <span></span>
+                <span>Customizable</span>
+                <span></span>
+            </div>
+        </section>
+       
+    </article>
+    </main>
+   
+</MainLayout>

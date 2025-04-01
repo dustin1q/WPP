@@ -3,6 +3,13 @@
     width: 30%;
     min-width: 400px;
     justify-content: space-between;
+
+    border-top-left-radius: 255px 15px;
+    border-top-right-radius: 15px 225px;
+    border-bottom-right-radius: 225px 15px;
+    border-bottom-left-radius:15px 255px;
+    border:solid 3px #41403E;
+
     border: #000 solid 1px;
     padding: 20px;
     margin-top: 1em;
@@ -14,8 +21,11 @@
     gap: 0.5em;
     
     .input-holder:has(input[type="radio"]:checked) {
-        background: rgb(0,0,0);
-        background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(255,255,255,1) 10%);
+        
+       
+        border-bottom-right-radius: 225px 15px;
+        border-bottom-left-radius:5px 255px;
+        border-bottom:solid 3px #41403E;
   }
     .input-holder{
         display: grid;
@@ -56,6 +66,13 @@
         align-items: center;
         padding: 10px;
         transition: height 0.6s;
+
+        border-top-left-radius: 255px 15px;
+        border-top-right-radius: 15px 225px;
+        border-bottom-right-radius: 225px 15px;
+        border-bottom-left-radius:15px 255px;
+        border:solid 3px #41403E;
+
         > label{
             font-weight: bold;
             font-size: 1.2rem;

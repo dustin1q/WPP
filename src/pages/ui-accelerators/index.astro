@@ -6,22 +6,23 @@ const uiSamples = await getCollection("uiAccelerators");
 const desc = " Sample scripts shared, showcase lesser known and emerging native capabilities of HTML CSS & JavaScript."
 ---
 <MainLayout title="UI Accelerators" desc={desc}>
-    
-    <section class="sample-holder">
-        {uiSamples.map((uiSamples) => (
-        <div class="card">
-            <h3>{uiSamples.data.title}</h3>
-            <p>{uiSamples.data.desc}</p> 
-             <a href={"/ui-accelerators/"+uiSamples.slug} aria-label={uiSamples.data.title}> Learn more </a>
-          </div>
-        ))}
+    <section class="breakout">
+        <section class="sample-holder">
+            {uiSamples.map((uiSamples) => (
+            <div class="card">
+                <h3>{uiSamples.data.title}</h3>
+                <p>{uiSamples.data.desc}</p> 
+                <a href={"/ui-accelerators/"+uiSamples.slug} aria-label={uiSamples.data.title}> Learn more </a>
+            </div>
+            ))}
+        </section>
+        <p>
+                Using a live code editor, users can view and interact with the showcased sample code (like codepen). 
+                With this hands-on experience you can test the capabilities and limitation of the code showcased, then use it for your own purposes. 
+        </p>
+        <p>
+                Note: Editors on this site use localstorage to save your edits and retain state automatically.</p>
+        </p>
     </section>
-<p>
-        Using a live code editor, users can view and interact with the showcased sample code (like codepen). 
-        With this hands-on experience you can test the capabilities and limitation of the code showcased, then use it for your own purposes. 
-    </p>
-    <p>
-        Note: Editors on this site use localstorage to save your edits and retain state automatically.</p>
-    </p>
 </MainLayout>
 <script>

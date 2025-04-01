@@ -20,14 +20,15 @@ const sampleData = new parseSampleData(sample.body)
 ---
 {
 <MainLayout title={sample.data.title} desc = {sample.data.desc}>
-   
- <CodeEditor 
-    client:only="react" 
-    title={sample.data.title}
-    defaultHTML={sampleData.htmlCode}
-    defaultCSS={sampleData.cssCode}
-    defaultJS={sampleData.jsCode}
-   
-    />
-   <Markdown content={sampleData.bodyContent} />
+    <section class="breakout">
+        <CodeEditor 
+        client:only="react" 
+        title={sample.data.title}
+        defaultHTML={sampleData.htmlCode}
+        defaultCSS={sampleData.cssCode}
+        defaultJS={sampleData.jsCode}
+    
+        />
+    <Markdown content={sampleData.bodyContent} />
+    </section>
 </MainLayout>

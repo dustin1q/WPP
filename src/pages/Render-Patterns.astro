@@ -3,7 +3,7 @@ import MainLayout from '../layouts/MainLayout.astro';
 import '../styles/Render-Patterns.css';
 ---
 <MainLayout title="Render Patterns">
-<main>
+<section class="breakout">
     <article>
         
         <section class="Render-View"> 
@@ -42,15 +42,15 @@ import '../styles/Render-Patterns.css';
             </ul> 
         </section>
     </article>
-    </main>
-    <script>
-        const radio = document.render_form.render_method;
-        for (var i = 0; i < radio.length; i++) {
-            radio[i].addEventListener('change', function() {
-                //console.log(this.value);
-                const elm = document.getElementsByClassName("Render")
-                elm[0].id = this.value;
-            });
-        }
-    </script>
+</section>
+<script>
+const radio = document.render_form.render_method;
+for (var i = 0; i < radio.length; i++) {
+    radio[i].addEventListener('change', function() {
+        //console.log(this.value);
+        const elm = document.getElementsByClassName("Render")
+        elm[0].id = this.value;
+    });
+}
+</script>
 </MainLayout>

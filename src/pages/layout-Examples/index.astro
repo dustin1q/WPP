@@ -6,6 +6,7 @@ const uiSamples = await getCollection("layoutExamples");
 const desc = "To provide robust layout patterns that work really well using modern methods. "
 ---
 <MainLayout title="Layouts" desc = {desc}>
+<section class="breakout">
   <section class="sample-holder">
     
         {uiSamples.map((layoutExamples) => (
@@ -20,6 +21,6 @@ const desc = "To provide robust layout patterns that work really well using mode
     <p>
          
       </p>
-
+</section>
 </MainLayout>
-<script>
+

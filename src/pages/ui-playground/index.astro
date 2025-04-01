@@ -6,7 +6,7 @@ const uiSamples = await getCollection("uiPlayground");
 const desc = "Playground for fun and interesting code. "
 ---
 <MainLayout title="UI Playground" desc={desc}>
-  
+<section class="breakout">
     <section class="sample-holder">
         {uiSamples.map((uiSamples) => (
         <div class="card">
@@ -16,5 +16,6 @@ const desc = "Playground for fun and interesting code. "
           </div>
         ))}
     </section>
+</section>
 </MainLayout>
 <script>

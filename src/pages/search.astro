@@ -5,6 +5,7 @@ import MainLayout from '../layouts/MainLayout.astro';
 ---
 
 <MainLayout title="Search Results" noSearch="true">
+<section class="breakout">
     <aside>
         <form class="search">
             <label for="search"></label>
@@ -17,12 +18,13 @@ import MainLayout from '../layouts/MainLayout.astro';
             placeholder="Enter a search term..."/>
         </form>
     </aside>
-<p id="searchReadout"></p>
-<h3 id="searchNumber"></h3>
-<section aria-label="Search Results">
-    <ul id="resultsList"></ul>
-</section>
+    <p id="searchReadout"></p>
+    <h3 id="searchNumber"></h3>
+    <section aria-label="Search Results">
+        <ul id="resultsList"></ul>
+    </section>
 <script src="../js/search.js"></script>
+</section>
 </MainLayout>
 
 <style>

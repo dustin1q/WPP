@@ -2,50 +2,86 @@
 import MainLayout from '../layouts/MainLayout.astro';
 ---
 <MainLayout title="UI/UX Architectural Principles">
-<main>
+    <style>
+
+    summary  {
+    cursor: pointer;
+    }
+
+    summary  {
+    background-color: var(--dark-blue);
+    color: var(--light-blue);
+    
+    padding: 10px;
+    border-radius: 5px;
+    }
+    details[open] summary {border-radius: 5px 5px 0 0;}
+    details {
+    background: #dadada;
+    border-radius: 5px;
+    margin: 1.5em;
+        p{
+            padding-left: 0.5em;
+        }
+    }
+    /* extra styles */
+    * {box-sizing: border-box;}
+   
+   
+
+    </style>
+<section class="breakout">
     <article>
         <section>
             <section>
 
                 <details>
                     <summary>Reduce Critical path loading and unnecessary  script blocking.</summary>
-                    Leverage async and defer load where possible 
+                    <p>Leverage async and defer load where possible </p>
                 </details>
                 <details>
                     <summary>Tree-shake bundles and eliminate loading of dead or unused code</summary>
-                    Improves page load and overall UI performance.
-                    Improve Caching & reduce bandwidth usage 
+                    <p>
+                        Improves page load and overall UI performance.
+                        Improve Caching & reduce bandwidth usage 
+                    </p>
                 </details>
                 <details>
                     <summary>Defined performance budgets & adhere to them</summary>
-                    Set Performance goals
-                    Setup ongoing measurement & monitoring tools for reporting 
-                    Establish escalation processes for performance guardrails & remediation 
+                    <p>
+                        Set Performance goals
+                        Setup ongoing measurement & monitoring tools for reporting 
+                        Establish escalation processes for performance guardrails & remediation 
+                    </p>
                 </details>
                 <details>
                     <summary>Follow web API, platform best practices & leverage native web APIs when possible </summary>
-                     Monitor emerging capabilities & UI best practices through MDN and W3C
-                    Stay UpToDate with cross-browser support on emerging specs and XE support. (caniuse.com)
+                    <p>
+                        Monitor emerging capabilities & UI best practices through MDN and W3C
+                        Stay UpToDate with cross-browser support on emerging specs and XE support. (caniuse.com)
+                    </p> 
                 </details>
                 <details>
                     <summary>Reduce complexity, Adopt frameworks responsibly</summary>
-                    Framework adoption should always be weighted against the complexities & requirements. 
-                    Use frameworks only when solving complex UI/UX problems. Do not adopt frameworks without a business need. 
-                    Always Leverage native browser capabilities over framework adoption. This will reduce complexity & leads to performant UI with a maintainable code base. 
-                    
+                    <p>
+                        Framework adoption should always be weighted against the complexities & requirements. 
+                        Use frameworks only when solving complex UI/UX problems. Do not adopt frameworks without a business need. 
+                        Always Leverage native browser capabilities over framework adoption. This will reduce complexity & leads to performant UI with a maintainable code base. 
+                    </p>
                 </details>
                 <details>
                     <summary>Follow Web Content Accessibility Guidelines (WCAG) 2.0</summary>
-                    https://www.w3.org/TR/WCAG20/
-                    Test UI with Screen Readers on Mac (Voice Over) and PC (NVDA)
-                    Test UI Designs against for contrast ratio guidelines https://webaim.org/articles/contrast/
-                    
+                    <p>
+                        https://www.w3.org/TR/WCAG20/
+                        Test UI with Screen Readers on Mac (Voice Over) and PC (NVDA)
+                        Test UI Designs against for contrast ratio guidelines https://webaim.org/articles/contrast/
+                    </p>
                 </details>    
-                    
+     
                 </section>
-        
+
         </section>
     </article>
-    </main>
+</section>
     
 </MainLayout>

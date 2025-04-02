@@ -3,45 +3,47 @@ import MainLayout from '../layouts/MainLayout.astro';
 import '../styles/Render-Patterns.css';
 ---
 <MainLayout title="Render Patterns">
-<section class="breakout">
-    <article>
+<section class="full-width-content-split">
+   
         
-        <section class="Render-View"> 
-        <form name="render_form">
-            <div class="Render-Controls">
-            <div class="input-holder">
-                <input type="radio" id="SSR-rdo" name="render_method" value="SSR" checked>
-                <label for="SSR-rdo">SSR</label>
-            </div>
-            <div class="input-holder">
-                <input type="radio" id="CSR-rdo" name="render_method" value="CSR">
-                <label for="CSR-rdo">CSR</label>
-            </div>
-            <div class="input-holder">
-                <input type="radio" id="SSG-rdo" name="render_method" value="SSG">
-                <label for="SSG-rdo">SSG</label>
-            </div>
-            <div class="input-holder">
-                <input type="radio" id="ISR-rdo" name="render_method" value="ISR">
-                <label for="ISR-rdo">ISR</label>
-            </div>
-            </div> 
-        </form>
-            <div class="Render" id="SSR">
-                <div class="client"><label>Client</label></div>
-                <div class="server"><label>Server</label></div>
-                <div class="build"><label>Build</label></div>
-            </div>
-        </section>
-        <section>
-            <ul>
-                <li>SSR - Server Side Rendering</li>    
-                <li>CSR - Client Side Rendering</li>   
-                <li>SSG - Static Site Generation</li>   
-                <li>ISR - Incremental Static Regeneration</li>   
-            </ul> 
-        </section>
-    </article>
+    <div class="Render-View"> 
+        
+        <div class="Render-Controls">
+            <form name="render_form">
+                <div class="input-holder">
+                    <input type="radio" id="SSR-rdo" name="render_method" value="SSR" checked>
+                    <label for="SSR-rdo">SSR</label>
+                </div>
+                <div class="input-holder">
+                    <input type="radio" id="CSR-rdo" name="render_method" value="CSR">
+                    <label for="CSR-rdo">CSR</label>
+                </div>
+                <div class="input-holder">
+                    <input type="radio" id="SSG-rdo" name="render_method" value="SSG">
+                    <label for="SSG-rdo">SSG</label>
+                </div>
+                <div class="input-holder">
+                    <input type="radio" id="ISR-rdo" name="render_method" value="ISR">
+                    <label for="ISR-rdo">ISR</label>
+                </div>
+            </form>
+        </div> 
+        
+        <div class="Render" id="SSR">
+            <div class="client"><label>Client</label></div>
+            <div class="server"><label>Server</label></div>
+            <div class="build"><label>Build</label></div>
+        </div>
+    </div>
+    <div>
+        <ul>
+            <li>SSR - Server Side Rendering</li>    
+            <li>CSR - Client Side Rendering</li>   
+            <li>SSG - Static Site Generation</li>   
+            <li>ISR - Incremental Static Regeneration</li>   
+        </ul> 
+    </div>
+    
 </section>
 <script>
 const radio = document.render_form.render_method;

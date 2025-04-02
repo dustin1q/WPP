@@ -1,43 +1,32 @@
 .Render-View{
-    display:flex;
-    width: 30%;
-    min-width: 400px;
-    justify-content: space-between;
-
-    border-top-left-radius: 255px 15px;
-    border-top-right-radius: 15px 225px;
-    border-bottom-right-radius: 225px 15px;
-    border-bottom-left-radius:15px 255px;
-    border:solid 3px #41403E;
-
-    border: #000 solid 1px;
+   
+    
+   
+    
+   
     padding: 20px;
     margin-top: 1em;
 }
+
 .Render-Controls{
-    width:20%;
-    display: flex;
-    flex-flow: column;
+   grid-area: 1/2;
+    grid-column-end: 4;
     gap: 0.5em;
     
-    .input-holder:has(input[type="radio"]:checked) {
-        
-       
+    .input-holder:has(input[type="radio"]:checked) { 
         border-bottom-right-radius: 225px 15px;
         border-bottom-left-radius:5px 255px;
         border-bottom:solid 3px #41403E;
-  }
+    }
     .input-holder{
         display: grid;
         grid-area: 1/1;
-        width:200px;
+       
         border-radius: 2px;
         > label{
             font-size: 1rem;
             line-height: 1.1;
-           
         }
-        
         > input[type="radio"] {
             /* turn off the radio UI */
             /*-webkit-appearance: none;
@@ -54,12 +43,21 @@
     }
 }
 .Render{
-    width:50%;
+    grid-area: 1/4;
+    grid-column-end: 7;
+/*    
+    border-top-left-radius: 255px 15px;
+    border-top-right-radius: 15px 225px;
+    border-bottom-right-radius: 225px 15px;
+    border-bottom-left-radius:15px 255px;
+    border: #000 solid 1px; */
+
     height: 20em;
     margin-left: 10px;
+    padding: 0.5em;
     display: flex;
     flex-flow: column;
-    align-items:end;
+    align-items:center;
     > div{
         width: 30%;
         display: grid;

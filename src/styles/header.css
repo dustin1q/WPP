@@ -1,7 +1,7 @@
 
 .header_section{
     padding: 0 0px 0 0rem;
-    background: #ffffff;
+    background: #000000;
     margin: 0px;
     height:5em;
     position:sticky;
@@ -17,7 +17,7 @@ header{
     vertical-align: middle;
 }
 header h1{
-   color: #000000;
+   color: #ffffff;
    margin: 20px 0 0 0px;
     vertical-align: middle;
     font-size: 2em;
@@ -29,7 +29,7 @@ header h1{
     }
 }
 header p{
-    color:rgb(0, 0, 0);
+    color:rgb(255, 255, 255);
     margin-top: 0px;
     margin-bottom: 5px;
     vertical-align: middle;

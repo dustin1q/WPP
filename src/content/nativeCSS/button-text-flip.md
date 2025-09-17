@@ -10,12 +10,9 @@ desc: Banner CTA mouseover effect that flips the text on hover. This example dem
 
 <ul role='list'>
   <li class="quick-flip"><a href="#">I'm a Link</a></li>
-  <li class="quick-flip"><a href="#">I'm also a Link</a></li>
-  <li class="quick-flip"><a href="#">Pffff I'm a link too</a></li>
+  <li class="quick-flip"><span>I'm a Span</span></li>
+  <li class="quick-flip"><p>Pffff I'm a P tag</p></li>
 </ul>
-
-
-
 </html-code>
 
 <css-code>

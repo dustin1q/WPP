@@ -6,12 +6,12 @@ desc: Banner CTA mouseover effect that flips the text on hover. This example dem
 ---
 
 <html-code>
-<button class="quick-flip"><span>Shop Men's Tennis</span></button>
+<button class="quick-flip"><span>I'm a Button</span></button>
 
 <ul role='list'>
-  <li class="quick-flip"><a href="#">Shop Men's Tennis</a></li>
-  <li class="quick-flip"><a href="#">Photos</a></li>
-  <li class="quick-flip"><a href="#">Contact</a></li>
+  <li class="quick-flip"><a href="#">I'm a Link</a></li>
+  <li class="quick-flip"><a href="#">I'm also a Link</a></li>
+  <li class="quick-flip"><a href="#">Pffff I'm a link too</a></li>
 </ul>
 
 

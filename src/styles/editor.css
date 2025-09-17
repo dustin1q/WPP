@@ -23,7 +23,7 @@
   
   .editor-title {
     display:flex;
-    background-color: var(--dark-blue);
+    background-color: #000000;
     color: white;
     font-size: .7rem;
     padding: .5rem 1rem .5rem 1rem;
@@ -80,16 +80,17 @@
 
   iframe{
     width:100%;
-    height:90%;
+    height:63vh;
     box-sizing: border-box;
     border: 1px solid var(--dark-blue);
-}
+  }
+ 
   .preview {
     resize: horizontal;
     display: flex;
     flex-direction: column;
     width: 50%;
-    height:100%;
+    height:70vh;
     overflow: hidden; /* Hide scrollbars */
     position: relative;
   }
@@ -114,7 +115,7 @@
 }
   .preview label{
     display:flex;
-    background-color: var(--dark-blue);
+    background-color: #000000;
     border: 1px solid #3b3939;
     color: white;
     font-size: .7rem;
@@ -123,35 +124,55 @@
     border-top-left-radius: .5rem;
     height: 1em;
     margin-top: .2em;
-    
+    cursor: pointer;
   }
 
-  #variablesModel::backdrop {
+  #previewModel::backdrop {
     background-color: rgb(4, 4, 16, 0.25);
     backdrop-filter: blur(5px);
 
   }
-#variablesModel{
+#previewModel{
     z-index: 5000;
-    width: 50%;   
+    width: 90%;   
     min-width: 400px;  
     padding: 0px; 
+    height:85vh;
 }
-.model{
-    display: flex;
-    flex-direction: row; 
-    
+.modal{
+    height: 85vh;
+    overflow: auto; /* Allows content to be scrollable */
+    scrollbar-width: none; /* For Firefox */
+    -ms-overflow-style: none; /* For IE and legacy Edge */
   }
-.modalContent{
-    width:100%
+ .modal::-webkit-scrollbar {
+    display: none; /* For WebKit browsers */
 }
+.modalContent{
+    width:100%;
+    height:76vh;
+}
+ #l-iframe{
+    height:75vh;
+  }
 .modalTop{
-    padding-bottom: 5px;
     display: flex;
-    background: var(--color-light-grey);
+    background: #000000;
+    color: #ffffff;
+    height:10vh;
+    align-items: center;
+    h3{
+      font-size: 1.2em;
+      margin-left: 1.2em;
+      padding: 0px;
+      line-height: inherit;
+      letter-spacing: inherit;
+    }
     button{
-      margin: 3px;
       margin-left: auto;
-      background: var(--color-light-grey);
+      margin-right: 3em;
+      background: #000000;
+      font-weight: bold;
+      color: #ffffff;
     }
   }

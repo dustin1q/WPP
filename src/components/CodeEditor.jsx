@@ -4,7 +4,7 @@ import Editor from './Editor.jsx'
 import useLocalStorage from '../hooks/useLocalStorage.js'
 import '../styles/editor.css';
 
-import  Modal  from "../components/Modal";
+import  Modal  from "./Modal.jsx";
 export default function CodeEditor(props) {
   
   //assign to local storage hook
@@ -98,7 +98,9 @@ export default function CodeEditor(props) {
           }
         </div>
         <div className="preview">
-          <label>Preview</label>
+          <label onClick={() => setModal(true)}>Mobile Preview
+            <img src="/assets/full-screen-105.svg" alt="full screen icon"/>
+          </label>
             <iframe 
               srcDoc={srcDoc}
               title="output"
@@ -108,18 +110,19 @@ export default function CodeEditor(props) {
             />
         </div>
       </div>
-      <Modal
-      openModal={modal}
-      closeModal={() => setModal(false)}
-      id="variablesModel">
-        <div className="pane">
-          <Editor
+      <Modal openModal={modal} closeModal={() => setModal(false)} title={"Desktop Preview"} id="previewModel">
+          {/*<Editor
               language="css"
               displayName="CSS Variables"
               value={cssVars}
               readOnly={true}
-              />
-        </div>
+              />*/}
+              <iframe 
+              srcDoc={srcDoc}
+              title="output"
+              sandbox="allow-scripts allow-popups allow-forms"
+              id="l-iframe"
+            />
       </Modal>
     </>
   )

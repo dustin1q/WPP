@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 
-function Modal({ openModal, closeModal, id, children }) {
+function Modal({ openModal, closeModal, id, children, title }) {
   const ref = useRef();
 
   useEffect(() => {
@@ -15,7 +15,7 @@ function Modal({ openModal, closeModal, id, children }) {
     <dialog id={id}ref={ref}onCancel={closeModal}>
         <div className="modal">
             <div className="modalTop">
-                <button onClick={closeModal}>X</button>
+               <h3>{title}</h3> <button onClick={closeModal}>X</button>
             </div>
             <div className="modalContent">
                 {children}

@@ -10,18 +10,26 @@ desc: Native accordions using details and summary tags. Using the "name" attribu
 <html-code>
 <details name="accordionGroup">  
     <summary>Accordion 1</summary> 
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    <div class="details-content">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    </div>
 </details> 
 <details name="accordionGroup">  
     <summary>Accordion 2</summary> 
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    <div class="details-content">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    </div>
 </details> 
 <details name="accordionGroup">  
     <summary>Accordion 3</summary> 
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    <div class="details-content">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    </div>
 </details>
 <details>  
     <summary>New Accordion</summary> 
+    <div class="details-content">
+     
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
     <article>
       <pre>
@@ -32,10 +40,12 @@ summary {
       </code>
       </pre>
     </article>
+    </div>
 </details>
 </html-code>
 
 <css-code>
+
 summary  {
   cursor: pointer;
 }
@@ -48,9 +58,10 @@ summary  {
 }
 details[open] summary {border-radius: 5px 5px 0 0;}
 details {
-  background: #acacac;
+  background: #e0e0e0;
   border-radius: 5px;
   margin: 0.5em;
+  interpolate-size: allow-keywords; /* Required for height: auto transitions */
 }
 /* extra styles */
 * {box-sizing: border-box;}
@@ -62,6 +73,19 @@ article > * + * {margin: 0.75em 0 0 0;}
 pre {color: white; background: #717070; padding: 1em; border-radius: 5px;}
 article {padding: 10px; margin: 0;}
 details code {font-size: 1.1em;}
+
+details::details-content {
+    height: 0;
+    overflow: hidden;
+    transition: height 0.5s ease-in-out, opacity 0.5s ease-in-out, content-visibility 0.5s ease allow-discrete;
+    opacity: 0;
+}
+
+details[open]::details-content {
+    height: auto;
+    opacity: 1;
+}
+
 
 </css-code>
 

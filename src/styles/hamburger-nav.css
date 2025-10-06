@@ -1,4 +1,10 @@
 
+
+:root {
+  /* 0.175, 0.885, 0.32, 1.25 */
+  --accordion-bezier: 0.68, -0.55, 0.27, 1.55; /* A 'bounce' like effect */
+}
+
 #menu {
   width: 250px;
   height: 100%;
@@ -50,7 +56,8 @@
   right: 1rem;
   background: none;
   border: none;
-   font-size:30px;
+  font-size:17px;
+  font-weight: bold;
 }
 .sr-only:not(:focus):not(:active) {
   clip: rect(0 0 0 0);
@@ -63,7 +70,6 @@
 }
 .sidebar ul{
 	list-style-type: none;
-  margin:3px;
 	padding:3px;
 }
 .sidebar li{
@@ -80,9 +86,8 @@
     text-decoration: none;
 }
 .sidebar ul ul {
-    
-    padding: 0;
-   display: inline;
+  padding: 0;
+  display: inline;
 }
 .sidebar ul ul li {
     float: none;
@@ -99,19 +104,42 @@
 .sidebar * ul:hover {
 	color: #000000;
 }
+.sidebar * summary {
+  cursor: pointer;
+  font-weight: bold;
+ 
+}
 .sidebar * summary:hover{
   color: #3b3b3b;
 }
 .sidebar details{
   padding: 0;
   color: #000000;
+  interpolate-size: allow-keywords; /* Required for height: auto transitions */
  
 }
 .sidebar details li {
   margin: 0;
-  font-size: 0.7rem;
+  font-size: 1rem;
   color:#ffffff;
 }
 .sidebar details ul {
   margin: 0;
 }
+
+
+details::details-content {
+    height: 0;
+    overflow: hidden;
+    transition: height 0.5s cubic-bezier(var(--accordion-bezier)), opacity 0.5s ease-in-out, content-visibility 0.5s ease allow-discrete;
+    opacity: 0;
+    background-color: #eeeded;
+    border-radius: 5px;
+    color:#ffffff;
+}
+
+details[open]::details-content {
+    height: auto;
+    opacity: 1;
+}
+

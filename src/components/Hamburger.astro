@@ -20,7 +20,7 @@ let {noSearch} = Astro.props
   </button>
   <nav popover id="menu" class="sidebar">
     <button class="close-btn" popovertarget="menu" popovertargetaction="hide">
-        <span aria-hidden="true">&#10006;</span>
+        <span aria-hidden="true">&#x2715;</span>
         <span class="sr-only">Close menu</span>
       </button>
       
@@ -28,73 +28,85 @@ let {noSearch} = Astro.props
             <li><a href="/">Overview</a></li>
             {!noSearch &&  <li><Search/></li>}
             <li>
-                <details>  
+                <details name="navGroup">  
                     <summary>Native HTML</summary> 
-                    <ul>
-                        <li><a href="/native-html">Overview</a></li>
-                        {nativeHTML.map((nativeHTML) => (
-                            <li><a href={"/native-html/"+nativeHTML.slug}> {nativeHTML.data.title} </a></li>
-                        ))}
-                    </ul>
+                    <div class="details-content">
+                        <ul>
+                            <li><a href="/native-html">Overview</a></li>
+                            {nativeHTML.map((nativeHTML) => (
+                                <li><a href={"/native-html/"+nativeHTML.slug}> {nativeHTML.data.title} </a></li>
+                            ))}
+                        </ul>
+                    </div>
                 </details>   
             </li>
             <li>
-                <details>  
+                <details name="navGroup">  
                     <summary>Native CSS</summary> 
-                    <ul>
-                        <li><a href="/native-css">Overview</a></li>
-                        {nativeCSS.map((nativeCSS) => (
-                            <li><a href={"/native-css/"+nativeCSS.slug}> {nativeCSS.data.title} </a></li>
-                        ))}
-                    </ul>
+                    <div class="details-content">
+                        <ul>
+                            <li><a href="/native-css">Overview</a></li>
+                            {nativeCSS.map((nativeCSS) => (
+                                <li><a href={"/native-css/"+nativeCSS.slug}> {nativeCSS.data.title} </a></li>
+                            ))}
+                        </ul>
+                    </div>
                 </details>  
             </li>
             <li>
-                <details>  
+                <details name="navGroup">  
                     <summary>Native JS</summary> 
-                    <ul>
-                        <li><a href="/native-js">Overview</a></li>
-                        {nativeJS.map((nativeJS) => (
-                            <li><a href={"/native-js/"+nativeJS.slug}> {nativeJS.data.title} </a></li>
-                        ))}
-                    </ul>
+                    <div class="details-content">
+                        <ul>
+                            <li><a href="/native-js">Overview</a></li>
+                            {nativeJS.map((nativeJS) => (
+                                <li><a href={"/native-js/"+nativeJS.slug}> {nativeJS.data.title} </a></li>
+                            ))}
+                        </ul>
+                    </div>
                 </details>  
             </li>
             <li>
-                <details>  
+                <details name="navGroup">  
                     <summary>UI Accelerators</summary> 
-                    <ul>
-                        <li><a href="/ui-accelerators">Overview</a></li>
-                        {uiAccelerators.map((uiAccelerators) => (
-                            <li><a href={"/ui-accelerators/"+uiAccelerators.slug}> {uiAccelerators.data.title} </a></li>
-                        ))}
-                    </ul>
+                    <div class="details-content">
+                        <ul>
+                            <li><a href="/ui-accelerators">Overview</a></li>
+                            {uiAccelerators.map((uiAccelerators) => (
+                                <li><a href={"/ui-accelerators/"+uiAccelerators.slug}> {uiAccelerators.data.title} </a></li>
+                            ))}
+                        </ul>
+                    </div>
                 </details> 
             </li>
             <li>
-                <details>  
+                <details name="navGroup">  
                     <summary>Layouts</summary> 
-                    <ul>
-                        <li><a href="/layout-Examples">Overview</a></li>
-                        {layoutExamples.map((layoutExamples) => (
-                            <li><a href={"/layout-Examples/"+layoutExamples.slug}> {layoutExamples.data.title} </a></li>
-                        ))}
-                    </ul>
+                    <div class="details-content">
+                        <ul>
+                            <li><a href="/layout-Examples">Overview</a></li>
+                            {layoutExamples.map((layoutExamples) => (
+                                <li><a href={"/layout-Examples/"+layoutExamples.slug}> {layoutExamples.data.title} </a></li>
+                            ))}
+                        </ul>
+                    </div>
                 </details> 
             </li>
             <li>
-                <details>  
+                <details name="navGroup">  
                     <summary>Playground</summary> 
-                    <ul>
-                        <li><a href="/ui-playground">Overview</a></li>
-                        {uiPlayground.map((uiPlayground) => (
-                            <li><a href={"/ui-playground/"+uiPlayground.slug}> {uiPlayground.data.title} </a></li>
-                        ))}
-                    </ul>
+                    <div class="details-content">
+                        <ul>
+                            <li><a href="/ui-playground">Overview</a></li>
+                            {uiPlayground.map((uiPlayground) => (
+                                <li><a href={"/ui-playground/"+uiPlayground.slug}> {uiPlayground.data.title} </a></li>
+                            ))}
+                        </ul>
+                    </div>
                 </details> 
             </li>
             <li>
-                <details>  
+                <details name="navGroup">  
                     <summary>Design Systems</summary> 
                     <ul>
                         <li><a href="/design-systems">Overview</a></li>

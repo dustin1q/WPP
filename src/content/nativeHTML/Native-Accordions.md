@@ -56,7 +56,10 @@ summary  {
   padding: 10px;
   border-radius: 5px;
 }
-details[open] summary {border-radius: 5px 5px 0 0;}
+details[open] summary {
+  border-radius: 5px 5px 0 0;
+  background-color: #000000;
+}
 details {
   background: #e0e0e0;
   border-radius: 5px;

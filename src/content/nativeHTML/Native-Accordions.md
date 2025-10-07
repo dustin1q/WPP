@@ -77,7 +77,7 @@ details code {font-size: 1.1em;}
 details::details-content {
     height: 0;
     overflow: hidden;
-    transition: height 0.5s ease-in-out, opacity 0.5s ease-in-out, content-visibility 0.5s ease allow-discrete;
+    transition: height 0.3s ease-in-out, opacity 0.3s ease-in-out, content-visibility 0.3s ease allow-discrete;
     opacity: 0;
 }
 

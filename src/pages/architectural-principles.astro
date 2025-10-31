@@ -4,28 +4,43 @@ import MainLayout from '../layouts/MainLayout.astro';
 <MainLayout title="UI/UX Architectural Principles">
     <style>
 
-    summary  {
-    cursor: pointer;
-    }
 
-    summary  {
-    background-color: var(--dark-blue);
-    color: var(--light-blue);
     
-    padding: 10px;
-    border-radius: 5px;
-    }
-    details[open] summary {border-radius: 5px 5px 0 0;}
-    details {
-    background: #dadada;
-    border-radius: 5px;
-    margin: 1.5em;
-        p{
-            padding-left: 0.5em;
-        }
-    }
-    /* extra styles */
-    * {box-sizing: border-box;}
+
+summary  {
+  cursor: pointer;
+}
+
+summary  {
+  background-color: #4d4d4d;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+}
+details[open] summary {
+  border-radius: 5px 5px 0 0;
+  background-color: #000000;
+}
+details {
+  background: #e0e0e0;
+  border-radius: 5px;
+  margin: 0.5em;
+  interpolate-size: allow-keywords; /* Required for height: auto transitions */
+}
+
+details::details-content {
+    height: 0;
+    overflow: hidden;
+    transition: height 0.3s cubic-bezier(var(--accordion-bezier)), opacity 0.3s ease-in-out, content-visibility 0.5s ease allow-discrete;
+    opacity: 0;
+    color: #000000;
+    padding: 0 10px 0px 10px;
+}
+
+details[open]::details-content {
+    height: auto;
+    opacity: 1;
+}
    
    
 
@@ -35,18 +50,18 @@ import MainLayout from '../layouts/MainLayout.astro';
         <section>
             <section>
 
-                <details>
+                <details name="accordionGroup">
                     <summary>Reduce Critical path loading and unnecessary  script blocking.</summary>
                     <p>Leverage async and defer load where possible </p>
                 </details>
-                <details>
+                <details  name="accordionGroup">
                     <summary>Tree-shake bundles and eliminate loading of dead or unused code</summary>
                     <p>
                         Improves page load and overall UI performance.
                         Improve Caching & reduce bandwidth usage 
                     </p>
                 </details>
-                <details>
+                <details name="accordionGroup">
                     <summary>Defined performance budgets & adhere to them</summary>
                     <p>
                         Set Performance goals
@@ -54,14 +69,14 @@ import MainLayout from '../layouts/MainLayout.astro';
                         Establish escalation processes for performance guardrails & remediation 
                     </p>
                 </details>
-                <details>
+                <details name="accordionGroup">
                     <summary>Follow web API, platform best practices & leverage native web APIs when possible </summary>
                     <p>
                         Monitor emerging capabilities & UI best practices through MDN and W3C
                         Stay UpToDate with cross-browser support on emerging specs and XE support. (caniuse.com)
                     </p> 
                 </details>
-                <details>
+                <details name="accordionGroup">
                     <summary>Reduce complexity, Adopt frameworks responsibly</summary>
                     <p>
                         Framework adoption should always be weighted against the complexities & requirements. 
@@ -69,7 +84,7 @@ import MainLayout from '../layouts/MainLayout.astro';
                         Always Leverage native browser capabilities over framework adoption. This will reduce complexity & leads to performant UI with a maintainable code base. 
                     </p>
                 </details>
-                <details>
+                <details name="accordionGroup">
                     <summary>Follow Web Content Accessibility Guidelines (WCAG) 2.0</summary>
                     <p>
                         https://www.w3.org/TR/WCAG20/

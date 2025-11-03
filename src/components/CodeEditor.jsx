@@ -98,8 +98,8 @@ export default function CodeEditor(props) {
           }
         </div>
         <div className="preview">
-          <label onClick={() => setModal(true)}>Mobile Preview
-            <img src="/assets/full-screen-105.svg" alt="full screen icon"/>
+          <label>Preview
+            <img onClick={() => setModal(true)} src="/assets/fullscreen_google.svg" alt="full screen icon"/>
           </label>
             <iframe 
               srcDoc={srcDoc}

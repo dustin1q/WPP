@@ -114,7 +114,10 @@
     z-index: 2;
 }
   .preview label{
+    
     display:flex;
+    justify-content: space-between; /* or flex-end to align all content to the right */
+  align-items: center; /* for vertical alignment if needed */
     background-color: #000000;
     border: 1px solid #3b3939;
     color: white;
@@ -124,6 +127,10 @@
     border-top-left-radius: .5rem;
     height: 1em;
     margin-top: .2em;
+    
+  }
+  .preview label img{
+    align-items: end;;
     cursor: pointer;
   }
 

@@ -87,10 +87,16 @@
 
 .ui-input-container:has(.ui-input:focus) .ui-input-label {
   transform: translateY(0.5rem) translateX(10px);
+
 }
 
 .ui-input-container:has(input:not(:placeholder-shown)) .ui-input-label {
   transform: translateY(0.5rem) translateX(10px);
+}
+
+.ui-input-container:has(.ui-input:focus) input::placeholder {
+  color: #6b7280;
+
 }
 
 input::placeholder {

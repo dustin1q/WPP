@@ -48,7 +48,8 @@ All commands are run from the root of the project, from a terminal:
 | `npm run build`          | Build your production site to `./dist/`      |
 | `npm run preview`        | Preview your build locally, before deploying |
 | `npm run storybook`      | Starts Storybook dev server at `localhost:6006` |
-| `npm run build-storybook`| Build static Storybook for deployment        |
+| `npm run build-storybook`| Build static Storybook to `public/storybook` |
+| `npm run integrate-storybook` | Build and integrate Storybook with Astro |
 
 ## 📚 Storybook
 
@@ -59,9 +60,9 @@ This project includes Storybook for developing and documenting UI components in 
 - **Checkbox** - Checkbox with label support
 - **Accordion** - Collapsible details/summary component
 
-### Running Storybook
+### Running Storybook (Development)
 
-To view and interact with the UI components:
+To view and interact with the UI components in development mode:
 
 ```bash
 npm run storybook
@@ -73,6 +74,28 @@ This will start Storybook at [http://localhost:6006](http://localhost:6006) wher
 - View component documentation
 - Interact with live examples
 
+### Integrating Storybook with Astro
+
+To access Storybook through your Astro site (useful for production or single-server access):
+
+1. **Build Storybook as static files:**
+   ```bash
+   npm run build-storybook
+   ```
+   This builds Storybook to the `public/storybook/` directory.
+
+2. **Start the Astro dev server:**
+   ```bash
+   npm run dev
+   ```
+
+3. **Access Storybook through Astro:**
+   Navigate to [http://localhost:4321/storybook/](http://localhost:4321/storybook/)
+
+**Quick Integration:** Run `npm run integrate-storybook` to build Storybook in one command, then start your Astro server.
+
+> **Note:** When you make changes to components, you'll need to rebuild Storybook (`npm run build-storybook`) to see updates in the integrated version. For active development, use `npm run storybook` for live reloading.
+
 ### Using Components
 
 Import components from the UI library in your Astro or React files:
@@ -80,3 +103,4 @@ Import components from the UI library in your Astro or React files:
 ```tsx
 import { Select, Input, Checkbox, Accordion } from '@/components/ui';
 ```
+

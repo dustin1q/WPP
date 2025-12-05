@@ -1,11 +1,11 @@
-export { Select } from './Select';
-export type { SelectProps, SelectOption } from './Select';
+export { Select } from './Select/Select';
+export type { SelectProps, SelectOption } from './Select/Select';
 
-export { Input } from './Input';
-export type { InputProps } from './Input';
+export { Input } from './Input/Input';
+export type { InputProps } from './Input/Input';
 
-export { Checkbox } from './Checkbox';
-export type { CheckboxProps } from './Checkbox';
+export { Checkbox } from './Checkbox/Checkbox';
+export type { CheckboxProps } from './Checkbox/Checkbox';
 
-export { Accordion } from './Accordion';
-export type { AccordionProps } from './Accordion';
+export { Accordion } from './Accordion/Accordion';
+export type { AccordionProps } from './Accordion/Accordion';

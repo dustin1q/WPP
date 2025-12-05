@@ -5,8 +5,15 @@ const meta = {
     title: 'UI/Accordion',
     component: Accordion,
     parameters: {
-        layout: 'centered',
+        layout: 'padded',
     },
+    decorators: [
+        (Story) => (
+            <div style={{ width: '600px', margin: '0 auto' }}>
+                <Story />
+            </div>
+        ),
+    ],
     tags: ['autodocs'],
     argTypes: {
         defaultOpen: { control: 'boolean' },
@@ -92,5 +99,64 @@ export const LongContent: Story = {
                 </p>
             </div>
         ),
+    },
+};
+
+export const ExclusiveGroup: Story = {
+    args: {
+        summary: '',
+        children: null,
+    },
+    render: () => (
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+            <Accordion
+                name="faq-group"
+                summary="What is React?"
+                defaultOpen={true}
+            >
+                <p>
+                    React is a JavaScript library for building user interfaces. It lets you create
+                    reusable components and manage application state efficiently.
+                </p>
+            </Accordion>
+
+            <Accordion
+                name="faq-group"
+                summary="What is TypeScript?"
+            >
+                <p>
+                    TypeScript is a strongly typed programming language that builds on JavaScript,
+                    giving you better tooling at any scale.
+                </p>
+            </Accordion>
+
+            <Accordion
+                name="faq-group"
+                summary="What is Storybook?"
+            >
+                <p>
+                    Storybook is a frontend workshop for building UI components and pages in isolation.
+                    It helps you develop and test components independently.
+                </p>
+            </Accordion>
+
+            <Accordion
+                name="faq-group"
+                summary="What is the name attribute?"
+            >
+                <p>
+                    The name attribute on details elements creates an exclusive accordion group.
+                    When multiple details elements share the same name, only one can be open at a time.
+                    Opening one automatically closes the others in the group.
+                </p>
+            </Accordion>
+        </div>
+    ),
+    parameters: {
+        docs: {
+            description: {
+                story: 'Multiple accordions with the same `name` attribute form an exclusive group where only one can be open at a time. Try clicking different accordions to see how opening one automatically closes the others.',
+            },
+        },
     },
 };

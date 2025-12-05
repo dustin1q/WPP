@@ -30,6 +30,13 @@
   --ui-transition: all 0.2s ease-in-out;
 }
 
+/* Input Container */
+.ui-input-container {
+  position: relative;
+  flex-direction: column;
+  gap: var(--ui-spacing-xs);
+}
+
 /* Base Input Styles */
 .ui-input,
 .ui-select {
@@ -65,4 +72,27 @@
 
 .ui-input.error:focus {
   box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
+
+.ui-input-label {
+  display: inline-block;
+  transition: .25s ease-in-out;
+  transform-origin: top left;
+  font-size: 0.875rem;
+  color: var(--ui-text-secondary);
+
+  transform: translateY(1.6rem) translateX(10px);
+  background-color: #ffffff;
+}
+
+.ui-input-container:has(.ui-input:focus) .ui-input-label {
+  transform: translateY(0.5rem) translateX(10px);
+}
+
+.ui-input-container:has(input:not(:placeholder-shown)) .ui-input-label {
+  transform: translateY(0.5rem) translateX(10px);
+}
+
+input::placeholder {
+  color: transparent;
 }

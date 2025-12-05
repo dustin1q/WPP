@@ -41,9 +41,42 @@ Monaco Editor is used as a code editor library wihin the CodeEditor component. T
 
 All commands are run from the root of the project, from a terminal:
 
-| Command           | Action                                       |
-|:----------------  |:-------------------------------------------- |
-| `npm install`     | Installs dependencies                        |
-| `npm run dev`     | Starts local dev server at `localhost:4321`  |
-| `npm run build`   | Build your production site to `./dist/`      |
-| `npm run preview` | Preview your build locally, before deploying |
+| Command                  | Action                                       |
+|:------------------------ |:-------------------------------------------- |
+| `npm install`            | Installs dependencies                        |
+| `npm run dev`            | Starts local dev server at `localhost:4321`  |
+| `npm run build`          | Build your production site to `./dist/`      |
+| `npm run preview`        | Preview your build locally, before deploying |
+| `npm run storybook`      | Starts Storybook dev server at `localhost:6006` |
+| `npm run build-storybook`| Build static Storybook for deployment        |
+
+## 📚 Storybook
+
+This project includes Storybook for developing and documenting UI components in isolation. The component library is located in `src/components/ui/` and includes:
+
+- **Select** - Dropdown select component with options
+- **Input** - Text input with label and error states
+- **Checkbox** - Checkbox with label support
+- **Accordion** - Collapsible details/summary component
+
+### Running Storybook
+
+To view and interact with the UI components:
+
+```bash
+npm run storybook
+```
+
+This will start Storybook at [http://localhost:6006](http://localhost:6006) where you can:
+- Browse all available components
+- Test different component states and props
+- View component documentation
+- Interact with live examples
+
+### Using Components
+
+Import components from the UI library in your Astro or React files:
+
+```tsx
+import { Select, Input, Checkbox, Accordion } from '@/components/ui';
+```

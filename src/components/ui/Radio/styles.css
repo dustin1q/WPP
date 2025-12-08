@@ -1,0 +1,68 @@
+/* Import centralized CSS variables */
+@import '../variables.css';
+
+/* Radio Container */
+.ui-radio-container {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--ui-spacing-sm);
+    cursor: pointer;
+    user-select: none;
+}
+
+.ui-radio-container.disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+/* Radio Input */
+.ui-radio {
+    width: 1rem;
+    height: 1rem;
+    border: 1px solid var(--ui-border);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: var(--ui-transition);
+    appearance: none;
+    background-color: var(--ui-bg);
+    position: relative;
+    flex-shrink: 0;
+}
+
+.ui-radio:checked {
+    border-color: var(--ui-primary);
+}
+
+.ui-radio:checked::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+    background-color: var(--ui-primary);
+}
+
+.ui-radio:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.ui-radio:disabled {
+    cursor: not-allowed;
+    background-color: var(--ui-bg-disabled);
+}
+
+/* Radio Label */
+.ui-radio-label {
+    font-size: 0.875rem;
+    color: var(--ui-text);
+    cursor: pointer;
+}
+
+.ui-radio-container.disabled .ui-radio-label {
+    color: var(--ui-text-disabled);
+    cursor: not-allowed;
+}

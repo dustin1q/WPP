@@ -1,6 +1,13 @@
 /* Import centralized CSS variables */
 @import '../variables.css';
 
+/* Select Container */
+.ui-select-container {
+  position: relative;
+  flex-direction: column;
+  gap: var(--ui-spacing-xs);
+}
+
 /* Base Input Styles */
 .ui-input,
 .ui-select {
@@ -30,11 +37,13 @@
   cursor: not-allowed;
 }
 
-.ui-input.error {
+.ui-input.error,
+.ui-select.error {
   border-color: var(--ui-error);
 }
 
-.ui-input.error:focus {
+.ui-input.error:focus,
+.ui-select.error:focus {
   box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
 }
 
@@ -50,4 +59,21 @@
 
 .ui-select:disabled {
   cursor: not-allowed;
+}
+
+/* Label Styles */
+.ui-select-label {
+  display: inline-block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--ui-text-secondary);
+  margin-bottom: var(--ui-spacing-xs);
+}
+
+/* Error Message Styles */
+.ui-select-error {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--ui-error);
+  margin-top: var(--ui-spacing-xs);
 }

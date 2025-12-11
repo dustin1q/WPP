@@ -11,6 +11,8 @@ const meta = {
     argTypes: {
         disabled: { control: 'boolean' },
         placeholder: { control: 'text' },
+        label: { control: 'text' },
+        error: { control: 'text' },
     },
 } satisfies Meta<typeof Select>;
 
@@ -59,5 +61,33 @@ export const ManyOptions: Story = {
             { value: 'Apollo 17', label: 'Apollo 17' },
         ],
         placeholder: 'Choose your favorite Apollo mission and rocket...',
+    },
+};
+
+export const WithLabel: Story = {
+    args: {
+        options: rocketOptions,
+        label: 'Choose a rocket',
+        placeholder: 'Select a rocket...',
+        id: 'rocket-select',
+    },
+};
+
+export const WithError: Story = {
+    args: {
+        options: rocketOptions,
+        placeholder: 'Select a rocket...',
+        error: 'Please select a valid rocket',
+        id: 'rocket-select-error',
+    },
+};
+
+export const WithLabelAndError: Story = {
+    args: {
+        options: rocketOptions,
+        label: 'Choose a rocket',
+        placeholder: 'Select a rocket...',
+        error: 'This field is required',
+        id: 'rocket-select-full',
     },
 };

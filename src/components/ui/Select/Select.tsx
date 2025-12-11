@@ -13,6 +13,9 @@ export interface SelectProps {
     placeholder?: string;
     disabled?: boolean;
     className?: string;
+    label?: string;
+    error?: string;
+    id?: string;
 }
 
 export const Select: React.FC<SelectProps> = ({
@@ -22,29 +25,46 @@ export const Select: React.FC<SelectProps> = ({
     placeholder = 'Select an option...',
     disabled = false,
     className = '',
+    label,
+    error,
+    id,
 }) => {
     const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
         onChange?.(e.target.value);
     };
 
     return (
-        <select
-            className={`ui-select ${className}`}
-            value={value}
-            onChange={handleChange}
-            disabled={disabled}
-            aria-label="Select input"
-        >
-            {placeholder && (
-                <option value="" disabled>
-                    {placeholder}
-                </option>
+        <div className="ui-select-container">
+            {label && (
+                <label className="ui-select-label" htmlFor={id}>
+                    {label}
+                </label>
             )}
-            {options.map((option) => (
-                <option key={option.value} value={option.value}>
-                    {option.label}
-                </option>
-            ))}
-        </select>
+            <select
+                id={id}
+                className={`ui-select ${error ? 'error' : ''} ${className}`}
+                value={value}
+                onChange={handleChange}
+                disabled={disabled}
+                aria-invalid={error ? 'true' : 'false'}
+                aria-describedby={error ? `${id}-error` : undefined}
+            >
+                {placeholder && (
+                    <option value="" disabled>
+                        {placeholder}
+                    </option>
+                )}
+                {options.map((option) => (
+                    <option key={option.value} value={option.value}>
+                        {option.label}
+                    </option>
+                ))}
+            </select>
+            {error && (
+                <span className="ui-select-error" id={`${id}-error`} role="alert">
+                    {error}
+                </span>
+            )}
+        </div>
     );
 };

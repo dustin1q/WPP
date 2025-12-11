@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './styles.css';
 
 export interface SelectOption {
@@ -29,8 +29,15 @@ export const Select: React.FC<SelectProps> = ({
     error,
     id,
 }) => {
+    const [selectedValue, setSelectedValue] = useState<string>('');
+
+    // Use controlled value if provided, otherwise use internal state
+    const currentValue = value !== undefined ? value : selectedValue;
+
     const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-        onChange?.(e.target.value);
+        const newValue = e.target.value;
+        setSelectedValue(newValue);
+        onChange?.(newValue);
     };
 
     return (
@@ -43,14 +50,14 @@ export const Select: React.FC<SelectProps> = ({
             <select
                 id={id}
                 className={`ui-select ${error ? 'error' : ''} ${className}`}
-                value={value}
+                value={currentValue}
                 onChange={handleChange}
                 disabled={disabled}
                 aria-invalid={error ? 'true' : 'false'}
                 aria-describedby={error ? `${id}-error` : undefined}
             >
                 {placeholder && (
-                    <option value="" disabled>
+                    <option value="" disabled={!disabled}>
                         {placeholder}
                     </option>
                 )}

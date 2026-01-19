@@ -2,11 +2,10 @@
 title: scroll-target-group
 cat: native-css
 image: ""
-desc: The scroll-target-group CSS property specifies whether an element is a scroll marker group container. This allows for styling the current scroll target. In this example, the current scroll target is styled with red text and bold font weight.
+desc: The scroll-target-group CSS property specifies whether an element is a scroll marker group container. This allows for styling the current scroll target. In this example, the current scroll target is styled with red text and bold font weight. 
 ---
 
 <html-code>
-
 <nav id="toc">
   <ol>
     <li><a href="#intro">Introduction</a></li>
@@ -110,9 +109,7 @@ desc: The scroll-target-group CSS property specifies whether an element is a scr
   </p>
 </section>
 </html-code>
-
 <css-code>
-
 ol {
   scroll-target-group: auto;
 /* Keyword values 
@@ -170,6 +167,5 @@ ol {
   margin: 0;
   background: white;
 }
-
 
 </css-code>

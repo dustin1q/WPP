@@ -4,13 +4,13 @@ import Editor from './Editor.jsx'
 import useLocalStorage from '../hooks/useLocalStorage.js'
 import '../styles/editor.css';
 
-import  Modal  from "./Modal.jsx";
+import Modal from "./Modal.jsx";
 export default function CodeEditor(props) {
-  
+
   //assign to local storage hook
-  const [html, setHtml] = useLocalStorage(props.title,'html',''+props.defaultHTML+'')
-  const [css, setCss] = useLocalStorage(props.title,'css', ''+props.defaultCSS+'')
-  const [js, setJs] = useLocalStorage(props.title,'js', ''+props.defaultJS+'')
+  const [html, setHtml] = useLocalStorage(props.title, 'html', '' + props.defaultHTML + '')
+  const [css, setCss] = useLocalStorage(props.title, 'css', '' + props.defaultCSS + '')
+  const [js, setJs] = useLocalStorage(props.title, 'js', '' + props.defaultJS + '')
 
   const [selectedTab, setSelectedTab] = useState('xml')//set HTML as default tab
   const [srcDoc, setSrcDoc] = useState('')
@@ -24,22 +24,25 @@ export default function CodeEditor(props) {
   const cssVars = props.cssVars;
 
 
-  function resetHTML(){
-    setHtml(''+props.defaultHTML+'');
+  function resetHTML() {
+    setHtml('' + props.defaultHTML + '');
   }
-  function resetCSS(){
-    setCss(''+props.defaultCSS+'');
+  function resetCSS() {
+    setCss('' + props.defaultCSS + '');
   }
-  function resetJS(){
-    setJs(''+props.defaultJS+'');
+  function resetJS() {
+    setJs('' + props.defaultJS + '');
   }
 
   useEffect(() => {
     const timeout = setTimeout(() => {
-      
+
       setSrcDoc(`
         <html>
-          <head><style>${cssVars}</style></head>
+          <head>
+          <base href="about:srcdoc"></base>
+          <style>${cssVars}</style>
+          </head>
           <body>${html}</body>
           <style>${css}</style>
           <script>${js}</script>
@@ -54,11 +57,11 @@ export default function CodeEditor(props) {
   }, [html, css, js, cssVars])
 
   return (
-    <> 
-     {/* <button onClick={() => setModal(true)}>CSS Variables</button>*/}
-    <div className="pane">
-      <div className="tab-editor-pane">
-        {html != "null" &&
+    <>
+      {/* <button onClick={() => setModal(true)}>CSS Variables</button>*/}
+      <div className="pane">
+        <div className="tab-editor-pane">
+          {html != "null" &&
             <TabEditor
               language="xml"
               onTabClick={setSelectedTab}
@@ -66,12 +69,12 @@ export default function CodeEditor(props) {
               displayName="HTML"
               value={html}
               onEditorChange={setHtml}
-              onUndoChanges= {resetHTML}
+              onUndoChanges={resetHTML}
               codeChange={htmlChange}
               title={props.title}
             />
-          
-        }
+
+          }
           {css != "null" &&
             <TabEditor
               language="css"
@@ -79,7 +82,7 @@ export default function CodeEditor(props) {
               displayName="CSS"
               value={css}
               onEditorChange={setCss}
-              onUndoChanges= {resetCSS}
+              onUndoChanges={resetCSS}
               title={props.title}
               codeChange={cssChange}
             />
@@ -91,7 +94,7 @@ export default function CodeEditor(props) {
               displayName="JS"
               value={js}
               onEditorChange={setJs}
-              onUndoChanges= {resetJS}
+              onUndoChanges={resetJS}
               codeChange={jsChange}
               title={props.title}
             />
@@ -99,30 +102,31 @@ export default function CodeEditor(props) {
         </div>
         <div className="preview">
           <label>Preview
-            <img onClick={() => setModal(true)} src="/assets/fullscreen_google.svg" alt="Larger Preview"/>
+            <img onClick={() => setModal(true)} src="/assets/fullscreen_google.svg" alt="Larger Preview" />
           </label>
-            <iframe 
-              srcDoc={srcDoc}
-              title="output"
-              sandbox="allow-scripts allow-popups allow-forms"
-              width="100%"
-              height="100%"
-            />
+          <iframe
+            srcDoc={srcDoc}
+            title="output"
+            sandbox="allow-scripts allow-popups allow-forms"
+            width="100%"
+            height="100%"
+          />
         </div>
       </div>
       <Modal openModal={modal} closeModal={() => setModal(false)} title={"Desktop Preview"} id="previewModel">
-          {/*<Editor
+        {/*<Editor
               language="css"
               displayName="CSS Variables"
               value={cssVars}
               readOnly={true}
               />*/}
-              <iframe 
-              srcDoc={srcDoc}
-              title="output"
-              sandbox="allow-scripts allow-popups allow-forms"
-              id="l-iframe"
-            />
+        <iframe
+          srcDoc={srcDoc}
+          title="output"
+          sandbox="allow-scripts allow-popups allow-forms"
+          id="l-iframe"
+          name="preview"
+        />
       </Modal>
     </>
   )

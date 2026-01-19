@@ -113,6 +113,27 @@ desc: The scroll-target-group CSS property specifies whether an element is a scr
 
 <css-code>
 
+ol {
+  scroll-target-group: auto;
+/* Keyword values 
+scroll-target-group: none;
+scroll-target-group: auto;
+*/
+/* Global values 
+scroll-target-group: inherit;
+scroll-target-group: initial;
+scroll-target-group: revert;
+scroll-target-group: revert-layer;
+scroll-target-group: unset;
+*/
+}
+
+:target-current {
+  color: red;
+  text-decoration: underline;
+}
+
+
 nav {
   position: fixed;
   top: 0;
@@ -145,12 +166,6 @@ ol {
   margin: 0;
   background: white;
 }
-ol {
-  scroll-target-group: auto;
-}
 
-:target-current {
-  color: red;
-}
 
 </css-code>

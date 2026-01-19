@@ -5,9 +5,9 @@ import MainLayout from "../layouts/MainLayout.astro";
 <MainLayout title="Overview">
     <section class="breakout">
         <div
-            style=" display:flex; flex-wrap: wrap; justify-content:space-around; align-content: center;"
+            style="display: grid; grid-template-columns: repeat(auto-fit, minmax(30em, 1fr)); gap: 2rem; align-items: center; margin-left: calc(-1 * var(--padding-inline)); margin-right: calc(-1 * var(--padding-inline)); padding: 0 var(--padding-inline);"
         >
-            <div style="flex-basis:30em; ">
+            <div>
                 <h2>The Evolution of Web Architecture</h2>
                 <p>
                     Web-based architectures have evolved significantly over the
@@ -31,11 +31,8 @@ import MainLayout from "../layouts/MainLayout.astro";
                     capabilities.
                 </p>
             </div>
-            <div style="flex-basis:30em; ">
-                <img
-                    src="/assets/img/native_diagram.png"
-                    style="width:100%; margin:0.5em"
-                />
+            <div>
+                <img src="/assets/img/native_diagram.png" style="width:100%;" />
             </div>
         </div>
         <p>

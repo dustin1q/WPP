@@ -1,60 +1,114 @@
 ---
-
-import MainLayout from '../layouts/MainLayout.astro';
+import MainLayout from "../layouts/MainLayout.astro";
 ---
 
 <MainLayout title="Overview">
-
-
-<section class="breakout">
-    <div style=" display:flex; flex-wrap: wrap; justify-content:space-around; align-content: center;">
-        <div style="flex-basis:30em; ">
+    <section class="breakout">
+        <div
+            style=" display:flex; flex-wrap: wrap; justify-content:space-around; align-content: center;"
+        >
+            <div style="flex-basis:30em; ">
+                <h2>The Evolution of Web Architecture</h2>
+                <p>
+                    Web-based architectures have evolved significantly over the
+                    last two decades. One clear trend we van observe is, browser
+                    capabilities within HTML, CSS, and JavaScript have expanded,
+                    and so have the responsibilities placed upon them. As a
+                    result, engineers have developped and adopted countless
+                    frameworks and libraries to abstract and support
+                    webapplication complexity.
+                </p>
+                <h2>The Hidden Cost of Abstraction</h2>
+                <p>
+                    As reliance on these libraries grows, engineers operate
+                    increasingly within abstraction layers rather than with
+                    native web standards. This separation causes skill atrophy,
+                    where deep knowledge of specific libraries replaces a
+                    fundamental understanding of the platform. Consequently,
+                    teams become dependent on these abstractions to bridge their
+                    knowledge gaps, often retaining legacy libraries for
+                    convenience while overlooking superior, modern native
+                    capabilities.
+                </p>
+            </div>
+            <div style="flex-basis:30em; ">
+                <img
+                    src="/assets/img/native_diagram.png"
+                    style="width:100%; margin:0.5em"
+                />
+            </div>
+        </div>
         <p>
-            Web based technologies, & architectures have undergone many changes over the last 20+ years. 
-            In this time we can observe and agree on one clear trend. 
-            Capabilities & therefore responsibilities within the browser (using HTML CSS & JavaScript) have increased significantly. 
-            This increased capability has lead to a high number of solutions solved through the adoption of frameworks and/or JavaScript libraries.
+            While frameworks offer utility, their widespread adoption often
+            results in over-engineered solutions that suffer from performance
+            overhead and high maintenance costs. Many modern libraries are now
+            redundant, as they merely replicate functionality that is
+            effectively handled by the lightweight, native capabilities of the
+            modern web.
+        </p>
+        <h2>Our Mission</h2>
+        <p>
+            <strong>
+                The purpose of this site is to showcase lightweight solutions
+                built on these modern standards. We highlight lesser-known and
+                emerging capabilities in HTML, CSS, and JavaScript to provide
+                low-complexity alternatives to heavy library adoption.
+            </strong>
         </p>
         <p>
-            As a result of this trend, today the web is saturated with JavaScript libraries designed to solve a range of problems from complex to super simple. 
-            While increased capabilities in the browser is a good thing, high adoption of libraries and frameworks can be a slippery slope. High library adoption often leads to a familiar pattern of having over complicated, hard to manage front-end solutions with high regression and dependency vulnerabilities which leads to modernization & scaling limitations.
+            We encourage engineers to adopt these native patterns and eliminate
+            reliance on third-party libraries. This strategy significantly
+            reduces code complexity and boosts performance, while ensuring
+            accessible user experiences that align with the highest industry
+            standards.
         </p>
-        </div>
-        <div style="flex-basis:30em; ">
-            <img src="/assets/img/native_diagram.png" style="width:100%; margin:0.5em"/>
-        </div>
-    </div>
-    <p>
-        As this trend increases, engineers and architects find themselves working with an abstracted interface from their native equivalent. 
-        Additionally, this abstraction can erode an engineers core skills & knowledge of native interfaces as they become more familiar with library interfaces over native. 
-        Overtime, they'll become more dependant on library interfaces due to this knowledge gap & may leverage legacy libraries based on ease-of-use and miss out on modernization opportunities.
-    </p> 
-    <p> While frameworks & libraries can be helpful, adopting them often leads to overly complicated solutions that run slow and are hard to maintain. 
-        Today, many libraries often solve problems that could otherwise be solved with lightweight native capabilities in modern HTML CSS & JavaScript. 
-    </p>
-    <p>
-        <strong>
-            The purpose of this site is to showcase these lightweight native solutions using lesser known or emerging native HTML Javascript & CSS capabilities as a low complexity alternative to librarie adoption.
-        </strong> 
-    </p>
-    <p>
-        Engineers may be encouraged to adopt these patterns and avoid using 3rd party libraries all together. This approach can reduce code complexity, improve performance, and deliver accessible industry best practice user experiences. 
-    </p> <br><br>
-    <h3>Benefits adopting native UI solutions over JavaScript libraries</h3>
-    <ul>
-        <li><strong>Maintainability</strong> - Simply put, low complexity solutions are easier to maintain</li>
-        <li><strong>Time-to-market</strong>- With lowered complexity is your architecture, engineers can respond to updates & enhancements faster</li>
-        <li><strong>Application Performance</strong> - Native solutions leverage APIs the browser gives us for free. This reduces payloads shipped to the browser & overall hydration at the client. This pattern leads performance outcomes no framework can compete with.</li>
-        <li><strong>Futureproof</strong> - Native solutions have a longer shelf-life over frameworks.</li>
-        <li><strong>Documentation, Knowledge</strong> - Native solutions are well documented specifications that are easily accessed</li>
-        <li><strong>Dependency free</strong> - All native solutions are dependency free which reduces risks to platform stability and regression.</li>
-    </ul>
-    <p>
-        Leveraging modern HTML JS & CSS, architects can appreciate these benefits & avoid adopting verbose libraries in their solutions. 
-        By showcasing interactive samples and discussing modern architectural patterns, this site aims to help architects throttle complexities, optimize the performance of your solutions and reduce dependancies. 
-    </p>
-    <p><strong>Note: </strong>
-        While this site advocates to avoid using frameworks, we are not recommending never to use them. Frameworks have practical use-cases and should be leveraged when application complexities call for it. Engineers should always strive for the right balance between application (UI) complexity and architectural complexities. In other words, simple problems should have simple solutions. Adopt frameworks only when its complexity can be weighted evenly against the problem you are solving.
-    </p>
-</section>
+        <br /><br />
+        <h3>Benefits adopting native UI solutions over JavaScript libraries</h3>
+        <ul>
+            <li>
+                <strong>Maintainability</strong> - Simply put, low complexity solutions
+                are easier to maintain
+            </li>
+            <li>
+                <strong>Time-to-market</strong>- With lowered complexity is your
+                architecture, engineers can respond to updates & enhancements
+                faster
+            </li>
+            <li>
+                <strong>Application Performance</strong> - Native solutions leverage
+                APIs the browser gives us for free. This reduces payloads shipped
+                to the browser & overall hydration at the client. This pattern leads
+                performance outcomes no framework can compete with.
+            </li>
+            <li>
+                <strong>Futureproof</strong> - Native solutions have a longer shelf-life
+                over frameworks.
+            </li>
+            <li>
+                <strong>Documentation, Knowledge</strong> - Native solutions are well
+                documented specifications that are easily accessed
+            </li>
+            <li>
+                <strong>Dependency free</strong> - All native solutions are dependency
+                free which reduces risks to platform stability and regression.
+            </li>
+        </ul>
+        <p>
+            Leveraging modern HTML JS & CSS, architects can appreciate these
+            benefits & avoid adopting verbose libraries in their solutions. By
+            showcasing interactive samples and discussing modern architectural
+            patterns, this site aims to help architects throttle complexities,
+            optimize the performance of your solutions and reduce dependancies.
+        </p>
+        <p>
+            <strong>Note: </strong>
+            While this site advocates to avoid using frameworks, we are not recommending
+            never to use them. Frameworks have practical use-cases and should be leveraged
+            when application complexities call for it. Engineers should always strive
+            for the right balance between application (UI) complexity and architectural
+            complexities. In other words, simple problems should have simple solutions.
+            Adopt frameworks only when its complexity can be weighted evenly against
+            the problem you are solving.
+        </p>
+    </section>
 </MainLayout>

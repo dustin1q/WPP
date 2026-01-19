@@ -127,14 +127,19 @@ scroll-target-group: revert-layer;
 scroll-target-group: unset;
 */
 }
-
 :target-current {
   color: red;
+  font-weight: bold;
   text-decoration: underline;
 }
-
-
+body {
+ font: 1.2em Arial, sans-serif;
+  width: 75%;
+  max-width: 700px;
+  margin: 0 auto;
+}
 nav {
+  font: 0.8em Arial, sans-serif;
   position: fixed;
   top: 0;
   left: 0;
@@ -142,7 +147,6 @@ nav {
   display: flex;
   justify-content: center;
 }
-
 section {
   padding-top: 60px;
 }

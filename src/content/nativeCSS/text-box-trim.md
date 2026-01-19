@@ -39,7 +39,7 @@ main {
     align-items: center;
     justify-content: space-around;
 
-    border: 1px solid lch(from red l c h / 0.6);
+    border: 0.5px solid lch(from red l c h / 0.6);
     padding: 0px 20px;
   }
 
@@ -52,8 +52,8 @@ main {
   }
 
   h1 {
-    border: 1px solid lch(from red l c h / 0.6);
-    border-width: 2px 0px;
+    border: 0.5px solid lch(from red l c h / 0.6);
+    border-width: 0.5px 0px;
   }
 
   p {

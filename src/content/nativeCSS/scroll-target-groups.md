@@ -129,6 +129,9 @@ scroll-target-group: unset;
   font-weight: bold;
   text-decoration: underline;
 }
+html { 
+  scroll-behavior: smooth; 
+}
 body {
  font: 1.2em Arial, sans-serif;
   width: 75%;
@@ -167,5 +170,4 @@ ol {
   margin: 0;
   background: white;
 }
-
 </css-code>

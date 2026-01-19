@@ -2,7 +2,7 @@
 title: scroll-target-group
 cat: native-css
 image: ""
-desc: The scroll-target-group CSS property specifies whether an element is a scroll marker group container.
+desc: The scroll-target-group CSS property specifies whether an element is a scroll marker group container. This allows for styling the current scroll target. In this example, the current scroll target is styled with red text and bold font weight.
 ---
 
 <html-code>

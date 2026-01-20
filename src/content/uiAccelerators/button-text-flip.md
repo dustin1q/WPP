@@ -1,6 +1,6 @@
 ---
 title: Button Text Flip
-cat: native-css
+cat: ui-accelerators
 image: ""
 desc: Banner CTA mouseover effect that flips the text on hover. This example demonstrates how to create a simple button with a flip effect using CSS.
 ---

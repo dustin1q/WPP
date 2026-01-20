@@ -9,7 +9,7 @@ desc: CSS only, animate elements as the page is scrolled while maintaining stick
 <article>
   <div class="nav">Sticky Navigation</div>
   <div class="img-container">
-    <img src="/sampleImages/dragon.jpg">
+    <img src="https://behindtheframework.com/sampleImages/dragon.jpg">
   </div>
     <div class="main-content">
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In tellus ipsum, placerat eget fringilla at, efficitur nec lacus. Aenean aliquam posuere commodo. Pellentesque consequat in odio non feugiat. Aenean semper ut mi vel tincidunt. Suspendisse tristique tristique leo nec vulputate. Sed mauris elit, malesuada eu lectus non, volutpat feugiat mauris. Fusce vulputate, leo sit amet aliquet ultrices, sapien ante scelerisque lorem, id sodales ipsum lorem eget orci. Aenean volutpat condimentum sapien, ac cursus arcu imperdiet eu. Pellentesque dapibus libero at leo venenatis, sit amet aliquam metus condimentum. Donec mollis augue sed mauris pretium, quis iaculis erat scelerisque.</p>

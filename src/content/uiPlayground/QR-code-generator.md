@@ -8,8 +8,8 @@ desc: Create a QR code generator using a small dependancy free QR code library (
 Inspired by this Veritasium video 
 [How do QR codes work? (I built one myself to find out)](https://www.youtube.com/watch?v=w5ebcowAJD8)
 <br/>
-Link to library file [qrcode.min.js](/lib/qrcode.min.js)
-<html-code><script src="/lib/qrcode.min.js"></script>
+Link to library file [qrcode.min.js](https://behindtheframework.com/lib/qrcode.min.js)
+<html-code><script src="https://behindtheframework.com/lib/qrcode.min.js"></script>
 <div class="container">
 <form name="qrForm">
   <label  for="msg"l>Enter text or URL</label>

@@ -7,7 +7,7 @@ desc: Matrix using p5
 ---
 
 <html-code>
-<script src="/lib/p5.js"></script>
+<script src="https://behindtheframework.com/lib/p5.js"></script>
     
 </html-code>
 

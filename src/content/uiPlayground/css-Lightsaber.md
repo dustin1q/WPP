@@ -25,7 +25,7 @@ desc: A fun Light Saber effect using CSS
   <div class="blade"></div>
   <label class="hilt" for="on-off">
   </label>
-  <embed src="/sampleImages/coolsaber.mp3" type="">
+  <embed src="https://behindtheframework.com/sampleImages/coolsaber.mp3" type="">
 </div>
 </html-code>
 

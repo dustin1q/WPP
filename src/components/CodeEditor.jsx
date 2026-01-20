@@ -43,9 +43,10 @@ export default function CodeEditor(props) {
           <base href="about:srcdoc"></base>
           <style>${cssVars}</style>
           </head>
-          <body>${html}</body>
+          <body>${html}
           <style>${css}</style>
           <script>${js}</script>
+          </body>
         </html>
       `)
       setHTMLChange(html != props.defaultHTML)

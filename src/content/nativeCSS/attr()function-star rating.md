@@ -1,5 +1,5 @@
 ---
-title: attr() calculations (star rating example)
+title: attr() Calculations w/Star Rating
 cat: native-css
 image: ""
 desc: The attr() CSS function returns the value of a given attribute of the selected element, or a default value if that attribute is not set. The calc() function is used to perform calculations on values.

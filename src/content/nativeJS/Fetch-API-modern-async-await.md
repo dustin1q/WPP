@@ -22,14 +22,7 @@ desc: Fetch is the modern replacement for XMLHttpRequest: unlike XMLHttpRequest,
             <p><strong>Email:</strong> <span class="user-email"></span></p>
         </div>
     </template>
-
-    <script src="script.js"></script>
-</body>
 </html-code>
-<css-code>
-
-</css-code>
-
 <js-code>
 // Function to fetch data and update the DOM
 async function fetchAndDisplayUsers() {
@@ -71,6 +64,8 @@ async function fetchAndDisplayUsers() {
 }
 
 // Call the function to initiate the fetch operation when the script runs
-fetchAndDisplayUsers();
+fetchAndDisplayUsers().catch(error => {
+    console.error('Initial fetch failed:', error);
+});
 
 </js-code>

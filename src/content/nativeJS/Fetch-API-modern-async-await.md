@@ -3,7 +3,7 @@
 title: Fetch API & modern async/await
 cat: native-js
 image: image
-desc: Fetch is the modern replacement for XMLHttpRequest: unlike XMLHttpRequest, which uses callbacks, Fetch is promise-based and is integrated with features of the modern web such as service workers and Cross-Origin Resource Sharing (CORS).
+desc: Fetch is the modern replacement for XMLHttpRequest unlike XMLHttpRequest, which uses callbacks, Fetch is promise-based and is integrated with features of the modern web such as service workers and Cross-Origin Resource Sharing (CORS).
 ---
 
 

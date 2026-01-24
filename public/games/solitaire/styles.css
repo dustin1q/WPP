@@ -248,3 +248,82 @@ button:hover {
         font-size: 1.5rem;
     }
 }
+
+@media (max-width: 480px) {
+    :root {
+        --card-width: 44px;
+        --card-height: 66px;
+        --card-radius: 4px;
+        --tableau-overlap: 12px;
+    }
+
+    #game-container {
+        padding: 8px;
+        gap: 12px;
+    }
+
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        padding-bottom: 10px;
+    }
+
+    h1 {
+        font-size: 1.2rem;
+    }
+
+    #controls {
+        width: 100%;
+        justify-content: space-between;
+        gap: 10px;
+    }
+
+    #stats {
+        flex-wrap: wrap;
+        gap: 8px 12px;
+        font-size: 0.8rem;
+    }
+
+    button {
+        padding: 6px 10px;
+        font-size: 0.85rem;
+    }
+
+    #board {
+        gap: 20px;
+    }
+
+    .pile {
+        border-width: 1px;
+    }
+
+    .pile-container {
+        gap: 8px;
+    }
+
+    #tableau {
+        gap: 8px;
+    }
+
+    .card {
+        padding: 4px;
+        border-radius: var(--card-radius);
+    }
+
+    .card-value {
+        font-size: 0.9rem;
+    }
+
+    .card-suit {
+        font-size: 0.7rem;
+    }
+
+    .card-center {
+        font-size: 1.8rem;
+    }
+
+    .card.face-down {
+        border-width: 2px;
+    }
+}

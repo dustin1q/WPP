@@ -14,7 +14,16 @@ self.addEventListener('install', (event) => {
         caches.open(CACHE_NAME)
             .then((cache) => {
                 console.log('Service Worker: Caching Assets');
-                return cache.addAll(ASSETS);
+                return Promise.all(
+                    ASSETS.map(url => {
+                        return cache.add(url).catch(err => {
+                            console.error(`Service Worker: Failed to cache ${url}:`, err);
+                            // We throw if it's a critical asset, or just log if not.
+                            // For now, let's keep throwing so addAll-like behavior is preserved but with logs.
+                            throw err;
+                        });
+                    })
+                );
             })
     );
     self.skipWaiting();

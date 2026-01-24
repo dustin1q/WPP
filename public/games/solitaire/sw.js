@@ -1,4 +1,4 @@
-const CACHE_NAME = 'solitaire-v1';
+const CACHE_NAME = 'solitaire-v2';
 const ASSETS = [
     './',
     './index.html',
@@ -37,12 +37,20 @@ self.addEventListener('activate', (event) => {
     return self.clients.claim();
 });
 
-// Fetch Event - Cache First Strategy
+// Fetch Event - Stale-While-Revalidate Strategy
 self.addEventListener('fetch', (event) => {
     event.respondWith(
-        caches.match(event.request)
-            .then((response) => {
-                return response || fetch(event.request);
-            })
+        caches.open(CACHE_NAME).then((cache) => {
+            return cache.match(event.request).then((cachedResponse) => {
+                const fetchedResponse = fetch(event.request).then((networkResponse) => {
+                    cache.put(event.request, networkResponse.clone());
+                    return networkResponse;
+                }).catch(() => {
+                    // Fail silently if network fails; we still have the cache
+                });
+
+                return cachedResponse || fetchedResponse;
+            });
+        })
     );
 });

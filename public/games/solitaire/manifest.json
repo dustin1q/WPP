@@ -1,7 +1,7 @@
 {
-  "name": "Solitaire Pro",
+  "name": "SampsonSolitaire",
   "short_name": "Solitaire",
-  "description": "A premium, distraction-free Solitaire experience.",
+  "description": "A Sampson premium, Solitaire experience.",
   "start_url": "index.html",
   "display": "standalone",
   "background_color": "#232624",

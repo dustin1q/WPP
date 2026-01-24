@@ -16,7 +16,7 @@
 <body>
     <div id="game-container">
         <header>
-            <h1>Solitaire</h1>
+            <h3>Sampson Solitaire</h3>
             <div id="controls">
                 <button id="new-game">New Game</button>
                 <div id="stats">
@@ -68,7 +68,19 @@
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
                 navigator.serviceWorker.register('sw.js')
-                    .then(reg => console.log('Service Worker registered:', reg))
+                    .then(reg => {
+                        console.log('Service Worker registered:', reg);
+
+                        // Check for updates on every launch
+                        if (navigator.onLine) {
+                            reg.update();
+                        }
+
+                        // When a new service worker takes over, reload the page
+                        navigator.serviceWorker.addEventListener('controllerchange', () => {
+                            window.location.reload();
+                        });
+                    })
                     .catch(err => console.log('Service Worker registration failed:', err));
             });
         }

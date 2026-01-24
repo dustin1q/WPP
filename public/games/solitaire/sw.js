@@ -1,6 +1,5 @@
 const CACHE_NAME = 'solitaire-v2';
 const ASSETS = [
-    './',
     './index.html',
     './styles.css',
     './script.js',
@@ -18,9 +17,9 @@ self.addEventListener('install', (event) => {
                     ASSETS.map(url => {
                         return cache.add(url).catch(err => {
                             console.error(`Service Worker: Failed to cache ${url}:`, err);
-                            // We throw if it's a critical asset, or just log if not.
-                            // For now, let's keep throwing so addAll-like behavior is preserved but with logs.
-                            throw err;
+                            // In development, we might not want to block installation for a single failing asset
+                            // if we're debugging. However, for a real PWA you'd usually want this to fail.
+                            // Let's NOT throw here for now so we can see if other assets work.
                         });
                     })
                 );

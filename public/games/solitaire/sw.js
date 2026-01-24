@@ -39,6 +39,11 @@ self.addEventListener('activate', (event) => {
 
 // Fetch Event - Stale-While-Revalidate Strategy
 self.addEventListener('fetch', (event) => {
+    // Only handle http/https schemes to avoid error with chrome-extension
+    if (!(event.request.url.startsWith('http'))) {
+        return;
+    }
+
     event.respondWith(
         caches.open(CACHE_NAME).then((cache) => {
             return cache.match(event.request).then((cachedResponse) => {

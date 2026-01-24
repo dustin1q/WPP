@@ -13,16 +13,7 @@ self.addEventListener('install', (event) => {
         caches.open(CACHE_NAME)
             .then((cache) => {
                 console.log('Service Worker: Caching Assets');
-                return Promise.all(
-                    ASSETS.map(url => {
-                        return cache.add(url).catch(err => {
-                            console.error(`Service Worker: Failed to cache ${url}:`, err);
-                            // In development, we might not want to block installation for a single failing asset
-                            // if we're debugging. However, for a real PWA you'd usually want this to fail.
-                            // Let's NOT throw here for now so we can see if other assets work.
-                        });
-                    })
-                );
+                return cache.addAll(ASSETS);
             })
     );
     self.skipWaiting();
@@ -45,7 +36,7 @@ self.addEventListener('activate', (event) => {
     return self.clients.claim();
 });
 
-// Fetch Event - Stale-While-Revalidate Strategy
+// Fetch Event - Network-First Strategy
 self.addEventListener('fetch', (event) => {
     // Only handle http/https schemes to avoid error with chrome-extension
     if (!(event.request.url.startsWith('http'))) {
@@ -53,17 +44,17 @@ self.addEventListener('fetch', (event) => {
     }
 
     event.respondWith(
-        caches.open(CACHE_NAME).then((cache) => {
-            return cache.match(event.request).then((cachedResponse) => {
-                const fetchedResponse = fetch(event.request).then((networkResponse) => {
+        fetch(event.request)
+            .then((networkResponse) => {
+                // If successful, update the cache and return the response
+                return caches.open(CACHE_NAME).then((cache) => {
                     cache.put(event.request, networkResponse.clone());
                     return networkResponse;
-                }).catch(() => {
-                    // Fail silently if network fails; we still have the cache
                 });
-
-                return cachedResponse || fetchedResponse;
-            });
-        })
+            })
+            .catch(() => {
+                // If network fails (offline), fall back to the cache
+                return caches.match(event.request);
+            })
     );
 });

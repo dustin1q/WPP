@@ -1,6 +1,6 @@
 {
   "name": "Sampson Solitaire",
-  "short_name": "Solitaire",
+  "short_name": "Samp Solitaire",
   "description": "A Sampson premium, Solitaire experience.",
   "start_url": "index.html",
   "display": "standalone",

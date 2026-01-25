@@ -44,17 +44,39 @@ class Game {
         this.lastPointerDownTime = 0;
         this.lastPointerDownCard = null;
         this.isAnimating = false;
+        this.hasStarted = false;
 
         this.init();
     }
 
     init() {
         this.loadHighScore();
+        this.setupEventListeners();
+        this.render();
+    }
+
+    restart() {
+        // Clear timer
+        if (this.timerInterval) {
+            clearInterval(this.timerInterval);
+            this.timerInterval = null;
+        }
+
+        // Reset state
+        this.moves = 0;
+        this.score = 5000;
+        this.startTime = null;
+        this.isAnimating = false;
+        this.dragData = null;
+        document.getElementById('timer').textContent = '00:00';
+
+        // Clean up any stray animation elements
+        document.querySelectorAll('.gliding').forEach(el => el.remove());
+
         this.createDeck();
         this.shuffleDeck();
         this.deal();
         this.render();
-        this.setupEventListeners();
     }
 
     loadHighScore() {
@@ -478,23 +500,30 @@ class Game {
     }
 
     setupEventListeners() {
-        document.getElementById('new-game').addEventListener('click', () => {
-            clearInterval(this.timerInterval);
-            new Game();
+        const newGameBtn = document.getElementById('new-game');
+        newGameBtn.addEventListener('click', () => {
+            if (!this.hasStarted) {
+                this.hasStarted = true;
+                newGameBtn.textContent = 'New Game';
+            }
+            this.restart();
         });
 
         document.getElementById('play-again').addEventListener('click', () => {
             document.getElementById('win-overlay').classList.add('hidden');
-            new Game();
+            this.restart();
         });
 
         document.getElementById('stock').addEventListener('click', () => {
             this.drawFromStock();
         });
 
-        // Global pointer events for dragging
-        window.addEventListener('pointermove', (e) => this.onPointerMove(e));
-        window.addEventListener('pointerup', (e) => this.onPointerUp(e));
+        // Global pointer events for dragging - only add once
+        if (!window._solitaireListenersAdded) {
+            window.addEventListener('pointermove', (e) => window.game?.onPointerMove(e));
+            window.addEventListener('pointerup', (e) => window.game?.onPointerUp(e));
+            window._solitaireListenersAdded = true;
+        }
     }
 }
 

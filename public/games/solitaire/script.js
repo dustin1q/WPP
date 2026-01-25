@@ -43,6 +43,7 @@ class Game {
         this.dragData = null;
         this.lastPointerDownTime = 0;
         this.lastPointerDownCard = null;
+        this.isAnimating = false;
 
         this.init();
     }
@@ -120,18 +121,46 @@ class Game {
     // --- Interaction Logic ---
 
     drawFromStock() {
+        if (this.isAnimating) return;
+
         if (this.stock.length === 0) {
             // Recycle waste
             this.stock = this.waste.reverse().map(c => ({ ...c, faceUp: false }));
             this.waste = [];
+            this.render();
         } else {
+            this.isAnimating = true;
             const card = this.stock.pop();
-            card.faceUp = true;
-            this.waste.push(card);
+
+            // Create a temporary element for the animation
+            const stockRect = document.getElementById('stock').getBoundingClientRect();
+            const wasteEl = document.getElementById('waste');
+            const wasteRect = wasteEl.getBoundingClientRect();
+
+            const tempCard = this.createCardElement({ ...card, faceUp: true }, { type: 'stock' });
+            tempCard.classList.add('gliding');
+            tempCard.style.position = 'fixed';
+            tempCard.style.left = `${stockRect.left}px`;
+            tempCard.style.top = `${stockRect.top}px`;
+            tempCard.style.margin = '0';
+            document.body.appendChild(tempCard);
+
+            // Force reflow
+            tempCard.offsetHeight;
+
+            tempCard.style.left = `${wasteRect.left}px`;
+            tempCard.style.top = `${wasteRect.top}px`;
+
+            tempCard.addEventListener('transitionend', () => {
+                document.body.removeChild(tempCard);
+                card.faceUp = true;
+                this.waste.push(card);
+                this.isAnimating = false;
+                this.render();
+            }, { once: true });
         }
         this.moves++;
         this.updateStats();
-        this.render();
     }
 
     canMoveToFoundation(card, foundationIndex) {
@@ -160,14 +189,21 @@ class Game {
         targetPile.push(...cardsToMove);
 
         // Flip top card of source if it's tableau
-        if (source.type === 'tableau' && sourcePile.length > 0) {
+        if (source.type === 'tableau' && sourcePile.length > 0 && !sourcePile[sourcePile.length - 1].faceUp) {
             sourcePile[sourcePile.length - 1].faceUp = true;
+            sourcePile[sourcePile.length - 1].isFlipping = true;
         }
 
         this.moves++;
         this.updateStats();
         this.checkWin();
-        this.render();
+        this.render({
+            lastMove: {
+                targetType: target.type,
+                targetIndex: target.index,
+                cardId: cardsToMove[0].id
+            }
+        });
     }
 
     getPile(type, index) {
@@ -325,6 +361,10 @@ class Game {
     createCardElement(card, source) {
         const el = document.createElement('div');
         el.className = `card ${card.color} ${card.faceUp ? '' : 'face-down'}`;
+        if (card.isFlipping) {
+            el.classList.add('flipping');
+            delete card.isFlipping;
+        }
         el.id = card.id;
 
         if (card.faceUp) {
@@ -350,7 +390,7 @@ class Game {
         return el;
     }
 
-    render() {
+    render(options = {}) {
         // Render Stock
         const stockEl = document.getElementById('stock');
         stockEl.innerHTML = '';
@@ -386,8 +426,20 @@ class Game {
             pile.forEach((cardData, cardIndex) => {
                 const cardEl = this.createCardElement(cardData, { type: 'tableau', index: i, cardIndex });
                 el.appendChild(cardEl);
+
+                // Add snap or success animation if this was the last move target
+                if (options.lastMove && options.lastMove.targetType === 'tableau' && options.lastMove.targetIndex === i && cardData.id === options.lastMove.cardId) {
+                    cardEl.classList.add('snapping');
+                }
             });
         });
+
+        // Add pulse to foundation if it was the target
+        if (options.lastMove && options.lastMove.targetType === 'foundation') {
+            const foundationEl = document.getElementById(`foundation-${options.lastMove.targetIndex}`);
+            const topCard = foundationEl.querySelector('.card');
+            if (topCard) topCard.classList.add('success-pulse');
+        }
     }
 
     updateStats() {

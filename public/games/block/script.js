@@ -241,7 +241,7 @@ class Game {
         this.dragData = null;
     }
 
-    placeShape(shape, r, c, poolIndex) {
+    async placeShape(shape, r, c, poolIndex) {
         if (!this.canPlace(shape, r, c)) return false;
 
         shape.cells.forEach(([dr, dc]) => {
@@ -251,9 +251,31 @@ class Game {
         this.score += shape.cells.length;
         this.pool[poolIndex] = null;
 
-        const clearedCount = this.checkAndClearLines();
-        if (clearedCount > 0) {
-            this.score += (clearedCount * 10) * clearedCount; // Bonus for multi-line
+        this.render(); // Render placement immediately
+
+        const clearedInfo = this.checkAndClearLines();
+        if (clearedInfo.count > 0) {
+            this.isAnimating = true;
+            this.score += (clearedInfo.count * 10) * clearedInfo.count; // Bonus for multi-line
+
+            // Add animation class to cells
+            clearedInfo.cells.forEach(([cr, cc]) => {
+                const cell = this.getCellEl(cr, cc);
+                if (cell) cell.classList.add('clearing');
+            });
+
+            // Wait for explosion
+            await new Promise(resolve => setTimeout(resolve, 400));
+
+            // Actually clear logic
+            clearedInfo.rows.forEach(r => {
+                for (let c = 0; c < GRID_SIZE; c++) this.grid[r][c] = null;
+            });
+            clearedInfo.cols.forEach(c => {
+                for (let r = 0; r < GRID_SIZE; r++) this.grid[r][c] = null;
+            });
+
+            this.isAnimating = false;
         }
 
         this.updateStats();
@@ -276,11 +298,13 @@ class Game {
     checkAndClearLines() {
         let rowsToClear = [];
         let colsToClear = [];
+        let cellsToAnim = new Set();
 
         // Check rows
         for (let r = 0; r < GRID_SIZE; r++) {
             if (this.grid[r].every(cell => cell !== null)) {
                 rowsToClear.push(r);
+                for (let c = 0; c < GRID_SIZE; c++) cellsToAnim.add(`${r},${c}`);
             }
         }
 
@@ -293,18 +317,18 @@ class Game {
                     break;
                 }
             }
-            if (full) colsToClear.push(c);
+            if (full) {
+                colsToClear.push(c);
+                for (let r = 0; r < GRID_SIZE; r++) cellsToAnim.add(`${r},${c}`);
+            }
         }
 
-        // Clear
-        rowsToClear.forEach(r => {
-            for (let c = 0; c < GRID_SIZE; c++) this.grid[r][c] = null;
-        });
-        colsToClear.forEach(c => {
-            for (let r = 0; r < GRID_SIZE; r++) this.grid[r][c] = null;
-        });
-
-        return rowsToClear.length + colsToClear.length;
+        return {
+            count: rowsToClear.length + colsToClear.length,
+            rows: rowsToClear,
+            cols: colsToClear,
+            cells: Array.from(cellsToAnim).map(s => s.split(',').map(Number))
+        };
     }
 
     isGameOver() {
@@ -334,9 +358,11 @@ class Game {
                 if (this.grid[r][c]) {
                     cell.style.backgroundColor = this.grid[r][c];
                     cell.classList.add('occupied');
+                    cell.classList.remove('clearing');
                 } else {
                     cell.style.backgroundColor = '';
                     cell.classList.remove('occupied');
+                    cell.classList.remove('clearing');
                 }
             }
         }

@@ -252,25 +252,30 @@ button:hover {
 }
 
 /* Animations */
-@keyframes clear-pop {
+@keyframes explode {
     0% {
         transform: scale(1);
+        filter: brightness(1) drop-shadow(0 0 0 transparent);
         opacity: 1;
     }
 
-    50% {
+    30% {
         transform: scale(1.2);
-        opacity: 0.5;
+        filter: brightness(2) drop-shadow(0 0 15px currentColor);
+        opacity: 1;
     }
 
     100% {
-        transform: scale(0);
+        transform: scale(2);
+        filter: brightness(3) drop-shadow(0 0 30px currentColor);
         opacity: 0;
     }
 }
 
 .clearing {
-    animation: clear-pop 0.3s forwards;
+    animation: explode 0.4s ease-out forwards;
+    z-index: 100;
+    pointer-events: none;
 }
 
 @media (max-width: 400px) {

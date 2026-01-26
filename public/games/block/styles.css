@@ -45,7 +45,7 @@ body {
     display: flex;
     justify-content: center;
     overflow: hidden;
-    touch-action: manipulation;
+    touch-action: none;
 }
 
 #game-container {
@@ -70,6 +70,7 @@ h1 {
     font-weight: 700;
     background: linear-gradient(45deg, var(--accent-color), #bc4e9c);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
@@ -143,6 +144,7 @@ h1 {
     gap: 2px;
     cursor: grab;
     transition: transform 0.2s;
+    touch-action: none;
 }
 
 .block.dragging {
@@ -235,6 +237,7 @@ button:hover {
     margin-bottom: 20px;
     background: linear-gradient(45deg, #ff4757, #ffa502);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 

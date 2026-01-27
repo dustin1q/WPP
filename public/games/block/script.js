@@ -42,9 +42,12 @@ class Game {
 
     measureGrid() {
         const gridEl = document.getElementById('grid');
+        if (!gridEl) return;
+
         const firstCell = gridEl.querySelector('.cell');
         const style = getComputedStyle(gridEl);
 
+        this.gridRect = gridEl.getBoundingClientRect();
         this.cellSize = firstCell.offsetWidth;
         this.cellGap = parseFloat(style.gap) || 2;
         this.padding = parseFloat(style.padding) || this.cellGap;
@@ -197,16 +200,16 @@ class Game {
     }
 
     getGridCoords(e) {
-        const gridRect = document.getElementById('grid').getBoundingClientRect();
+        if (!this.gridRect) this.measureGrid();
 
         // y is adjusted by -50px to match the visual offset in onPointerMove
         const x = e.clientX - this.dragData.offsetX + (this.cellSize / 2);
         const y = e.clientY - this.dragData.offsetY - 50 + (this.cellSize / 2);
 
-        if (x < gridRect.left || x > gridRect.right || y < gridRect.top || y > gridRect.bottom) return null;
+        if (x < this.gridRect.left || x > this.gridRect.right || y < this.gridRect.top || y > this.gridRect.bottom) return null;
 
-        const r = Math.floor((y - gridRect.top - this.padding) / (this.cellSize + this.cellGap));
-        const c = Math.floor((x - gridRect.left - this.padding) / (this.cellSize + this.cellGap));
+        const r = Math.floor((y - this.gridRect.top - this.padding) / (this.cellSize + this.cellGap));
+        const c = Math.floor((x - this.gridRect.left - this.padding) / (this.cellSize + this.cellGap));
 
         if (r < 0 || r >= GRID_SIZE || c < 0 || c >= GRID_SIZE) return null;
 
@@ -386,8 +389,12 @@ class Game {
             this.restart();
         });
 
-        window.addEventListener('pointermove', (e) => this.onPointerMove(e));
-        window.addEventListener('pointerup', (e) => this.onPointerUp(e));
+        if (!window._blockListenersAdded) {
+            window.addEventListener('pointermove', (e) => window.game?.onPointerMove(e));
+            window.addEventListener('pointerup', (e) => window.game?.onPointerUp(e));
+            window.addEventListener('resize', () => window.game?.measureGrid());
+            window._blockListenersAdded = true;
+        }
     }
 }
 

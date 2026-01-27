@@ -1,5 +1,5 @@
 :root {
-    --bg-color: #121212;
+    --bg-color: #646363;
     --card-bg: #1e1e1e;
     --grid-bg: #2a2a2a;
     --text-primary: #ffffff;
@@ -68,10 +68,9 @@ header {
 h1 {
     font-size: 1.8rem;
     font-weight: 700;
-    background: linear-gradient(45deg, var(--accent-color), #bc4e9c);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: var(--text-primar);
+
+
 }
 
 .subtitle {
@@ -184,7 +183,7 @@ h1 {
     justify-content: center;
     align-items: center;
     background: rgba(255, 255, 255, 0.03);
-    border-radius: 12px;
+
 }
 
 #controls {
@@ -193,7 +192,7 @@ h1 {
 }
 
 button {
-    background: linear-gradient(45deg, var(--accent-color), #bc4e9c);
+    background: var(--bg-color);
     border: none;
     color: white;
     padding: 12px 30px;

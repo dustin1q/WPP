@@ -161,7 +161,76 @@ input.addEventListener('change', (e) => {
     const val = parseInt(e.target.value);
     if (!isNaN(val)) {
         renderActivities(val);
+        // Set up scroll tracking after rendering and animations complete
+        setTimeout(setupScrollTracking, 800);
     }
 });
+
+// Map category IDs to their RGB color values
+const categoryColors = {
+    'touch': '255, 193, 7',
+    'movement': '76, 175, 80',
+    'taste': '255, 112, 67',
+    'hearing': '103, 58, 183',
+    'vision': '0, 150, 136',
+    'sleep': '3, 169, 244'
+};
+
+// Track if scroll listener is already set up
+let scrollListenerActive = false;
+
+function setupScrollTracking() {
+    const categoryGroups = document.querySelectorAll('.category-group');
+    const intensityElements = document.querySelectorAll('.intensity');
+
+    if (categoryGroups.length === 0 || intensityElements.length === 0) return;
+
+    function updateBackgroundColor() {
+        let closestCategory = null;
+        let minDistance = Infinity;
+
+        // Find which category header is closest to the top of the viewport
+        categoryGroups.forEach(group => {
+            const rect = group.getBoundingClientRect();
+
+            // Calculate distance from top of viewport
+            // We want the category that's closest to the top (but still visible or just passed)
+            const distance = Math.abs(rect.top);
+
+            // Only consider categories that are visible or just above viewport
+            if (rect.bottom > 0 && distance < minDistance) {
+                minDistance = distance;
+                // Extract category ID - skip 'category-group', find the actual category
+                const classList = Array.from(group.classList);
+                const categoryClass = classList.find(c => c.startsWith('category-') && c !== 'category-group');
+                if (categoryClass) {
+                    closestCategory = categoryClass.replace('category-', '');
+                }
+            }
+        });
+
+        // Update intensity background color if we found a category
+        if (closestCategory && categoryColors[closestCategory]) {
+            const color = `rgb(${categoryColors[closestCategory]})`;
+            intensityElements.forEach(el => {
+                el.style.backgroundColor = color;
+            });
+        } else {
+            // Reset to default gray if no category is close
+            intensityElements.forEach(el => {
+                el.style.backgroundColor = '#64748b';
+            });
+        }
+    }
+
+    // Remove old listener if exists and add new one
+    if (!scrollListenerActive) {
+        window.addEventListener('scroll', updateBackgroundColor, { passive: true });
+        scrollListenerActive = true;
+    }
+
+    // Initial update
+    setTimeout(updateBackgroundColor, 200);
+}
 
 // No initial render - show instructional message instead

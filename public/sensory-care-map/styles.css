@@ -75,13 +75,24 @@ h1 {
     padding: 15px 25px;
     border-radius: 16px;
     box-shadow: var(--shadow);
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
     position: sticky;
     top: 0px;
     z-index: 10;
     margin-bottom: 30px;
+}
+
+.input-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.week-selector {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
 }
 
 .input-section label {
@@ -319,9 +330,9 @@ footer {
 }
 
 .intensity {
-    width: 20px;
-    height: 12px;
-    border-radius: 4px;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
     background: #64748b;
 }
 

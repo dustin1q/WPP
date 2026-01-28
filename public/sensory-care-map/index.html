@@ -18,17 +18,7 @@
                 <h1>SENSORY DEVELOPMENT CARE MAP</h1>
                 <p class="subtitle">Personalized Developmental Support Guide</p>
             </div>
-            <div class="input-section">
-                <label for="week-input">Gestational Age (weeks):</label>
-                <div class="input-wrapper">
-                    <input type="number" id="week-input" min="22" max="41" value="22" placeholder="22-41">
-                    <span class="week-label">Weeks</span>
-                </div>
-            </div>
-        </header>
-
-        <main>
-            <section class="instructions">
+            <div class="instructions">
                 <div class="instruction-card protect">
                     <h3>PROTECT</h3>
                     <p>Reduce too much sensory input to protect healthy brain development.</p>
@@ -37,7 +27,40 @@
                     <h3>PROMOTE</h3>
                     <p>Provide appropriate sensory input to promote healthy brain development.</p>
                 </div>
-            </section>
+            </div>
+            <div class="input-section">
+                <label for="week-input">Select Gestational Age (weeks):</label>
+                <div class="input-wrapper">
+                    <select id="week-input">
+                        <option value="">Select a week...</option>
+                        <option value="22">22</option>
+                        <option value="23">23</option>
+                        <option value="24">24</option>
+                        <option value="25">25</option>
+                        <option value="26">26</option>
+                        <option value="27">27</option>
+                        <option value="28">28</option>
+                        <option value="29">29</option>
+                        <option value="30">30</option>
+                        <option value="31">31</option>
+                        <option value="32">32</option>
+                        <option value="33">33</option>
+                        <option value="34">34</option>
+                        <option value="35">35</option>
+                        <option value="36">36</option>
+                        <option value="37">37</option>
+                        <option value="38">38</option>
+                        <option value="39">39</option>
+                        <option value="40">40</option>
+                        <option value="41">41</option>
+                    </select>
+                    <span class="week-label">Weeks</span>
+                </div>
+            </div>
+        </header>
+
+        <main>
+
 
             <div id="activities-container" class="activities-grid">
                 <!-- Activities will be injected here by script.js -->

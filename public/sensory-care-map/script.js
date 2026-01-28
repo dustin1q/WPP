@@ -157,10 +157,11 @@ function renderActivities(week) {
     });
 }
 
-input.addEventListener('input', (e) => {
+input.addEventListener('change', (e) => {
     const val = parseInt(e.target.value);
-    renderActivities(val);
+    if (!isNaN(val)) {
+        renderActivities(val);
+    }
 });
 
-// Initial render
-renderActivities(22);
+// No initial render - show instructional message instead

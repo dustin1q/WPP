@@ -3,7 +3,7 @@
     --card-bg: rgba(255, 255, 255, 0.8);
     --text-primary: #1e293b;
     --text-secondary: #64748b;
-    --accent-color: #3b82f6;
+    --accent-color: #8d8989;
 
     /* Category Colors */
     --color-touch: 255, 193, 7;
@@ -85,9 +85,9 @@ h1 {
 }
 
 .input-section label {
-    font-size: 0.85rem;
+    font-size: 1rem;
     font-weight: 600;
-    text-transform: uppercase;
+
     color: var(--text-secondary);
 }
 
@@ -102,8 +102,8 @@ select {
     border-radius: 8px;
     padding: 8px 12px;
     font-size: 1.2rem;
-    font-weight: 600;
-    min-width: 180px;
+
+    width: 80px;
     color: var(--accent-color);
     outline: none;
     transition: border-color 0.2s;

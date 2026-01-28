@@ -65,6 +65,10 @@ h1 {
     font-size: 0.95rem;
 }
 
+.logo-section {
+    grid-column: 1 / -1;
+}
+
 .input-section {
     grid-column: 1 / -1;
     background: white;

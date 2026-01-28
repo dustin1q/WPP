@@ -98,7 +98,7 @@ class Game {
     refillPool() {
         for (let i = 0; i < 3; i++) {
             const randomShape = SHAPES[Math.floor(Math.random() * SHAPES.length)];
-            this.pool[i] = { ...randomShape, id: `shape-${Date.now()}-${i}` };
+            this.pool[i] = { ...randomShape, id: `shape-${Date.now()}-${i}`, isNew: true };
         }
         this.renderPool();
     }
@@ -117,6 +117,12 @@ class Game {
     createShapeElement(shape, poolIndex) {
         const el = document.createElement('div');
         el.className = 'block';
+
+        if (shape.isNew) {
+            el.classList.add('spawn');
+            delete shape.isNew;
+        }
+
         el.dataset.poolIndex = poolIndex;
 
         // Calculate dimensions
@@ -170,7 +176,7 @@ class Game {
     }
 
     onPointerMove(e) {
-        if (!this.dragData) return;
+        if (!this.dragData || this.isAnimating) return;
 
         if (!this.dragData.started) {
             const dist = Math.hypot(e.clientX - this.dragData.startX, e.clientY - this.dragData.startY);
@@ -190,6 +196,8 @@ class Game {
 
     highlightPlacement(e) {
         this.clearHighlights();
+        if (!this.dragData || this.isAnimating) return;
+
         const coords = this.getGridCoords(e);
         if (coords && this.canPlace(this.dragData.shape, coords.r, coords.c)) {
             this.dragData.shape.cells.forEach(([dr, dc]) => {
@@ -224,24 +232,35 @@ class Game {
         });
     }
 
-    onPointerUp(e) {
+    async onPointerUp(e) {
         if (!this.dragData) return;
+
+        this.clearHighlights(); // Clear highlights IMMEDIATELY upon release
 
         if (this.dragData.started) {
             const coords = this.getGridCoords(e);
-            const placed = coords && this.placeShape(this.dragData.shape, coords.r, coords.c, this.dragData.poolIndex);
+            const el = this.dragData.el;
+
+            // Mark movement as finished so mover doesn't re-highlight during async delay
+            const dragDataRef = this.dragData;
+            this.dragData = null;
+
+            const placed = coords && await this.placeShape(dragDataRef.shape, coords.r, coords.c, dragDataRef.poolIndex);
 
             if (!placed) {
-                // Return to slot
-                this.dragData.el.classList.remove('dragging');
-                this.dragData.el.style.left = '';
-                this.dragData.el.style.top = '';
+                el.classList.remove('dragging');
+                el.style.left = '';
+                el.style.top = '';
+            } else {
+                el.classList.add('hidden');
+                el.classList.remove('dragging');
             }
-        }
 
-        this.dragData.el.releasePointerCapture(e.pointerId);
-        this.clearHighlights();
-        this.dragData = null;
+            el.releasePointerCapture(e.pointerId);
+        } else {
+            this.dragData.el.releasePointerCapture(e.pointerId);
+            this.dragData = null;
+        }
     }
 
     async placeShape(shape, r, c, poolIndex) {
@@ -254,6 +273,13 @@ class Game {
         this.score += shape.cells.length;
         this.pool[poolIndex] = null;
 
+        // Update pool state immediately before any async delays to prevent ghosting
+        if (this.pool.every(p => p === null)) {
+            this.refillPool();
+        } else {
+            this.renderPool();
+        }
+
         this.render(); // Render placement immediately
 
         const clearedInfo = this.checkAndClearLines();
@@ -261,16 +287,13 @@ class Game {
             this.isAnimating = true;
             this.score += (clearedInfo.count * 10) * clearedInfo.count; // Bonus for multi-line
 
-            // Add animation class to cells
+            // Add animation class to cells before we clear the data
             clearedInfo.cells.forEach(([cr, cc]) => {
                 const cell = this.getCellEl(cr, cc);
                 if (cell) cell.classList.add('clearing');
             });
 
-            // Wait for explosion
-            await new Promise(resolve => setTimeout(resolve, 400));
-
-            // Actually clear logic
+            // NOW Actually clear logic data so the grid is empty while we wait
             clearedInfo.rows.forEach(r => {
                 for (let c = 0; c < GRID_SIZE; c++) this.grid[r][c] = null;
             });
@@ -278,18 +301,14 @@ class Game {
                 for (let r = 0; r < GRID_SIZE; r++) this.grid[r][c] = null;
             });
 
+            // Wait for explosion
+            await new Promise(resolve => setTimeout(resolve, 400));
+
             this.isAnimating = false;
+            this.render(); // Final clean render
         }
 
         this.updateStats();
-
-        // If pool is empty, refill
-        if (this.pool.every(p => p === null)) {
-            this.refillPool();
-        }
-
-        this.render();
-        this.renderPool();
 
         if (this.isGameOver()) {
             this.onGameOver();
@@ -360,12 +379,20 @@ class Game {
                 const cell = this.getCellEl(r, c);
                 if (this.grid[r][c]) {
                     cell.style.backgroundColor = this.grid[r][c];
+                    cell.style.color = this.grid[r][c];
+                    cell.style.opacity = '1';
+                    cell.style.transform = 'scale(1)';
+                    cell.style.filter = '';
                     cell.classList.add('occupied');
-                    cell.classList.remove('clearing');
+                    cell.classList.remove('clearing', 'highlight');
                 } else {
                     cell.style.backgroundColor = '';
+                    cell.style.color = '';
+                    cell.style.opacity = '1';
+                    cell.style.transform = 'scale(1)';
+                    cell.style.filter = '';
                     cell.classList.remove('occupied');
-                    cell.classList.remove('clearing');
+                    cell.classList.remove('clearing', 'highlight');
                 }
             }
         }

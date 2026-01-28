@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sensory Development Care Map</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="app-container">
+        <header>
+            <div class="logo-section">
+                <h1>SENSORY DEVELOPMENT CARE MAP</h1>
+                <p class="subtitle">Personalized Developmental Support Guide</p>
+            </div>
+            <div class="input-section">
+                <label for="week-input">Gestational Age (weeks):</label>
+                <div class="input-wrapper">
+                    <input type="number" id="week-input" min="22" max="41" value="22" placeholder="22-41">
+                    <span class="week-label">Weeks</span>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <section class="instructions">
+                <div class="instruction-card protect">
+                    <h3>PROTECT</h3>
+                    <p>Reduce too much sensory input to protect healthy brain development.</p>
+                </div>
+                <div class="instruction-card promote">
+                    <h3>PROMOTE</h3>
+                    <p>Provide appropriate sensory input to promote healthy brain development.</p>
+                </div>
+            </section>
+
+            <div id="activities-container" class="activities-grid">
+                <!-- Activities will be injected here by script.js -->
+                <div class="loading-state">
+                    Please enter a week number between 22 and 41.
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <div class="legend">
+                <div class="legend-item"><span class="intensity high"></span> More Frequent</div>
+                <div class="legend-item"><span class="intensity low"></span> Less Frequent</div>
+            </div>
+            <p class="disclaimer">The activities are based on your baby's medical status and ability to cope with
+                "sensory input".</p>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

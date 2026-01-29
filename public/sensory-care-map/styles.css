@@ -3,7 +3,10 @@
     --card-bg: rgba(255, 255, 255, 0.8);
     --text-primary: #1e293b;
     --text-secondary: #64748b;
+    --text-primary: #1e293b;
+    --text-secondary: #64748b;
     --accent-color: #8d8989;
+    --current-category-color: #64748b;
 
     /* Category Colors */
     --color-touch: 255, 193, 7;
@@ -45,6 +48,38 @@ body {
     padding: 40px;
     box-shadow: var(--shadow-lg);
 }
+
+
+/* Global color updates based on active target */
+/* Global color updates based on active target */
+body[data-category="touch"] {
+    --current-category-color: rgb(var(--color-touch));
+}
+
+body[data-category="movement"] {
+    --current-category-color: rgb(var(--color-movement));
+}
+
+body[data-category="taste"] {
+    --current-category-color: rgb(var(--color-taste));
+}
+
+body[data-category="hearing"] {
+    --current-category-color: rgb(var(--color-hearing));
+}
+
+body[data-category="vision"] {
+    --current-category-color: rgb(var(--color-vision));
+}
+
+body[data-category="sleep"] {
+    --current-category-color: rgb(var(--color-sleep));
+}
+
+
+
+
+
 
 header {
     display: grid;
@@ -278,25 +313,50 @@ select:focus {
     background: rgb(var(--color-touch));
 }
 
+.category-touch {
+    view-timeline-name: --touch;
+}
+
 .category-movement .category-header {
     background: rgb(var(--color-movement));
+}
+
+.category-movement {
+    view-timeline-name: --movement;
 }
 
 .category-taste .category-header {
     background: rgb(var(--color-taste));
 }
 
+.category-taste {
+    view-timeline-name: --taste;
+}
+
 .category-hearing .category-header {
     background: rgb(var(--color-hearing));
+}
+
+.category-hearing {
+    view-timeline-name: --hearing;
 }
 
 .category-vision .category-header {
     background: rgb(var(--color-vision));
 }
 
+.category-vision {
+    view-timeline-name: --vision;
+}
+
 .category-sleep .category-header {
     background: rgb(var(--color-sleep));
 }
+
+.category-sleep {
+    view-timeline-name: --sleep;
+}
+
 
 .sub-category.PROTECT .sub-category-title {
     color: #991b1b;
@@ -333,8 +393,12 @@ footer {
     width: 25px;
     height: 25px;
     border-radius: 50%;
-    background: #64748b;
+    background: var(--current-category-color);
+    transition: background-color 0.3s;
 }
+
+
+
 
 .intensity.high {
     opacity: 1;

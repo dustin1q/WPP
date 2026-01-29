@@ -137,7 +137,7 @@ function renderActivities(week) {
                         const dot = document.createElement('div');
                         dot.className = 'activity-dot';
                         dot.style.backgroundColor = `rgba(var(--color-${cat.id}), ${item.opacity})`;
-                        dot.innerHTML = item.opacity === 1 ? '✓' : '';
+                        dot.innerHTML = '';
 
                         const text = document.createElement('div');
                         text.className = 'activity-text';

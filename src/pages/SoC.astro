@@ -1,0 +1,68 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import "../styles/soc.css";
+const desc =
+    "Separation of Concerns (SoC) is a software design principle that emphasizes the separation of different concerns or responsibilities into distinct modules or components. This principle helps improve code organization, maintainability, and scalability.";
+---
+
+<MainLayout title="Separation of Concerns (SoC)" desc={desc}>
+    <section class="full-width-content">
+        <p>
+            Modern CSS and HTML are profoundly affecting Separation of Concerns
+            (SoC) by enabling developers to offload complex layout, interaction,
+            and styling logic from JavaScript to native, declarative markup and
+            styles.
+        </p>
+        <p>
+            Toggle the button to see examples of how a few concerns are impacted
+            with emerging CSS & HTML features.
+        </p>
+    </section>
+    <div class="pyramid-container">
+        <input type="checkbox" id="toggleCheckbox" class="toggle-checkbox" />
+        <label for="toggleCheckbox" class="toggle-label"></label>
+        <div class="venn-diagram">
+            <!-- CSS Circle (Left) -->
+            <div class="circle css-circle">
+                <div class="circle-label">PRESENTATION</div>
+                <span class="css-svg"></span>
+
+                <div class="category">LAYOUTS</div>
+                <div class="category">FONTS</div>
+                <div class="category">COLORS</div>
+                <div class="css-items-container changing-items">
+                    <div class="category">INTERACTION</div>
+                    <div class="category">VALIDATION</div>
+                    <div class="category">ANIMATION</div>
+                </div>
+            </div>
+
+            <!-- HTML Circle (Bottom Center) -->
+            <div class="circle html-circle">
+                <div class="circle-label">STRUCTURE</div>
+                <span class="html-svg"></span>
+
+                <div class="category">PARAGRAPHS</div>
+                <div class="category">FORMS</div>
+                <div class="category">LISTS</div>
+                <div class="category">HEADINGS</div>
+                <div class="html-items-container changing-items">
+                    <div class="category">VALIDATION</div>
+                </div>
+            </div>
+
+            <!-- JavaScript Circle (Right) -->
+            <div class="circle js-circle">
+                <div class="circle-label">BEHAVIOUR</div>
+                <span class="js-svg"></span>
+
+                <div class="js-items changing-items">
+                    <div class="category">INTERACTION</div>
+                    <div class="category">VALIDATION</div>
+                    <div class="category">ANIMATION</div>
+                </div>
+                <div class="category">BUSINESS LOGIC</div>
+            </div>
+        </div>
+    </div>
+</MainLayout>

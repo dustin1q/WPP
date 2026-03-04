@@ -44,6 +44,11 @@ p {
 	background: var(--color-dark-grey);
 	display: grid;
 	justify-content: center;
+
+	p {
+		font-family: "Space Grotesk1";
+		text-transform: uppercase;
+	}
 }
 
 main {

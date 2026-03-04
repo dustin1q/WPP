@@ -2,10 +2,7 @@ body {
 	font-family: 'Space Grotesk Light', Arial, Helvetica, sans-serif;
 	color: var(--color-primary);
 	font-size: 1rem;
-	background: #f9fafb;
-	color: #000000;
-	padding: 0;
-	margin: 0;
+	background: black;
 }
 
 
@@ -38,12 +35,7 @@ p {
 	padding: 10px 0px 10px 0px;
 }
 
-@media (prefers-color-scheme: dark) {
-	body {
-		background: #ffffff;
-		color: var(--black);
-	}
-}
+
 
 .footer {
 	margin-top: 10px;

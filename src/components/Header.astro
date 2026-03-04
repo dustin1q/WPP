@@ -1,29 +1,41 @@
 ---
-import '../styles/header.css';
-import Hamburger from '../components/Hamburger.astro';
+import "../styles/header.css";
+import Hamburger from "../components/Hamburger.astro";
 
-let {noSearch} = Astro.props;
+let { noSearch } = Astro.props;
 ---
-<header class="breakout">
-    <Hamburger {noSearch}/>
-    <div class="headerTitle">
-        <h1>Behind the Framework </h1>
-        <p>Reduce Complexities & Improve Performance</p>
-    </div>
-    <div id="logo">
-     <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 1920 1080" fill="#FFFFFF" height="80" width="80">
-       <g>
-          <g id="Layer_1">
-            <g>
-              <path d="M769.31,454.19v-51.55l120.85-43.66v29.58l-116.34,39.72,116.34,40v29.58l-120.85-43.66Z"/>
-              <path d="M983.39,304.9h35.21l-81.97,241.69h-35.21l81.97-241.69Z"/>
-              <path d="M1029.87,468.28l116.34-40-116.34-39.72v-29.58l120.85,43.66v51.55l-120.85,43.66v-29.58Z"/>
-            </g>
-            <path d="M1448.47,328.64v81.26h-136.15V107.46h-704.6v302.45h-136.15v-81.26h-249.04v194.2h249.04v-81.26h136.15v200.7h336.47v136.15h-108.69v194.2h249.04v-194.2h-108.69v-136.15h336.47v-200.7h136.15v81.26h249.04v-194.2h-249.04ZM439.89,491.17h-185.7v-130.86h185.7v130.86ZM1052.87,940.96h-185.7v-130.86h185.7v130.86ZM639.38,139.13h641.26v70.07h-641.26v-70.07ZM1280.65,610.61h-641.26V240.87h641.26v369.74ZM1665.84,491.17h-185.7v-130.86h185.7v130.86Z"/>
-          </g>
-        </g>
-      </svg>
-    </div>
-</header>
 
-   
+<header class="breakout">
+  <Hamburger {noSearch} />
+  <div class="headerTitle">
+    <h1>Behind the Framework</h1>
+    <p>Reduce Complexities & Improve Performance</p>
+  </div>
+  <div id="logo">
+    <svg
+      version="1.0"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="#FFFFFF"
+      viewBox="0 0 600.000000 447.000000"
+      preserveAspectRatio="xMidYMid meet"
+      height="80"
+      width="80"
+    >
+      <g
+        transform="translate(0.000000,447.000000) scale(0.050000,-0.050000)"
+        fill="#ffffff"
+        stroke="none"
+      >
+        <path
+          d="M2848 6916 c-483 -509 -1103 -1163 -1378 -1455 -275 -291 -619 -656 -765 -810 l-265 -280 107 -111 c164 -170 945 -1004 2013 -2150 534 -571 984 -1053 1000 -1071 17 -17 70 -75 119 -129 l88 -97 267 278 c147 154 291 308 319 344 l51 65 -97 106 c-148 161 -1491 1593 -2074 2211 l-517 548 107 112 c59 62 216 225 349 363 132 137 443 462 689 720 246 259 637 668 869 910 231 242 476 499 544 570 l123 131 -320 334 c-176 184 -328 335 -336 335 -9 0 -411 -416 -893 -924z"
+        ></path>
+        <path
+          d="M7620 7517 c-170 -178 -313 -331 -317 -341 -4 -11 77 -106 180 -213 406 -420 768 -799 1907 -1993 241 -253 444 -465 449 -470 6 -6 37 -39 69 -74 l57 -64 -476 -506 c-261 -278 -558 -591 -658 -696 -216 -225 -1342 -1425 -1469 -1564 -48 -54 -81 -104 -73 -112 15 -14 382 -407 544 -583 l83 -90 137 149 c120 130 386 416 1546 1660 514 551 861 920 1211 1290 198 210 377 400 397 424 l38 44 -348 366 c-191 201 -586 618 -877 926 -1063 1124 -2064 2170 -2077 2170 -7 0 -152 -145 -323 -323z"
+        ></path>
+        <path
+          d="M4028 4722 c-4 -5 -8 -187 -8 -405 l0 -397 1820 0 1821 0 -6 401 -5 401 -1807 4 c-993 2 -1810 0 -1815 -4z"
+        ></path>
+      </g>
+    </svg>
+  </div>
+</header>

@@ -1,7 +1,8 @@
 :root {
 	--black: #232323;
-	--color-light-grey: #919191;
-	--color-extra-light-grey: #dddddd;
+	--color-light-grey: #c0bcbc;
+	--color-light-grey-2: #706e6e;
+	--color-dark-grey: #323232;
 	--dark-blue: #113045;
 	--light-blue: #6CEAFC;
 	--extra-light-blue: #DBFAFD;
@@ -9,8 +10,9 @@
 	--color-blue: #0070d2;
 	--color-green: #008827;
 	--color-red: #c00;
-	--color-primary: var(--color-black);
+	--color-primary: var(--color-white);
 	--color-secondary: var(--color-extra-light-grey);
+	--color-accent: rgb(245 158 11);
 	--font-primary: euro;
 
 	/*hamburger Variables */
@@ -42,6 +44,7 @@
 	src: url('../styles/fonts/space-grotesk/SpaceGrotesk1.woff2') format('woff2');
 
 }
+
 
 
 @font-face {

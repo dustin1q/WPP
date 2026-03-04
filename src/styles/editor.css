@@ -1,185 +1,215 @@
+ body {
+   background-color: var(--color-light-grey-2);
+ }
+
  .pane {
-    height: 70vh;
-    display: flex;
-    padding-top: 1em;
-  }
+   height: 70vh;
+   display: flex;
+   padding-top: 1em;
+ }
 
-  .tab-editor-pane{
-    display: flex;
-    flex-wrap: wrap;
-    width: 50%;
-    height:100%;
-    padding: 0px;
-  }
-  
-  .editor-container {
-    padding: .5rem;
-    background-color: hsl(225, 6%, 25%);
-    overflow:visible;
-   
+ .tab-editor-pane {
+   display: flex;
+   flex-wrap: wrap;
+   width: 50%;
+   height: 100%;
+   padding: 0px;
+ }
 
-  }
+ .editor-container {
+   padding: .5rem;
+   background-color: hsl(225, 6%, 25%);
+   overflow: visible;
 
-  
-  .editor-title {
-    display:flex;
-    background-color: #000000;
-    color: white;
-    font-size: .7rem;
-    padding: .5rem 1rem .5rem 1rem;
-    border-top-right-radius: .5rem;
-    border-top-left-radius: .5rem;
-    margin-right: .5em;
-    margin-top: .2em;
-    cursor: pointer; 
-    height: 1em;
-    button {
-      margin-left: 0.8em;
-      font-size: 1rem;
-      line-height: 0.2rem;
-     }
-  }
-  
-  .monaco-wrapper {
-    height: 90%;
-    border-bottom: 1px solid var(--dark-blue);
-  }
 
-  
-  .Monaco {
-    order: 1;
-    width: 100%;
-    padding: 0em;
-    line-height: 1.5;
-    font-size: 0.9em;
-  }
- 
-  .editor-tabs-radio {
-    display: none;
-  }
-  .editor-tabs-content {
-    order: 1;
-    width: 100%;
-    height: 100%;
-    padding: 0;
-    line-height: 1.5;
-    font-size: 0.9em;
-    display: none;
-  }
+ }
 
-  .editor-tabs-radio:checked + .editor-title {
-    background-color: rgb(30, 30, 30);
-    border: 1px solid #8d8a8a;
-    border-bottom: 0;
-    display: flex;
-    line-height: 1.2rem;
-  }
-  .editor-tabs-radio:checked + .editor-title + .editor-tabs-content {
-    display: initial;
-  }
 
-  iframe{
-    width:100%;
-    height:63vh;
-    box-sizing: border-box;
-    border: 1px solid var(--dark-blue);
-  }
- 
-  .preview {
-    resize: horizontal;
-    display: flex;
-    flex-direction: column;
-    width: 50%;
-    height:70vh;
-    overflow: hidden; /* Hide scrollbars */
-    position: relative;
-  }
-  ::-webkit-resizer {
-    background-color: none;
-    /*size does not work*/  
-    display:block;  
-    width: 150px;
-    height: 150px;
-}
-  .preview::after {
-    pointer-events: none;
-    content: "\21C6";
-    font-size: 20px;
-    position: absolute;
-    height: 22px;
-    width: 22px;
-    text-align: center;
-    bottom: 2px;
-    right: -2px;
-    z-index: 2;
-}
-  .preview label{
-    
-    display:flex;
-    justify-content: space-between; /* or flex-end to align all content to the right */
-  align-items: center; /* for vertical alignment if needed */
-    background-color: #000000;
-    border: 1px solid #3b3939;
-    color: white;
-    font-size: .7rem;
-    padding: .5rem 1rem .5rem 1rem;
-    border-top-right-radius: .5rem;
-    border-top-left-radius: .5rem;
-    height: 1em;
-    margin-top: .2em;
-    
-  }
-  .preview label img{
-    align-items: end;;
-    cursor: pointer;
-  }
+ .editor-title {
+   display: flex;
+   background-color: #000000;
+   color: var(--color-accent);
 
-  #previewModel::backdrop {
-    background-color: rgb(4, 4, 16, 0.25);
-    backdrop-filter: blur(5px);
+   font-size: .7rem;
+   padding: .5rem 1rem .5rem 1rem;
+   border-top-right-radius: .5rem;
+   border-top-left-radius: .5rem;
+   margin-right: .5em;
+   margin-top: .2em;
+   cursor: pointer;
+   height: 1em;
 
-  }
-#previewModel{
-    z-index: 5000;
-    width: 90%;   
-    min-width: 400px;  
-    padding: 0px; 
-    height:85vh;
-}
-.modal{
-    height: 85vh;
-    overflow: auto; /* Allows content to be scrollable */
-    scrollbar-width: none; /* For Firefox */
-    -ms-overflow-style: none; /* For IE and legacy Edge */
-  }
+   button {
+     margin-left: 0.8em;
+     font-size: 1rem;
+     line-height: 0.2rem;
+   }
+ }
+
+ .monaco-wrapper {
+   height: 90%;
+   border-bottom: 1px solid var(--dark-blue);
+ }
+
+
+ .Monaco {
+   order: 1;
+   width: 100%;
+   padding: 0em;
+   line-height: 1.5;
+   font-size: 0.9em;
+ }
+
+ .editor-tabs-radio {
+   display: none;
+ }
+
+ .editor-tabs-content {
+   order: 1;
+   width: 100%;
+   height: 100%;
+   padding: 0;
+   line-height: 1.5;
+   font-size: 0.9em;
+   display: none;
+ }
+
+ .editor-tabs-radio:checked+.editor-title {
+   background-color: rgb(30, 30, 30);
+   border: 1px solid #8d8a8a;
+   border-bottom: 0;
+   display: flex;
+   line-height: 1.2rem;
+ }
+
+ .editor-tabs-radio:checked+.editor-title+.editor-tabs-content {
+   display: initial;
+ }
+
+ iframe {
+   width: 100%;
+   height: 63vh;
+   box-sizing: border-box;
+   border: 1px solid var(--dark-blue);
+   background-color: white;
+ }
+
+ .preview {
+   resize: horizontal;
+   display: flex;
+   flex-direction: column;
+   width: 50%;
+   height: 70vh;
+   overflow: hidden;
+   /* Hide scrollbars */
+   position: relative;
+ }
+
+ ::-webkit-resizer {
+   background-color: none;
+   /*size does not work*/
+   display: block;
+   width: 150px;
+   height: 150px;
+ }
+
+ .preview::after {
+   pointer-events: none;
+   content: "\21C6";
+   font-size: 20px;
+   position: absolute;
+   height: 22px;
+   width: 22px;
+   text-align: center;
+   bottom: 2px;
+   right: -2px;
+   z-index: 2;
+ }
+
+ .preview label {
+
+   display: flex;
+   justify-content: space-between;
+   /* or flex-end to align all content to the right */
+   align-items: center;
+   /* for vertical alignment if needed */
+   background-color: #000000;
+   border: 1px solid #3b3939;
+   color: var(--color-accent);
+
+   font-size: .7rem;
+   padding: .5rem 1rem .5rem 1rem;
+   border-top-right-radius: .5rem;
+   border-top-left-radius: .5rem;
+   height: 1em;
+   margin-top: .2em;
+
+ }
+
+ .preview label img {
+   align-items: end;
+   ;
+   cursor: pointer;
+ }
+
+ #previewModel::backdrop {
+   background-color: rgb(4, 4, 16, 0.25);
+   backdrop-filter: blur(5px);
+
+ }
+
+ #previewModel {
+   z-index: 5000;
+   width: 90%;
+   min-width: 400px;
+   padding: 0px;
+   height: 85vh;
+ }
+
+ .modal {
+   height: 85vh;
+   overflow: auto;
+   /* Allows content to be scrollable */
+   scrollbar-width: none;
+   /* For Firefox */
+   -ms-overflow-style: none;
+   /* For IE and legacy Edge */
+ }
+
  .modal::-webkit-scrollbar {
-    display: none; /* For WebKit browsers */
-}
-.modalContent{
-    width:100%;
-    height:76vh;
-}
- #l-iframe{
-    height:75vh;
-  }
-.modalTop{
-    display: flex;
-    background: #000000;
-    color: #ffffff;
-    height:10vh;
-    align-items: center;
-    h3{
-      font-size: 1.2em;
-      margin-left: 1.2em;
-      padding: 0px;
-      line-height: inherit;
-      letter-spacing: inherit;
-    }
-    button{
-      margin-left: auto;
-      margin-right: 3em;
-      background: #000000;
-      font-weight: bold;
-      color: #ffffff;
-    }
-  }
+   display: none;
+   /* For WebKit browsers */
+ }
+
+ .modalContent {
+   width: 100%;
+   height: 76vh;
+ }
+
+ #l-iframe {
+   height: 75vh;
+ }
+
+ .modalTop {
+   display: flex;
+   background: #000000;
+   color: #ffffff;
+   height: 10vh;
+   align-items: center;
+
+   h3 {
+     font-size: 1.2em;
+     margin-left: 1.2em;
+     padding: 0px;
+     line-height: inherit;
+     letter-spacing: inherit;
+   }
+
+   button {
+     margin-left: auto;
+     margin-right: 3em;
+     background: #000000;
+     font-weight: bold;
+     color: var(--color-accent);
+   }
+ }

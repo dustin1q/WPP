@@ -18,7 +18,7 @@
     font-size: 14px;
     font-weight: 700;
     letter-spacing: 1px;
-    color: white;
+    color: var(--color-accent);
     background: #4a4a4a;
     border: none;
     border-radius: 6px;
@@ -47,9 +47,9 @@
 .category {
     font-size: 12px;
     font-weight: 700;
-    color: #666;
+    color: var(--color-light-grey);
     padding: 6px 12px;
-    background: rgba(255, 255, 255, 0.5);
+    background: var(--color-dark-grey-2);
     border-radius: 12px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
     white-space: nowrap;
@@ -71,7 +71,7 @@
     max-height: 200px;
 
     .category {
-        color: rgb(228, 73, 73);
+        color: rgb(244, 160, 160);
     }
 }
 
@@ -169,7 +169,8 @@
 .circle-label {
     font-size: 1.2em;
     letter-spacing: 2px;
-    color: #4a4a4a;
+    color: white;
+    font-family: "Space Grotesk1";
     margin-bottom: 0px;
     width: 250px;
     text-align: center;

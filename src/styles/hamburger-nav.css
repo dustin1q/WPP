@@ -61,11 +61,11 @@
 
 .close-btn {
   position: absolute;
-  top: 1rem;
-  right: 1rem;
+  top: 0.7rem;
+  right: 0.7rem;
   background: none;
   border: none;
-  font-size: 17px;
+  font-size: 14px;
   font-weight: bold;
   color: var(--color-accent);
 }

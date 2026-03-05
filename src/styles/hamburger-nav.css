@@ -44,13 +44,9 @@
 }
 
 .menu-btn {
-
   margin: -15px 0px 0 -15px;
-  grid-column-start: 0;
-  grid-row-start: 0;
   justify-self: left;
   align-self: left;
-
   background: none;
   border: none;
   font-size: 30px;
@@ -58,6 +54,7 @@
 
   @media (max-width: 700px) {
     margin: -15px 0px 0 -40px;
+
   }
 }
 

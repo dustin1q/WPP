@@ -11,6 +11,17 @@
     @media (max-width: 71em) {
         padding-left: 2.3em;
         height: 4em;
+
+        @media (max-width: 420px) {
+            .headerTitle {
+                line-height: 1;
+                vertical-align: middle;
+
+                h1 {
+                    font-size: 1em;
+                }
+            }
+        }
     }
 }
 

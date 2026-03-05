@@ -55,13 +55,9 @@ let { noSearch } = Astro.props;
                 </svg>
             </a>
         </li>
-        {
-            !noSearch && (
-                <li>
-                    <Search />
-                </li>
-            )
-        }
+        <li>
+            <Search />
+        </li>
         <li>
             <details name="navGroup">
                 <summary>Native HTML</summary>

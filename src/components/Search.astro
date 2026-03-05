@@ -1,39 +1,61 @@
 <aside>
-<form class="search">
-    <label for="search"></label>
-    <input type="search" required min="2" max="24" name="search" id="search" placeholder="Search all code samples..."/>
-</form>
-<!--sourced fron this lesson https://www.youtube.com/watch?v=XnV_2MWqAhQ -->
+    <form class="search">
+        <label for="search"></label>
+        <input
+            type="search"
+            required
+            min="2"
+            max="24"
+            name="search"
+            id="search"
+            placeholder="Search all code samples..."
+        />
+    </form>
+    <!--sourced fron this lesson https://www.youtube.com/watch?v=XnV_2MWqAhQ -->
 </aside>
 <style>
-    html{
+    html {
         scrollbar-gutter: stable;
     }
-    .search{
+    .search {
         display: grid;
-        gap: 1rem;
+        gap: 0.6rem;
         max-width: 32ch;
-        input{
+        input {
             font: inherit;
+            font-size: 12px;
             border-radius: 3px;
-            height:30px;
+            height: 25px;
             padding: 5px;
+            background: var(--color-dark-grey, #323232);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            color: var(--color-light-grey, #c0bcbc);
+            transition: border-color 0.2s ease-in-out;
         }
-
+        input:focus {
+            outline: none;
+            border-color: var(--color-accent, rgb(245 158 11));
+        }
+        ::placeholder {
+            color: rgba(255, 255, 255, 0.4);
+            opacity: 1;
+            font-size: 12px;
+        }
     }
 </style>
 <script>
     import DOMPurify from "dompurify";
     const form = document.querySelector("form");
-    form?.addEventListener("submit", (e) =>{
+    form?.addEventListener("submit", (e) => {
         e.preventDefault();
         const formData = new FormData(form);
-        const searchTerm = DOMPurify.sanitize(formData.get("search")?.toString());
+        const searchTerm = DOMPurify.sanitize(
+            formData.get("search")?.toString(),
+        );
         console.log(formData.get("search"));
-        if(!searchTerm || searchTerm.length === 0) return;
+        if (!searchTerm || searchTerm.length === 0) return;
         const url = new URL("/search", window.location.origin);
         url.searchParams.set("q", searchTerm);
         window.location.assign(url.toString());
-
-    })
+    });
 </script>

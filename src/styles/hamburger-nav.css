@@ -14,6 +14,7 @@
   right: auto;
   background: var(--color-dark-grey);
   color: var(--color-light-grey);
+  border-right: 1px solid var(--color-light-grey-2);
   /*  animate  */
   transition: translate 0.3s ease-out, display 0.3s ease-out allow-discrete,
     overlay 0.5s ease-out allow-discrete;
@@ -151,6 +152,10 @@
   margin: 0;
 }
 
+::marker {
+  color: var(--color-accent);
+  font-size: 0.8rem;
+}
 
 details::details-content {
   height: 0;

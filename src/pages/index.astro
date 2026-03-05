@@ -5,7 +5,7 @@ import MainLayout from "../layouts/MainLayout.astro";
 <MainLayout title="Overview">
     <section class="breakout">
         <div
-            style="display: grid; grid-template-columns: repeat(auto-fit, minmax(30em, 1fr)); gap: 2rem; align-items: center; margin-left: calc(-1 * var(--padding-inline)); margin-right: calc(-1 * var(--padding-inline)); padding: 0 var(--padding-inline);"
+            style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 30em), 1fr)); gap: 2rem; align-items: center; margin-left: calc(-1 * var(--padding-inline)); margin-right: calc(-1 * var(--padding-inline)); padding: 0 var(--padding-inline);"
         >
             <div>
                 <h2 style="margin-top: 1rem;">
@@ -36,7 +36,7 @@ import MainLayout from "../layouts/MainLayout.astro";
             <div>
                 <img
                     src="/assets/img/native_diagram2.png"
-                    style="width:100%;"
+                    style="width:100%; height:auto; display:block; max-width:600px; margin:0 auto;"
                 />
             </div>
         </div>

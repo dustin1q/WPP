@@ -1,78 +1,108 @@
 ---
-import MainLayout from '../layouts/MainLayout.astro';
-
+import MainLayout from "../layouts/MainLayout.astro";
 ---
-<MainLayout title="Pros & Cons of Framwork Adoption">
+
+<MainLayout title="Pros & Cons of Framework Adoption">
     <style>
-        .grid{
+        .grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            border-top: 1px solid black;
-            border-right: 1px solid black;
-            
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+            background: var(--color-dark-grey, #323232);
+            margin: 1rem 0;
         }
-        .grid > span{
-            padding: 8px 4px;
-            border-left: 1px solid black;
-            border-bottom: 1px solid black;
+
+        .grid > span {
+            padding: 12px 16px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            color: var(--color-light-grey, #c0bcbc);
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
         }
-        section{
-            margin: 0.5em;
+
+        .grid > span:nth-child(even) {
+            border-left: 1px solid rgba(255, 255, 255, 0.05);
         }
-        .gridHeader{
-            font-weight: bold;
-            text-align: center;
+
+        /* Remove border from last row */
+        .grid > span:nth-last-child(-n + 2) {
+            border-bottom: none;
+        }
+
+        section {
+            margin: 1.5rem 0.5rem;
+        }
+
+        .gridHeader {
+            font-family: "Space Grotesk1", sans-serif;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--color-accent, rgb(245 158 11)) !important;
+            background: rgba(255, 255, 255, 0.05);
+            justify-content: center;
+            font-size: 0.85rem !important;
+        }
+
+        h3 {
+            margin-top: 2rem;
+            color: var(--color-primary, #eeeded);
         }
     </style>
-<section class="breakout">
-    <article>
-        
-        <section> 
-            <p>
-                Adopting a JavaScript framework or library often comes with benefits. This is why we use frameworks in the first place. Whats rarely discussed is are the risks and trade-offs we unknowingly or knowingly accept when adopting JavaScript libraries and frameworks. Here we explore the pro and cons of JavaScript library and framework adoption.
-            </p>
-            <h3>Framework & Library Adoption</h3>
-            <div class="grid">
-                <span class="gridHeader">Pros</span>
-                <span class="gridHeader">Cons</span>
-                <span>Time to Market</span>
-                <span>Added Payload</span>
-                <span>Tested & Relyable</span>
-                <span>Regression Risk</span>
-                <span>Well Documented</span>
-                <span>Increased Dependancies</span>
-                <span>Customizable</span>
-                <span>Performance impact</span>
-                <span>Cross-Browser Support</span>
-                <span>Ongoing support - version MGMT</span>
-                <span></span>
-                <span>Future Proof</span>
-            </div>
-            <br/>
-            <h3>Native Capabilities Adoption</h3>
-            <div class="grid">
-                <span class="gridHeader">Pros</span>
-                <span class="gridHeader">Cons</span>
-                <span>Time to Market</span>
-                <span>Cross-Browser Support</span>
-                <span>Tested & Relyable</span>
-                <span></span>
-                <span>Well Documented</span>
-                <span></span>
-                <span>Dependancy Free</span>
-                <span></span>
-                <span>Performant</span>
-                <span></span>
-                <span>Future proof</span>
-                <span></span>
-                <span>Customizable</span>
-                <span></span>
-                <span>Progressive enhancement</span>
-                <span></span>
-            </div>
-        </section>
-       
-    </article>
-</section>
-   
+    <section class="breakout">
+        <article>
+            <section>
+                <p>
+                    Adopting a JavaScript framework or library often comes with
+                    benefits. This is why we use frameworks in the first place.
+                    Whats rarely discussed is are the risks and trade-offs we
+                    unknowingly or knowingly accept when adopting JavaScript
+                    libraries and frameworks. Here we explore the pro and cons
+                    of JavaScript library and framework adoption.
+                </p>
+                <h3>Framework & Library Adoption</h3>
+                <div class="grid">
+                    <span class="gridHeader">Pros</span>
+                    <span class="gridHeader">Cons</span>
+                    <span>Time to Market</span>
+                    <span>Added Payload</span>
+                    <span>Tested & Reliable</span>
+                    <span>Regression Risk</span>
+                    <span>Well Documented</span>
+                    <span>Increased Dependencies</span>
+                    <span>Customizable</span>
+                    <span>Performance Impact</span>
+                    <span>Cross-Browser Support</span>
+                    <span>Ongoing Support - Version MGMT</span>
+                    <span></span>
+                    <span>Future Proof</span>
+                </div>
+                <br />
+                <h3>Native Capabilities Adoption</h3>
+                <div class="grid">
+                    <span class="gridHeader">Pros</span>
+                    <span class="gridHeader">Cons</span>
+                    <span>Time to Market</span>
+                    <span>Cross-Browser Support</span>
+                    <span>Tested & Reliable</span>
+                    <span></span>
+                    <span>Well Documented</span>
+                    <span></span>
+                    <span>Dependency Free</span>
+                    <span></span>
+                    <span>Performant</span>
+                    <span></span>
+                    <span>Future Proof</span>
+                    <span></span>
+                    <span>Customizable</span>
+                    <span></span>
+                    <span>Progressive Enhancement</span>
+                    <span></span>
+                </div>
+            </section>
+        </article>
+    </section>
 </MainLayout>

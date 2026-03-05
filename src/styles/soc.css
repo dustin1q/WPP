@@ -24,7 +24,7 @@
 
 /* Left label: "Past" */
 .toggle-label::before {
-    content: 'Past';
+    content: 'Older SOC';
     font-size: 13px;
     font-weight: 700;
     letter-spacing: 1px;
@@ -35,7 +35,7 @@
 
 /* Right label: "Modern" */
 .toggle-label::after {
-    content: 'Modern';
+    content: 'Modern SOC';
     font-size: 13px;
     font-weight: 700;
     letter-spacing: 1px;

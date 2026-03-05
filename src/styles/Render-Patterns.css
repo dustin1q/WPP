@@ -1,139 +1,167 @@
-.Render-View{
-   
-    
-   
-    
-   
-    padding: 20px;
+/* ── Render-View Container ──────────────────────────────────────── */
+.Render-View {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: start;
+    gap: 2em;
+    padding: 24px;
     margin-top: 1em;
+    background: var(--color-dark-grey, #323232);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.07);
 }
 
-.Render-Controls{
-   grid-area: 1/2;
-    grid-column-end: 4;
-    gap: 0.5em;
-    
-    .input-holder:has(input[type="radio"]:checked) { 
-        border-bottom-right-radius: 225px 15px;
-        border-bottom-left-radius:5px 255px;
-        border-bottom:solid 3px #41403E;
-    }
-    .input-holder{
-        display: grid;
-        grid-area: 1/1;
-       
-        border-radius: 2px;
-        > label{
-            font-size: 1rem;
-            line-height: 1.1;
-        }
-        > input[type="radio"] {
-            /* turn off the radio UI */
-            /*-webkit-appearance: none;
-            appearance: none;*/
+/* ── Radio Controls ─────────────────────────────────────────────── */
+.Render-Controls {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25em;
+
+    .input-holder {
+        display: block;
+        border-radius: 6px;
+        padding: 2px 0;
+        transition: border-color 0.2s ease;
+
+        >input[type="radio"] {
             display: none;
-           
-        } 
-        > input[type="radio"]:checked+label {
-            font-weight: bold;
-            font-size: 1.5rem;
-            color: black;
-           
+        }
+
+        >label {
+            display: block;
+            font-family: "Space Grotesk1", Arial, sans-serif;
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--color-light-grey, #c0bcbc);
+            letter-spacing: 1px;
+            cursor: pointer;
+            padding: 10px 16px;
+            border-radius: 8px;
+            border: 1px solid transparent;
+            transition: color 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+        }
+
+        >label:hover {
+            color: var(--color-primary, #eeeded);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        >input[type="radio"]:checked+label {
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: var(--color-accent, rgb(245 158 11));
+            background: rgba(245, 158, 11, 0.08);
+            border-color: rgba(245, 158, 11, 0.3);
+
+            border-bottom-right-radius: 225px 15px;
+            border-bottom-left-radius: 5px 255px;
+            border-bottom: solid 2px rgba(245, 158, 11, 0.5);
         }
     }
 }
-.Render{
-    grid-area: 1/4;
-    grid-column-end: 7;
-/*    
-    border-top-left-radius: 255px 15px;
-    border-top-right-radius: 15px 225px;
-    border-bottom-right-radius: 225px 15px;
-    border-bottom-left-radius:15px 255px;
-    border: #000 solid 1px; */
 
+/* ── Bar Chart Render View ──────────────────────────────────────── */
+.Render {
     height: 20em;
-    margin-left: 10px;
-    padding: 0.5em;
+    padding: 0.5em 0;
     display: flex;
     flex-flow: column;
-    align-items:center;
-    > div{
-        width: 30%;
+    align-items: center;
+    gap: 6px;
+
+    >div {
+        width: 55%;
         display: grid;
         align-items: center;
-        padding: 10px;
-        transition: height 0.6s;
+        padding: 10px 14px;
+        transition: height 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        border-radius: 8px;
+        border: 1px solid rgba(255, 255, 255, 0.12);
 
         border-top-left-radius: 255px 15px;
         border-top-right-radius: 15px 225px;
         border-bottom-right-radius: 225px 15px;
-        border-bottom-left-radius:15px 255px;
-        border:solid 3px #41403E;
+        border-bottom-left-radius: 15px 255px;
 
-        > label{
-            font-weight: bold;
-            font-size: 1.2rem;
-            margin-left: -80px;
-            
+        >label {
+            font-family: "Space Grotesk1", Arial, sans-serif;
+            font-weight: 700;
+            font-size: 0.8rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.85);
+            margin-left: 0;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
         }
     }
 }
-.client{
-    background: rgb(183,246,170);
-    background: linear-gradient(0deg, rgba(183,246,170,1) 0%, rgba(53,224,22,0.989233193277311) 51%, rgba(183,246,170,1) 100%);
-}
-.server{
-    background: rgb(126,190,245);
-    background: linear-gradient(0deg, rgba(126,190,245,1) 0%, rgba(48,143,241,0.989233193277311) 51%, rgba(144,198,244,1) 100%);
-}
-.build{
-    background: rgb(245,171,148);
-    background: linear-gradient(0deg, rgba(245,171,148,1) 0%, rgba(241,48,48,0.989233193277311) 51%, rgba(244,129,94,1) 100%);
+
+/* ── Node Colors ────────────────────────────────────────────────── */
+.client {
+    background: linear-gradient(160deg, rgba(53, 200, 80, 0.55) 0%, rgba(30, 140, 50, 0.7) 100%);
 }
 
-#SSR{
-    .client{
-        height:20%;
+.server {
+    background: linear-gradient(160deg, rgba(48, 143, 241, 0.55) 0%, rgba(20, 90, 190, 0.7) 100%);
+}
+
+.build {
+    background: linear-gradient(160deg, rgba(241, 100, 48, 0.55) 0%, rgba(180, 50, 20, 0.7) 100%);
+}
+
+/* ── Render Mode Heights ────────────────────────────────────────── */
+#SSR {
+    .client {
+        height: 20%;
     }
-    .server{
-        height:70%;
+
+    .server {
+        height: 70%;
     }
-    .build{
-        height:10%;
+
+    .build {
+        height: 10%;
     }
 }
 
-#CSR{
-    .client{
-        height:70%;
+#CSR {
+    .client {
+        height: 70%;
     }
-    .server{
-        height:20%;
+
+    .server {
+        height: 20%;
     }
-    .build{
-        height:10%;
-    }
-}
-#SSG{
-    .client{
-        height:10%;
-    }
-    .server{
-        height:10%;
-    }
-    .build{
-        height:80%;
+
+    .build {
+        height: 10%;
     }
 }
-#ISR{
-    .client{
-        height:10%;
+
+#SSG {
+    .client {
+        height: 10%;
     }
-    .server{
-        height:40%;
+
+    .server {
+        height: 10%;
     }
-    .build{
-        height:50%;
+
+    .build {
+        height: 80%;
+    }
+}
+
+#ISR {
+    .client {
+        height: 10%;
+    }
+
+    .server {
+        height: 40%;
+    }
+
+    .build {
+        height: 50%;
     }
 }
